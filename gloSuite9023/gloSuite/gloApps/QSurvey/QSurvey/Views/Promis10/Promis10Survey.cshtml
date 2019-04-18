@@ -1,0 +1,278 @@
+﻿@model QSurvey.Models.Promis10Model
+
+@{
+    ViewBag.Title = "Promis10Survey";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Global Health PROMIS Global Health (10) SF</title>
+</head>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+  @using (Html.BeginForm("PostSurvey", "Promis10", FormMethod.Post))
+    { @Html.HiddenFor(m => m.RequestID)
+<div class="container">
+            <h1>
+                <center>
+                  PROMIS–10 Profile v1.0 
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                     Global 01. In general, would you say your health is:  </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global01   ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global01, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global01, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global01, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global01,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+                   Global 02. In general, would you say your quality of life is:  </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global02   ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global02, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global02, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global02, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global02,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+                 Global 03. In general, how would you rate your physical health?   </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global03 ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global03, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global03, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global03, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global03,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <h3 class="h3">
+                Global 04. In general, how would you rate your mental health, including your mood and your ability to think?   </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global04   ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global04, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global04, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global04, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global04,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+              Global 05. In general, how would you rate your satisfaction with your social activities and relationships?    </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global05   ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global05, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global05, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global05, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global05,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+              Global 09. In general, please rate how well you carry out your usual social activities and roles. (This includes activities at home, at work and in your 
+              community, and responsibilities as a parent, child, spouse, employee, friend, etc.)     </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global05   ,"excellent")   Excellent
+                                @Html.RadioButtonFor(m => m.Global05, "very good")   Very good
+                                 @Html.RadioButtonFor(m => m.Global05, "good")   Good
+                                @Html.RadioButtonFor(m => m.Global05, "fair")   Fair
+                                 @Html.RadioButtonFor(m => m.Global05,  "poor")  Poor
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+             Global 06. To what extent are you able to carry out your everyday physical activities such as walking, climbing stairs, carrying groceries, or moving a chair?    </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Global06, "completely")   Completely
+                                @Html.RadioButtonFor(m => m.Global06, "mostly") Mostly
+                                 @Html.RadioButtonFor(m => m.Global06, "moderately")   Moderately
+                                @Html.RadioButtonFor(m => m.Global06, "a little")   A Little
+                                 @Html.RadioButtonFor(m => m.Global06, "not at aLL")  Not At ALL
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+             Global 10. How often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?  </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                               <p>
+                                @Html.RadioButtonFor(m => m.Global10, "never")   Never
+                                @Html.RadioButtonFor(m => m.Global10, "rarely") Rarely
+                                 @Html.RadioButtonFor(m => m.Global10, "sometimes")   Sometimes
+                                @Html.RadioButtonFor(m => m.Global10, "often")   Often
+                                 @Html.RadioButtonFor(m => m.Global10, "always")  Always
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                    Global 08. How would you rate your fatigue on average?   </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                               <p>
+                            
+                                @Html.RadioButtonFor(m => m.Global08, "none")   None
+                                @Html.RadioButtonFor(m => m.Global08, "mild") Mild
+                                 @Html.RadioButtonFor(m => m.Global08, "moderate")   Moderate
+                                @Html.RadioButtonFor(m => m.Global08, "severe")   Severe
+                                 @Html.RadioButtonFor(m => m.Global08, "very severe")  Very Severe
+                              
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <h3 class="h3">
+                 Global 07. How would you rate your pain on average?   </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <ul>
+                               <p>
+                            
+                                @Html.RadioButtonFor(m => m.Global07, "0")   0
+                                @Html.RadioButtonFor(m => m.Global07, "1") 1
+                                 @Html.RadioButtonFor(m => m.Global07, "2")   2
+                                @Html.RadioButtonFor(m => m.Global07, "3")  3
+                                 @Html.RadioButtonFor(m => m.Global07, "4") 4
+                                @Html.RadioButtonFor(m => m.Global07, "5")  5
+                                @Html.RadioButtonFor(m => m.Global07, "6") 6
+                                 @Html.RadioButtonFor(m => m.Global07, "7")  7
+                                @Html.RadioButtonFor(m => m.Global07, "8")  8
+                                 @Html.RadioButtonFor(m => m.Global07, "9") 9
+                                 @Html.RadioButtonFor(m => m.Global07, "10")  10
+                            </p>                  
+                        </ul>
+                    </td>
+                </tr>
+
+                   </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+            <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+    }
+</body> 
+</html> 

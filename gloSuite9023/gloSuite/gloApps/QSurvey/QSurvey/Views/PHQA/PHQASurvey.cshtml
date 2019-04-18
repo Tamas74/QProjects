@@ -1,0 +1,256 @@
+﻿@model QSurvey.Models.PHQAModel
+
+@{
+    ViewBag.Title = "PHQASurvey";
+}
+
+<html>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+  @using (Html.BeginForm("PostSurvey", "PHQASurvey", FormMethod.Post))
+    { @Html.HiddenFor(m => m.RequestID)
+<div class="container">
+            <h1>
+                <center>
+                 PHQ-9 modified for Adolescents (PHQ-A)
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">
+               
+                 
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           1. Feeling down, depressed, irritable or hopeless?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q1, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q1, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q1, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q1, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           2. Little interest or pleasure in doing things?
+
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q2, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q2, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q2, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q2, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                          3. Trouble falling asleep, staying asleep, or speeping too much
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q3, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q3, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q3, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q3, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                          4. Poor appetite, weight loss, or overheating?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q4, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q4, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q4, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q4, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                         5. Feeling tired, or having little energy?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q5, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q5, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q5, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q5, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                         6. Feeling bad about yourself- or feeling that you are a failure, 
+                         or that you have let yourself or your family down?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q6, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q6, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q6, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q6, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                        7. Trouble concentrating on thing like school work, reading,
+                        or watching TV?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q7, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q7, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q7, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q7, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                        8. Moving or speaking so slowly that other people could have noticed.
+                        or the opposite - being so figety or restless that you have been moving around a lot more than usual.
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q8, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q8, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q8, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q8, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                       9. Thoughts that you would be better off dead, or of hurting yourself in some way?.
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q9, "Not At All")Not At All
+                                @Html.RadioButtonFor(m => m.Q9, "Several Days")  Several Days 
+                                @Html.RadioButtonFor(m => m.Q9, "More Than Half The Days")  More Than Half The Days 
+                                @Html.RadioButtonFor(m => m.Q9, "Nearly Every Day")  Nearly Every Day 
+                              
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+
+                 </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+            <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+    }
+</body> 
+</html>

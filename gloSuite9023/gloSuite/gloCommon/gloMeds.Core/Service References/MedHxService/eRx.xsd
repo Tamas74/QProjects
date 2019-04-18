@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFeRxService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFeRxService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="clsException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsException" nillable="true" type="tns:clsException" />
+  <xs:complexType name="ClsGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsGeneral" nillable="true" type="tns:ClsGeneral" />
+  <xs:complexType name="Prescriber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AUSID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatabaseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDirectMessageEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNewRxEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRefillEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsServiceLevelDisabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NPI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrescriberAddress" nillable="true" type="tns:AddressDetail" />
+      <xs:element minOccurs="0" name="PrescriberAgentName" nillable="true" type="tns:PersonName" />
+      <xs:element minOccurs="0" name="PrescriberClinic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrescriberDEA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrescriberName" nillable="true" type="tns:PersonName" />
+      <xs:element minOccurs="0" name="PrescriberSpecialtyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrescriberSpecialtyQualifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gloSuiteVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Prescriber" nillable="true" type="tns:Prescriber" />
+  <xs:complexType name="AddressDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhQualifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDetail" nillable="true" type="tns:AddressDetail" />
+  <xs:complexType name="PersonName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonName" nillable="true" type="tns:PersonName" />
+</xs:schema>

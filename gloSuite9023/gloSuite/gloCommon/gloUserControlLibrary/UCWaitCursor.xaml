@@ -1,0 +1,66 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="UCWaitCursor"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480" Width="32" Height="32">
+	<UserControl.Resources>
+		<Storyboard x:Key="OnLoaded1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ellipse" RepeatBehavior="Forever">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="22.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="45"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.75" Value="67.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="90"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.25" Value="112.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="135"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.75" Value="157.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="180"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.25" Value="202.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="225"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.75" Value="247.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="270"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.25" Value="292.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="315"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.75" Value="337.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="360"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<Grid x:Name="LayoutRoot" Width="32" Height="32">
+		<Path Data="M15.5,5.4999998 C9.9771523,5.5 5.5,9.9771523 5.4999998,15.5 5.5,21.022847 9.9771523,25.5 15.5,25.5 21.022847,25.5 25.5,21.022847 25.5,15.5 25.5,9.9771523 21.022847,5.5 15.5,5.4999998 z M15.5,0 C24.060413,0 31,6.9395864 31,15.5 31,24.060413 24.060413,31 15.5,31 6.9395864,31 0,24.060413 0,15.5 0,6.9395864 6.9395864,0 15.5,0 z" Margin="0.5" Stretch="Fill">
+			<Path.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FFFFB057" Offset="0.5"/>
+					<GradientStop Color="#FFFF800B" Offset="0.504"/>
+					<GradientStop Color="#FFE87F19" Offset="1"/>
+				</LinearGradientBrush>
+			</Path.Fill>
+		</Path>
+		<Ellipse x:Name="ellipse" Height="5.5" VerticalAlignment="Top" Margin="11.376,0.5,0,0" RenderTransformOrigin="0.512,2.818" HorizontalAlignment="Left" Width="8.541">
+			<Ellipse.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Ellipse.RenderTransform>
+			<Ellipse.Fill>
+				<LinearGradientBrush EndPoint="-0.299,0.49" StartPoint="1.066,0.44">
+					<GradientStop Offset="0.539"/>
+					<GradientStop Color="White" Offset="0.288"/>
+				</LinearGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+	</Grid>
+</UserControl>

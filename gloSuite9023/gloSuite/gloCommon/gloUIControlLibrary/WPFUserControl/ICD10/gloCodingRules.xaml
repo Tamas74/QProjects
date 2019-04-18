@@ -1,0 +1,588 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.ICD10.gloCodingRules"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:visibility="clr-namespace:gloUIControlLibrary.Classes"
+             xmlns:usercontrol="clr-namespace:gloUIControlLibrary.WPFUserControl.ICD10"
+             mc:Ignorable="d" FontFamily="{DynamicResource BaseFontFamily}" 
+             FontSize="{DynamicResource BaseFontSize}" Width="Auto" Height="Auto" 
+             UseLayoutRounding="True">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloCodingRulesOrange.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+     <visibility:EnumerableContainsAnyVisibilityConverter x:Key="EnumerableContainsAnyVisibilityConverter"/>
+            <visibility:SingleVisibilityConverter x:Key="SingleVisibilityConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+
+        <ScrollViewer DockPanel.Dock="Top" x:Name="scrlViewer" PanningRatio="0.1">
+            <Border  x:Name="pnlBodyCodingRules"
+                    BorderBrush="{DynamicResource InfoForegroundBrush}"
+                    BorderThickness="0"
+                    Margin="0">
+
+                <ListBox 
+                    PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                    ItemsSource="{Binding BindingView}" 
+                    HorizontalContentAlignment="Stretch"
+                    VerticalAlignment="Stretch" Background="White" 
+                    BorderThickness="0" DockPanel.Dock="Top">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Focusable" Value="False"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Expander IsExpanded="True" Width="Auto"
+                                          HorizontalAlignment="Stretch"
+                                          Style="{StaticResource ExpanderStyle}">
+                                <Expander.Header>
+                                    <WrapPanel Orientation="Horizontal" 
+                                                    Margin="0,0,10,0">
+                                        <TextBlock Text="{Binding ICDCode}"
+                                                       />
+                                        <TextBlock Text=" - " Visibility="{Binding Path=ICDCode, Converter={StaticResource SingleVisibilityConverter}}"/>
+                                        <TextBlock Text="{Binding Description}" Width="Auto" MaxWidth="600"
+                                                       TextTrimming="WordEllipsis" />
+
+                                        <WrapPanel.ToolTip>
+                                            <ToolTip StaysOpen="True">
+                                                <TextBlock Text="{Binding Description}"></TextBlock>
+                                            </ToolTip>
+                                        </WrapPanel.ToolTip>
+                                    </WrapPanel>
+                                </Expander.Header>
+                                <Border BorderThickness="0"
+                                Padding="2"
+                                Margin="3,0,3,3"
+                                BorderBrush="#FFDC810E">
+                                    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+
+                                        <!--Start NotesBinding-->
+                                        <StackPanel Visibility="{Binding Path=NotesBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="Notes"
+                                    Margin="5,5,5,5">
+                                            <TextBlock Margin="5,5,0,0"
+                                       Text="Notes"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="CharacterEllipsis" Foreground="{DynamicResource InfoForegroundBrushText}" />
+                                            <ListBox  
+                                            Visibility="{Binding Path=NotesBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                            x:Name="lstNotes"
+                                     ItemsSource="{Binding Path=NotesBinding}"
+                                     BorderThickness="0"
+                                     
+                                     PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                                     Grid.IsSharedSizeScope="True"
+                                     HorizontalContentAlignment="Stretch"
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" 
+                                     Foreground="{DynamicResource InfoForegroundBrushText}"
+									  Background="{x:Null}">
+
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\OrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis">
+                                        <TextBlock.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding}"
+                                                                 Value="&lt;No information available&gt;">
+                                                        <Setter Property="TextBlock.FontStyle"
+                                                                Value="Italic" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style></TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+                                        <!--End NotesBinding-->
+
+                                        <StackPanel Orientation="Vertical"
+                                                Visibility="{Binding Path=IncludesBinding, 
+                                                Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                                x:Name="Includes"
+                                                Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal" >
+                                                <!--<Button  Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto" Click="Button_Click">
+                                                        <Image Source="/gloUIControlLibrary;component/Resources/ICO/infobutton.ico"></Image>
+                                                </Button>-->
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Includes"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333"
+                                       TextWrapping="Wrap"
+                                       ToolTipService.ShowDuration="2147483647" 
+                                       TextTrimming="CharacterEllipsis" Foreground="{DynamicResource InfoForegroundBrushText}">
+                                                     <TextBlock.ToolTip>
+                                                        <ToolTip>
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="The word 'Includes' appears immediately under certain categories to further define, or give examples of, the content of the category." 
+                                                                                                   >
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+
+                                                
+                                            </StackPanel>
+                                            <ListBox
+                                            Visibility="{Binding Path=IncludesBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                            x:Name="lstIncludes"
+                                     ItemsSource="{Binding Path=IncludesBinding}"
+                                     BorderThickness="0"
+                                     
+                                     PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                                     Grid.IsSharedSizeScope="True"
+                                     HorizontalContentAlignment="Stretch"
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" 
+                                     Foreground="{DynamicResource InfoForegroundBrushText}"
+									  Background="{x:Null}">
+
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\OrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis"></TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=InclusionTermBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="InclusionTermBinding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <!--<Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                    <Image Source="/gloUIControlLibrary;component/Resources/ICO/infobutton.ico"></Image>
+                                                </Button>-->
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Inclusion Term"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333"
+                                       TextWrapping="Wrap"
+                                        ToolTipService.ShowDuration="2147483647" 
+                                       TextTrimming="WordEllipsis" Foreground="{DynamicResource InfoForegroundBrushText}">
+                                                     <TextBlock.ToolTip>
+                                                        <ToolTip StaysOpen="True">
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="List of terms is included under some codes. These terms are the conditions for which that code is to be used. The terms may be synonyms of the code title, or, in the case of 'other specified' codes, the terms are a list of the various conditions assigned to that code. The inclusion terms are not necessarily exhaustive. Additional terms found only in the Alphabetic Index may also be assigned to a code." 
+                                                                                                   >
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+
+                                                
+                                            </StackPanel>
+                                            <ListBox x:Name="lstInclusionTerm"
+                                     ItemsSource="{Binding Path=InclusionTermBinding}"
+                                     BorderThickness="0"
+                                     PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                                     Grid.IsSharedSizeScope="True"
+                                     HorizontalContentAlignment="Stretch"
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\OrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis"></TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=UseAdditionalCodeBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                                        
+                                    x:Name="UseAdditionalCodeBinding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <!--<Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                    <Image Source="/gloUIControlLibrary;component/Resources/ICO/infobutton.ico"></Image>
+                                                </Button>-->
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Use Additional Code"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333"
+                                       TextWrapping="Wrap"
+                                       ToolTipService.ShowDuration="2147483647" 
+                                       TextTrimming="WordEllipsis" Foreground="{DynamicResource InfoForegroundBrushText}">
+
+                                                <TextBlock.ToolTip>
+                                                    <ToolTip StaysOpen="True">
+                                                        <StackPanel>
+                                                            <usercontrol:gloCodingRulesToolTip 
+                                                                DataContext="Certain conditions have both an underlying etiology and multiple body system manifestations due to the underlying etiology.  For such conditions the ICD-10-CM has a coding convention that requires the underlying condition be sequenced first followed by the manifestation.  Wherever such a combination exists there is a 'use additional code' note at the etiology code, and a 'code first' note at the manifestation code.  These instructional notes indicate the proper sequencing order of the codes, etiology followed by manifestation. In most cases the manifestation codes will have in the code title, 'in diseases classified elsewhere.'  Codes with this title are a component of the etiology/ manifestation convention. The code title indicates that it is a manifestation code.  'In diseases classified elsewhere' codes are never permitted to be used as first listed or principal diagnosis codes. They must be used in conjunction with an underlying condition code and they must be listed following the underlying condition.">
+
+                                                            </usercontrol:gloCodingRulesToolTip>
+                                                        </StackPanel>
+                                                    </ToolTip>
+                                                </TextBlock.ToolTip>
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <ListBox x:Name="lstUseAdditionalCode" 
+                                     ItemsSource="{Binding Path=UseAdditionalCodeBinding}"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Stretch"
+                                     PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel" 
+                                     ToolTipService.ShowDuration="2147483647" 
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\OrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextTrimming="WordEllipsis"
+                                                       TextWrapping="Wrap"></TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=ExcludesBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="ExcludesBinding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal" >
+                                                <Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                   
+                                                </Button>
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Excludes 1"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333"
+                                       TextTrimming="WordEllipsis"
+                                        ToolTipService.ShowDuration="2147483647"                                                           
+                                       TextWrapping="Wrap" Foreground="{DynamicResource InfoForegroundBrushText}">
+                                                    <TextBlock.ToolTip>
+                                                        <ToolTip StaysOpen="True">
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="A type 1 Excludes note is a pure excludes.  It means 'NOT CODED HERE!'  An Excludes1 note indicates that the code excluded should never be used at the same time as the code above the Excludes1 note.  An Excludes1 is used when two conditions cannot occur together, such as a congenital form versus an acquired form of the same condition." 
+                                                                                                   x:Name="gloCodingRulesToolTip">
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+
+                                            </StackPanel>
+                                            <ListBox x:Name="lstExcludes" 
+                                     ItemsSource="{Binding Path=ExcludesBinding}"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Stretch"
+                                     PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\OrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextTrimming="WordEllipsis"
+                                                       TextWrapping="Wrap">
+                                           </TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=Excludes2Binding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="Excludes2Binding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <!--<Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                    <Image Source="/gloUIControlLibrary;component/Resources/ICO/infobutton.ico"></Image>
+                                                </Button>-->
+                                                <TextBlock Margin="5,5,0,0"
+                                                           Width="Auto" MaxWidth="600"
+                                       Text="Excludes 2"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       ToolTipService.ShowDuration="2147483647"         
+                                       FontFamily="Tahoma"
+                                       FontSize="13.333" Foreground="{DynamicResource InfoForegroundBrushText}">
+                                                <TextBlock.ToolTip>
+                                                        <ToolTip StaysOpen="True">
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="A type 2 excludes note represents 'Not included here'.  An excludes2 note indicates that the condition excluded is not part of the condition it is excluded from but a patient may have both conditions at the same time.  When an Excludes2 note appears under a code it is acceptable to use both the code and the excluded code together." 
+                                                                                                   >
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+                                                
+
+
+
+
+                                            </StackPanel>
+                                            <ListBox x:Name="lstExcludes2" 
+                                     ItemsSource="{Binding Path=Excludes2Binding}"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Stretch"
+                                             PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel"
+                                     SelectionMode="Single"
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\ICO\BulletOrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis">
+                                           </TextBlock>
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=CodeFirstBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="CodeFirstBinding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                    <Image Source="/gloUIControlLibrary;component/Resources/ICO/Info.ico"></Image>
+                                                </Button>
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Code First"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       ToolTipService.ShowDuration="2147483647"                   
+                                       FontSize="13.333" Foreground="{DynamicResource InfoForegroundBrushText}" >
+                                                    
+                                                    <TextBlock.ToolTip>
+                                                        <ToolTip StaysOpen="True">
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="Certain conditions have both an underlying etiology and multiple body system manifestations due to the underlying etiology.  For such conditions the ICD-10-CM has a coding convention that requires the underlying condition be sequenced first followed by the manifestation.  Wherever such a combination exists there is a 'use additional code' note at the etiology code, and a 'code first' note at the manifestation code.  These instructional notes indicate the proper sequencing order of the codes, etiology followed by manifestation. In most cases the manifestation codes will have in the code title, 'in diseases classified elsewhere.'  Codes with this title are a component of the etiology/ manifestation convention. The code title indicates that it is a manifestation code.  'In diseases classified elsewhere' codes are never permitted to be used as first listed or principal diagnosis codes. They must be used in conjunction with an underlying condition code and they must be listed following the underlying condition." 
+                                                                                                   >
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+                                                
+                                            </StackPanel>
+                                            <ListBox x:Name="lstCodeFirst" 
+                                     ItemsSource="{Binding Path=CodeFirstBinding}"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Stretch"
+                                     SelectionMode="Single"
+                                             
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}" PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\ICO\BulletOrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis">
+                                       </TextBlock>
+
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <StackPanel Visibility="{Binding Path=CodeAlsoBinding, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}"
+                                    x:Name="CodeAlsoBinding" Orientation="Vertical"
+                                    Margin="5,5,5,5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Style="{StaticResource SimpleButton}" Margin="5,5,0,0" Height="Auto" Width="Auto">
+                                                    <Image Source="/gloUIControlLibrary;component/Resources/ICO/Info.ico"></Image>
+                                                </Button>
+                                                <TextBlock Margin="5,5,0,0"
+                                       Text="Code Also"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="Tahoma"
+                                       ToolTipService.ShowDuration="2147483647"                     
+                                       FontSize="13.333" Foreground="{DynamicResource InfoForegroundBrushText}" >
+                                                     <TextBlock.ToolTip>
+                                                        <ToolTip StaysOpen="True">
+                                                            <StackPanel>
+                                                                <usercontrol:gloCodingRulesToolTip DataContext="A code also note instructs that 2 codes may be required to fully describe a condition but the sequencing of the two codes is discretionary, depending on the severity of the conditions and the reason for the encounter." 
+                                                                                                   >
+                                                                   
+                                                                </usercontrol:gloCodingRulesToolTip>
+                                                            </StackPanel>
+                                                        </ToolTip>
+                                                    </TextBlock.ToolTip>
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <ListBox x:Name="lstCodeAlso" 
+                                     ItemsSource="{Binding Path=CodeAlsoBinding}"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Stretch"
+                                     SelectionMode="Single"
+                                             
+                                     VerticalContentAlignment="Stretch" Foreground="{DynamicResource InfoForegroundBrushText}" Background="{x:Null}" PreviewMouseWheel="lstCodeFirst_PreviewMouseWheel">
+                                                <ListBox.ItemContainerStyle>
+                                                    <Style TargetType="{x:Type ListBoxItem}">
+                                                        <Setter Property="Focusable"
+                                                Value="False" />
+                                                    </Style>
+                                                </ListBox.ItemContainerStyle>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <WrapPanel>
+                                                            <Image Width="16"
+                                                   Height="16"
+                                                   Stretch="Fill"
+                                                   Source="Resources\ICO\BulletOrangeDiamond.ico"></Image>
+                                                            <TextBlock Text="{Binding}"
+                                                                           Width="Auto" MaxWidth="600"
+                                                       FontSize="13.333"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="WordEllipsis">
+                                            </TextBlock>
+
+                                                        </WrapPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </Border>
+                            </Expander>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+        </ScrollViewer>
+    </DockPanel>
+            
+
+</UserControl>

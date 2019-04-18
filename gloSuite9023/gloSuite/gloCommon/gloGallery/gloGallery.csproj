@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98EBF01C-8F20-46E9-BB31-B974D573F18A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloGallery</RootNamespace>
+    <AssemblyName>gloGallery</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsCPT.cs" />
+    <Compile Include="Classes\clsGallery.cs" />
+    <Compile Include="Classes\clsICD9.cs" />
+    <Compile Include="Classes\clsICD9CPTGallery.cs" />
+    <Compile Include="Classes\clsmyTreeNode.cs" />
+    <Compile Include="frmICD9CPTGallery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmICD9CPTGallery.designer.cs">
+      <DependentUpon>frmICD9CPTGallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloUC_TreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloUC_TreeView.designer.cs">
+      <DependentUpon>gloUC_TreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmICD9CPTGallery.resx">
+      <DependentUpon>frmICD9CPTGallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloUC_TreeView.resx">
+      <DependentUpon>gloUC_TreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\gloCommon\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloTransparentScreen\gloTransparentScreen.csproj">
+      <Project>{B0698FDA-3EA2-4203-8A5C-A13CB49E8FBA}</Project>
+      <Name>gloTransparentScreen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Blue2007.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Toolstrip.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

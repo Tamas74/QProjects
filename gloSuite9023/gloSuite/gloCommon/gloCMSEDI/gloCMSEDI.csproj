@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A16B9946-75AF-4691-BB91-8B98BF2A2236}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloCMSEDI</RootNamespace>
+    <AssemblyName>gloCMSEDI</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PDFNet">
+      <HintPath>..\..\gloDLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsBL_gloPrintPaperForm.cs" />
+    <Compile Include="ClsBL_HCFA1500PaperForm.cs" />
+    <Compile Include="ClsBL_Transaction.cs" />
+    <Compile Include="clsClinicalChartPrinting.cs" />
+    <Compile Include="frmPrintCMS1500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintCMS1500.designer.cs">
+      <DependentUpon>frmPrintCMS1500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloUB04\ClsBL_UB04PaperForm.cs" />
+    <Compile Include="clsgloBilling.cs" />
+    <Compile Include="ClsgloBillingEnums.cs" />
+    <Compile Include="clsgloPatient.cs" />
+    <Compile Include="gloUB04\gloUB04.cs" />
+    <Compile Include="HCFA1500.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCFA1500.Designer.cs">
+      <DependentUpon>HCFA1500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewCMS1500\gloHCFA1500PaperFormNew.cs" />
+    <Compile Include="NewCMS1500\gloPrintPaperFormNew.cs" />
+    <Compile Include="NewCMS1500\HCFA1500New.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewCMS1500\HCFA1500New.Designer.cs">
+      <DependentUpon>HCFA1500New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="gloUB04\UB04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloUB04\UB04.Designer.cs">
+      <DependentUpon>UB04.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloClinicalQueueGeneral\gloClinicalQueueGeneral\gloClinicalQueueGeneral.csproj">
+      <Project>{F4774319-666F-44A3-8178-7E719ECDEF56}</Project>
+      <Name>gloClinicalQueueGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmPrintCMS1500.resx">
+      <DependentUpon>frmPrintCMS1500.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCFA1500.resx">
+      <DependentUpon>HCFA1500.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloUB04\UB04.resx">
+      <DependentUpon>UB04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCMS1500\HCFA1500New.resx">
+      <DependentUpon>HCFA1500New.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

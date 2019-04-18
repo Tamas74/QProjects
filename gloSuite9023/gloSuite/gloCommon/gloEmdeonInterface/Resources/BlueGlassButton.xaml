@@ -1,0 +1,109 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Resource dictionary entries should be defined here. -->
+	
+	<RadialGradientBrush x:Key="BLUE_BACKGROUND" GradientOrigin="0.5,0.5">
+		<RadialGradientBrush.RelativeTransform>
+			<TransformGroup>
+				<ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="0.865" ScaleY="0.805"/>
+				<SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+				<RotateTransform Angle="135.194" CenterX="0.5" CenterY="0.5"/>
+				<TranslateTransform X="0.006" Y="0.124"/>
+			</TransformGroup>
+		</RadialGradientBrush.RelativeTransform>
+		<GradientStop Color="#FF8DD0FB" Offset="1"/>
+		<GradientStop Color="#FFB6DEF9"/>
+	</RadialGradientBrush>
+	
+			<Style x:Key="BlueGlassButton" TargetType="{x:Type Button}">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Grid>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+													<EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.1"/>
+												</DoubleAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Pressed"/>
+										<VisualState x:Name="Disabled">
+											<Storyboard>
+												<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+													<EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+												<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.StrokeThickness)">
+													<EasingDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+												</DoubleAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="FocusStates">
+										<VisualState x:Name="Focused"/>
+										<VisualState x:Name="Unfocused"/>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="0.08*"/>
+									<RowDefinition Height="0.84*"/>
+									<RowDefinition Height="0.08*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.08*"/>
+									<ColumnDefinition Width="0.84*"/>
+									<ColumnDefinition Width="0.08*"/>
+								</Grid.ColumnDefinitions>
+								<Ellipse Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="1,1,1,1" >
+									<Ellipse.Fill>
+										<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+											<GradientStop Color="#FF3B80EB" Offset="0.262"/>
+											<GradientStop Color="#FF0C4EB4" Offset="0.685"/>
+											<GradientStop Color="#FF65B7FF"/>
+											<GradientStop Color="#FF0A44A1" Offset="1"/>
+										</LinearGradientBrush>
+									</Ellipse.Fill>
+								</Ellipse>
+								<Grid Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Margin="1.2">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="0.033*"/>
+										<RowDefinition Height="0.6*"/>
+										<RowDefinition Height="0.367*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="0.114*"/>
+										<ColumnDefinition Width="0.772*"/>
+										<ColumnDefinition Width="0.114*"/>
+									</Grid.ColumnDefinitions>
+									<Ellipse StrokeThickness="1" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="ellipse" Fill="{TemplateBinding Background}" Margin="0.5">
+										<Ellipse.Stroke>
+											<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+												<GradientStop Color="#FF3A6EDC"/>
+												<GradientStop Color="#FF3B80EB" Offset="1"/>
+											</LinearGradientBrush>
+										</Ellipse.Stroke>
+									</Ellipse>
+									<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+									<Ellipse Stroke="#FF000000" StrokeThickness="0" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="1" x:Name="ellipse1">
+										<Ellipse.Fill>
+											<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+												<GradientStop Color="#D8FFFFFF" Offset="0"/>
+												<GradientStop Color="Transparent" Offset="1"/>
+											</LinearGradientBrush>
+										</Ellipse.Fill>
+									</Ellipse> 
+								</Grid>
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="FontSize" Value="18.667"/>
+			</Style>
+			<SolidColorBrush x:Key="TextColor" Color="#FF1F497D"/>
+		
+	
+</ResourceDictionary>

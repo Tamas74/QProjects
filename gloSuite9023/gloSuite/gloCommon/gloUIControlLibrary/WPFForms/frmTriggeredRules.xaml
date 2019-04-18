@@ -1,0 +1,252 @@
+﻿<Window x:Class="gloUIControlLibrary.WPFForms.frmTriggeredRules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Converter="clr-namespace:gloUIControlLibrary.Classes"
+        xmlns:RuleTypeConverter="clr-namespace:gloUIControlLibrary.Classes.ClaimRules"
+        mc:Ignorable="d"
+        Title="Review Claim Rules"
+        WindowStartupLocation="CenterScreen"
+        Height="780"
+        Width="647"
+        TextOptions.TextFormattingMode="Display"
+        Background="{DynamicResource BaseBackColor}"
+        Foreground="{DynamicResource BaseForeColor}"
+        FontFamily="{DynamicResource BaseFontFamily}"
+        FontSize="{DynamicResource BaseFontSize}"
+        Icon="ICO/ReviewClaimRule.ico"
+        ShowInTaskbar="False" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        	<Style x:Key="ListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        		 <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="2,2,2,2"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd" Margin="1" SnapsToDevicePixels="true" CornerRadius="3" Height="Auto" >
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="#FFC4D9FF"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"/>
+                                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+
+                            <Trigger  Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="Bd">
+                                    <Setter.Value>
+                                        #FFE2EDFF
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+		</Style>
+   <RuleTypeConverter:RuleInfoVisibilityConverter x:Key="RuleInfoVisibilityConverter" />   
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#FF458AD2"
+                Margin="2"
+                x:Name="pnlBottom"  Grid.Row="1"
+                CornerRadius="5" BorderThickness="1">
+        	<Border.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FFC4E4FE" Offset="0"/>
+        			<GradientStop Color="#FF91BFEE" Offset="0.33"/>
+        			<GradientStop Color="#FF68A5E2" Offset="0.344"/>
+        			<GradientStop Color="#FF8BC4F9" Offset="0.771"/>
+        			<GradientStop Color="#FFB3E7FD" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Border.Background>
+            <DockPanel x:Name="pnlToolStrip"
+                       HorizontalAlignment="Right"
+                       Margin="0,0,5,0"
+                       Grid.Row="1">
+             
+                <Border Margin="3" CornerRadius="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" Padding="2" >
+                    <Button x:Name="btnOK" IsDefault="True" Style="{DynamicResource SimpleButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                             RenderOptions.BitmapScalingMode="NearestNeighbor" SnapsToDevicePixels="True" Height="24"  Width="Auto"  Margin="0,0,3,0"
+                             Cursor="Hand" Click="btnOK_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Save with Errors" /></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/gloUIControlLibrary;component/Resources/SaveWithError.ico" Height="Auto"/>
+                                    <Label  Margin="2"  Content="Save with Errors" Foreground="{StaticResource BaseForeColor}"  VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="1" FontWeight="Bold"></Label>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                </Border>
+    
+                <Border Margin="3,3,0,3" CornerRadius="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" Padding="2" >
+                    <Button x:Name="btnClose" IsDefault="True" Style="{DynamicResource SimpleButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                             RenderOptions.BitmapScalingMode="NearestNeighbor" SnapsToDevicePixels="True" Height="24"  Width="Auto"  Margin="0,0,3,0"
+                             Cursor="Hand" Click="btnClose_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Correct Claim" /></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/gloUIControlLibrary;component/Resources/CorrectClaim.ico" Height="Auto"/>
+                                <Label  Margin="2"  Content="Correct Claim" Foreground="{StaticResource BaseForeColor}"  VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="1" FontWeight="Bold"></Label>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Border>
+
+                <Border Margin="3" CornerRadius="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" Padding="2">
+                    <Button x:Name="btnVerified" IsDefault="True" Style="{DynamicResource SimpleButton}" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                             RenderOptions.BitmapScalingMode="NearestNeighbor" SnapsToDevicePixels="True" Height="24"  Width="Auto"  Margin="0,0,3,0"
+                             Cursor="Hand" Click="btnVerified_Click" Padding="1">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Ok" /></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" >
+                                <Image Source="/gloUIControlLibrary;component/Resources/OkSmall.ico" Height="Auto"/>
+                                <Label  Margin="2"  Content="Ok" Foreground="{StaticResource BaseForeColor}"  VerticalAlignment="Center" HorizontalAlignment="Right"  Padding="1" FontWeight="Bold"></Label>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Border>
+
+            </DockPanel>
+        </Border>
+        
+        <Border BorderBrush="#FF458AD2"
+                x:Name="pnlTop"
+                d:LayoutOverrides="Height"
+                CornerRadius="5" BorderThickness="1" Margin="2" Background="#FFFEFEFE" Padding="0">
+            <ListBox x:Name="lbTriggeredRules"
+                     AlternationCount="2"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     HorizontalContentAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Background="White"
+                     BorderThickness="0"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemContainerStyle="{DynamicResource ListBoxItemStyle}" Margin="1,2"
+                      >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="2"
+                                Margin="1"
+                                BorderBrush="Silver"
+                                CornerRadius="3" Padding="3" Height="83">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel
+                                        x:Name="stkpMain"
+                                	Grid.Column="1"
+                                	Height="{Binding Height, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Border}}}"
+                                	Grid.Row="0" VerticalAlignment="Center"
+                                           >
+                                                                        <StackPanel.Background>
+                                                                                <ImageBrush ImageSource="{Binding RuleSourceImgPath}" Stretch="Uniform"></ImageBrush>
+                                                                        </StackPanel.Background>
+                                                                                <TextBlock  Margin="5,3,0,0"
+                                		Text="{Binding RuleName}"
+                                		FontWeight="Bold" FontSize="12"
+                                		TextWrapping="WrapWithOverflow" Foreground="#FF042A58"
+                                                />
+                                                <TextBlock  Margin="5,2,0,0"
+                                		FontWeight="Heavy"  FontSize="11"
+                                		TextWrapping="WrapWithOverflow" Foreground="#FF0E488D"
+                                                >
+                                                        <TextBlock.Inlines> 
+                                                                <Run Foreground="#eb6128" Text="{Binding RuleCategory, Mode=OneWay}"/>:  
+                                                                <Run Foreground="#FF0E488D" Text="{Binding RuleTypeInfo, Mode=OneWay}"/>
+                                                        </TextBlock.Inlines>
+                                                </TextBlock>
+                                                <TextBlock  Margin="5,2,0,0"
+                                		Text="{Binding RuleMessage}"
+                                		TextWrapping="WrapWithOverflow" Foreground="#FF494949" VerticalAlignment="Center"
+                                                >
+                                                        <LineBreak/>
+                                		<TextBlock.ToolTip>
+                                			<ToolTip>
+                                				<StackPanel>
+                                					<TextBlock Text="{Binding RuleMessage}"  TextWrapping="WrapWithOverflow"/>
+                                				</StackPanel>
+                                			</ToolTip>
+                                		</TextBlock.ToolTip>
+                                	</TextBlock>
+                                                                        <!--<TextBlock  Margin="5,2,0,0"
+                                		Text="{Binding RuleCategory}"
+                                		FontWeight="Heavy"  FontSize="11"
+                                		TextWrapping="WrapWithOverflow" Foreground="#eb6128"
+                                                />-->
+                                                                </StackPanel>
+                                <Border Grid.Row="0"
+                                        Grid.Column="0"
+                                        BorderThickness="2"
+                                        Margin="3"
+                                        BorderBrush="#FFECF0F6"
+                                        CornerRadius="3"
+                                        Height="64"
+                                        Width="64" HorizontalAlignment="Center">
+                                	<Image Height="Auto"
+                                		Width="Auto"
+                                		VerticalAlignment="Stretch"
+                                		RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                        SnapsToDevicePixels="True"
+                                		Stretch="None"
+                                		Source="{Binding RuleTypeInfo, Converter={StaticResource RuleInfoVisibilityConverter}}" />
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </Grid>
+</Window>

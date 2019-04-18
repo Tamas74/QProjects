@@ -1,0 +1,88 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+gloEMRGeneralLibrary
+</name>
+</assembly>
+<members>
+<member name="P:gloEMRGeneralLibrary.gloEMRActors.Prescription.DosageFrequencyValue">
+	<summary>
+ ''added for CCHIT 11. this value is carry forwarded to dosage calc to calculate the end dosage val
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:gloEMRGeneralLibrary.gloEMRActors.Prescription.DosageFrequencyText">
+	<summary>
+ ''added for CCHIT 11. this value is carry forwarded to dosage calc to show the selected frequency text
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:gloEMRGeneralLibrary.gloEMRActors.tmpCheckFlag">
+	<summary>
+ General Class added to stored some value or flag related to individual prescription and Medication
+ currently used in issue- System makes the medication that was refilled 'Discontinued', even though the generated prescription was deleted 
+ </summary>
+	<remarks></remarks>
+</member><member name="F:gloEMRGeneralLibrary.clsSplitScreen.showOutlookNavMenu">
+20121212::Bug No.:41893::New Variable Declared
+
+</member><member name="P:gloEMRGeneralLibrary.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:gloEMRGeneralLibrary.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:gloEMRGeneralLibrary.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:gloEMRGeneralLibrary.gloEMRPrescription.RefillRequest.UpdateStatusCancel(System.String,System.String)">
+	<summary>
+ 'this will update the status of is alert flag when the menu is clicked on the grid
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloEMRGeneralLibrary.gloEMRPrescription.RefillRequest.GetDrugType(System.String,System.String,System.Int64@,System.String)">
+	<summary>
+ This function is called from Pending refill request from
+ </summary>
+	<param name="DrugName"></param>
+	<param name="nRxTransactionId"></param>
+	<param name="Drug_id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:gloEMRGeneralLibrary.gloEMRPrescription.RefillRequest.GetDrugType_Rx(System.String,System.String,System.Int64@)">
+	<summary>
+ 'This function is called from Refill Request control of Rx form
+ </summary>
+	<param name="DrugName"></param>
+	<param name="nRxTransactionId"></param>
+	<param name="Drug_id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:gloEMRGeneralLibrary.gloEMRLab.gloEMRLabOrder.GetOutStandingOrder(System.DateTime,System.DateTime,System.Int64,System.Int64)">
+	<summary>
+ Fill Outstanding Orders For Selected Date And Provider
+ </summary>
+	<param name="dtFromDate">Order From Date</param>
+	<param name="dtToDate">Order To Date</param>
+	<returns>Call From frmOutstandingOrders Form</returns>
+	<remarks>Add By Pramod on 22012008 For CCHIT-2007</remarks>
+</member><member name="M:gloEMRGeneralLibrary.frmlaunchEPCSui.#ctor(System.String)">
+	<summary>
+ Method to Call from EPCS
+ </summary>
+	<param name="_Methodname">Method Name</param>
+	<remarks></remarks>
+</member><member name="M:gloEMRGeneralLibrary.gloUC_PastWordNotes_SplitControl.FillProblemList">
+	<summary>
+ Fills the problem list.
+ </summary>
+</member>
+</members>
+</doc>

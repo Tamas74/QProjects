@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="eRx" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="eRx10dot6_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://ophit.net/WCFeRx/eRx.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://ophit.net/WCFeRx/eRx.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFeRxService" />
+      <xsd:import schemaLocation="https://ophit.net/WCFeRx/eRx.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IeRx_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetData_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q1:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetDataUsingDataContract_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q2:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetResponses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponses" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetResponses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetResponses_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q3:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateDownloadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatus" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateDownloadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateDownloadStatus_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q4:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownLoad" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownLoad_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q5:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal4dot0_InputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownloadLocal4dot0" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal4dot0_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownloadLocal4dot0Response" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal4dot0_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q6:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownloadLocal" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PharmacyDownloadLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PharmacyDownloadLocal_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q7:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownload" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownload_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q8:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownloadLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadLocal" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownloadLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PrescriberDownloadLocal_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q9:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostClientMessage" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostClientMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessage_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q10:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessageV1_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostClientMessageV1" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessageV1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostClientMessageV1Response" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClientMessageV1_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q11:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetLoginCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetLoginCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_GetLoginCredentials_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q12:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Login_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q13:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClient270nMedHxMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostClient270nMedHxMessage" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClient270nMedHxMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostClient270nMedHxMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_PostClient270nMedHxMessage_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q14:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_InsertProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProvider" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_InsertProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_InsertProvider_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q15:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProvider" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_UpdateProvider_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q16:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DirectAddressExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:DirectAddressExists" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DirectAddressExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DirectAddressExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DirectAddressExists_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q17:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DeleteDirectAddressProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectAddressProvider" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DeleteDirectAddressProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectAddressProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_DeleteDirectAddressProvider_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q18:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownloadLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkPharmacyDownloadLocal" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownloadLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkPharmacyDownloadLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownloadLocal_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q19:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkPharmacyDownload" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkPharmacyDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkPharmacyDownload_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q20:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkWebConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkWebConfig" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkWebConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkWebConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_checkWebConfig_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q21:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Increment_InputMessage">
+    <wsdl:part name="parameters" element="tns:Increment" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Increment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncrementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IeRx_Increment_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/WCFeRxService" name="detail" element="q22:clsException" />
+  </wsdl:message>
+  <wsdl:portType name="IeRx">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/GetData" message="tns:IeRx_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/GetDataResponse" message="tns:IeRx_GetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/GetDataclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_GetData_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/GetDataUsingDataContract" message="tns:IeRx_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/GetDataUsingDataContractResponse" message="tns:IeRx_GetDataUsingDataContract_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/GetDataUsingDataContractclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_GetDataUsingDataContract_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/GetResponses" message="tns:IeRx_GetResponses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/GetResponsesResponse" message="tns:IeRx_GetResponses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/GetResponsesclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_GetResponses_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/UpdateDownloadStatus" message="tns:IeRx_UpdateDownloadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/UpdateDownloadStatusResponse" message="tns:IeRx_UpdateDownloadStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/UpdateDownloadStatusclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_UpdateDownloadStatus_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PharmacyDownLoad" message="tns:IeRx_PharmacyDownLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PharmacyDownLoadResponse" message="tns:IeRx_PharmacyDownLoad_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PharmacyDownLoadclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PharmacyDownLoad_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownloadLocal4dot0">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocal4dot0" message="tns:IeRx_PharmacyDownloadLocal4dot0_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocal4dot0Response" message="tns:IeRx_PharmacyDownloadLocal4dot0_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocal4dot0clsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PharmacyDownloadLocal4dot0_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownloadLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocal" message="tns:IeRx_PharmacyDownloadLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocalResponse" message="tns:IeRx_PharmacyDownloadLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PharmacyDownloadLocalclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PharmacyDownloadLocal_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PrescriberDownload" message="tns:IeRx_PrescriberDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PrescriberDownloadResponse" message="tns:IeRx_PrescriberDownload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PrescriberDownloadclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PrescriberDownload_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownloadLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PrescriberDownloadLocal" message="tns:IeRx_PrescriberDownloadLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PrescriberDownloadLocalResponse" message="tns:IeRx_PrescriberDownloadLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PrescriberDownloadLocalclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PrescriberDownloadLocal_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostClientMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PostClientMessage" message="tns:IeRx_PostClientMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PostClientMessageResponse" message="tns:IeRx_PostClientMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PostClientMessageclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PostClientMessage_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostClientMessageV1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PostClientMessageV1" message="tns:IeRx_PostClientMessageV1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PostClientMessageV1Response" message="tns:IeRx_PostClientMessageV1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PostClientMessageV1clsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PostClientMessageV1_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/GetLoginCredentials" message="tns:IeRx_GetLoginCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/GetLoginCredentialsResponse" message="tns:IeRx_GetLoginCredentials_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/GetLoginCredentialsclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_GetLoginCredentials_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/Login" message="tns:IeRx_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/LoginResponse" message="tns:IeRx_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/LoginclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_Login_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostClient270nMedHxMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/PostClient270nMedHxMessage" message="tns:IeRx_PostClient270nMedHxMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/PostClient270nMedHxMessageResponse" message="tns:IeRx_PostClient270nMedHxMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/PostClient270nMedHxMessageclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_PostClient270nMedHxMessage_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/InsertProvider" message="tns:IeRx_InsertProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/InsertProviderResponse" message="tns:IeRx_InsertProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/InsertProviderclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_InsertProvider_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/UpdateProvider" message="tns:IeRx_UpdateProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/UpdateProviderResponse" message="tns:IeRx_UpdateProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/UpdateProviderclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_UpdateProvider_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectAddressExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/DirectAddressExists" message="tns:IeRx_DirectAddressExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/DirectAddressExistsResponse" message="tns:IeRx_DirectAddressExists_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/DirectAddressExistsclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_DirectAddressExists_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectAddressProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/DeleteDirectAddressProvider" message="tns:IeRx_DeleteDirectAddressProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/DeleteDirectAddressProviderResponse" message="tns:IeRx_DeleteDirectAddressProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/DeleteDirectAddressProviderclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_DeleteDirectAddressProvider_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPharmacyDownloadLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownloadLocal" message="tns:IeRx_checkPharmacyDownloadLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownloadLocalResponse" message="tns:IeRx_checkPharmacyDownloadLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownloadLocalclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_checkPharmacyDownloadLocal_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPharmacyDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownload" message="tns:IeRx_checkPharmacyDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownloadResponse" message="tns:IeRx_checkPharmacyDownload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/checkPharmacyDownloadclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_checkPharmacyDownload_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkWebConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/checkWebConfig" message="tns:IeRx_checkWebConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/checkWebConfigResponse" message="tns:IeRx_checkWebConfig_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/checkWebConfigclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_checkWebConfig_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Increment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IeRx/Increment" message="tns:IeRx_Increment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IeRx/IncrementResponse" message="tns:IeRx_Increment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IeRx/IncrementclsExceptionFault" name="clsExceptionFault" message="tns:IeRx_Increment_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eRx10dot6" type="tns:IeRx">
+    <wsp:PolicyReference URI="#eRx10dot6_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/GetResponses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/UpdateDownloadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownLoad">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PharmacyDownLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownloadLocal4dot0">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PharmacyDownloadLocal4dot0" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PharmacyDownloadLocal">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PharmacyDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownload">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PrescriberDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownloadLocal">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PrescriberDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostClientMessage">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PostClientMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostClientMessageV1">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PostClientMessageV1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginCredentials">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/GetLoginCredentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostClient270nMedHxMessage">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/PostClient270nMedHxMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProvider">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/InsertProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProvider">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/UpdateProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DirectAddressExists">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/DirectAddressExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectAddressProvider">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/DeleteDirectAddressProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkPharmacyDownloadLocal">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/checkPharmacyDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkPharmacyDownload">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/checkPharmacyDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="checkWebConfig">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/checkWebConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Increment">
+      <soap12:operation soapAction="http://tempuri.org/IeRx/Increment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eRx">
+    <wsdl:port name="eRx10dot6" binding="tns:eRx10dot6">
+      <soap12:address location="https://ophit.net/WCFeRx/eRx.svc/secure" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://ophit.net/WCFeRx/eRx.svc/secure</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

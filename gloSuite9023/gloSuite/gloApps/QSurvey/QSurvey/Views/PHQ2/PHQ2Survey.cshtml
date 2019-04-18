@@ -1,0 +1,105 @@
+﻿@model QSurvey.Models.PHQ2Model
+
+@{
+    ViewBag.Title = "PHQ2Survey";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PHQ2Survey</title>
+</head>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+  @using (Html.BeginForm("PostSurvey", "PHQ2", FormMethod.Post))
+    { 
+      @Html.HiddenFor(m => m.RequestID)
+      @Html.HiddenFor(m => m.AgeInYears)
+<div class="container">
+            <h1>
+                <center>
+                 PRIME-MD PHQ (2 Question Screen)
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">                
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           Over the last 2 weeks, how often have you been bothered by any of the following problems?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>1.During the past month, have you often been bothered by feeling down, depressed, or hopeless?</p>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q1, "yes") Yes
+                                @Html.RadioButtonFor(m => m.Q1, "no") No
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           2.During the past month, have you often been bothered by little interest or pleasure in doing things?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q2, "yes") Yes
+                                @Html.RadioButtonFor(m => m.Q2, "no") No
+                            </p>
+                        </ul>
+                    </td>
+                </tr>                 
+                 </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+            <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+    }
+</body> 
+</html> 

@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.gloCopayControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:gloUIControlLibrary.Classes"
+             xmlns:coverage="clr-namespace:gloUIControlLibrary.WPFUserControl"
+             mc:Ignorable="d"  FontSize="12"
+             FontFamily="{DynamicResource BaseFontFamily}"
+             Foreground="{DynamicResource InfoBorderBrush}">
+
+    <UserControl.Resources>
+      
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloFormularyInfoRD.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+
+            <local:FormularyStatusConverter x:Key="FormularyStatusConverter"/>
+            <local:PharmacyTypeConverter x:Key="PharmacyTypeConverter"/>
+            <local:PharmacyTypeVisibilityConverter x:Key="PharmacyTypeVisibilityConverter"/>
+
+            <local:OutOfPocketRangeStartConverter x:Key="OutOfPocketRangeStartConverter"/>
+            <local:OutOfPocketRangeEndConverter x:Key="OutOfPocketRangeEndConverter"/>                        
+            <local:PercentCoPayRateConverter x:Key="PercentCoPayRateConverter"/>
+            <local:MinMaxCoPayConverter x:Key="MinMaxCoPayConverter"/>
+            <local:CopayListTypeConverter x:Key="CopayListTypeConverter"/>
+            <local:EnumerableContainsAnyVisibilityConverter x:Key="EnumerableContainsAnyVisibilityConverter"/>
+
+            <local:NullVisibilityConverter x:Key="NullVisibilityConverter"/>
+            <local:MultiVisibilityConverter x:Key="MultiVisibilityConverter"/>
+            <local:SingleVisibilityConverter x:Key="SingleVisibilityConverter"/>
+
+            <local:CopayTermConverter x:Key="CopayTermConverter"/>
+        </ResourceDictionary>
+      
+    </UserControl.Resources>
+    <UserControl.Visibility>
+        <Binding Path="Copay.cop" Converter="{StaticResource EnumerableContainsAnyVisibilityConverter}"/>                    
+    </UserControl.Visibility>
+
+    <ScrollViewer  Background="{DynamicResource InfoBackgroundBrush}">
+        <Border BorderBrush="{DynamicResource InfoBorderBrush}" BorderThickness="1,0,1,1">
+            <StackPanel>
+                <StackPanel DataContext="{Binding Copay}">    		                     
+            <ListView ItemsSource="{Binding cop}" x:Name="listView1" BorderBrush="{StaticResource InfoBorderBrush}" Background="{StaticResource InfoBackgroundBrush}" FontFamily="Tahoma" BorderThickness="0" FontSize="12" SelectionMode="Single" Foreground="{StaticResource InfoForegroundBrush}">
+    			<ListView.ItemContainerStyle>
+    				<Style TargetType="{x:Type ListViewItem}">
+    					<Setter Property="Focusable" Value="False"/>
+    				</Style>                                
+    			</ListView.ItemContainerStyle>            
+    			<ListView.ItemTemplate>
+    				<DataTemplate>
+                                <StackPanel Margin="0,1" >
+    						<TextBlock 
+    							Text="{Binding type, Converter={StaticResource CopayListTypeConverter}}" 
+    							FontWeight="Bold" 
+    							VerticalAlignment="Center" 
+    							HorizontalAlignment="Left" 
+    							FontFamily="Tahoma" 
+    							FontSize="12" Margin="0,2,0,2" Foreground="Black" ></TextBlock>
+
+                            <WrapPanel Visibility="{Binding ptype, Converter={StaticResource SingleVisibilityConverter}}" Margin="1,1,1,0">
+                                        <TextBlock Margin="0,1,0,0" Text="Pharmacy Type: "  FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                                        <TextBlock Margin="0,1,0,0" Text="{Binding ptype, Converter={StaticResource PharmacyTypeConverter}}" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma"  />
+                            </WrapPanel>
+
+
+                                    <WrapPanel Margin="0,1,0,0">
+                                <WrapPanel.Visibility>
+                                    <MultiBinding
+    									Converter="{StaticResource MultiVisibilityConverter}">
+                                        <Binding Path="mintier"/>
+                                        <Binding Path="maxtier"/>
+                                    </MultiBinding>
+                                </WrapPanel.Visibility>
+                                <TextBlock Text="Tier: " FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                                <TextBlock Text="(" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" Margin="5,1,1,1" />
+                                <TextBlock Text="{Binding mintier}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                                <TextBlock Text="-" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                                <TextBlock Text="{Binding maxtier}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                                <TextBlock Text=")" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" />
+                            </WrapPanel>
+
+                            <WrapPanel Visibility="{Binding flat, Converter={StaticResource SingleVisibilityConverter}}" Margin="1,1,1,0">
+                                <TextBlock Text="Flat Copay Amount: "  FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                                <TextBlock Text="{Binding flat}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" Margin="5,1,1,1" />
+                                <TextBlock Text="$" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                            </WrapPanel>
+
+
+                                    <WrapPanel Margin="0,1,0,0">
+                                <WrapPanel.Visibility>
+                                    <MultiBinding
+    									Converter="{StaticResource MultiVisibilityConverter}">
+                                        <Binding Path="rate"/>
+                                        <Binding Path="mincop"/>
+                                        <Binding Path="maxcop"/>
+                                    </MultiBinding>
+                                </WrapPanel.Visibility>
+
+                                <TextBlock Text="Percent CoPay Rate: "  FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+
+                                <WrapPanel Visibility="{Binding rate, Converter={StaticResource SingleVisibilityConverter}}">
+                                    <TextBlock Text="{Binding rate, Converter={StaticResource PercentCoPayRateConverter}}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" Margin="5,1,1,1" />
+                                    <TextBlock Text="%"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" Margin="0,1,1,1" />
+                                </WrapPanel>
+
+
+                                <WrapPanel>
+                                    <WrapPanel.Visibility>
+                                        <MultiBinding
+    										Converter="{StaticResource MultiVisibilityConverter}">
+
+                                            <Binding Path="mincop"/>
+                                            <Binding Path="maxcop"/>
+                                        </MultiBinding>
+                                    </WrapPanel.Visibility>
+    
+                                <TextBlock Text="($" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                                <TextBlock Text="{Binding mincop, Converter={StaticResource MinMaxCoPayConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" Margin="1,1,1,1" />
+                                <TextBlock Text=" - " VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma"/>
+
+                                <TextBlock Text="$" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                                <TextBlock Text="{Binding maxcop, Converter={StaticResource MinMaxCoPayConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" Margin="1,1,1,1" />
+                                <TextBlock Text=")" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                         </WrapPanel>
+                     </WrapPanel>
+
+                            <WrapPanel Visibility="{Binding days, Converter={StaticResource SingleVisibilityConverter}}" Margin="1,1,1,0">
+                                <TextBlock Text="Days Supply: " HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Tahoma" />
+                                <TextBlock Text="{Binding days}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" Margin="5,1,1,1" />
+                            </WrapPanel>
+
+                            <WrapPanel Margin="0,1,0,0">
+                        <WrapPanel.Visibility>
+                            <MultiBinding
+    							Converter="{StaticResource MultiVisibilityConverter}">
+                                <Binding Path="spocket"/>
+                                <Binding Path="epocket"/>
+                            </MultiBinding>
+                        </WrapPanel.Visibility>
+                        <TextBlock Text="Out Of Pocket Range: " FontWeight="Bold" />
+                        <TextBlock Text="(" />
+                        <TextBlock Text="$" Visibility="{Binding spocket, Converter={StaticResource SingleVisibilityConverter}}" />
+                        <TextBlock Text="{Binding spocket, Converter={StaticResource OutOfPocketRangeStartConverter}}"  />
+                        <TextBlock Text=" - " />
+                        <TextBlock Text="$" Visibility="{Binding epocket, Converter={StaticResource SingleVisibilityConverter}}" />
+                        <TextBlock Text="{Binding epocket, Converter={StaticResource OutOfPocketRangeEndConverter}}" />
+                        <TextBlock Text=")" />
+                    </WrapPanel>
+                                    
+                    <WrapPanel x:Name="CopayTermPanel" Visibility="{Binding firstterm, Converter={StaticResource SingleVisibilityConverter}}" Margin="0,1">
+                        <TextBlock Text="First Copay Term : " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                        <TextBlock Text="{Binding firstterm, Converter={StaticResource CopayTermConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                    </WrapPanel>
+                                    
+                                </StackPanel>
+    				</DataTemplate>
+    			</ListView.ItemTemplate>
+    		</ListView>
+
+            </StackPanel>
+                <coverage:gloCoverageControl x:Name="gloCoverageControl" DataContext="{Binding Coverage}" Visibility="{Binding Path=DataContext, RelativeSource={RelativeSource Self}, Converter={StaticResource NullVisibilityConverter}}">
+                
+            </coverage:gloCoverageControl>
+                      
+        </StackPanel>
+	    </Border>
+    </ScrollViewer>
+   
+
+</UserControl>

@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="UC_SendIntuitSecureMsg"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+             xmlns:mcl="clr-namespace:gloUserControlLibrary"
+             mc:Ignorable="d" 
+             Height="897" Width="882" Background="#FFDEDEDE">
+    <UserControl.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                  Source="ResourceDictionary.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <StackPanel x:Name="MainPnl"  DataContext="{Binding}" >
+
+            <StackPanel x:Name="ToolBar" Orientation="Horizontal" Margin="0" Height="73" d:IsLocked="True">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFA3A3A3" Offset="0.99" />
+                        <GradientStop Color="#FFC8C8C8" />
+                        <GradientStop Color="#FF212121" Offset="1" />
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,0">
+                    <Button  x:Name="btnSend" VerticalAlignment="Center" Height="52" Style="{DynamicResource ButtonStyle1}" Width="52" Margin="5,0,0,0" HorizontalAlignment="Center" Background="{DynamicResource Orange_BACKGROUND}" ToolTip="Send">
+                        <Image Height="43.828" Source="Image/Symbol Ok.png" Stretch="Fill" Width="44" RenderTransformOrigin="0.5,0.5" />
+                    </Button>
+                    <TextBlock TextWrapping="Wrap" Margin="0,0,0,0" Text="Send" Foreground="#FF212121" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,0">
+                    <Button  x:Name="btnClose" VerticalAlignment="Center" Height="52" Style="{DynamicResource ButtonStyle1}" Width="52" Margin="5,0,0,0" HorizontalAlignment="Center" Background="{DynamicResource Orange_BACKGROUND}" ToolTip="Close">
+                        <Image Height="43.828" Source="Image/Symbol Cancel.png" Stretch="Fill" Width="44" RenderTransformOrigin="0.5,0.5" />
+                    </Button>
+                    <TextBlock TextWrapping="Wrap" Margin="0,0,0,0" Text="Close" Foreground="#FF212121" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="PatientStrip" VerticalAlignment="Top" Margin="5,5,5,5">
+                <WindowsFormsHost x:Name="Wfh" DockPanel.Dock="Top" Height="217" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0">
+                    <WindowsFormsHost.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFFAEF" Offset="0.005" />
+                            <GradientStop Color="#FFF5CF75" Offset="0.99" />
+                            <GradientStop Color="#FF745000" Offset="0" />
+                            <GradientStop Color="#FF745000" Offset="1" />
+                        </LinearGradientBrush>
+                    </WindowsFormsHost.Background>
+           <mcl:gloUC_PatientStrip Name="mc" />
+                </WindowsFormsHost>
+            </StackPanel>
+            
+                <Grid Height="602" Margin="14,0" ScrollViewer.CanContentScroll="True" Width="854">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="506"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Send Secure Message to Patient" x:Name="lblSecureMsg" Width="334" Foreground="#FF2F2F2F" FontFamily="Calibri" HorizontalAlignment="Left" FontWeight="Bold" FontSize="14.667" d:LayoutOverrides="Height, GridBox" Margin="0,0,0,-0.003" Grid.ColumnSpan="2" />
+                    <TextBlock  TextWrapping="Wrap" x:Name="lblNote" Margin="8,8,46,8" FontFamily="Calibri" Grid.Row="1" Foreground="#FF2F2F2F" FontStyle="Italic" Grid.ColumnSpan="3" d:LayoutOverrides="GridBox"><Run Text=" "/><Run FontWeight="Bold" Text="NOTE"/><Run FontWeight="Bold" FontStyle="Normal" Text=": "/><Run Text="Patient Patient ID is Not Registered on the practice portal, but has an email mayuri.gunjal@glostream.com Address. A message may still be sent,  and the Patient Will Receive an invitation to sign up for the portal. The Patient must sign up to receive this and any future messages."/></TextBlock>
+                    <Label Content="Subject :" x:Name="lblSubject" Margin="0,4" Grid.Row="2" Foreground="#FF2F2F2F" FontFamily="Calibri" HorizontalAlignment="Right" />
+                    <TextBox Margin="8" x:Name="txtSubject" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" TabIndex="0" />
+                    <CheckBox Content="Allow Patient to reply" Margin="8" x:Name="chkAllowtoReply" Grid.Row="3" Foreground="#FF2F2F2F" FontFamily="Calibri" Background="#FF092F5F" BorderBrush="#FF382525" Grid.Column="1" Height="15" Grid.ColumnSpan="2" TabIndex="1" />
+                    <Label Content="Type your message below :" HorizontalAlignment="Right" Margin="0,4" x:Name="Label5" Grid.Row="4" Foreground="#FF2F2F2F" FontFamily="Calibri" />
+                    <TextBox Height="142" Margin="8" x:Name="txtMessage" Grid.Row="5" FontFamily="Calibri" Foreground="#FF313131" Background="White" BorderBrush="#FFC6C6C6" SelectionBrush="#FFFFD71C" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" TabIndex="2" />
+                    <CheckBox Content="Include Visit Summary  for :" Margin="16,0,4,4" x:Name="chkvisitSummary" Grid.Row="6" Background="#FF1E395B" Foreground="#FF2F2F2F" FontFamily="Calibri" BorderBrush="#FF382525" Height="16" TabIndex="3" />
+
+                    <CheckBox Content="Include Patient Record from :" Margin="16,0,4,14" x:Name="chkPtRecord" Grid.Row="7" Background="#FF1E395B" Foreground="#FF2F2F2F" FontFamily="Calibri" BorderBrush="#FF382525" Height="16" VerticalAlignment="Bottom" TabIndex="6" />
+                    <CheckBox Content="Per Patient Request " Margin="16,4,4,4" x:Name="chkPerPtRequest" Grid.Row="8" Background="#FF1E395B" Foreground="#FF2F2F2F" FontFamily="Calibri" BorderBrush="#FF382525" Height="16" />
+                    <StackPanel Margin="4" Grid.Row="7" Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2">
+                        <DatePicker x:Name="dtFromPtCCD" Width="Auto" HorizontalAlignment="Left" Margin="0,4" BorderThickness="0" TabIndex="7" />
+                        <Label Content="to:" x:Name="lblTo" Foreground="#FF2F2F2F" FontFamily="Calibri" Margin="0,4" />
+                        <DatePicker x:Name="dtToPtCCD" Width="Auto" Height="Auto" Margin="0,4" BorderThickness="0" VerticalAlignment="Top" d:LayoutOverrides="Height" TabIndex="8" />
+                        <Button FontFamily="Calibri" Width="66" x:Name="btnPtCCD" FontSize="12" Content="CCD" Style="{DynamicResource GlassButton}" Margin="0,4" TabIndex="9" Height="Auto" />
+                        <Button FontFamily="Calibri" Width="66" x:Name="btnDMS" FontSize="12" Content="DMS" Style="{DynamicResource GlassButton}" Margin="0,4" TabIndex="10" Height="Auto" />
+                </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="4" Grid.Row="6" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <DatePicker  x:Name="dtExamCCD" d:LayoutOverrides="VerticalAlignment" Height="Auto" Margin="0,4" BorderThickness="0" Width="Auto" TabIndex="4" />
+                        <Button FontFamily="Calibri" x:Name="btnExamCCD" FontSize="12" Content="CCD" Style="{DynamicResource GlassButton}" Margin="0,4" BorderThickness="0" d:LayoutOverrides="HorizontalAlignment" Width="66" Height="Auto" TabIndex="5" />                        
+                </StackPanel>
+                    <StackPanel Grid.Row="9" Grid.Column="1" CanVerticallyScroll="True" Margin="0,0,0,13">
+                        <Button x:Name="btnAttachment" FontSize="12" Content="Add Attachment" Style="{DynamicResource GlassButton}"  FontFamily="Calibri" Height="36.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="131.26" Grid.Row="9" Grid.Column="1" TabIndex="10" />
+
+                        <ListBox ItemContainerStyle="{DynamicResource SimpleListBoxItem}" ScrollViewer.VerticalScrollBarVisibility="Auto" Foreground="Black" IsSynchronizedWithCurrentItem="True" x:Name="lstAttachment" Margin="3.924,4,7.075,8" BorderBrush="#FF282828" FontFamily="Calibri" d:LayoutOverrides="HorizontalAlignment" Grid.Column="1" Width="495" Grid.ColumnSpan="2" Height="105" VerticalAlignment="Top"  VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+                            <ListBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleX="0.722"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="0.737"/>
+                                </TransformGroup>
+                            </ListBox.RenderTransform>
+                            <ListBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFB1BABA" Offset="0" />
+                                    <GradientStop Color="#FFDEDEDE" Offset="1" />
+                                </LinearGradientBrush>
+                            </ListBox.Background>
+
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+           
+            <!--</StackPanel>-->
+        </StackPanel>
+        <mcl:UCWaitCursor x:Name="WaitCursor" Width="32" d:LayoutOverrides="Height" Margin="0,93,0,0" />
+    </Grid>
+</UserControl>

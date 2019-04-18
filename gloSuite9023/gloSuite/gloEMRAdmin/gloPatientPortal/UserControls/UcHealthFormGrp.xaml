@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="gloPatientPortal.UserControls.UcHealthFormGrp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000" Loaded="UserControl_Loaded">
+    <!--<UserControl.Resources >
+        <DataTemplate x:Key="StatusTemplateNormal" x:Name="mNormalImage">
+            <Button Name="btnEdit" Content="Edit"></Button>
+        </DataTemplate>
+    </UserControl.Resources>-->
+    
+       <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+       
+    </Grid.ColumnDefinitions>
+    <Border BorderBrush="Black" Grid.Column="0">
+        	<Grid Margin="4">
+                <DataGrid CanUserAddRows="False" AutoGenerateColumns="False" x:Name="dgGroup" Height="600" />
+                <!--<WindowsFormsHost Name="stkGrid" VerticalAlignment="Top" Height="584" >
+                   
+                </WindowsFormsHost>-->
+            </Grid>
+        </Border>
+
+    <GridSplitter HorizontalAlignment="Left" 
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                  Width="5" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Grid.ColumnSpan="2"/>
+  <Border BorderBrush="Black" Grid.Column="1" Margin="1,1,0,0">
+        	<Grid Margin="10">
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="Auto"/>
+        			<RowDefinition Height="Auto"/>
+        			<RowDefinition Height="Auto"/>
+        			<RowDefinition Height="Auto"/>
+        			<RowDefinition Height="Auto"/>
+        			<RowDefinition Height="Auto"/>
+        		</Grid.RowDefinitions>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="Auto"/>
+        			<ColumnDefinition Width="*"/>
+        		</Grid.ColumnDefinitions>
+        		<TextBlock FontWeight="Bold" VerticalAlignment="Center" d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="3" Foreground="#FF3D6394"><Run Text="History Category :"/></TextBlock>
+                <ComboBox x:Name="cmbHisCategory" ItemsSource="{Binding}" SelectionChanged="cmbHisCategory_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Width="180" Margin="3"/>
+        		<TextBlock FontWeight="Bold" VerticalAlignment="Center" d:LayoutOverrides="Width" Grid.Row="1" HorizontalAlignment="Right" Margin="3" Foreground="#FF3D6394"><Run Text="Publish Name :"/></TextBlock>
+                <TextBox x:Name="txtPublishNm" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Width="180" Margin="3" />
+
+        		<TextBlock FontWeight="Bold" d:LayoutOverrides="Width, Height" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Foreground="#FF3D6394"><Run Text="Pre Text :"/></TextBlock>
+        		<TextBox x:Name="txtPreText" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Width="180" Margin="3" />
+        		<TextBlock FontWeight="Bold" d:LayoutOverrides="Width, Height" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Foreground="#FF3D6394"><Run Text="Post Text :" /></TextBlock>
+        		<TextBox x:Name="txtPostText" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Width="180" Margin="3" />
+        		<Button Content="Add Group" x:Name="btnAddGroup" Click="btnAddGroup_Click" Grid.Column="1" HorizontalAlignment="Left" Width="75" Grid.Row="4" Margin="3" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionTextBrushKey}}" Foreground="#FF3D6394" />
+                <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Width="180" Margin="3" />
+        	</Grid>
+        </Border>
+
+</Grid>
+
+</UserControl>
+<!--xmlns:mcl="clr-namespace:C1.Win.C1FlexGrid;assembly=C1.Win.C1FlexGrid.2"-->

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetEDI837">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="edi" type="tns:EDI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EDI">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ClinicID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="FunctionalGroupHeader" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterchangeHeader" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionSetHeader" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SEFFilePath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionIDs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGenrated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EDIID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDIFile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EDIType" type="tns:EDIType" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceType" type="tns:InsuranceType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EDIType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Professional" />
+          <s:enumeration value="Institutional" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="InsuranceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Primary" />
+          <s:enumeration value="Secondary" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetEDI837Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEDI837Result" type="tns:EDI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInsuranceEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="edi" type="tns:EligibilityData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EligibilityData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClinicID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PatientID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProviderID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGenrated" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDIFile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI270FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI271FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gloEligibilityResponse" type="tns:gloEligibilityResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="gloEligibility" type="tns:gloEligibility" />
+          <s:element minOccurs="0" maxOccurs="1" name="gloEligibilities" type="tns:gloEligibilities" />
+          <s:element minOccurs="0" maxOccurs="1" name="EligibilityResponse" type="tns:EligibilityResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gloEligibilityResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PatientID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClinicID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubscriberDOB" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerContactNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiverName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiverID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiverAdditionalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberAdditionalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberGender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Eligibilities" type="tns:gloEligibilities" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EligibilityDate" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtEligibilityCheck" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPayerRejected" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayerRejectionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FollowUp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReceiverRejected" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiverRejectionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiverFollowUp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSubscriberRejected" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberRejectionReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriberFollowUp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="gloEligibilities" />
+      <s:complexType name="gloEligibility">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EligibilityAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="BenefitInformation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoverageLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimePeriod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPlanNetwork" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EligibilityResponse" />
+      <s:element name="GetInsuranceEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInsuranceEligibilityResult" type="tns:EligibilityData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRxEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRxEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRxEligibilityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetEDI837">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BatchID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ediType" type="tns:EDIType" />
+            <s:element minOccurs="1" maxOccurs="1" name="insuranceType" type="tns:InsuranceType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetEDI837Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Test_GetEDI837Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetInsuranceEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PatientID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="InsuranceID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProviderID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetInsuranceEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Test_GetInsuranceEligibilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetRxEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test_GetRxEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Test_GetRxEligibilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEDI837SoapIn">
+    <wsdl:part name="parameters" element="tns:GetEDI837" />
+  </wsdl:message>
+  <wsdl:message name="GetEDI837SoapOut">
+    <wsdl:part name="parameters" element="tns:GetEDI837Response" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetInsuranceEligibility" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetInsuranceEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRxEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRxEligibility" />
+  </wsdl:message>
+  <wsdl:message name="GetRxEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRxEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837SoapIn">
+    <wsdl:part name="parameters" element="tns:Test_GetEDI837" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837SoapOut">
+    <wsdl:part name="parameters" element="tns:Test_GetEDI837Response" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:Test_GetInsuranceEligibility" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:Test_GetInsuranceEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:Test_GetRxEligibility" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:Test_GetRxEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837HttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="BatchID" type="s:string" />
+    <wsdl:part name="TransactionIDs" type="s:string" />
+    <wsdl:part name="ediType" type="s:string" />
+    <wsdl:part name="insuranceType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilityHttpGetIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="PatientID" type="s:string" />
+    <wsdl:part name="InsuranceID" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="ProviderID" type="s:string" />
+    <wsdl:part name="PayerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilityHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilityHttpGetIn">
+    <wsdl:part name="PatientID" type="s:string" />
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilityHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837HttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="BatchID" type="s:string" />
+    <wsdl:part name="TransactionIDs" type="s:string" />
+    <wsdl:part name="ediType" type="s:string" />
+    <wsdl:part name="insuranceType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetEDI837HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilityHttpPostIn">
+    <wsdl:part name="ConnectionString" type="s:string" />
+    <wsdl:part name="PatientID" type="s:string" />
+    <wsdl:part name="InsuranceID" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="ProviderID" type="s:string" />
+    <wsdl:part name="PayerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetInsuranceEligibilityHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilityHttpPostIn">
+    <wsdl:part name="PatientID" type="s:string" />
+    <wsdl:part name="ConnectionString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Test_GetRxEligibilityHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="gloWebEDI837Soap">
+    <wsdl:operation name="GetEDI837">
+      <wsdl:input message="tns:GetEDI837SoapIn" />
+      <wsdl:output message="tns:GetEDI837SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceEligibility">
+      <wsdl:input message="tns:GetInsuranceEligibilitySoapIn" />
+      <wsdl:output message="tns:GetInsuranceEligibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRxEligibility">
+      <wsdl:input message="tns:GetRxEligibilitySoapIn" />
+      <wsdl:output message="tns:GetRxEligibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetEDI837">
+      <wsdl:input message="tns:Test_GetEDI837SoapIn" />
+      <wsdl:output message="tns:Test_GetEDI837SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <wsdl:input message="tns:Test_GetInsuranceEligibilitySoapIn" />
+      <wsdl:output message="tns:Test_GetInsuranceEligibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <wsdl:input message="tns:Test_GetRxEligibilitySoapIn" />
+      <wsdl:output message="tns:Test_GetRxEligibilitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="gloWebEDI837HttpGet">
+    <wsdl:operation name="Test_GetEDI837">
+      <wsdl:input message="tns:Test_GetEDI837HttpGetIn" />
+      <wsdl:output message="tns:Test_GetEDI837HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <wsdl:input message="tns:Test_GetInsuranceEligibilityHttpGetIn" />
+      <wsdl:output message="tns:Test_GetInsuranceEligibilityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <wsdl:input message="tns:Test_GetRxEligibilityHttpGetIn" />
+      <wsdl:output message="tns:Test_GetRxEligibilityHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="gloWebEDI837HttpPost">
+    <wsdl:operation name="Test_GetEDI837">
+      <wsdl:input message="tns:Test_GetEDI837HttpPostIn" />
+      <wsdl:output message="tns:Test_GetEDI837HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <wsdl:input message="tns:Test_GetInsuranceEligibilityHttpPostIn" />
+      <wsdl:output message="tns:Test_GetInsuranceEligibilityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <wsdl:input message="tns:Test_GetRxEligibilityHttpPostIn" />
+      <wsdl:output message="tns:Test_GetRxEligibilityHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="gloWebEDI837Soap" type="tns:gloWebEDI837Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEDI837">
+      <soap:operation soapAction="http://tempuri.org/GetEDI837" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceEligibility">
+      <soap:operation soapAction="http://tempuri.org/GetInsuranceEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRxEligibility">
+      <soap:operation soapAction="http://tempuri.org/GetRxEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetEDI837">
+      <soap:operation soapAction="http://tempuri.org/Test_GetEDI837" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <soap:operation soapAction="http://tempuri.org/Test_GetInsuranceEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <soap:operation soapAction="http://tempuri.org/Test_GetRxEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="gloWebEDI837Soap12" type="tns:gloWebEDI837Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEDI837">
+      <soap12:operation soapAction="http://tempuri.org/GetEDI837" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceEligibility">
+      <soap12:operation soapAction="http://tempuri.org/GetInsuranceEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRxEligibility">
+      <soap12:operation soapAction="http://tempuri.org/GetRxEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetEDI837">
+      <soap12:operation soapAction="http://tempuri.org/Test_GetEDI837" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <soap12:operation soapAction="http://tempuri.org/Test_GetInsuranceEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <soap12:operation soapAction="http://tempuri.org/Test_GetRxEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="gloWebEDI837HttpGet" type="tns:gloWebEDI837HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Test_GetEDI837">
+      <http:operation location="/Test_GetEDI837" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <http:operation location="/Test_GetInsuranceEligibility" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <http:operation location="/Test_GetRxEligibility" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="gloWebEDI837HttpPost" type="tns:gloWebEDI837HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Test_GetEDI837">
+      <http:operation location="/Test_GetEDI837" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetInsuranceEligibility">
+      <http:operation location="/Test_GetInsuranceEligibility" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test_GetRxEligibility">
+      <http:operation location="/Test_GetRxEligibility" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="gloWebEDI837">
+    <wsdl:port name="gloWebEDI837Soap" binding="tns:gloWebEDI837Soap">
+      <soap:address location="http://glosvr05/glowebedi/gloWebEDI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="gloWebEDI837Soap12" binding="tns:gloWebEDI837Soap12">
+      <soap12:address location="http://glosvr05/glowebedi/gloWebEDI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="gloWebEDI837HttpGet" binding="tns:gloWebEDI837HttpGet">
+      <http:address location="http://glosvr05/glowebedi/gloWebEDI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="gloWebEDI837HttpPost" binding="tns:gloWebEDI837HttpPost">
+      <http:address location="http://glosvr05/glowebedi/gloWebEDI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

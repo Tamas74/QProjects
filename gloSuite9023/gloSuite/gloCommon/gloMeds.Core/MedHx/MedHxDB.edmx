@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gloMeds.Core.MedHxDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="gloMedsCoreMedHxDBStoreContainer">
+          <EntitySet Name="MedicationHistory" EntityType="gloMeds.Core.MedHxDB.Store.MedicationHistory" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="MedicationHistory">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PatientID" Type="numeric" />
+          <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+          <Property Name="PatientDOB" Type="date" />
+          <Property Name="PatientGender" Type="varchar" MaxLength="10" />
+          <Property Name="ProviderID" Type="numeric" />
+          <Property Name="ProviderFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="ProviderLastName" Type="varchar" MaxLength="50" />
+          <Property Name="ProviderNPI" Type="varchar" MaxLength="50" />
+          <Property Name="PayerID" Type="varchar" MaxLength="50" />
+          <Property Name="PayerName" Type="varchar" MaxLength="255" />
+          <Property Name="PayerMemberID" Type="varchar" MaxLength="255" />
+          <Property Name="gloSuiteVersion" Type="varchar" MaxLength="20" />
+          <Property Name="PracticeID" Type="numeric" />
+          <Property Name="DateTimeCreated" Type="datetime" />
+          <Property Name="RequestFile" Type="xml" />
+          <Property Name="ResponseFile" Type="xml" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gloMeds.Core.MedHxDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MedHxDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MedicationHistories" EntityType="gloMeds.Core.MedHxDB.MedicationHistory" />
+        </EntityContainer>
+        <EntityType Name="MedicationHistory">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Guid" Nullable="false" />
+          <Property Name="PatientID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PatientFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PatientLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PatientDOB" Type="DateTime" />
+          <Property Name="PatientGender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ProviderID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ProviderFirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProviderLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProviderNPI" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PayerID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PayerName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PayerMemberID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="gloSuiteVersion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PracticeID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DateTimeCreated" Type="DateTime" />
+          <Property Name="RequestFile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ResponseFile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gloMedsCoreMedHxDBStoreContainer" CdmEntityContainer="MedHxDBEntities">
+          <EntitySetMapping Name="MedicationHistories">
+            <EntityTypeMapping TypeName="gloMeds.Core.MedHxDB.MedicationHistory">
+              <MappingFragment StoreEntitySet="MedicationHistory">
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+                <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+                <ScalarProperty Name="PatientDOB" ColumnName="PatientDOB" />
+                <ScalarProperty Name="PatientGender" ColumnName="PatientGender" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="ProviderFirstName" ColumnName="ProviderFirstName" />
+                <ScalarProperty Name="ProviderLastName" ColumnName="ProviderLastName" />
+                <ScalarProperty Name="ProviderNPI" ColumnName="ProviderNPI" />
+                <ScalarProperty Name="PayerID" ColumnName="PayerID" />
+                <ScalarProperty Name="PayerName" ColumnName="PayerName" />
+                <ScalarProperty Name="PayerMemberID" ColumnName="PayerMemberID" />
+                <ScalarProperty Name="gloSuiteVersion" ColumnName="gloSuiteVersion" />
+                <ScalarProperty Name="PracticeID" ColumnName="PracticeID" />
+                <ScalarProperty Name="DateTimeCreated" ColumnName="DateTimeCreated" />
+                <ScalarProperty Name="RequestFile" ColumnName="RequestFile" />
+                <ScalarProperty Name="ResponseFile" ColumnName="ResponseFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MedHxDB" ZoomLevel="82">
+        <EntityTypeShape EntityType="gloMeds.Core.MedHxDB.MedicationHistory" Width="1.5" PointX="0.75" PointY="0.75" Height="4.480205078125" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

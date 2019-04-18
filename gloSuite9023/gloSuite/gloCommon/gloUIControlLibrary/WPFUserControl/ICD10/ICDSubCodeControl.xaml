@@ -1,0 +1,261 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="gloUIControlLibrary.ICDSubCodeControl"
+    xmlns:Converter="clr-namespace:gloUIControlLibrary.Classes"
+    xmlns:ICD10Converter="clr-namespace:gloUIControlLibrary.Classes.ICD10"
+	x:Name="UserControl"
+	d:DesignWidth="344" d:DesignHeight="612.517" UseLayoutRounding="True" FontFamily="{DynamicResource BaseFontFamily}" FontSize="{DynamicResource BaseFontSize}" Loaded="UserControl_Loaded">
+	<UserControl.Resources>
+
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			
+    	 <Converter:BolleanVisibilityConverter x:Key="BolleanVisibilityConverter"/>        
+		     <ICD10Converter:CodeVisibilityConverter x:Key="CodeVisibilityConverter"/> 
+        </ResourceDictionary>        
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="35"/>
+    		<ColumnDefinition Width="*"/>
+    		<ColumnDefinition Width="35"/>
+    	</Grid.ColumnDefinitions>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="28"/>
+    		<RowDefinition Height="30"/>
+    		<RowDefinition Height="*"/>
+    	</Grid.RowDefinitions>
+		<Border x:Name="pnlHeaderICD" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Background="{DynamicResource Img_DarkHeaderStyle}" CornerRadius="2,2,0,0" Margin="0,0,0,3" Grid.ColumnSpan="2" >
+			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}" Text="ICD-10 Gallery" Foreground="White"/>
+		</Border>
+		<Border x:Name="pnlClearSearch" BorderBrush="{DynamicResource BaseForeColor}" Margin="0,0,0,3" BorderThickness="1" d:LayoutOverrides="Width" Grid.Row="1" Background="White" Grid.ColumnSpan="2" >
+
+			<Grid x:Name="CLearSearch" Margin="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="25"/>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="30"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="btnClearSearch_Copy"  Cursor="Arrow" Template="{DynamicResource Browse}" Style="{DynamicResource ClearSearchButtonStyle}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="18" Height="18"/>
+				<TextBox Margin="0" TextChanged="txtGallerySearch_TextChanged" x:Name="txtGallerySearch" Grid.Column="1" BorderBrush="{x:Null}"  Background="{x:Null}" d:LayoutOverrides="GridBox" VerticalAlignment="Center" Grid.ColumnSpan="1" />
+				<Button Click="btnClearSearch_Click" x:Name="btnClearSearch" VerticalAlignment="Stretch"  Grid.Column="3" Style="{DynamicResource ClearSearchButtonStyle}" Width="20" Height="18" Cursor="Hand"/>
+			</Grid>
+		</Border>
+		<Border x:Name="pnlTreeview" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Background="{DynamicResource Img_GradientStyle}" Grid.Row="2" Grid.ColumnSpan="2">
+            <TreeView 
+				x:Name="trvSubCode"
+                Margin="0,3,0,0" 
+				ItemsSource="{Binding Level3CategoriesFilteredView}"    
+				ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                BorderThickness="0"
+                      VerticalContentAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="Template"
+                                Value="{DynamicResource TreeViewItemControlTemplate}" />
+                        <EventSetter Event="Control.MouseDoubleClick" Handler="trvICD_MouseDoubleClick"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+					<HierarchicalDataTemplate ItemsSource="{Binding ICD10CodeFilteredView}">                                                               
+						<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+                            <!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+
+                            <Image Height="16" Width="16" Margin="0,0,4,0">
+                                <Image.Source>
+                                    <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                        <Binding Path="CodeType"/>
+                                        <Binding Path="ParentCode"/>
+                                    </MultiBinding>
+                                </Image.Source>
+                            </Image>
+                            <TextBlock Text="{Binding ICD10Code}"  Margin="3,0,0,0" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening" />
+                            
+                            <TextBlock Text="-" Margin="3,0,0,0"/>
+                            <TextBlock Text="{Binding LongDescription}" Margin="3,0,0,0" TextTrimming="CharacterEllipsis" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  >
+                            
+                                       
+                                       </TextBlock>
+						</StackPanel>
+						<HierarchicalDataTemplate.ItemTemplate>
+							<HierarchicalDataTemplate ItemsSource="{Binding ChildrenICD10}">
+
+                                        <!--A00 Code Description-->
+								<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+<!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+                                    <Image Height="16" Width="16" Margin="0,0,4,0">
+                                        <Image.Source>
+                                            <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                                <Binding Path="CodeType"/>
+                                                <Binding Path="ParentCode"/>
+                                            </MultiBinding>
+                                        </Image.Source>
+                                    </Image>
+                                    <TextBlock Text="{Binding ICD10Code}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening" Margin="3,0,0,0"/>
+                                    <TextBlock Text="-" Margin="3,0,0,0"/>
+                                    <TextBlock Text="{Binding LongDescription}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  TextTrimming="CharacterEllipsis" Margin="3,0,0,0"/>
+								</StackPanel>
+
+								<HierarchicalDataTemplate.ItemTemplate>
+									<HierarchicalDataTemplate ItemsSource="{Binding ChildrenICD10}">
+										<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+<!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+                                            <Image Height="16" Width="16" Margin="0,0,4,0">
+                                                <Image.Source>
+                                                    <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                                        <Binding Path="CodeType"/>
+                                                        <Binding Path="ParentCode"/>
+                                                    </MultiBinding>
+                                                </Image.Source>
+                                            </Image>
+                                            <TextBlock Text="{Binding ICD10Code}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening" Margin="3,0,0,0"/>
+                                            <TextBlock Text="-" Margin="3,0,0,0"/>
+                                            <TextBlock Text="{Binding LongDescription}"  ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening" TextTrimming="CharacterEllipsis" Margin="3,0,0,0"/>
+										</StackPanel>
+										<HierarchicalDataTemplate.ItemTemplate>
+
+                                                    <!--A00.0 Code Description-->
+											<HierarchicalDataTemplate ItemsSource="{Binding ChildrenICD10}">
+												<StackPanel Orientation="Horizontal" Margin="0,0,0,3" >
+<!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+                                                    <Image Height="16" Width="16" Margin="0,0,4,0">
+                                                        <Image.Source>
+                                                            <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                                                <Binding Path="CodeType"/>
+                                                                <Binding Path="ParentCode"/>
+                                                            </MultiBinding>
+                                                        </Image.Source>
+                                                    </Image>
+                                                    <TextBlock Text="{Binding ICD10Code}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  Margin="3,0,0,0"/>
+                                                    <TextBlock Text="-" Margin="3,0,0,0"/>
+                                                    <TextBlock Text="{Binding LongDescription}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  TextTrimming="CharacterEllipsis" Margin="3,0,0,0"/>
+												</StackPanel>
+												<HierarchicalDataTemplate.ItemTemplate>
+
+                                                            <!--A00.00 Code Description-->
+													<HierarchicalDataTemplate ItemsSource="{Binding ChildrenICD10}">
+														<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+<!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+                                                            <Image Height="16" Width="16" Margin="0,0,4,0">
+                                                                <Image.Source>
+                                                                    <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                                                        <Binding Path="CodeType"/>
+                                                                        <Binding Path="ParentCode"/>
+                                                                    </MultiBinding>
+                                                                </Image.Source>
+                                                            </Image>
+                                                            <TextBlock Text="{Binding ICD10Code}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  Margin="3,0,0,0"/>
+                                                            <TextBlock Text="-" Margin="3,0,0,0"/>
+                                                            <TextBlock Text="{Binding LongDescription}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  TextTrimming="CharacterEllipsis" Margin="3,0,0,0"/>
+														</StackPanel>
+                                                        
+														<HierarchicalDataTemplate.ItemTemplate>
+
+                                                                    <!--A00.000 Code Description-->
+															<HierarchicalDataTemplate ItemsSource="{Binding ChildrenICD10}">
+																<StackPanel Orientation="Horizontal" Margin="0,0,0,3">
+ <!--<Image Source="{Binding CodeType, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,4,0"></Image>-->
+                                                                    <Image Height="16" Width="16" Margin="0,0,4,0">
+                                                                        <Image.Source>
+                                                                            <MultiBinding
+    									Converter="{StaticResource CodeVisibilityConverter}">
+                                                                                <Binding Path="CodeType"/>
+                                                                                <Binding Path="ParentCode"/>
+                                                                            </MultiBinding>
+                                                                        </Image.Source>
+                                                                    </Image>
+                                                                    <TextBlock Text="{Binding ICD10Code}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening" Margin="3,0,0,0"/>
+                                                                    <TextBlock Text="-" Margin="3,0,0,0"/>
+                                                                    <TextBlock Text="{Binding LongDescription}" ToolTip="{Binding LongDescription}" ToolTipOpening="TextBlock_ToolTipOpening"  Margin="3,0,0,0" TextTrimming="CharacterEllipsis" />
+																</StackPanel>
+
+															
+
+
+															</HierarchicalDataTemplate>
+														</HierarchicalDataTemplate.ItemTemplate>
+
+
+													</HierarchicalDataTemplate>
+												</HierarchicalDataTemplate.ItemTemplate>
+
+
+											</HierarchicalDataTemplate>
+										</HierarchicalDataTemplate.ItemTemplate>
+
+
+									</HierarchicalDataTemplate>
+								</HierarchicalDataTemplate.ItemTemplate>
+
+
+							</HierarchicalDataTemplate>
+						</HierarchicalDataTemplate.ItemTemplate>
+
+
+					</HierarchicalDataTemplate>
+
+
+				</TreeView.ItemTemplate>
+			</TreeView>
+               
+            
+            
+		</Border>
+		<Border x:Name="pnlRightSaveButton" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" CornerRadius="2" Margin="4,0,0,0"  Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Background="{DynamicResource BaseBackColor}">
+			<Grid x:Name="grdSaveButtons" Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+				<Button x:Name="btnAddCode" Click="CodeAddedToCurrent_Click"   Grid.Row="1" Margin="4" Style="{DynamicResource SimpleButton}" ToolTip="Save selected ICD-10 code or category into current ICD-10">
+					<Image Source="/gloUIControlLibrary;component/Resources/SaveCPT.png" Cursor="Arrow"/>
+				</Button>
+                <Button x:Name="btnRemoveCode" Grid.Row="2" Margin="4" Click="CodeRemovedFromMaster_Click" Style="{DynamicResource SimpleButton}" ToolTip="Delete selected ICD-10 code from current ICD-10">
+                    <Image Source="/gloUIControlLibrary;component/Resources/SaveICD9.png"
+                           Cursor="Arrow"/>
+				</Button>
+                <Button x:Name="btnAddCodeArrow" Click="CodeAddedToCurrent_Click" Visibility="Collapsed"  Grid.Row="3" Margin="4" Style="{DynamicResource SimpleButton}" ToolTip="Add ICD 10 Code(s)">
+                    <Image Source="/gloUIControlLibrary;component/Resources/Right.png" Cursor="Arrow" />
+                </Button>
+                <Button x:Name="btnRemoveMasterCode" Click="btnRemoveMasterCode_Click" Visibility="Collapsed"  Grid.Row="4" Margin="4" Style="{DynamicResource SimpleButton}" ToolTip="Remove selected ICD-10 codes from Master" Grid.RowSpan="2">
+                    <Image Source="/gloUIControlLibrary;component/WPFForms/ICO/Delete.png" RenderOptions.BitmapScalingMode="NearestNeighbor"  Cursor="Arrow"  />
+                </Button>
+            </Grid>
+		</Border>
+        <Border x:Name="pnlLeftSaveButton" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" CornerRadius="2" Margin="0,0,3,0"  Grid.Row="0" Background="{DynamicResource BaseBackColor}" Grid.RowSpan="3" Visibility="Collapsed">
+			<Grid Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Button Click="CodeImported_Click"   Grid.Row="1" Margin="3,3,3,3" Style="{DynamicResource SimpleButton}" ToolTip="Add ICD 10 Code(s)">
+                    <Image Source="/gloUIControlLibrary;component/Resources/Left.png" Cursor="Hand"/>
+                </Button>
+				
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

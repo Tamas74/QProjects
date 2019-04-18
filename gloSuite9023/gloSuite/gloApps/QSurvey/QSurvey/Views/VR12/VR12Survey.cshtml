@@ -1,0 +1,397 @@
+﻿@model QSurvey.Models.VR12Model
+
+@{
+    ViewBag.Title = "VR12Survey";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>THE VETERANS RAND 12-ITEM HEALTH SURVEY (VR-12)</title>
+</head>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+@using (Html.BeginForm("PostSurvey", "VR12", FormMethod.Post))
+{ 
+    @Html.HiddenFor(m => m.RequestID)
+
+    <div class="container">
+            <h1>
+                <center>
+                  THE VETERANS RAND 12-ITEM HEALTH SURVEY (VR-12)
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                     The following questions ask for your views about your health—how you feel and how well you are able to do your usual activities. All kinds of people across the country are being asked these same questions. Their answers and yours will help to improve health care for everyone. There are no right or wrong answers; please choose the answer that best fits your life right now.
+                    </td>
+                </tr>              
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           Q1. In general, would you say your health is:
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q1, "poor") Poor
+                                @Html.RadioButtonFor(m => m.Q1, "fair") Fair
+                                @Html.RadioButtonFor(m => m.Q1, "good") Good
+                                @Html.RadioButtonFor(m => m.Q1, "verygood") Very good
+                                @Html.RadioButtonFor(m => m.Q1, "excellent") Excellent
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                          Q2. The following questions are about activities you might do during a typical day.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                            Does your health now limit you in these activities? If so, how much?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                        a. Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling or playing golf?
+                        </p>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q2A, "yeslimitedalot") Yes limited a lot
+                                @Html.RadioButtonFor(m => m.Q2A, "yeslimitedalittle") Yes limited a little
+                                @Html.RadioButtonFor(m => m.Q2A, "nonotlimitedatall") No not limited at all
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                   <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                         b. Climbing several flights of stairs?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q2B, "yeslimitedalot") Yes limited a lot
+                                @Html.RadioButtonFor(m => m.Q2B, "yeslimitedalittle") Yes limited a little
+                                @Html.RadioButtonFor(m => m.Q2B, "nonotlimitedatall") No not limited at all
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                       Q3. During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?
+                        </p>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                        a. Accomplished less than you would like.
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q3A, "nononeofthetime") No, none of the time
+                                @Html.RadioButtonFor(m => m.Q3A, "yesalittleofthetime") Yes, a little of the time
+                                @Html.RadioButtonFor(m => m.Q3A, "yessomeofthetime") Yes, some of the time
+                                @Html.RadioButtonFor(m => m.Q3A, "yesmostofthetime") Yes, most of the time
+                                @Html.RadioButtonFor(m => m.Q3A, "yesallofthetime") Yes, all of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                    <p style="margin-bottom: 20px;">
+                    b. Were limited in the <b>kind</b> of work or other activities.
+                    </p>                     
+                    </td>
+                </tr>                
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q3B, "nononeofthetime") No, none of the time
+                                @Html.RadioButtonFor(m => m.Q3B, "yesalittleofthetime") Yes, a little of the time
+                                @Html.RadioButtonFor(m => m.Q3B, "yessomeofthetime") Yes, some of the time
+                                @Html.RadioButtonFor(m => m.Q3B, "yesmostofthetime") Yes, most of the time
+                                @Html.RadioButtonFor(m => m.Q3B, "yesallofthetime") Yes, all of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> Q4. During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)? </p> 
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                <p>a. Accomplished less than you would like.</p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q4A, "nononeofthetime") No, none of the time
+                                @Html.RadioButtonFor(m => m.Q4A, "yesalittleofthetime") Yes, a little of the time
+                                @Html.RadioButtonFor(m => m.Q4A, "yessomeofthetime") Yes, some of the time
+                                @Html.RadioButtonFor(m => m.Q4A, "yesmostofthetime") Yes, most of the time
+                                @Html.RadioButtonFor(m => m.Q4A, "yesallofthetime") Yes, all of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> b. Didn’t do work or other activities as carefully as usual. </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q4B, "nononeofthetime") No, none of the time
+                                @Html.RadioButtonFor(m => m.Q4B, "yesalittleofthetime") Yes, a little of the time
+                                @Html.RadioButtonFor(m => m.Q4B, "yessomeofthetime") Yes, some of the time
+                                @Html.RadioButtonFor(m => m.Q4B, "yesmostofthetime") Yes, most of the time
+                                @Html.RadioButtonFor(m => m.Q4B, "yesallofthetime") Yes, all of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> Q5. During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)? </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q5, "notatall") Not at all
+                                @Html.RadioButtonFor(m => m.Q5, "alittlebit") A little bit
+                                @Html.RadioButtonFor(m => m.Q5, "moderately") Moderately
+                                @Html.RadioButtonFor(m => m.Q5, "quiteabit") Quite a bit 
+                                @Html.RadioButtonFor(m => m.Q5, "extremely") Extremely
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                      <h3 class="h3">These questions are about how you feel and how things have been with you during the past 4 weeks. For each question, please give the one answer that comes closest to the way you have been feeling.</h3>  
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p>Q6a. How much of the time during the past 4 weeks:</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p>Have you felt calm and peaceful?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q6A, "allofthetime") All of the time
+                                @Html.RadioButtonFor(m => m.Q6A, "mostofthetime") Most of the time
+                                @Html.RadioButtonFor(m => m.Q6A, "agoodbitofthetime") A good bit of the time
+                                @Html.RadioButtonFor(m => m.Q6A, "someofthetime") Some of the time 
+                                @Html.RadioButtonFor(m => m.Q6A, "alittleofthetime") A little of the time
+                                @Html.RadioButtonFor(m => m.Q6A, "noneofthetime") None of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p>Q6b. How much of the time during the past 4 weeks:</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p>Did you have a lot of energy?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q6B, "allofthetime") All of the time
+                                @Html.RadioButtonFor(m => m.Q6B, "mostofthetime") Most of the time
+                                @Html.RadioButtonFor(m => m.Q6B, "agoodbitofthetime") A good bit of the time
+                                @Html.RadioButtonFor(m => m.Q6B, "someofthetime") Some of the time 
+                                @Html.RadioButtonFor(m => m.Q6B, "alittleofthetime") A little of the time
+                                @Html.RadioButtonFor(m => m.Q6B, "noneofthetime") None of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                
+                 <tr>
+                    <td>
+                     <p>Q6c. How much of the time during the past 4 weeks:</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p>Have you felt downhearted and blue?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q6C, "allofthetime") All of the time
+                                @Html.RadioButtonFor(m => m.Q6C, "mostofthetime") Most of the time
+                                @Html.RadioButtonFor(m => m.Q6C, "agoodbitofthetime") A good bit of the time
+                                @Html.RadioButtonFor(m => m.Q6C, "someofthetime") Some of the time
+                                @Html.RadioButtonFor(m => m.Q6C, "alittleofthetime") A little of the time
+                                @Html.RadioButtonFor(m => m.Q6C, "noneofthetime") None of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p>Q7. During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                 @Html.RadioButtonFor(m => m.Q7, "allofthetime") All of the time
+                                @Html.RadioButtonFor(m => m.Q7, "mostofthetime") Most of the time                                
+                                @Html.RadioButtonFor(m => m.Q7, "someofthetime") Some of the time
+                                @Html.RadioButtonFor(m => m.Q7, "alittleofthetime") A little of the time
+                                @Html.RadioButtonFor(m => m.Q7, "noneofthetime") None of the time
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                   <tr>
+                    <td>
+                     <p>                     
+                         <b>
+                            Now, we’d like to ask you some questions about how your health may have changed.
+                         </b>                     
+                     </p> 
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p>Q8. Compared to one year ago, how would you rate your physical health in general now?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q8, "muchbetter") Much better
+                                @Html.RadioButtonFor(m => m.Q8, "slightlybetter") Slightly better
+                                @Html.RadioButtonFor(m => m.Q8, "aboutthesame") About the same
+                                @Html.RadioButtonFor(m => m.Q8, "slightlyworse") Slightly worse
+                                @Html.RadioButtonFor(m => m.Q8, "muchworse") Much worse
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p>Q9. Compared to one year ago, how would you rate your emotional problems (such as feeling anxious, depressed or irritable) now?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.Q9, "muchbetter") Much better
+                                @Html.RadioButtonFor(m => m.Q9, "slightlybetter") Slightly better
+                                @Html.RadioButtonFor(m => m.Q9, "aboutthesame") About the same
+                                @Html.RadioButtonFor(m => m.Q9, "slightlyworse") Slightly worse
+                                @Html.RadioButtonFor(m => m.Q9, "muchworse") Much worse
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>                
+                 </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+            <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+}
+</body>
+</html>

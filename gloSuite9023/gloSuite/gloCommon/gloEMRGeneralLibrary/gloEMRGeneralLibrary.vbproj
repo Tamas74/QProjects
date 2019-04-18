@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39D920BB-D15F-41CC-864B-B9786E8130CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gloEMRGeneralLibrary</RootNamespace>
+    <AssemblyName>gloEMRGeneralLibrary</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/gloEMRGeneralLibrary/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>gloEMRGeneralLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>gloEMRGeneralLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>gloEMRGeneralLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>gloEMRGeneralLibrary.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloEMR\gloEMR\DLL\AxInterop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\..\gloEMR\gloEMR\DLL\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\gloEMR\gloEMR\DLL\Interop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Data.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ButtonBar.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.ButtonBar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.CalendarCombo.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.Common.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ExplorerBar.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.ExplorerBar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.FilterEditor.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.FilterEditor.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.GridEX.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.Ribbon.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Schedule.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.Schedule.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.TimeLine.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.TimeLine.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.UI.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFNet">
+      <HintPath>..\..\gloEMR\gloEMR\DLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CentralizedFormularyClasses\clsServiceArguments.vb" />
+    <Compile Include="Classes\CentralizedFormularyClasses\clsServiceReturnObjects.vb" />
+    <Compile Include="Classes\clsAppointments.vb" />
+    <Compile Include="Classes\clsAppointmentScheduler.vb" />
+    <Compile Include="Classes\clsAudit.vb" />
+    <Compile Include="Classes\clsDataGridTableStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\ClsGeneral.vb" />
+    <Compile Include="Classes\clsgloEMRActors.vb" />
+    <Compile Include="Classes\clsgloEMRDatabase.vb" />
+    <Compile Include="Classes\clsgloEMRLab.vb" />
+    <Compile Include="Classes\ClsgloEMRPrescription.vb" />
+    <Compile Include="Classes\clsInfobutton.vb" />
+    <Compile Include="Classes\ClsMultiLineColumn.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\ClsMySort.vb" />
+    <Compile Include="Classes\ClsPrintandFax.vb" />
+    <Compile Include="Classes\ClsReportActors.vb" />
+    <Compile Include="Classes\clsSplitScreen.vb" />
+    <Compile Include="Classes\ClsVisitBusinessLayer.vb" />
+    <Compile Include="Classes\EPA\EPABusinesslayer.vb" />
+    <Compile Include="Classes\ErrorMessage.vb" />
+    <Compile Include="Classes\gloC1FlexStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\gloDBException.vb" />
+    <Compile Include="Classes\gloEMRActorsException.vb" />
+    <Compile Include="Classes\MedicationBusinessLayer.vb" />
+    <Compile Include="Classes\myList.vb" />
+    <Compile Include="Classes\PDR\PDRBusinessLayer.vb" />
+    <Compile Include="Classes\PrescriptionBusinessLayer.vb" />
+    <Compile Include="Classes\RefillRequest.vb" />
+    <Compile Include="Classes\SmartDxClassLibrary\clsSmartDx.vb" />
+    <Compile Include="Classes\SurescriptsBusinessLayer.vb" />
+    <Compile Include="Forms\frmConfirmApproove.Designer.vb">
+      <DependentUpon>frmConfirmApproove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfirmApproove.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmeRxSummary.Designer.vb">
+      <DependentUpon>frmeRxSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmeRxSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmgloPrintPrintInfoController.Designer.vb">
+      <DependentUpon>frmgloPrintPrintInfoController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmgloPrintPrintInfoController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInfoButtonBrowser.Designer.vb">
+      <DependentUpon>frmInfoButtonBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInfoButtonBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLab_ContactInformation.Designer.vb">
+      <DependentUpon>frmLab_ContactInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLab_ContactInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmlaunchEPCSui.Designer.vb">
+      <DependentUpon>frmlaunchEPCSui.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmlaunchEPCSui.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProviderNADEAN.Designer.vb">
+      <DependentUpon>frmProviderNADEAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProviderNADEAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="User Control\gloUC_PastWordNotes_SplitControl.Designer.vb">
+      <DependentUpon>gloUC_PastWordNotes_SplitControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\gloUC_PastWordNotes_SplitControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Classes\clsDataGridTableStyle.resx">
+      <DependentUpon>clsDataGridTableStyle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfirmApproove.resx">
+      <DependentUpon>frmConfirmApproove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmeRxSummary.resx">
+      <DependentUpon>frmeRxSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmgloPrintPrintInfoController.resx">
+      <DependentUpon>frmgloPrintPrintInfoController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInfoButtonBrowser.resx">
+      <DependentUpon>frmInfoButtonBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLab_ContactInformation.resx">
+      <DependentUpon>frmLab_ContactInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmlaunchEPCSui.resx">
+      <DependentUpon>frmlaunchEPCSui.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProviderNADEAN.resx">
+      <DependentUpon>frmProviderNADEAN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\gloUC_PastWordNotes_SplitControl.resx">
+      <DependentUpon>gloUC_PastWordNotes_SplitControl.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <None Include="Resources\Acknowledge.ico" />
+    <Content Include="Resources\Green24.png" />
+    <None Include="Resources\Medication16.png" />
+    <None Include="Resources\Medication24.png" />
+    <None Include="Resources\Messages16.png" />
+    <None Include="Resources\Messages.png" />
+    <None Include="Resources\History16.png" />
+    <None Include="Resources\History24.png" />
+    <None Include="Resources\Lab24.png" />
+    <None Include="Resources\Lab16.png" />
+    <Content Include="Resources\NO.png" />
+    <Content Include="Resources\Not Reimbursable.png" />
+    <None Include="Resources\NurseNote24.png" />
+    <None Include="Resources\NurseNote16.png" />
+    <None Include="Resources\Note.ico" />
+    <Content Include="Resources\Off Formulary.png" />
+    <Content Include="Resources\On Formulary.png" />
+    <None Include="Resources\PatientExam16.png" />
+    <None Include="Resources\PatientExam24.png" />
+    <None Include="Resources\Orders24.png" />
+    <None Include="Resources\Orders16.png" />
+    <None Include="Resources\PatientLetters24.png" />
+    <None Include="Resources\PatientLetters16.png" />
+    <Content Include="Resources\Preferred.png" />
+    <None Include="Resources\ProblemList24.png" />
+    <None Include="Resources\ProblemList16.png" />
+    <Content Include="Resources\Red24.png" />
+    <Content Include="Resources\Unknown.png" />
+    <None Include="Resources\ViewDoc16.png" />
+    <None Include="Resources\ViewDoc24.png" />
+    <Content Include="Resources\Yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloClinicalQueueGeneral\gloClinicalQueueGeneral\gloClinicalQueueGeneral.csproj">
+      <Project>{F4774319-666F-44A3-8178-7E719ECDEF56}</Project>
+      <Name>gloClinicalQueueGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatientPortalCommon\gloPatientPortalCommon\gloPatientPortalCommon.vbproj">
+      <Project>{E13714AA-CE10-4A69-85A0-3EAF21227265}</Project>
+      <Name>gloPatientPortalCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPrintDialog\gloPrintDialog.csproj">
+      <Project>{8DD0457B-4AF0-4CB3-A7BB-35DAC5665C50}</Project>
+      <Name>gloPrintDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSureScript\gloSureScript.vbproj">
+      <Project>{D30C09DC-7C58-465F-91BE-FAB082655926}</Project>
+      <Name>gloSureScript</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloWord\gloWord.vbproj">
+      <Project>{DF7A4D19-B508-499E-BF16-347DA844D1D3}</Project>
+      <Name>gloWord</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

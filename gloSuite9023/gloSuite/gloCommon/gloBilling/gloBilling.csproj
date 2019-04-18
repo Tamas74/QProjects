@@ -1,0 +1,3066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1952B570-8843-4A21-B518-D3E0A40F11EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloBilling</RootNamespace>
+    <AssemblyName>gloBilling</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/gloBilling/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\gloPM\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaII.CodeWizard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.DataAccess, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.Engine, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.Entities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.Plugin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AlphaII.CodeWizard.UI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cb7bee2f646c2f33, processorArchitecture=MSIL" />
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\AxInterop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Editor.4, Version=4.0.20111.68, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <HintPath>..\..\gloDLL\C1.Win.C1Editor.4.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EDIdEv.FrameworkEDI.NET, Version=5.5.571.266, Culture=neutral, PublicKeyToken=366ef3324f08b1d2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\EDIdEv\BIN\EDIdEv.FrameworkEDI.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="gloPatientMigration, Version=1.6.3500.51, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\gloPatientMigration.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSOFramer">
+      <HintPath>..\..\gloDLL\Interop.DSOFramer.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\UnZip\bin\x86\Debug\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.Common.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.UI.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Core, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\gloDLL\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PDFNet">
+      <HintPath>..\..\gloDLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Rebex.Common">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Ftp">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Imap">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Imap.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Mail">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Networking">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Pop3">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Pop3.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Security, Version=1.5.3333.0, Culture=neutral, PublicKeyToken=1c4638788972655d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Sftp">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Sftp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Smtp">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Smtp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.SshShell">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.SshShell.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Telnet">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Telnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Terminal">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Terminal.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Time">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Time.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Zip">
+      <HintPath>..\..\gloDLL\Rebex2014R1\Rebex.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox, Version=6.1.0.150, Culture=neutral, PublicKeyToken=5a62fa96d0ac431a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\SecureBlackbox.dll</HintPath>
+    </Reference>
+    <Reference Include="SecureBlackbox.PGP, Version=6.1.0.150, Culture=neutral, PublicKeyToken=5a62fa96d0ac431a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\SecureBlackbox.PGP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="vjslib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <HintPath>..\UnZip\bin\x86\Debug\vjslib.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C1GridFilter\AccountLogTypeFilter.cs" />
+    <Compile Include="C1GridFilter\AccountLogTypeFilterEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C1GridFilter\AccountLogTypeFilterEditor.Designer.cs">
+      <DependentUpon>AccountLogTypeFilterEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CFormFlickering .cs" />
+    <Compile Include="ClsBL_Association.cs" />
+    <Compile Include="ClsBL_BillingBook.cs" />
+    <Compile Include="ClsBL_gloPrintPaperForm.cs" />
+    <Compile Include="ClsBL_HCFA1500PaperForm.cs" />
+    <Compile Include="ClsBL_Hold.cs" />
+    <Compile Include="ClsBL_Payment.cs" />
+    <Compile Include="ClsBL_PaymentInsurance.cs" />
+    <Compile Include="CLsBL_PaymentPatient.cs" />
+    <Compile Include="ClsBL_Transaction.cs" />
+    <Compile Include="ClsCleargagePaymentPosting.cs" />
+    <Compile Include="ClsFTPLogWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClsFTPManager.cs" />
+    <Compile Include="ClsGeneralClaimManager.cs" />
+    <Compile Include="ClsPGP.cs" />
+    <Compile Include="ClsRemittance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\frmBatchFollowUpStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmBatchFollowUpStatus.Designer.cs">
+      <DependentUpon>frmBatchFollowUpStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmgloPrintSetupDateActionTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmgloPrintSetupDateActionTemplate.Designer.cs">
+      <DependentUpon>frmgloPrintSetupDateActionTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmMergeScheduledActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmMergeScheduledActions.Designer.cs">
+      <DependentUpon>frmMergeScheduledActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSelectPaymentcollectionAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSelectPaymentcollectionAgency.Designer.cs">
+      <DependentUpon>frmSelectPaymentcollectionAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupBadDebtFollowUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupBadDebtFollowUp.designer.cs">
+      <DependentUpon>frmSetupBadDebtFollowUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCGNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCGNotes.Designer.cs">
+      <DependentUpon>frmCGNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCleargageFileHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCleargageFileHistory.Designer.cs">
+      <DependentUpon>frmCleargageFileHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCleargagePaymentDistributionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCleargagePaymentDistributionList.Designer.cs">
+      <DependentUpon>frmCleargagePaymentDistributionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClearGagePaymentPosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClearGagePaymentPosting.Designer.cs">
+      <DependentUpon>frmClearGagePaymentPosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCleargagePaymentVoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCleargagePaymentVoid.Designer.cs">
+      <DependentUpon>frmCleargagePaymentVoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceFollowupActionCrossWalk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceFollowupActionCrossWalk.Designer.cs">
+      <DependentUpon>frmInsuranceFollowupActionCrossWalk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentTransferInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentTransferInfo.Designer.cs">
+      <DependentUpon>frmPaymentTransferInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentUseCopayReserveV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentUseCopayReserveV2.Designer.cs">
+      <DependentUpon>frmPaymentUseCopayReserveV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReservesDistributionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReservesDistributionList.Designer.cs">
+      <DependentUpon>frmReservesDistributionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectCollectionAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectCollectionAgency.Designer.cs">
+      <DependentUpon>frmSelectCollectionAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetupHoldBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetupHoldBilling.Designer.cs">
+      <DependentUpon>FrmSetupHoldBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupRemarkCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupRemarkCodes.designer.cs">
+      <DependentUpon>frmSetupRemarkCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStandardFollowupAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStandardFollowupAction.Designer.cs">
+      <DependentUpon>frmStandardFollowupAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStandardReasonCodeSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStandardReasonCodeSetup.Designer.cs">
+      <DependentUpon>frmStandardReasonCodeSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUploadClaim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUploadClaim.Designer.cs">
+      <DependentUpon>frmUploadClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\BulkPaymentOperation.cs" />
+    <Compile Include="gloAccountPayment\frmCGPaymentPlanList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmCGPaymentPlanList.Designer.cs">
+      <DependentUpon>frmCGPaymentPlanList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmCollectionAgencyPaymentRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmCollectionAgencyPaymentRefund.Designer.cs">
+      <DependentUpon>frmCollectionAgencyPaymentRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmCollectionAgencyPreviousRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmCollectionAgencyPreviousRefund.Designer.cs">
+      <DependentUpon>frmCollectionAgencyPreviousRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmTransferResponsibilityStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmTransferResponsibilityStatus.Designer.cs">
+      <DependentUpon>frmTransferResponsibilityStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientClaimsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientClaimsList.Designer.cs">
+      <DependentUpon>frmPatientClaimsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewAvailableReserveV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewAvailableReserveV2.Designer.cs">
+      <DependentUpon>frmViewAvailableReserveV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsStandardReasonCode.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmgloPrintBatchPatientStatementController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmgloPrintBatchPatientStatementController.Designer.cs">
+      <DependentUpon>frmgloPrintBatchPatientStatementController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\Rpt_Paper_PatientStatementGW.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Paper_PatientStatementGW.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WC Forms\C42ProgressReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WC Forms\C4Authorization.cs" />
+    <Compile Include="WC Forms\C4IntialReport.cs" />
+    <Compile Include="clsCaseSetup.cs" />
+    <Compile Include="clsCharges.cs" />
+    <Compile Include="ClsCommonCPT.cs" />
+    <Compile Include="ClsCopayDistributionList.cs" />
+    <Compile Include="clsDBSettings.cs" />
+    <Compile Include="ClsEDIValidation.cs" />
+    <Compile Include="ClsFeeSchedule.cs" />
+    <Compile Include="clsGlobalPeriods.cs" />
+    <Compile Include="clsgloBilling.cs" />
+    <Compile Include="ClsgloBillingEnums.cs" />
+    <Compile Include="ClsgloC1FlexStyle.cs" />
+    <Compile Include="ClsgloClaimManager.cs" />
+    <Compile Include="ClsgloClaimManagerEx1.cs" />
+    <Compile Include="ClsgloPayment.cs" />
+    <Compile Include="clsgloSplitClaim.cs" />
+    <Compile Include="clsgoResend.cs" />
+    <Compile Include="ClsMytreeNode.cs" />
+    <Compile Include="clsPatientFinancialView.cs" />
+    <Compile Include="ClsPostEDI.cs" />
+    <Compile Include="WC Forms\clsWorkerCompData.cs" />
+    <Compile Include="CLs_EDI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cls_GlobalSettings.cs" />
+    <Compile Include="Cls_TabIndexSettings.cs" />
+    <Compile Include="Collections\frmInsurance_Claim_Followup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmInsurance_Claim_Followup.designer.cs">
+      <DependentUpon>frmInsurance_Claim_Followup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCommonCPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommonCPT.Designer.cs">
+      <DependentUpon>frmCommonCPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopayDistributionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopayDistributionList.Designer.cs">
+      <DependentUpon>frmCopayDistributionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupQuickNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupQuickNotes.Designer.cs">
+      <DependentUpon>frmSetupQuickNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingPatientviewExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingPatientviewExam.Designer.cs">
+      <DependentUpon>frmBillingPatientviewExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_MG21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_MG21.Designer.cs">
+      <DependentUpon>frmWorkerCompFormViewer_MG21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_MG2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_MG2.Designer.cs">
+      <DependentUpon>frmWorkerCompFormViewer_MG2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_C4Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_C4Auth.Designer.cs">
+      <DependentUpon>frmWorkerCompFormViewer_C4Auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_C42.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer_C42.Designer.cs">
+      <DependentUpon>frmWorkerCompFormViewer_C42.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWCPatientClaims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWCPatientClaims.Designer.cs">
+      <DependentUpon>frmWCPatientClaims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WC Forms\frmWorkerCompFormViewer.Designer.cs">
+      <DependentUpon>frmWorkerCompFormViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentV3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentV3.Designer.cs">
+      <DependentUpon>frmPatientPaymentV3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WC Forms\C4MG2.cs" />
+    <Compile Include="NewCMS1500\frmHCFA1500New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCMS1500\frmHCFA1500New.Designer.cs">
+      <DependentUpon>frmHCFA1500New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\clsCL_Collection.cs" />
+    <Compile Include="Collections\ClsCl_CollectionEnums.cs" />
+    <Compile Include="Collections\clsFollowUpUtility.cs" />
+    <Compile Include="Collections\EFCollection.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFCollection.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmAutoFollowupUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmAutoFollowupUtility.Designer.cs">
+      <DependentUpon>frmAutoFollowupUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmRevenueCycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmRevenueCycle.Designer.cs">
+      <DependentUpon>frmRevenueCycle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupAccFollowUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupAccFollowUp.designer.cs">
+      <DependentUpon>frmSetupAccFollowUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupFollowupDateAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupFollowupDateAction.Designer.cs">
+      <DependentUpon>frmSetupFollowupDateAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupFollowupDateActionTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupFollowupDateActionTemplate.designer.cs">
+      <DependentUpon>frmSetupFollowupDateActionTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupInsClaimFollowUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupInsClaimFollowUp.designer.cs">
+      <DependentUpon>frmSetupInsClaimFollowUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSetupPaymentPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSetupPaymentPlan.Designer.cs">
+      <DependentUpon>frmSetupPaymentPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collections\frmSSRSViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collections\frmSSRSViewer.designer.cs">
+      <DependentUpon>frmSSRSViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupClaimCategoryType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupClaimCategoryType.Designer.cs">
+      <DependentUpon>frmSetupClaimCategoryType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnesthesiaBilling .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnesthesiaBilling .Designer.cs">
+      <DependentUpon>frmAnesthesiaBilling .cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchEligibilityActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchEligibilityActivity.designer.cs">
+      <DependentUpon>frmBatchEligibilityActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClaimNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimNotes.Designer.cs">
+      <DependentUpon>frmClaimNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportGlobalPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportGlobalPeriod.Designer.cs">
+      <DependentUpon>frmImportGlobalPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPromptforGlobalPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPromptforGlobalPeriod.Designer.cs">
+      <DependentUpon>frmPromptforGlobalPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupBusinessCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupBusinessCenter.designer.cs">
+      <DependentUpon>frmSetupBusinessCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCases.designer.cs">
+      <DependentUpon>frmSetupCases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupEPSDTFamilyPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupEPSDTFamilyPlanning.Designer.cs">
+      <DependentUpon>frmSetupEPSDTFamilyPlanning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupGlobalPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupGlobalPeriod.designer.cs">
+      <DependentUpon>frmSetupGlobalPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupMedicaid Resubmission Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupMedicaid Resubmission Code.designer.cs">
+      <DependentUpon>frmSetupMedicaid Resubmission Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupModifyGlobalPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupModifyGlobalPeriod.designer.cs">
+      <DependentUpon>frmSetupModifyGlobalPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupOccurrenceSpanCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupOccurrenceSpanCode.Designer.cs">
+      <DependentUpon>frmSetupOccurrenceSpanCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupReportingCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupReportingCategory.designer.cs">
+      <DependentUpon>frmSetupReportingCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupValueCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupValueCode.Designer.cs">
+      <DependentUpon>frmSetupValueCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupOccurrenceCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupOccurrenceCode.Designer.cs">
+      <DependentUpon>frmSetupOccurrenceCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsChargesTVP.cs">
+      <DependentUpon>dsChargesTVP.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsChargesTVP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsChargesTVP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEDIClaimdetails.cs">
+      <DependentUpon>dsEDIClaimdetails.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsEDIClaimdetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEDIClaimdetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingModifyChargesExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingNDCCodeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingNDCCodeSelection.designer.cs">
+      <DependentUpon>frmBillingNDCCodeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingTransactionExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimExp.designer.cs">
+      <DependentUpon>frmClaimExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClaimSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimSearch.Designer.cs">
+      <DependentUpon>frmClaimSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCPTMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCPTMapping.designer.cs">
+      <DependentUpon>frmCPTMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDrugBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrugBilling.Designer.cs">
+      <DependentUpon>frmDrugBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportRVUSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportRVUSchedule.Designer.cs">
+      <DependentUpon>frmImportRVUSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsTransCloseDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsTransCloseDate.Designer.cs">
+      <DependentUpon>frmInsTransCloseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientPayRefundView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientPayRefundView.Designer.cs">
+      <DependentUpon>frmPatientPayRefundView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsAdjudicationHistory.cs">
+      <DependentUpon>dsAdjudicationHistory.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsAdjudicationHistory.designer.cs">
+      <DependentUpon>dsAdjudicationHistory.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="frmBillingHold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingHold.Designer.cs">
+      <DependentUpon>frmBillingHold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClaimChargeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimChargeHistory.Designer.cs">
+      <DependentUpon>frmClaimChargeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceReserveRemaining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceReserveRemaining.Designer.cs">
+      <DependentUpon>frmInsuranceReserveRemaining.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotes.Designer.cs">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientFinancialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientFinancialView.Designer.cs">
+      <DependentUpon>frmPatientFinancialView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientPaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientPaymentList.Designer.cs">
+      <DependentUpon>frmPatientPaymentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientPaymentRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientPaymentRefund.Designer.cs">
+      <DependentUpon>frmPatientPaymentRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientPayRefundVoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientPayRefundVoid.Designer.cs">
+      <DependentUpon>frmPatientPayRefundVoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReplacementClaimIndication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReplacementClaimIndication.Designer.cs">
+      <DependentUpon>frmReplacementClaimIndication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_MonthEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_MonthEnd.Designer.cs">
+      <DependentUpon>frmRpt_MonthEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchInsuranceCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchInsuranceCompany.Designer.cs">
+      <DependentUpon>frmSearchInsuranceCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupConditionCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupConditionCode.Designer.cs">
+      <DependentUpon>frmSetupConditionCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupGroupCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupGroupCode.Designer.cs">
+      <DependentUpon>frmSetupGroupCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingBatch_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingBatch_New.Designer.cs">
+      <DependentUpon>frmBillingBatch_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingCheckDiff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingCheckDiff.Designer.cs">
+      <DependentUpon>frmBillingCheckDiff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingClosePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingClosePeriod.Designer.cs">
+      <DependentUpon>frmBillingClosePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingEOBPatientRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingEOBPatientRefund.Designer.cs">
+      <DependentUpon>frmBillingEOBPatientRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingModifyCharges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingModifyCharges.Designer.cs">
+      <DependentUpon>frmBillingModifyCharges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingTraySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingTraySelection.Designer.cs">
+      <DependentUpon>frmBillingTraySelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBillingTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillingTransaction.Designer.cs">
+      <DependentUpon>frmBillingTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCodeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodeType.Designer.cs">
+      <DependentUpon>frmCodeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEDI276Generation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEDI276Generation.Designer.cs">
+      <DependentUpon>frmEDI276Generation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEligibilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEligibilityForm.Designer.cs">
+      <DependentUpon>frmEligibilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEligibilityResponse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEligibilityResponse.Designer.cs">
+      <DependentUpon>frmEligibilityResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEOBLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEOBLedger.Designer.cs">
+      <DependentUpon>frmEOBLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEOBPaymentReasonCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEOBPaymentReasonCode.Designer.cs">
+      <DependentUpon>frmEOBPaymentReasonCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHCFA1500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHCFA1500.Designer.cs">
+      <DependentUpon>frmHCFA1500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportFeeSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportFeeSchedule.Designer.cs">
+      <DependentUpon>frmImportFeeSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceServiceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceServiceType.Designer.cs">
+      <DependentUpon>frmInsuranceServiceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientStatementNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientStatementNotes.Designer.cs">
+      <DependentUpon>frmPatientStatementNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentPatient.Designer.cs">
+      <DependentUpon>frmPaymentPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentReserveRemaning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentReserveRemaning.designer.cs">
+      <DependentUpon>frmPaymentReserveRemaning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentUseReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentUseReserve.Designer.cs">
+      <DependentUpon>frmPaymentUseReserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentUseReserveInsurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentUseReserveInsurance.Designer.cs">
+      <DependentUpon>frmPaymentUseReserveInsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_ClaimStatusReportNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_ClaimStatusReportNew.Designer.cs">
+      <DependentUpon>frmRpt_ClaimStatusReportNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_DuplicateClaimReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_DuplicateClaimReport.Designer.cs">
+      <DependentUpon>frmRpt_DuplicateClaimReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_MissingCharges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_MissingCharges.Designer.cs">
+      <DependentUpon>frmRpt_MissingCharges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_NewPatientvsEstablishedPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_NewPatientvsEstablishedPatient.Designer.cs">
+      <DependentUpon>frmRpt_NewPatientvsEstablishedPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_PatientReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_PatientReport.Designer.cs">
+      <DependentUpon>frmRpt_PatientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRpt_ReferralProviderPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRpt_ReferralProviderPatients.Designer.cs">
+      <DependentUpon>frmRpt_ReferralProviderPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectSmartTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectSmartTreatment.Designer.cs">
+      <DependentUpon>frmSelectSmartTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupActionCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupActionCodes.Designer.cs">
+      <DependentUpon>frmSetupActionCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupAdjustmentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupAdjustmentType.Designer.cs">
+      <DependentUpon>frmSetupAdjustmentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupAntiScrubber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupAntiScrubber.Designer.cs">
+      <DependentUpon>frmSetupAntiScrubber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupAssociation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupAssociation.Designer.cs">
+      <DependentUpon>frmSetupAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupBatch.Designer.cs">
+      <DependentUpon>frmSetupBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCardType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCardType.Designer.cs">
+      <DependentUpon>frmSetupCardType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCategory.Designer.cs">
+      <DependentUpon>frmSetupCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupChargesTray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupChargesTray.Designer.cs">
+      <DependentUpon>frmSetupChargesTray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupClearingHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupClearingHouse.Designer.cs">
+      <DependentUpon>frmSetupClearingHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCloseDayTray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCloseDayTray.Designer.cs">
+      <DependentUpon>frmSetupCloseDayTray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCPT.Designer.cs">
+      <DependentUpon>frmSetupCPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCPTCodeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCPTCodeType.Designer.cs">
+      <DependentUpon>frmSetupCPTCodeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupDrugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupDrugs.Designer.cs">
+      <DependentUpon>frmSetupDrugs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupEDIData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupEDIData.Designer.cs">
+      <DependentUpon>frmSetupEDIData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupFacility.Designer.cs">
+      <DependentUpon>frmSetupFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupFeeScheduleAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupFeeScheduleAllocation.Designer.cs">
+      <DependentUpon>frmSetupFeeScheduleAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupICD9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupICD9.Designer.cs">
+      <DependentUpon>frmSetupICD9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupIDQualifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupIDQualifier.designer.cs">
+      <DependentUpon>frmSetupIDQualifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupIDQualifierAssociation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupIDQualifierAssociation.designer.cs">
+      <DependentUpon>frmSetupIDQualifierAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupInsurancePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupInsurancePlan.Designer.cs">
+      <DependentUpon>frmSetupInsurancePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupModifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupModifier.Designer.cs">
+      <DependentUpon>frmSetupModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupRevCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupRevCode.designer.cs">
+      <DependentUpon>frmSetupRevCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowCases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowCases.designer.cs">
+      <DependentUpon>frmShowCases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUB04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUB04.Designer.cs">
+      <DependentUpon>frmUB04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUB04Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUB04Data.Designer.cs">
+      <DependentUpon>frmUB04Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SetupRVUSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SetupRVUSchedule.Designer.cs">
+      <DependentUpon>frm_SetupRVUSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\ClsPatientFinancialViewV2.cs" />
+    <Compile Include="gloAccountPayment\cls_gloPaymentV2.cs" />
+    <Compile Include="gloAccountPayment\cls_PaymentCollection.cs" />
+    <Compile Include="gloAccountPayment\cls_PaymentEnumsV2.cs" />
+    <Compile Include="gloAccountPayment\dsPaymentTVP_V2.cs">
+      <DependentUpon>dsPaymentTVP_V2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\dsPaymentTVP_V2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPaymentTVP_V2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmClaimChargeHistoryV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmClaimChargeHistoryV2.Designer.cs">
+      <DependentUpon>frmClaimChargeHistoryV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceOffset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceOffset.Designer.cs">
+      <DependentUpon>frmInsuranceOffset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentEx1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentLogV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentLogV2.Designer.cs">
+      <DependentUpon>frmInsurancePaymentLogV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentRefundLogV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentRefundLogV2.Designer.cs">
+      <DependentUpon>frmInsurancePaymentRefundLogV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentRefundV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentRefundV2.Designer.cs">
+      <DependentUpon>frmInsurancePaymentRefundV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePaymentV2.designer.cs">
+      <DependentUpon>frmInsurancePaymentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePayRefundViewV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsurancePayRefundViewV2.Designer.cs">
+      <DependentUpon>frmInsurancePayRefundViewV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceReserveRemainingV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceReserveRemainingV2.Designer.cs">
+      <DependentUpon>frmInsuranceReserveRemainingV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceReserveUsedV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmInsuranceReserveUsedV2.Designer.cs">
+      <DependentUpon>frmInsuranceReserveUsedV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmLoadPendingChecksV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmLoadPendingChecksV2.Designer.cs">
+      <DependentUpon>frmLoadPendingChecksV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientFinancialViewV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientFinancialViewV2.Designer.cs">
+      <DependentUpon>frmPatientFinancialViewV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentRefundV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentRefundV2.Designer.cs">
+      <DependentUpon>frmPatientPaymentRefundV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPaymentV2.Designer.cs">
+      <DependentUpon>frmPatientPaymentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPayRefundViewV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPatientPayRefundViewV2.Designer.cs">
+      <DependentUpon>frmPatientPayRefundViewV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentReserveRemaningV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentReserveRemaningV2.designer.cs">
+      <DependentUpon>frmPaymentReserveRemaningV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentUseReserveInsuranceV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentUseReserveInsuranceV2.Designer.cs">
+      <DependentUpon>frmPaymentUseReserveInsuranceV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentUseReserveV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmPaymentUseReserveV2.Designer.cs">
+      <DependentUpon>frmPaymentUseReserveV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmReservesAvailableV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmReservesAvailableV2.Designer.cs">
+      <DependentUpon>frmReservesAvailableV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewClaimRemittanceV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewClaimRemittanceV2.Designer.cs">
+      <DependentUpon>frmViewClaimRemittanceV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewInsurancePaymentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewInsurancePaymentV2.Designer.cs">
+      <DependentUpon>frmViewInsurancePaymentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewInsuranceReserveV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewInsuranceReserveV2.Designer.cs">
+      <DependentUpon>frmViewInsuranceReserveV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewPatientPaymentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmViewPatientPaymentV2.Designer.cs">
+      <DependentUpon>frmViewPatientPaymentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidInsuranceRefundV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidInsuranceRefundV2.Designer.cs">
+      <DependentUpon>frmVoidInsuranceRefundV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidPatientRefundV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidPatientRefundV2.Designer.cs">
+      <DependentUpon>frmVoidPatientRefundV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidPaymentV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloAccountPayment\frmVoidPaymentV2.Designer.cs">
+      <DependentUpon>frmVoidPaymentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\clsERAPostingV2.cs" />
+    <Compile Include="Payment\frmSavePaymentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmSavePaymentDialog.Designer.cs">
+      <DependentUpon>frmSavePaymentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\clsERAPayer.cs" />
+    <Compile Include="gloERA\frmERAPayerSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmERAPayerSetup.Designer.cs">
+      <DependentUpon>frmERAPayerSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloUB04\gloUB04.cs" />
+    <Compile Include="Payment\frmInsurancePaymentEx1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentRefund.Designer.cs">
+      <DependentUpon>frmInsurancePaymentRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentRefundLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentRefundLog.Designer.cs">
+      <DependentUpon>frmInsurancePaymentRefundLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePayRefundView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePayRefundView.Designer.cs">
+      <DependentUpon>frmInsurancePayRefundView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmViewInsuranceReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmViewInsuranceReserve.Designer.cs">
+      <DependentUpon>frmViewInsuranceReserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmVoidInsuranceRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmVoidInsuranceRefund.Designer.cs">
+      <DependentUpon>frmVoidInsuranceRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\ClsgloStatment.cs" />
+    <Compile Include="Statement\frmSetupPatientStatementCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmSetupPatientStatementCriteria.Designer.cs">
+      <DependentUpon>frmSetupPatientStatementCriteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmSetupPatientStatementDisplaySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmSetupPatientStatementDisplaySettings.Designer.cs">
+      <DependentUpon>frmSetupPatientStatementDisplaySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmSetupPatientStatementFilterCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmSetupPatientStatementFilterCriteria.Designer.cs">
+      <DependentUpon>frmSetupPatientStatementFilterCriteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupPaymentNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupPaymentNotes.Designer.cs">
+      <DependentUpon>frmSetupPaymentNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupPOS.designer.cs">
+      <DependentUpon>frmSetupPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupReasonCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupReasonCodes.Designer.cs">
+      <DependentUpon>frmSetupReasonCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupReferralCPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupReferralCPT.Designer.cs">
+      <DependentUpon>frmSetupReferralCPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupRefundType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupRefundType.Designer.cs">
+      <DependentUpon>frmSetupRefundType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupScrubber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupScrubber.Designer.cs">
+      <DependentUpon>frmSetupScrubber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupSmartTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupSmartTreatment.Designer.cs">
+      <DependentUpon>frmSetupSmartTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupSpecialty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupSpecialty.Designer.cs">
+      <DependentUpon>frmSetupSpecialty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupTOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupTOS.designer.cs">
+      <DependentUpon>frmSetupTOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupTOSCPTAssociation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupTOSCPTAssociation.Designer.cs">
+      <DependentUpon>frmSetupTOSCPTAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupTransactionNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupTransactionNotes.Designer.cs">
+      <DependentUpon>frmSetupTransactionNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetup_FlagType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup_FlagType.Designer.cs">
+      <DependentUpon>frmSetup_FlagType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetup_InsuranceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup_InsuranceType.Designer.cs">
+      <DependentUpon>frmSetup_InsuranceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShow997Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShow997Status.Designer.cs">
+      <DependentUpon>frmShow997Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewBillingBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewBillingBook.Designer.cs">
+      <DependentUpon>frmViewBillingBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewClaimRemittance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewClaimRemittance.Designer.cs">
+      <DependentUpon>frmViewClaimRemittance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewPatientPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewPatientPayment.Designer.cs">
+      <DependentUpon>frmViewPatientPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoidEMRTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoidEMRTreatment.Designer.cs">
+      <DependentUpon>frmVoidEMRTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoidPatientRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoidPatientRefund.Designer.cs">
+      <DependentUpon>frmVoidPatientRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoidPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoidPayment.Designer.cs">
+      <DependentUpon>frmVoidPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SetupStdFeeSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SetupStdFeeSchedule.Designer.cs">
+      <DependentUpon>frm_SetupStdFeeSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloBillingTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloBillingTransaction.Designer.cs">
+      <DependentUpon>gloBillingTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\ClsERALogs.cs" />
+    <Compile Include="gloERA\clsERAValidation.cs" />
+    <Compile Include="gloERA\ClsFTPLogWriter.cs" />
+    <Compile Include="gloERA\ClsFTPManager.cs" />
+    <Compile Include="gloERA\cls_ERA.cs" />
+    <Compile Include="gloERA\frmCloseDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmCloseDate.Designer.cs">
+      <DependentUpon>frmCloseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\frmDownloadClaim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmDownloadClaim.Designer.cs">
+      <DependentUpon>frmDownloadClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\frmDownloadFileList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmDownloadFileList.Designer.cs">
+      <DependentUpon>frmDownloadFileList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\frmERAFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmERAFiles.Designer.cs">
+      <DependentUpon>frmERAFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloERA\frmERAPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloERA\frmERAPayment.Designer.cs">
+      <DependentUpon>frmERAPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloGridListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloGridListControl.Designer.cs">
+      <DependentUpon>gloGridListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPriorAuthorization\clsgloPriorAuthorization.cs" />
+    <Compile Include="gloPriorAuthorization\frmSetupAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloPriorAuthorization\frmSetupAuthorization.designer.cs">
+      <DependentUpon>frmSetupAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPriorAuthorization\frmShowPriorAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloPriorAuthorization\frmShowPriorAuthorization.designer.cs">
+      <DependentUpon>frmShowPriorAuthorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\clsInsurancePayment.cs" />
+    <Compile Include="Payment\clsInsurancePaymentVoid.cs" />
+    <Compile Include="Payment\clsPaymentBase.cs" />
+    <Compile Include="Payment\frmInsurancePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePayment.designer.cs">
+      <DependentUpon>frmInsurancePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsurancePaymentLog.Designer.cs">
+      <DependentUpon>frmInsurancePaymentLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmInsuranceReserveUsed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmInsuranceReserveUsed.Designer.cs">
+      <DependentUpon>frmInsuranceReserveUsed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmReservesAvailable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmReservesAvailable.Designer.cs">
+      <DependentUpon>frmReservesAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmSplitClaimHoldSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmSplitClaimHoldSelection.Designer.cs">
+      <DependentUpon>frmSplitClaimHoldSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\frmViewInsurancePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmViewInsurancePayment.Designer.cs">
+      <DependentUpon>frmViewInsurancePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt_AdjClaimSubReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_AdjClaimSubReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt_AdjudicationHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_AdjudicationHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Statement\ClsgloElectronic.cs" />
+    <Compile Include="Statement\dsRevisedPatientStatement.cs">
+      <DependentUpon>dsRevisedPatientStatement.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Statement\dsRevisedPatientStatement.designer.cs">
+      <DependentUpon>dsRevisedPatientStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\dsRevisedPatientStatement1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRevisedPatientStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmRpt_Revised_PatientStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmRpt_Revised_PatientStatement.Designer.cs">
+      <DependentUpon>frmRpt_Revised_PatientStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmStatementCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmStatementCount.Designer.cs">
+      <DependentUpon>frmStatementCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmVoidStatementInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmVoidStatementInfoDialog.Designer.cs">
+      <DependentUpon>frmVoidStatementInfoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmVoidStatmentBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmVoidStatmentBatch.Designer.cs">
+      <DependentUpon>frmVoidStatmentBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmWd_BatchPatientStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmWd_BatchPatientStatement.Designer.cs">
+      <DependentUpon>frmWd_BatchPatientStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\frmWd_ViewPatientStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statement\frmWd_ViewPatientStatement.Designer.cs">
+      <DependentUpon>frmWd_ViewPatientStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statement\Rpt_Paper_PatientStatement1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Paper_PatientStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WC Forms\MG2_1.cs" />
+    <Compile Include="Web References\EDIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RTEligibilityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="C1GridFilter\AccountLogTypeFilterEditor.resx">
+      <DependentUpon>AccountLogTypeFilterEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmBatchFollowUpStatus.resx">
+      <DependentUpon>frmBatchFollowUpStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmgloPrintSetupDateActionTemplate.resx">
+      <DependentUpon>frmgloPrintSetupDateActionTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmInsurance_Claim_Followup.resx">
+      <DependentUpon>frmInsurance_Claim_Followup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmMergeScheduledActions.resx">
+      <DependentUpon>frmMergeScheduledActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSelectPaymentcollectionAgency.resx">
+      <DependentUpon>frmSelectPaymentcollectionAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupBadDebtFollowUp.resx">
+      <DependentUpon>frmSetupBadDebtFollowUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCGNotes.resx">
+      <DependentUpon>frmCGNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCleargageFileHistory.resx">
+      <DependentUpon>frmCleargageFileHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCleargagePaymentDistributionList.resx">
+      <DependentUpon>frmCleargagePaymentDistributionList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClearGagePaymentPosting.resx">
+      <DependentUpon>frmClearGagePaymentPosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCleargagePaymentVoid.resx">
+      <DependentUpon>frmCleargagePaymentVoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceFollowupActionCrossWalk.resx">
+      <DependentUpon>frmInsuranceFollowupActionCrossWalk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentTransferInfo.resx">
+      <DependentUpon>frmPaymentTransferInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCommonCPT.resx">
+      <DependentUpon>frmCommonCPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopayDistributionList.resx">
+      <DependentUpon>frmCopayDistributionList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentUseCopayReserveV2.resx">
+      <DependentUpon>frmPaymentUseCopayReserveV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReservesDistributionList.resx">
+      <DependentUpon>frmReservesDistributionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectCollectionAgency.resx">
+      <DependentUpon>frmSelectCollectionAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetupHoldBilling.resx">
+      <DependentUpon>FrmSetupHoldBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupQuickNotes.resx">
+      <DependentUpon>frmSetupQuickNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingPatientviewExam.resx">
+      <DependentUpon>frmBillingPatientviewExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupRemarkCodes.resx">
+      <DependentUpon>frmSetupRemarkCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStandardFollowupAction.resx">
+      <DependentUpon>frmStandardFollowupAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStandardReasonCodeSetup.resx">
+      <DependentUpon>frmStandardReasonCodeSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUploadClaim.resx">
+      <DependentUpon>frmUploadClaim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmCGPaymentPlanList.resx">
+      <DependentUpon>frmCGPaymentPlanList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmCollectionAgencyPaymentRefund.resx">
+      <DependentUpon>frmCollectionAgencyPaymentRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmCollectionAgencyPreviousRefund.resx">
+      <DependentUpon>frmCollectionAgencyPreviousRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmTransferResponsibilityStatus.resx">
+      <DependentUpon>frmTransferResponsibilityStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientClaimsList.resx">
+      <DependentUpon>frmPatientClaimsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmViewAvailableReserveV2.resx">
+      <DependentUpon>frmViewAvailableReserveV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Statement\frmgloPrintBatchPatientStatementController.resx">
+      <DependentUpon>frmgloPrintBatchPatientStatementController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\Rpt_Paper_PatientStatementGW.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_Paper_PatientStatementGW.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWorkerCompFormViewer_MG21.resx">
+      <DependentUpon>frmWorkerCompFormViewer_MG21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWorkerCompFormViewer_MG2.resx">
+      <DependentUpon>frmWorkerCompFormViewer_MG2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWorkerCompFormViewer_C4Auth.resx">
+      <DependentUpon>frmWorkerCompFormViewer_C4Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWorkerCompFormViewer_C42.resx">
+      <DependentUpon>frmWorkerCompFormViewer_C42.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWCPatientClaims.resx">
+      <DependentUpon>frmWCPatientClaims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WC Forms\frmWorkerCompFormViewer.resx">
+      <DependentUpon>frmWorkerCompFormViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientPaymentV3.resx">
+      <DependentUpon>frmPatientPaymentV3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCMS1500\frmHCFA1500New.resx">
+      <DependentUpon>frmHCFA1500New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmAutoFollowupUtility.resx">
+      <DependentUpon>frmAutoFollowupUtility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmRevenueCycle.resx">
+      <DependentUpon>frmRevenueCycle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupAccFollowUp.resx">
+      <DependentUpon>frmSetupAccFollowUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupFollowupDateAction.resx">
+      <DependentUpon>frmSetupFollowupDateAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupFollowupDateActionTemplate.resx">
+      <DependentUpon>frmSetupFollowupDateActionTemplate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupInsClaimFollowUp.resx">
+      <DependentUpon>frmSetupInsClaimFollowUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSetupPaymentPlan.resx">
+      <DependentUpon>frmSetupPaymentPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\frmSSRSViewer.resx">
+      <DependentUpon>frmSSRSViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupClaimCategoryType.resx">
+      <DependentUpon>frmSetupClaimCategoryType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnesthesiaBilling .resx">
+      <DependentUpon>frmAnesthesiaBilling .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchEligibilityActivity.resx">
+      <DependentUpon>frmBatchEligibilityActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClaimNotes.resx">
+      <DependentUpon>frmClaimNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportGlobalPeriod.resx">
+      <DependentUpon>frmImportGlobalPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPromptforGlobalPeriod.resx">
+      <DependentUpon>frmPromptforGlobalPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupBusinessCenter.resx">
+      <DependentUpon>frmSetupBusinessCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCases.resx">
+      <DependentUpon>frmSetupCases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupEPSDTFamilyPlanning.resx">
+      <DependentUpon>frmSetupEPSDTFamilyPlanning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupGlobalPeriod.resx">
+      <DependentUpon>frmSetupGlobalPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupMedicaid Resubmission Code.resx">
+      <DependentUpon>frmSetupMedicaid Resubmission Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupModifyGlobalPeriod.resx">
+      <DependentUpon>frmSetupModifyGlobalPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupOccurrenceSpanCode.resx">
+      <DependentUpon>frmSetupOccurrenceSpanCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupReportingCategory.resx">
+      <DependentUpon>frmSetupReportingCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupValueCode.resx">
+      <DependentUpon>frmSetupValueCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupOccurrenceCode.resx">
+      <DependentUpon>frmSetupOccurrenceCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingNDCCodeSelection.resx">
+      <DependentUpon>frmBillingNDCCodeSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClaimExp.resx">
+      <DependentUpon>frmClaimExp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClaimSearch.resx">
+      <DependentUpon>frmClaimSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCPTMapping.resx">
+      <DependentUpon>frmCPTMapping.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrugBilling.resx">
+      <DependentUpon>frmDrugBilling.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportRVUSchedule.resx">
+      <DependentUpon>frmImportRVUSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsTransCloseDate.resx">
+      <DependentUpon>frmInsTransCloseDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientPayRefundView.resx">
+      <DependentUpon>frmPatientPayRefundView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingHold.resx">
+      <DependentUpon>frmBillingHold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClaimChargeHistory.resx">
+      <DependentUpon>frmClaimChargeHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceReserveRemaining.resx">
+      <DependentUpon>frmInsuranceReserveRemaining.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotes.resx">
+      <DependentUpon>frmNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientFinancialView.resx">
+      <DependentUpon>frmPatientFinancialView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientPaymentList.resx">
+      <DependentUpon>frmPatientPaymentList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientPaymentRefund.resx">
+      <DependentUpon>frmPatientPaymentRefund.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientPayRefundVoid.resx">
+      <DependentUpon>frmPatientPayRefundVoid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReplacementClaimIndication.resx">
+      <DependentUpon>frmReplacementClaimIndication.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_MonthEnd.resx">
+      <DependentUpon>frmRpt_MonthEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchInsuranceCompany.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSearchInsuranceCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupConditionCode.resx">
+      <DependentUpon>frmSetupConditionCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupGroupCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupGroupCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingBatch_New.resx">
+      <DependentUpon>frmBillingBatch_New.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingCheckDiff.resx">
+      <DependentUpon>frmBillingCheckDiff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingClosePeriod.resx">
+      <DependentUpon>frmBillingClosePeriod.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingEOBPatientRefund.resx">
+      <DependentUpon>frmBillingEOBPatientRefund.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingModifyCharges.resx">
+      <DependentUpon>frmBillingModifyCharges.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingTraySelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBillingTraySelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBillingTransaction.resx">
+      <DependentUpon>frmBillingTransaction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCodeType.resx">
+      <DependentUpon>frmCodeType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEDI276Generation.resx">
+      <DependentUpon>frmEDI276Generation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEligibilityForm.resx">
+      <DependentUpon>frmEligibilityForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEligibilityResponse.resx">
+      <DependentUpon>frmEligibilityResponse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEOBLedger.resx">
+      <DependentUpon>frmEOBLedger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEOBPaymentReasonCode.resx">
+      <DependentUpon>frmEOBPaymentReasonCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHCFA1500.resx">
+      <DependentUpon>frmHCFA1500.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportFeeSchedule.resx">
+      <DependentUpon>frmImportFeeSchedule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceServiceType.resx">
+      <DependentUpon>frmInsuranceServiceType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientStatementNotes.resx">
+      <DependentUpon>frmPatientStatementNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentPatient.resx">
+      <DependentUpon>frmPaymentPatient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentReserveRemaning.resx">
+      <DependentUpon>frmPaymentReserveRemaning.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentUseReserve.resx">
+      <DependentUpon>frmPaymentUseReserve.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentUseReserveInsurance.resx">
+      <DependentUpon>frmPaymentUseReserveInsurance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_ClaimStatusReportNew.resx">
+      <DependentUpon>frmRpt_ClaimStatusReportNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_DuplicateClaimReport.resx">
+      <DependentUpon>frmRpt_DuplicateClaimReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_MissingCharges.resx">
+      <DependentUpon>frmRpt_MissingCharges.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_NewPatientvsEstablishedPatient.resx">
+      <DependentUpon>frmRpt_NewPatientvsEstablishedPatient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_PatientReport.resx">
+      <DependentUpon>frmRpt_PatientReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRpt_ReferralProviderPatients.resx">
+      <DependentUpon>frmRpt_ReferralProviderPatients.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectSmartTreatment.resx">
+      <DependentUpon>frmSelectSmartTreatment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupActionCodes.resx">
+      <DependentUpon>frmSetupActionCodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupAdjustmentType.resx">
+      <DependentUpon>frmSetupAdjustmentType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupAntiScrubber.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupAntiScrubber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupBatch.resx">
+      <DependentUpon>frmSetupBatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCardType.resx">
+      <DependentUpon>frmSetupCardType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCategory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupChargesTray.resx">
+      <DependentUpon>frmSetupChargesTray.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupClearingHouse.resx">
+      <DependentUpon>frmSetupClearingHouse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCloseDayTray.resx">
+      <DependentUpon>frmSetupCloseDayTray.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCPT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupCPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCPTCodeType.resx">
+      <DependentUpon>frmSetupCPTCodeType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupDrugs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupDrugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupEDIData.resx">
+      <DependentUpon>frmSetupEDIData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupFacility.resx">
+      <DependentUpon>frmSetupFacility.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupFeeScheduleAllocation.resx">
+      <DependentUpon>frmSetupFeeScheduleAllocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupICD9.resx">
+      <DependentUpon>frmSetupICD9.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupIDQualifier.resx">
+      <DependentUpon>frmSetupIDQualifier.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupIDQualifierAssociation.resx">
+      <DependentUpon>frmSetupIDQualifierAssociation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupInsurancePlan.resx">
+      <DependentUpon>frmSetupInsurancePlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupModifier.resx">
+      <DependentUpon>frmSetupModifier.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupRevCode.resx">
+      <DependentUpon>frmSetupRevCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowCases.resx">
+      <DependentUpon>frmShowCases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUB04.resx">
+      <DependentUpon>frmUB04.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUB04Data.resx">
+      <DependentUpon>frmUB04Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SetupRVUSchedule.resx">
+      <DependentUpon>frm_SetupRVUSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmClaimChargeHistoryV2.resx">
+      <DependentUpon>frmClaimChargeHistoryV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsuranceOffset.resx">
+      <DependentUpon>frmInsuranceOffset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsurancePaymentLogV2.resx">
+      <DependentUpon>frmInsurancePaymentLogV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsurancePaymentRefundLogV2.resx">
+      <DependentUpon>frmInsurancePaymentRefundLogV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsurancePaymentRefundV2.resx">
+      <DependentUpon>frmInsurancePaymentRefundV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsurancePaymentV2.resx">
+      <DependentUpon>frmInsurancePaymentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsurancePayRefundViewV2.resx">
+      <DependentUpon>frmInsurancePayRefundViewV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsuranceReserveRemainingV2.resx">
+      <DependentUpon>frmInsuranceReserveRemainingV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmInsuranceReserveUsedV2.resx">
+      <DependentUpon>frmInsuranceReserveUsedV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmLoadPendingChecksV2.resx">
+      <DependentUpon>frmLoadPendingChecksV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientFinancialViewV2.resx">
+      <DependentUpon>frmPatientFinancialViewV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientPaymentRefundV2.resx">
+      <DependentUpon>frmPatientPaymentRefundV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientPaymentV2.resx">
+      <DependentUpon>frmPatientPaymentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPatientPayRefundViewV2.resx">
+      <DependentUpon>frmPatientPayRefundViewV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPaymentReserveRemaningV2.resx">
+      <DependentUpon>frmPaymentReserveRemaningV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPaymentUseReserveInsuranceV2.resx">
+      <DependentUpon>frmPaymentUseReserveInsuranceV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmPaymentUseReserveV2.resx">
+      <DependentUpon>frmPaymentUseReserveV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmReservesAvailableV2.resx">
+      <DependentUpon>frmReservesAvailableV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmViewClaimRemittanceV2.resx">
+      <DependentUpon>frmViewClaimRemittanceV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmViewInsurancePaymentV2.resx">
+      <DependentUpon>frmViewInsurancePaymentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmViewInsuranceReserveV2.resx">
+      <DependentUpon>frmViewInsuranceReserveV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmViewPatientPaymentV2.resx">
+      <DependentUpon>frmViewPatientPaymentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmVoidInsuranceRefundV2.resx">
+      <DependentUpon>frmVoidInsuranceRefundV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmVoidPatientRefundV2.resx">
+      <DependentUpon>frmVoidPatientRefundV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloAccountPayment\frmVoidPaymentV2.resx">
+      <DependentUpon>frmVoidPaymentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmERAPayerSetup.resx">
+      <DependentUpon>frmERAPayerSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsurancePaymentRefund.resx">
+      <DependentUpon>frmInsurancePaymentRefund.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsurancePaymentRefundLog.resx">
+      <DependentUpon>frmInsurancePaymentRefundLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsurancePayRefundView.resx">
+      <DependentUpon>frmInsurancePayRefundView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmSavePaymentDialog.resx">
+      <DependentUpon>frmSavePaymentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmViewInsuranceReserve.resx">
+      <DependentUpon>frmViewInsuranceReserve.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmVoidInsuranceRefund.resx">
+      <DependentUpon>frmVoidInsuranceRefund.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmSetupPatientStatementCriteria.resx">
+      <DependentUpon>frmSetupPatientStatementCriteria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmSetupPatientStatementDisplaySettings.resx">
+      <DependentUpon>frmSetupPatientStatementDisplaySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmSetupPatientStatementFilterCriteria.resx">
+      <DependentUpon>frmSetupPatientStatementFilterCriteria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupPaymentNotes.resx">
+      <DependentUpon>frmSetupPaymentNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupPOS.resx">
+      <DependentUpon>frmSetupPOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupReasonCodes.resx">
+      <DependentUpon>frmSetupReasonCodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupReferralCPT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupReferralCPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupRefundType.resx">
+      <DependentUpon>frmSetupRefundType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupScrubber.resx">
+      <DependentUpon>frmSetupScrubber.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupSmartTreatment.resx">
+      <DependentUpon>frmSetupSmartTreatment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupSpecialty.resx">
+      <DependentUpon>frmSetupSpecialty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupTOS.resx">
+      <DependentUpon>frmSetupTOS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupTOSCPTAssociation.resx">
+      <DependentUpon>frmSetupTOSCPTAssociation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupTransactionNotes.resx">
+      <DependentUpon>frmSetupTransactionNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup_FlagType.resx">
+      <DependentUpon>frmSetup_FlagType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup_InsuranceType.resx">
+      <DependentUpon>frmSetup_InsuranceType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShow997Status.resx">
+      <DependentUpon>frmShow997Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewBillingBook.resx">
+      <DependentUpon>frmViewBillingBook.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewClaimRemittance.resx">
+      <DependentUpon>frmViewClaimRemittance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewPatientPayment.resx">
+      <DependentUpon>frmViewPatientPayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoidEMRTreatment.resx">
+      <DependentUpon>frmVoidEMRTreatment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoidPatientRefund.resx">
+      <DependentUpon>frmVoidPatientRefund.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoidPayment.resx">
+      <DependentUpon>frmVoidPayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SetupStdFeeSchedule.resx">
+      <DependentUpon>frm_SetupStdFeeSchedule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloBillingTransaction.resx">
+      <DependentUpon>gloBillingTransaction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmCloseDate.resx">
+      <DependentUpon>frmCloseDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmDownloadClaim.resx">
+      <DependentUpon>frmDownloadClaim.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmDownloadFileList.resx">
+      <DependentUpon>frmDownloadFileList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmERAFiles.resx">
+      <DependentUpon>frmERAFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloERA\frmERAPayment.resx">
+      <DependentUpon>frmERAPayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloGridListControl.resx">
+      <DependentUpon>gloGridListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPriorAuthorization\frmSetupAuthorization.resx">
+      <DependentUpon>frmSetupAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPriorAuthorization\frmShowPriorAuthorization.resx">
+      <DependentUpon>frmShowPriorAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsurancePayment.resx">
+      <DependentUpon>frmInsurancePayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsurancePaymentLog.resx">
+      <DependentUpon>frmInsurancePaymentLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmInsuranceReserveUsed.resx">
+      <DependentUpon>frmInsuranceReserveUsed.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmReservesAvailable.resx">
+      <DependentUpon>frmReservesAvailable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmSplitClaimHoldSelection.resx">
+      <DependentUpon>frmSplitClaimHoldSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmViewInsurancePayment.resx">
+      <DependentUpon>frmViewInsurancePayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_AdjClaimSubReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_AdjClaimSubReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_AdjudicationHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_AdjudicationHistory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmRpt_Revised_PatientStatement.resx">
+      <DependentUpon>frmRpt_Revised_PatientStatement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmStatementCount.resx">
+      <DependentUpon>frmStatementCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmVoidStatementInfoDialog.resx">
+      <DependentUpon>frmVoidStatementInfoDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmVoidStatmentBatch.resx">
+      <DependentUpon>frmVoidStatmentBatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmWd_BatchPatientStatement.resx">
+      <DependentUpon>frmWd_BatchPatientStatement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\frmWd_ViewPatientStatement.resx">
+      <DependentUpon>frmWd_ViewPatientStatement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statement\Rpt_Paper_PatientStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_Paper_PatientStatement1.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClearGageSSO\ClearGageSSO\ClearGageSSO.csproj">
+      <Project>{2AD6C46C-929A-4583-B556-E6269C80968A}</Project>
+      <Name>ClearGageSSO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAppointmentBook\gloAppointmentBook.csproj">
+      <Project>{8DDE29B5-495E-49D1-82A0-644B2C4B493C}</Project>
+      <Name>gloAppointmentBook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAUSdll\gloAUSLibrary\gloAUSLibrary.csproj">
+      <Project>{FEBB8F47-F62A-419F-AC1B-B10E672DE624}</Project>
+      <Name>gloAUSLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloChargeRules\gloChargeRules.csproj">
+      <Project>{64C06BC3-F991-45B9-AC55-AF48894C5C34}</Project>
+      <Name>gloChargeRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloClinicalQueueGeneral\gloClinicalQueueGeneral\gloClinicalQueueGeneral.csproj">
+      <Project>{F4774319-666F-44A3-8178-7E719ECDEF56}</Project>
+      <Name>gloClinicalQueueGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCMSEDI\gloCMSEDI.csproj">
+      <Project>{A16B9946-75AF-4691-BB91-8B98BF2A2236}</Project>
+      <Name>gloCMSEDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloContacts\gloContacts.csproj">
+      <Project>{E927ECC9-383B-4812-8167-48F712C5A769}</Project>
+      <Name>gloContacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEDI\gloEDI.csproj">
+      <Project>{E45826B2-1BDB-4A8B-AD52-3E337AF7E297}</Project>
+      <Name>gloEDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEDocumentV3\gloEDocumentV3.csproj">
+      <Project>{454B2E59-637D-4FBD-AB86-BD16C580CF5A}</Project>
+      <Name>gloEDocumentV3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralNode\gloGeneralNode.csproj">
+      <Project>{16E2F827-0ADC-4430-A466-93B96055E227}</Project>
+      <Name>gloGeneralNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloOffice\gloOffice.csproj">
+      <Project>{8DCDE259-C9ED-40AC-A4B2-C76D85BD0875}</Project>
+      <Name>gloOffice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatientPortalCommon\gloPatientPortalCommon\gloPatientPortalCommon.vbproj">
+      <Project>{E13714AA-CE10-4A69-85A0-3EAF21227265}</Project>
+      <Name>gloPatientPortalCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatientStripControl\gloPatientStripControl.csproj">
+      <Project>{6631630A-0D48-474B-B713-086CD89401EB}</Project>
+      <Name>gloPatientStripControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPMGeneral\gloPMGeneral.csproj">
+      <Project>{53F93EAB-6018-49B2-9A81-47D37338D8E4}</Project>
+      <Name>gloPMGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPrintDialog\gloPrintDialog.csproj">
+      <Project>{8DD0457B-4AF0-4CB3-A7BB-35DAC5665C50}</Project>
+      <Name>gloPrintDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSecurity\gloSecurity.csproj">
+      <Project>{7BFA9168-E479-4217-B7BB-A9440D38CDFB}</Project>
+      <Name>gloSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSnoMed\gloSnoMed.csproj">
+      <Project>{93A18F4F-252C-4A03-A82E-930075606135}</Project>
+      <Name>gloSnoMed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloStrips\gloStrips.csproj">
+      <Project>{B38D3D00-CD25-496F-9F4E-DE071A2FA91D}</Project>
+      <Name>gloStrips</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserRights\gloUserRights.csproj">
+      <Project>{9487621F-F5AF-473F-A6FD-794890C10B39}</Project>
+      <Name>gloUserRights</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloWord\gloWord.vbproj">
+      <Project>{DF7A4D19-B508-499E-BF16-347DA844D1D3}</Project>
+      <Name>gloWord</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QClaimStatusInquiry\TRIARQEDIRealTimeClaimStatus.csproj">
+      <Project>{74E8AE89-6D68-4571-A469-D974811CB9B8}</Project>
+      <Name>TRIARQEDIRealTimeClaimStatus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\AlphaII.CodeWizard.Configuration.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.DataAccess.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.Engine.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.Entities.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.Plugin.dll" />
+    <Content Include="DLL\AlphaII.CodeWizard.UI.dll" />
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <Content Include="DLL\gloPatientMigration.dll" />
+    <Content Include="DLL\SecureBlackbox.dll" />
+    <Content Include="DLL\SecureBlackbox.PGP.dll" />
+    <Content Include="Resources\Accepted1.png" />
+    <Content Include="Resources\Accepted2.png" />
+    <Content Include="Resources\Accepted3.png" />
+    <None Include="Properties\DataSources\gloBilling.Collections.EFCollection1.datasource" />
+    <None Include="Resources\Anesthesia.png" />
+    <None Include="Resources\Anesthesia - EPSDT.png" />
+    <None Include="Resources\Anesthesia - EPSDT -NDC.png" />
+    <None Include="Resources\Anesthesia - EPSDT -NDC - Note.png" />
+    <None Include="Resources\Anesthesia - NDC.png" />
+    <None Include="Resources\Anesthesia - Note.png" />
+    <None Include="Resources\Anesthesia - Note - EPST.png" />
+    <None Include="Resources\Anesthesia - Note -NDC.png" />
+    <None Include="Resources\Add Note.png" />
+    <None Include="Resources\AutoDistributeAdjustment.png" />
+    <None Include="Resources\AutoDistributePayment.png" />
+    <None Include="Resources\AutoDistributeDiscount.png" />
+    <None Include="Resources\AddPaymentPlan.ico" />
+    <Content Include="Resources\Batch Processing.png" />
+    <Content Include="Resources\Bullet06.png" />
+    <Content Include="Resources\Charges Try.ico" />
+    <Content Include="Resources\ClearAllPNG.png" />
+    <None Include="Resources\CopayDistribution.png" />
+    <None Include="Resources\CleargagePayment.ico" />
+    <Content Include="Resources\CPT.png" />
+    <Content Include="Resources\DeSelect All.png" />
+    <None Include="Resources\doller.ico" />
+    <Content Include="Resources\Down.png" />
+    <Content Include="Resources\DownHover.png" />
+    <Content Include="Resources\EDI4010.ico" />
+    <Content Include="Resources\EDI5010.ico" />
+    <None Include="Resources\c4.pdf" />
+    <None Include="Resources\c4AUTH.pdf" />
+    <None Include="Resources\c4AUTH_tab.pdf" />
+    <None Include="Resources\c4AUTH_tab_ImageSign.pdf" />
+    <None Include="Resources\C4_2.pdf" />
+    <None Include="Resources\C4_2_ImageSign.pdf" />
+    <None Include="Resources\c4_tab.pdf" />
+    <None Include="Resources\C4_Tab_ImageSign.pdf" />
+    <None Include="Resources\EPSDT-Family planning fields.png" />
+    <None Include="Resources\EPSDT-NDC.png" />
+    <None Include="Resources\EPSDT-Note.png" />
+    <None Include="Resources\Edit Note.png" />
+    <None Include="Resources\EditPaymentPlan.ico" />
+    <Content Include="Resources\Facility Charges .png" />
+    <EntityDeploy Include="Collections\EFCollection.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFCollection.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\FemalePatient.gif" />
+    <Content Include="Resources\Finish01.png" />
+    <Content Include="Resources\Flag Yellow.png" />
+    <Content Include="Resources\FollowUp1.png" />
+    <Content Include="Resources\FollowUP2.png" />
+    <Content Include="Resources\Forward.png" />
+    <Content Include="Resources\ForwardHover.png" />
+    <None Include="Resources\Generate Account Template.ico" />
+    <None Include="Resources\Generate Claim Template.ico" />
+    <Content Include="Resources\globaldate.ico" />
+    <None Include="Resources\globaldatemofity.ico" />
+    <Content Include="Resources\Hide Completed.png" />
+    <Content Include="Resources\Hide Zero Balance.png" />
+    <None Include="Resources\HoldClaim.png" />
+    <None Include="Resources\HideBadDebt.png" />
+    <Content Include="Resources\ICD 09.png" />
+    <None Include="Resources\ICD10GalleryGreen.png" />
+    <Content Include="Resources\Ico_Add.ico" />
+    <Content Include="Resources\Ico_Cancel.ico" />
+    <Content Include="Resources\Ico_Delete.ico" />
+    <Content Include="Resources\Ico_Modify.ico" />
+    <Content Include="Resources\Ico_New.ico" />
+    <Content Include="Resources\Ico_Ok.ico" />
+    <Content Include="Resources\Ico_Patient.ico" />
+    <Content Include="Resources\Ico_Refresh.ico" />
+    <Content Include="Resources\Ico_Save.ico" />
+    <Content Include="Resources\Img_2003DarkHeader.gif" />
+    <Content Include="Resources\Img_2003Header.gif" />
+    <Content Include="Resources\Img_2007Header.gif" />
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <Content Include="Resources\Img_Button.gif" />
+    <Content Include="Resources\Img_ButtonHover.gif" />
+    <Content Include="Resources\Img_Button_Reports.gif" />
+    <Content Include="Resources\Img_DownarrowWhite.png" />
+    <Content Include="Resources\Img_DownBlueArrow.png" />
+    <Content Include="Resources\Img_Gradient.gif" />
+    <None Include="Resources\Img_LongBlueBtn.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <Content Include="Resources\Img_OliveHeader.gif" />
+    <Content Include="Resources\Img_Orange.gif" />
+    <None Include="Resources\Img_Rx&amp;MxGreen.png" />
+    <Content Include="Resources\Img_SilverHeader.gif" />
+    <Content Include="Resources\Img_Status_Accepted.png" />
+    <Content Include="Resources\Img_Status_Alert.png" />
+    <Content Include="Resources\Img_Status_Batch.png" />
+    <Content Include="Resources\Img_Status_Challenge.png" />
+    <Content Include="Resources\Img_Status_Hold.png" />
+    <Content Include="Resources\Img_Status_ParticalPaid.png" />
+    <Content Include="Resources\Img_Status_Pending.png" />
+    <Content Include="Resources\Img_Status_Queue.png" />
+    <Content Include="Resources\Img_Status_ReBatch.png" />
+    <Content Include="Resources\Img_Status_Rejected.png" />
+    <Content Include="Resources\Img_Status_ReQueue.png" />
+    <Content Include="Resources\Img_Status_ReSend.png" />
+    <Content Include="Resources\Img_Status_Send.png" />
+    <Content Include="Resources\Img_Status_Transacted.png" />
+    <Content Include="Resources\Img_Toolstrip.gif" />
+    <Content Include="Resources\Img_UparrowWhite.png" />
+    <Content Include="Resources\Img_UPBlueArrow.png" />
+    <Content Include="Resources\Img_White.gif" />
+    <Content Include="Resources\Img_Yellow.gif" />
+    <None Include="Resources\Insurance  Claim Follow up date.png" />
+    <Content Include="Resources\Insurance Batch.ico" />
+    <None Include="Resources\Insurance Claim Follow up date.ico" />
+    <Content Include="Resources\Insurance.png" />
+    <Content Include="Resources\Insurance_10.png" />
+    <None Include="Resources\loading39.gif" />
+    <None Include="Resources\loading_icon.gif" />
+    <None Include="Resources\MalePatient.gif" />
+    <None Include="Resources\Marked ICD9.png" />
+    <None Include="Resources\MarkedICD10.png" />
+    <None Include="Resources\MedicalCategoryImages_1-Brown_BottomBrown.png" />
+    <None Include="Resources\MedicalCategoryImages_1-Brown_TopBrown.png" />
+    <None Include="Resources\MedicalCategoryImages_2-Blue_BottomSkyBlue.png" />
+    <None Include="Resources\MedicalCategoryImages_2-Blue_TopSkyBlue.png" />
+    <None Include="Resources\MedicalCategoryImages_3-Gray_BottomGray.png" />
+    <None Include="Resources\MedicalCategoryImages_3-Gray_TopGray.png" />
+    <None Include="Resources\MedicalCategoryImages_4-Green_BottomLightGreen.png" />
+    <None Include="Resources\MedicalCategoryImages_4-GreenTopLightGreen.png" />
+    <None Include="Resources\MedicalCategoryImages_5-BottomOrange.png" />
+    <None Include="Resources\MedicalCategoryImages_5-TopOrange.png" />
+    <None Include="Resources\MedicalCategoryImages_6-Pink_BottomPink.png" />
+    <None Include="Resources\MedicalCategoryImages_6-Pink_TopPink.png" />
+    <None Include="Resources\MedicalCategoryImages_7-Red_BottomRed.png" />
+    <None Include="Resources\MedicalCategoryImages_7-Red_TopRed.png" />
+    <None Include="Resources\MedicalCategoryImages_8-Violet_BottomViolet.png" />
+    <None Include="Resources\MedicalCategoryImages_8-Violet_TopViolet.png" />
+    <None Include="Resources\MedicalCategoryImages_9-Yellow_BottomYellow.png" />
+    <None Include="Resources\MedicalCategoryImages_9-Yellow_TopYellow.png" />
+    <None Include="Resources\MedicalCategoryImages_91_BottomDark Blue.png" />
+    <None Include="Resources\MedicalCategoryImages_91_TopDark Blue.png" />
+    <Content Include="Resources\Modify.ico" />
+    <Content Include="Resources\Modify.png" />
+    <None Include="Resources\MG2.pdf" />
+    <None Include="Resources\MG2_1_Tab_ImageSign.pdf" />
+    <None Include="Resources\MG2_tab.pdf" />
+    <None Include="Resources\MG2_tab_ImageSign.pdf" />
+    <None Include="Resources\NDC-Note-EPSDT.png" />
+    <Content Include="Resources\NDCCodeGrid.png" />
+    <Content Include="Resources\Non Facility Charges .png" />
+    <Content Include="Resources\None.png" />
+    <Content Include="Resources\Normal Priority.png" />
+    <Content Include="Resources\Normal1.png" />
+    <Content Include="Resources\Notes.png" />
+    <Content Include="Resources\NotesNDCCode.png" />
+    <Content Include="Resources\On Formulary.png" />
+    <None Include="Resources\OneTimePayment1.ico" />
+    <Content Include="Resources\Other.ico" />
+    <None Include="Resources\Patient Follow up date.ico" />
+    <None Include="Resources\Patient Follow up date.png" />
+    <None Include="Resources\ParticalySuccessNew.png" />
+    <Content Include="Resources\Patient Statement.ico" />
+    <None Include="Resources\Patient.png" />
+    <Content Include="Resources\Patient01.ico" />
+    <Content Include="Resources\Patient01.png" />
+    <None Include="Resources\PatientHover.png" />
+    <Content Include="Resources\Patient_10.png" />
+    <Content Include="Resources\Payment Tray.ico" />
+    <Content Include="Resources\Payment.png" />
+    <None Include="Resources\PostAdjustment.ico" />
+    <None Include="Resources\PostPayment.ico" />
+    <None Include="Resources\PostDiscount.ico" />
+    <Content Include="Resources\Rebill Batch.png" />
+    <Content Include="Resources\Rebill.png" />
+    <Content Include="Resources\Rebill01.png" />
+    <Content Include="Resources\Rebill1.png" />
+    <Content Include="Resources\Rebill2.png" />
+    <Content Include="Resources\Rebill3.png" />
+    <Content Include="Resources\Refund.ico" />
+    <Content Include="Resources\Refund.png" />
+    <Content Include="Resources\Rejected1.png" />
+    <Content Include="Resources\Rejected2.png" />
+    <Content Include="Resources\Rejected3.png" />
+    <Content Include="Resources\Rewind.png" />
+    <Content Include="Resources\RewindHover.png" />
+    <Content Include="Resources\Select All01.png" />
+    <Content Include="Resources\Sent to Claim Manage.png" />
+    <Content Include="Resources\Sent to Clearing House.png" />
+    <Content Include="Resources\Show Completed.png" />
+    <Content Include="Resources\Show Zero Balance.png" />
+    <None Include="Resources\ShowBadDebt.png" />
+    <Content Include="Resources\Small Arrow.png" />
+    <Content Include="Resources\StatusFollowup.png" />
+    <Content Include="Resources\StatusNormal.png" />
+    <Content Include="Resources\StatusRebil5.png" />
+    <Content Include="Resources\StatusRejected.png" />
+    <Content Include="Resources\StatusResend.png" />
+    <Content Include="Resources\Template.png" />
+    <None Include="Resources\tick.png" />
+    <Content Include="Resources\Undo batch.png" />
+    <Content Include="Resources\Undo.png" />
+    <Content Include="Resources\UP.png" />
+    <Content Include="Resources\UPHover.png" />
+    <None Include="Resources\View 271.png" />
+    <None Include="Resources\View 270.png" />
+    <None Include="Resources\VoidCleargagePayment.ico" />
+    <None Include="Resources\ViewRecentTransactions.ico" />
+    <Content Include="Resources\Wait.gif" />
+    <None Include="dsChargesTVP.xsc">
+      <DependentUpon>dsChargesTVP.xsd</DependentUpon>
+    </None>
+    <None Include="dsChargesTVP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsChargesTVP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsChargesTVP.xss">
+      <DependentUpon>dsChargesTVP.xsd</DependentUpon>
+    </None>
+    <None Include="dsEDIClaimdetails.xsc">
+      <DependentUpon>dsEDIClaimdetails.xsd</DependentUpon>
+    </None>
+    <None Include="dsEDIClaimdetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEDIClaimdetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsEDIClaimdetails.xss">
+      <DependentUpon>dsEDIClaimdetails.xsd</DependentUpon>
+    </None>
+    <None Include="gloAccountPayment\dsPaymentTVP_V2.xsc">
+      <DependentUpon>dsPaymentTVP_V2.xsd</DependentUpon>
+    </None>
+    <None Include="gloAccountPayment\dsPaymentTVP_V2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPaymentTVP_V2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="gloAccountPayment\dsPaymentTVP_V2.xss">
+      <DependentUpon>dsPaymentTVP_V2.xsd</DependentUpon>
+    </None>
+    <None Include="dsAdjudicationHistory.xsc">
+      <DependentUpon>dsAdjudicationHistory.xsd</DependentUpon>
+    </None>
+    <None Include="dsAdjudicationHistory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAdjudicationHistory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsAdjudicationHistory.xss">
+      <DependentUpon>dsAdjudicationHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\EDI.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\EligibilityData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\gloWebEDI.disco" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Statement\dsRevisedPatientStatement.xsc">
+      <DependentUpon>dsRevisedPatientStatement.xsd</DependentUpon>
+    </None>
+    <None Include="Statement\dsRevisedPatientStatement.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRevisedPatientStatement1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Statement\dsRevisedPatientStatement.xss">
+      <DependentUpon>dsRevisedPatientStatement.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\gloWebEDI.wsdl" />
+    <None Include="Web References\EDIService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RTEligibilityService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RTEligibilityService\Service.disco" />
+    <None Include="Web References\RTEligibilityService\Service.wsdl" />
+    <None Include="Web References\RTEligibilityService\WSEligibilityResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RTEligibilityService\WSX12EligibilityResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://glosvr05/glowebedi/gloWebEDI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EDIService\</RelPath>
+      <UpdateFromURL>http://glosvr05/glowebedi/gloWebEDI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloBilling_EDIService_gloWebEDI837</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://services.gatewayedi.com/Eligibility/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RTEligibilityService\</RelPath>
+      <UpdateFromURL>https://services.gatewayedi.com/Eligibility/Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloBilling_RTEligibilityService_Eligibility</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

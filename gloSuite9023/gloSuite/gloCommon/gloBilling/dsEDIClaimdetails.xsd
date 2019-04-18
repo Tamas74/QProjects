@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEDIClaimdetails" targetNamespace="http://tempuri.org/dsEDIClaimdetails.xsd" xmlns:mstns="http://tempuri.org/dsEDIClaimdetails.xsd" xmlns="http://tempuri.org/dsEDIClaimdetails.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEDIClaimdetails" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEDIClaimdetails" msprop:Generator_UserDSName="dsEDIClaimdetails">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BL_Transaction_ClaimMgr_MST" msprop:Generator_TableClassName="BL_Transaction_ClaimMgr_MSTDataTable" msprop:Generator_TableVarName="tableBL_Transaction_ClaimMgr_MST" msprop:Generator_TablePropName="BL_Transaction_ClaimMgr_MST" msprop:Generator_RowDeletingName="BL_Transaction_ClaimMgr_MSTRowDeleting" msprop:Generator_UserTableName="BL_Transaction_ClaimMgr_MST" msprop:Generator_RowChangingName="BL_Transaction_ClaimMgr_MSTRowChanging" msprop:Generator_RowEvHandlerName="BL_Transaction_ClaimMgr_MSTRowChangeEventHandler" msprop:Generator_RowDeletedName="BL_Transaction_ClaimMgr_MSTRowDeleted" msprop:Generator_RowEvArgName="BL_Transaction_ClaimMgr_MSTRowChangeEvent" msprop:Generator_RowChangedName="BL_Transaction_ClaimMgr_MSTRowChanged" msprop:Generator_RowClassName="BL_Transaction_ClaimMgr_MSTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nBatchID" msdata:Caption="nBatchId" msprop:Generator_ColumnVarNameInTable="columnnBatchID" msprop:Generator_ColumnPropNameInRow="nBatchID" msprop:Generator_ColumnPropNameInTable="nBatchIDColumn" msprop:Generator_UserColumnName="nBatchID" type="xs:long" minOccurs="0" />
+              <xs:element name="nTransactionId" msprop:Generator_ColumnVarNameInTable="columnnTransactionId" msprop:Generator_ColumnPropNameInRow="nTransactionId" msprop:Generator_ColumnPropNameInTable="nTransactionIdColumn" msprop:Generator_UserColumnName="nTransactionId" type="xs:long" minOccurs="0" />
+              <xs:element name="nClaimNumber" msprop:Generator_ColumnVarNameInTable="columnnClaimNumber" msprop:Generator_ColumnPropNameInRow="nClaimNumber" msprop:Generator_ColumnPropNameInTable="nClaimNumberColumn" msprop:Generator_UserColumnName="nClaimNumber" type="xs:long" minOccurs="0" />
+              <xs:element name="nPatientId" msprop:Generator_ColumnVarNameInTable="columnnPatientId" msprop:Generator_ColumnPropNameInRow="nPatientId" msprop:Generator_ColumnPropNameInTable="nPatientIdColumn" msprop:Generator_UserColumnName="nPatientId" type="xs:long" minOccurs="0" />
+              <xs:element name="nClearingHouseId" msprop:Generator_ColumnVarNameInTable="columnnClearingHouseId" msprop:Generator_ColumnPropNameInRow="nClearingHouseId" msprop:Generator_ColumnPropNameInTable="nClearingHouseIdColumn" msprop:Generator_UserColumnName="nClearingHouseId" type="xs:long" minOccurs="0" />
+              <xs:element name="sInterchangeNumber" msprop:Generator_ColumnVarNameInTable="columnsInterchangeNumber" msprop:Generator_ColumnPropNameInRow="sInterchangeNumber" msprop:Generator_ColumnPropNameInTable="sInterchangeNumberColumn" msprop:Generator_UserColumnName="sInterchangeNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="sTransationSetNumber" msprop:Generator_ColumnVarNameInTable="columnsTransationSetNumber" msprop:Generator_ColumnPropNameInRow="sTransationSetNumber" msprop:Generator_ColumnPropNameInTable="sTransationSetNumberColumn" msprop:Generator_UserColumnName="sTransationSetNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="sFunctionalGroupNumber" msprop:Generator_ColumnVarNameInTable="columnsFunctionalGroupNumber" msprop:Generator_ColumnPropNameInRow="sFunctionalGroupNumber" msprop:Generator_ColumnPropNameInTable="sFunctionalGroupNumberColumn" msprop:Generator_UserColumnName="sFunctionalGroupNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="nDate" msprop:Generator_ColumnVarNameInTable="columnnDate" msprop:Generator_ColumnPropNameInRow="nDate" msprop:Generator_ColumnPropNameInTable="nDateColumn" msprop:Generator_UserColumnName="nDate" type="xs:int" minOccurs="0" />
+              <xs:element name="nTime" msprop:Generator_ColumnVarNameInTable="columnnTime" msprop:Generator_ColumnPropNameInRow="nTime" msprop:Generator_ColumnPropNameInTable="nTimeColumn" msprop:Generator_UserColumnName="nTime" type="xs:string" minOccurs="0" />
+              <xs:element name="nUserId" msprop:Generator_ColumnVarNameInTable="columnnUserId" msprop:Generator_ColumnPropNameInRow="nUserId" msprop:Generator_ColumnPropNameInTable="nUserIdColumn" msprop:Generator_UserColumnName="nUserId" type="xs:string" minOccurs="0" />
+              <xs:element name="nClaimType" msprop:Generator_ColumnVarNameInTable="columnnClaimType" msprop:Generator_ColumnPropNameInRow="nClaimType" msprop:Generator_ColumnPropNameInTable="nClaimTypeColumn" msprop:Generator_UserColumnName="nClaimType" type="xs:int" minOccurs="0" />
+              <xs:element name="nClinicId" msprop:Generator_ColumnVarNameInTable="columnnClinicId" msprop:Generator_ColumnPropNameInRow="nClinicId" msprop:Generator_ColumnPropNameInTable="nClinicIdColumn" msprop:Generator_UserColumnName="nClinicId" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BL_CMSEDI_ElectronicClaim" msprop:Generator_TableClassName="BL_CMSEDI_ElectronicClaimDataTable" msprop:Generator_TableVarName="tableBL_CMSEDI_ElectronicClaim" msprop:Generator_TablePropName="BL_CMSEDI_ElectronicClaim" msprop:Generator_RowDeletingName="BL_CMSEDI_ElectronicClaimRowDeleting" msprop:Generator_UserTableName="BL_CMSEDI_ElectronicClaim" msprop:Generator_RowChangingName="BL_CMSEDI_ElectronicClaimRowChanging" msprop:Generator_RowEvHandlerName="BL_CMSEDI_ElectronicClaimRowChangeEventHandler" msprop:Generator_RowDeletedName="BL_CMSEDI_ElectronicClaimRowDeleted" msprop:Generator_RowEvArgName="BL_CMSEDI_ElectronicClaimRowChangeEvent" msprop:Generator_RowChangedName="BL_CMSEDI_ElectronicClaimRowChanged" msprop:Generator_RowClassName="BL_CMSEDI_ElectronicClaimRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nBatchID" msprop:Generator_ColumnVarNameInTable="columnnBatchID" msprop:Generator_ColumnPropNameInRow="nBatchID" msprop:Generator_ColumnPropNameInTable="nBatchIDColumn" msprop:Generator_UserColumnName="nBatchID" type="xs:long" minOccurs="0" />
+              <xs:element name="sBatchName" msprop:Generator_ColumnVarNameInTable="columnsBatchName" msprop:Generator_ColumnPropNameInRow="sBatchName" msprop:Generator_ColumnPropNameInTable="sBatchNameColumn" msprop:Generator_UserColumnName="sBatchName" type="xs:string" minOccurs="0" />
+              <xs:element name="i837File" msprop:Generator_ColumnVarNameInTable="columni837File" msprop:Generator_ColumnPropNameInRow="i837File" msprop:Generator_ColumnPropNameInTable="i837FileColumn" msprop:Generator_UserColumnName="i837File" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="nStatus" msprop:Generator_ColumnVarNameInTable="columnnStatus" msprop:Generator_ColumnPropNameInRow="nStatus" msprop:Generator_ColumnPropNameInTable="nStatusColumn" msprop:Generator_UserColumnName="nStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="nUserID" msprop:Generator_ColumnVarNameInTable="columnnUserID" msprop:Generator_ColumnPropNameInRow="nUserID" msprop:Generator_ColumnPropNameInTable="nUserIDColumn" msprop:Generator_UserColumnName="nUserID" type="xs:long" minOccurs="0" />
+              <xs:element name="nClinicID" msprop:Generator_ColumnVarNameInTable="columnnClinicID" msprop:Generator_ColumnPropNameInRow="nClinicID" msprop:Generator_ColumnPropNameInTable="nClinicIDColumn" msprop:Generator_UserColumnName="nClinicID" type="xs:long" minOccurs="0" />
+              <xs:element name="BillingType" msprop:Generator_ColumnVarNameInTable="columnBillingType" msprop:Generator_ColumnPropNameInRow="BillingType" msprop:Generator_ColumnPropNameInTable="BillingTypeColumn" msprop:Generator_UserColumnName="BillingType" type="xs:short" minOccurs="0" />
+              <xs:element name="nSendUserID" msprop:Generator_ColumnVarNameInTable="columnnSendUserID" msprop:Generator_ColumnPropNameInRow="nSendUserID" msprop:Generator_ColumnPropNameInTable="nSendUserIDColumn" msprop:Generator_UserColumnName="nSendUserID" type="xs:long" minOccurs="0" />
+              <xs:element name="sSendUserName" msprop:Generator_ColumnVarNameInTable="columnsSendUserName" msprop:Generator_ColumnPropNameInRow="sSendUserName" msprop:Generator_ColumnPropNameInTable="sSendUserNameColumn" msprop:Generator_UserColumnName="sSendUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="nBatchBillingMethod" msprop:Generator_ColumnVarNameInTable="columnnBatchBillingMethod" msprop:Generator_ColumnPropNameInRow="nBatchBillingMethod" msprop:Generator_ColumnPropNameInTable="nBatchBillingMethodColumn" msprop:Generator_UserColumnName="nBatchBillingMethod" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BL_CMSEDI_ElectronicClaim_DTL" msprop:Generator_TableClassName="BL_CMSEDI_ElectronicClaim_DTLDataTable" msprop:Generator_TableVarName="tableBL_CMSEDI_ElectronicClaim_DTL" msprop:Generator_TablePropName="BL_CMSEDI_ElectronicClaim_DTL" msprop:Generator_RowDeletingName="BL_CMSEDI_ElectronicClaim_DTLRowDeleting" msprop:Generator_UserTableName="BL_CMSEDI_ElectronicClaim_DTL" msprop:Generator_RowChangingName="BL_CMSEDI_ElectronicClaim_DTLRowChanging" msprop:Generator_RowEvHandlerName="BL_CMSEDI_ElectronicClaim_DTLRowChangeEventHandler" msprop:Generator_RowDeletedName="BL_CMSEDI_ElectronicClaim_DTLRowDeleted" msprop:Generator_RowEvArgName="BL_CMSEDI_ElectronicClaim_DTLRowChangeEvent" msprop:Generator_RowChangedName="BL_CMSEDI_ElectronicClaim_DTLRowChanged" msprop:Generator_RowClassName="BL_CMSEDI_ElectronicClaim_DTLRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nDetailID" msprop:Generator_ColumnVarNameInTable="columnnDetailID" msprop:Generator_ColumnPropNameInRow="nDetailID" msprop:Generator_ColumnPropNameInTable="nDetailIDColumn" msprop:Generator_UserColumnName="nDetailID" type="xs:long" minOccurs="0" />
+              <xs:element name="nClaimNo" msprop:Generator_ColumnVarNameInTable="columnnClaimNo" msprop:Generator_ColumnPropNameInRow="nClaimNo" msprop:Generator_ColumnPropNameInTable="nClaimNoColumn" msprop:Generator_UserColumnName="nClaimNo" type="xs:long" minOccurs="0" />
+              <xs:element name="sSubClaimNumber" msprop:Generator_ColumnVarNameInTable="columnsSubClaimNumber" msprop:Generator_ColumnPropNameInRow="sSubClaimNumber" msprop:Generator_ColumnPropNameInTable="sSubClaimNumberColumn" msprop:Generator_UserColumnName="sSubClaimNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="nBillingTransactionID" msprop:Generator_ColumnVarNameInTable="columnnBillingTransactionID" msprop:Generator_ColumnPropNameInRow="nBillingTransactionID" msprop:Generator_ColumnPropNameInTable="nBillingTransactionIDColumn" msprop:Generator_UserColumnName="nBillingTransactionID" type="xs:long" minOccurs="0" />
+              <xs:element name="nClinicID" msprop:Generator_ColumnVarNameInTable="columnnClinicID" msprop:Generator_ColumnPropNameInRow="nClinicID" msprop:Generator_ColumnPropNameInTable="nClinicIDColumn" msprop:Generator_UserColumnName="nClinicID" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BL_TransactionIDs" msprop:Generator_TableClassName="BL_TransactionIDsDataTable" msprop:Generator_TableVarName="tableBL_TransactionIDs" msprop:Generator_TablePropName="BL_TransactionIDs" msprop:Generator_RowDeletingName="BL_TransactionIDsRowDeleting" msprop:Generator_UserTableName="BL_TransactionIDs" msprop:Generator_RowChangingName="BL_TransactionIDsRowChanging" msprop:Generator_RowEvHandlerName="BL_TransactionIDsRowChangeEventHandler" msprop:Generator_RowDeletedName="BL_TransactionIDsRowDeleted" msprop:Generator_RowEvArgName="BL_TransactionIDsRowChangeEvent" msprop:Generator_RowChangedName="BL_TransactionIDsRowChanged" msprop:Generator_RowClassName="BL_TransactionIDsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nTransactionID" msprop:Generator_ColumnVarNameInTable="columnnTransactionID" msprop:Generator_ColumnPropNameInRow="nTransactionID" msprop:Generator_ColumnPropNameInTable="nTransactionIDColumn" msprop:Generator_UserColumnName="nTransactionID" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

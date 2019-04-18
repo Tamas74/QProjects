@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="gloPatientSavingMessage.UC_RxSaving"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             IsEnabled="True" Height="266.109" Width="956.977" Background="{DynamicResource BaseForeColor}" Foreground="{DynamicResource BaseForeColor}" >
+	<UserControl.Resources>
+			<ResourceDictionary>
+				<ResourceDictionary.MergedDictionaries>
+					 <ResourceDictionary Source="pack://application:,,,/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+               		 <ResourceDictionary Source="pack://application:,,,/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+			</ResourceDictionary>     
+    </UserControl.Resources>
+	
+    <Grid Margin="0,0,0,0" Name="Grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+       
+            <DockPanel Height="Auto" LastChildFill="True" Margin="0" Name="MainPanel" Width="Auto">
+                <StackPanel Background="#FFBFDBFF" DockPanel.Dock="Top" Margin="0" x:Name="Header">
+                <StackPanel x:Name="ToolStrip" Orientation="Horizontal" Margin="0" VerticalAlignment="Stretch" Background="{DynamicResource Img_ToolstripStyle}" Height="52">
+                    <!-- PrintButton -->
+                    <Border x:Name="PrintButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                        <Grid>
+                            <Button x:Name="btnPrint" Click="btnPrint_Click" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand">
+                                <Button.ToolTip>
+                                    <ToolTip>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap"><Run Text="Print"/></TextBlock>
+                                        </StackPanel>
+                                    </ToolTip>
+                                </Button.ToolTip>
+                                <DynamicResource ResourceKey="Print"/>
+                            </Button>
+                            <Label  Margin="2" Content ="Print" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                        </Grid>
+                    </Border>
+                    <!-- PrintButton End -->
+
+                    <!-- SaveandCloseButton -->
+                    <Border x:Name="SaveandCloseButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                        <Grid>
+                            <Button Click="btnSave_Cls_Click" x:Name="btnSave_Cls"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource SaveClose}">
+                                <Button.ToolTip>
+                                    <ToolTip>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap"><Run Text="Save and Close"/></TextBlock>
+                                        </StackPanel>
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Label  Margin="2" Content ="SaveCls" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                        </Grid>
+                    </Border>
+                    <!-- SaveandCloseButton End -->
+
+                    <!-- RxButton -->
+					 <Border x:Name="RxButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                        <Grid>
+                    <Button Click="btnRx_Click" x:Name="btnRx"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource RxMed}">
+                                    <Button.ToolTip>
+                                    <ToolTip>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap"><Run Text="Rx"/></TextBlock>
+                                        </StackPanel>
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Label  Margin="2" Content ="Rx" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+								</Grid>
+								</Border>
+                    <!-- RxButton End -->
+
+                    <!-- CloseButton End -->
+					 <Border x:Name="CloseButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                        <Grid>
+                    <Button Click="btnClose_Click" x:Name="btnClose"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource Close}">
+                                   <Button.ToolTip>
+                                    <ToolTip>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap"><Run Text="Close"/></TextBlock>
+                                        </StackPanel>
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Label  Margin="2" Content ="Close" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+								</Grid>
+								</Border>
+                    <!-- CloseButton End -->
+                </StackPanel>
+                    <StackPanel Margin="0,3,0,0" x:Name="PatientStrip" Orientation="Vertical">
+                      <Border BorderBrush="#FF4E4617" Margin="4,0,4,2" x:Name="PtStrip_Header" BorderThickness="1">
+                            <StackPanel>
+                                <WrapPanel x:Name="PtStrip_Top" Margin="0" Orientation="Horizontal">
+                            		<WrapPanel.Background>
+                            			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            				<GradientStop Color="#FFFFE0B4" Offset="0" />
+                            				<GradientStop Color="#FFFDC577" Offset="0.25" />
+                            				<GradientStop Color="#FFFFAB31" Offset="0.333" />
+                            				<GradientStop Color="#FFFFDA57" Offset="0.974" />
+                            				<GradientStop Color="#FF392C00" Offset="1" />
+                            				<GradientStop Color="#FFFFC143" Offset="0.641"/>
+                            			</LinearGradientBrush>
+                            		</WrapPanel.Background>
+                            		<TextBlock FontSize="13.333" FontWeight="Bold" Margin="4" x:Name="tbPatientFName" Text="{Binding PatFirstName}" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold"  Margin="4" x:Name="tbPatientMName" Text="{Binding PatMiddleName}" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold"  Margin="4" x:Name="tbPatientLName" Text="{Binding PatLastName}" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontStyle="Italic"  Margin="4" Text="DOB:" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold"  Margin="4" x:Name="tbPatientBorn" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontStyle="Italic"  Margin="4" Text="Gender:" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold"  Margin="4" x:Name="tbPatientGender" Text="" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontStyle="Italic"  Margin="4" Text="Code:" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold"  Margin="4" x:Name="tbPatientCode" Text="{Binding PatMedicalRecIdNumberEHR}" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontStyle="Italic"  Margin="4" Text="PBM Member ID:" TextWrapping="Wrap" Foreground="Black" />
+                            		<TextBlock FontSize="13.333" FontWeight="Bold" x:Name="tbPBMMemberID" Text="{Binding BenefitCoordinationPBMMemberID}" TextWrapping="WrapWithOverflow" Margin="4" Foreground="Black" />
+                            	</WrapPanel>
+                                <WrapPanel x:Name="PtStrip_Bottom" Orientation="Horizontal">
+                                	<WrapPanel.Background>
+                                		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                			<GradientStop Color="#FFFFFBF1" Offset="0" />
+                                			<GradientStop Color="#FFFFEBBF" Offset="1" />
+                                		</LinearGradientBrush>
+                                	</WrapPanel.Background>
+                                	<WrapPanel x:Name="pnlAddress" Margin="0">
+                                		<TextBlock FontSize="10.667" HorizontalAlignment="Left" Margin="8,4,0,4" Text="Address:" TextWrapping="Wrap" Foreground="Black" />
+                                		<TextBlock FontSize="10.667" FontWeight="Bold" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="tbAddress" Text="{Binding PatAddressLine1}" TextWrapping="WrapWithOverflow" Foreground="Black" />
+                                	</WrapPanel>
+                                	<DockPanel LastChildFill="True" Margin="0" x:Name="pnlCity">
+                                		<TextBlock FontSize="10.667" HorizontalAlignment="Left" Margin="8,4,0,4" Text="City:" TextWrapping="Wrap" Foreground="Black" />
+                                		<TextBlock FontSize="10.667" FontWeight="Bold" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="tbCity" Text="{Binding PatCity}" TextWrapping="WrapWithOverflow" Foreground="Black" />
+                                	</DockPanel>
+                                	<DockPanel LastChildFill="True" Margin="0" x:Name="pnlState">
+                                		<TextBlock FontSize="10.667" HorizontalAlignment="Left" Margin="8,4,0,4" Text="State:" TextWrapping="Wrap" Foreground="Black" />
+                                		<TextBlock FontSize="10.667" FontWeight="Bold" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="tbState" Text="{Binding PatState}" TextWrapping="WrapWithOverflow" Foreground="Black" />
+                                	</DockPanel>
+                                	<DockPanel LastChildFill="True" Margin="0" x:Name="pnlZip">
+                                		<TextBlock FontSize="10.667" HorizontalAlignment="Left" Margin="8,4,0,4" Text="Zip:" TextWrapping="Wrap" Foreground="Black" />
+                                		<TextBlock FontSize="10.667" FontWeight="Bold" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="tbZip" Text="{Binding PatZipCode}" TextWrapping="WrapWithOverflow" Foreground="Black" />
+                                	</DockPanel>
+                                </WrapPanel>
+                            </StackPanel>
+                        </Border>
+                    <DockPanel Margin="0" x:Name="PtStrip_Body">
+                        <StackPanel Orientation="Vertical" DockPanel.Dock="Top" >
+                            <Border BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="4,2,4,0" x:Name="Prescriber" Background="{DynamicResource Img_DarkHeaderStyle}">
+                                <TextBlock FontSize="10.667" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="10,4,0,4" x:Name="lblPrescriber" Text="Prescriber" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" />
+                            </Border>
+                            <Border BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1,0,1,1" Margin="4,0,4,2" x:Name="Borders">
+                                <StackPanel Margin="0" Background="{DynamicResource Img_GradientStyle}">
+                                    <WrapPanel  x:Name="pnlPrescriber_Name" Width="800" HorizontalAlignment="Left">
+                                        <TextBlock Foreground="{DynamicResource BaseForeColor}" HorizontalAlignment="Left" Margin="8,4,0,4" Text="Name:" TextWrapping="Wrap" />
+                                        <TextBlock DockPanel.Dock="Left" Width="Auto" Height="Auto" FontWeight="Bold" Foreground="{DynamicResource BaseForeColor}" HorizontalAlignment="Left" Margin="4,4,0,4" x:Name="lblPrescriberFName" Text="{Binding PrescFirstName}" TextAlignment="Right" TextWrapping="WrapWithOverflow" TextTrimming="WordEllipsis"  />
+                                        <TextBlock DockPanel.Dock="Left" Width="Auto" Height="Auto" FontWeight="Bold" Foreground="{DynamicResource BaseForeColor}" HorizontalAlignment="Left" Margin="4,4,0,4" x:Name="lblPrescriberMName" Text="{Binding PrescMiddleName}" TextAlignment="Right" TextWrapping="WrapWithOverflow"  TextTrimming="WordEllipsis" />
+                                        <TextBlock DockPanel.Dock="Left" Width="Auto" Height="Auto" FontWeight="Bold" Foreground="{DynamicResource BaseForeColor}" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="lblPrescriberLName" Text="{Binding PrescLastName}" TextAlignment="Right" TextWrapping="WrapWithOverflow"  TextTrimming="WordEllipsis" />
+                                        <TextBlock Foreground="{DynamicResource BaseForeColor}" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="8,4,0,4" Text="NPI:" TextWrapping="Wrap" />
+                                        <TextBlock DockPanel.Dock="Left" Width="Auto" Height="Auto" FontWeight="Bold" Foreground="{DynamicResource BaseForeColor}" HorizontalAlignment="Left" Margin="4,4,8,4" x:Name="lblPrescriberNPI" Text="{Binding PrescNPI}" TextAlignment="Right" TextWrapping="WrapWithOverflow" LineStackingStrategy="BlockLineHeight" TextTrimming="WordEllipsis" />
+                                    </WrapPanel>
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0,-24,0,0" HorizontalAlignment="Right">
+                                        <RadioButton Checked="radioButton_Checked" Content="Active Opportunities" Foreground="{DynamicResource BaseForeColor}" GroupName="PendingMsg" HorizontalAlignment="Right" Margin="10,0" x:Name="rbAll" VerticalAlignment="Center" HorizontalContentAlignment="Right" />
+                                        <RadioButton Checked="radioButton_Checked" Content="Pending Opportunities" Foreground="{DynamicResource BaseForeColor}" GroupName="PendingMsg" HorizontalAlignment="Right" Margin="10,0" x:Name="rbPending" VerticalAlignment="Center" HorizontalContentAlignment="Right" />
+                                       
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </DockPanel>
+                </StackPanel>
+                </StackPanel>
+                <Grid x:Name="Opportunity" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFBFDBFF" Margin="0">
+                	<Grid.RowDefinitions>
+                		<RowDefinition Height="Auto"/>
+                		<RowDefinition Height="*"/>
+                	</Grid.RowDefinitions>
+                	<TabControl Background="#FFBFDBFF" BorderBrush="#FFBFDBFF" BorderThickness="0" Margin="0" x:Name="tlbOpp" d:LayoutOverrides="Width, Height" Grid.RowSpan="2">
+                		<TabItem BorderBrush="{DynamicResource BaseForeColor}" ClipToBounds="True" Foreground="{DynamicResource BaseForeColor}" Header="Generic Alternatives" IsSelected="True" Margin="2,0,-2.666,-3" x:Name="tlbGeneric" ScrollViewer.CanContentScroll="True" Background="{DynamicResource Img_ButtonStyle}">
+                			<Border BorderBrush="{DynamicResource BaseForeColor}" Margin="0" x:Name="border" Background="White" BorderThickness="1,0,1,1">
+                				<ScrollViewer Background="White" Margin="0"  d:LayoutOverrides="Width" VerticalScrollBarVisibility="Auto">
+                					<StackPanel Margin="0" x:Name="stkGenericOpportunity" Orientation="Vertical" Background="White" />
+                				</ScrollViewer>
+                			</Border>
+                		</TabItem>
+                		<TabItem BorderBrush="{DynamicResource BaseForeColor}" Foreground="{DynamicResource BaseForeColor}" Header="30-90 Day Dispense" Margin="9,0,-8.875,-3" x:Name="tlb3090" Background="{DynamicResource Img_ButtonStyle}">
+                			<Border BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="0" x:Name="border_Copy" Background="White">
+                				<ScrollViewer Margin="0" VerticalScrollBarVisibility="Auto" Background="White">
+                					<StackPanel Background="White" Margin="0" x:Name="stk3090Opportunity" Orientation="Vertical" />
+                				</ScrollViewer>
+                			</Border>
+                		</TabItem>
+                	</TabControl>
+                	<StackPanel Orientation="Horizontal" Margin="0,2,3,0" HorizontalAlignment="Right">
+                		<Button Background="{DynamicResource Img_ButtonStyle}" BorderBrush="{DynamicResource BaseForeColor}" Click="btnPrevious_Click" ClipToBounds="False" Content="Previous" FontSize="10.667" Height="20" Margin="2,0" x:Name="btnPrevious" Width="60" BorderThickness="1" Foreground="{DynamicResource BaseForeColor}" />
+                		<Button Background="{DynamicResource Img_ButtonStyle}"  Click="btnNext_Click" Content="Next" FontSize="10.667"  Height="20" Margin="2,0" x:Name="btnNext" Width="60" BorderBrush="{DynamicResource BaseForeColor}" Foreground="{DynamicResource BaseForeColor}"  />
+                   
+                	</StackPanel>
+                </Grid>
+            </DockPanel>
+    </Grid>
+   
+</UserControl>

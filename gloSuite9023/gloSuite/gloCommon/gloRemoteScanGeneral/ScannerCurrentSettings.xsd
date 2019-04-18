@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ScannerCurrentSettings" targetNamespace="" xmlns:mstns="" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ScannerCurrentSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ScannerCurrentSettings" msprop:Generator_UserDSName="ScannerCurrentSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ScannerSettings" msprop:Generator_TableClassName="ScannerSettingsDataTable" msprop:Generator_TableVarName="tableScannerSettings" msprop:Generator_TablePropName="ScannerSettings" msprop:Generator_RowDeletingName="ScannerSettingsRowDeleting" msprop:Generator_RowChangingName="ScannerSettingsRowChanging" msprop:Generator_RowEvHandlerName="ScannerSettingsRowChangeEventHandler" msprop:Generator_RowDeletedName="ScannerSettingsRowDeleted" msprop:Generator_UserTableName="ScannerSettings" msprop:Generator_RowChangedName="ScannerSettingsRowChanged" msprop:Generator_RowEvArgName="ScannerSettingsRowChangeEvent" msprop:Generator_RowClassName="ScannerSettingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScannerSettingsID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnScannerSettingsID" msprop:Generator_ColumnPropNameInRow="ScannerSettingsID" msprop:Generator_ColumnPropNameInTable="ScannerSettingsIDColumn" msprop:Generator_UserColumnName="ScannerSettingsID" type="xs:long" />
+              <xs:element name="ScannerID" msprop:Generator_ColumnVarNameInTable="columnScannerID" msprop:Generator_ColumnPropNameInRow="ScannerID" msprop:Generator_ColumnPropNameInTable="ScannerIDColumn" msprop:Generator_UserColumnName="ScannerID" type="xs:string" minOccurs="0" />
+              <xs:element name="ScannerName" msprop:Generator_ColumnVarNameInTable="columnScannerName" msprop:Generator_ColumnPropNameInRow="ScannerName" msprop:Generator_ColumnPropNameInTable="ScannerNameColumn" msprop:Generator_UserColumnName="ScannerName" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanType" msprop:Generator_ColumnVarNameInTable="columnScanType" msprop:Generator_ColumnPropNameInRow="ScanType" msprop:Generator_ColumnPropNameInTable="ScanTypeColumn" msprop:Generator_UserColumnName="ScanType" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanModeID" msprop:Generator_ColumnVarNameInTable="columnScanModeID" msprop:Generator_ColumnPropNameInRow="ScanModeID" msprop:Generator_ColumnPropNameInTable="ScanModeIDColumn" msprop:Generator_UserColumnName="ScanModeID" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanModeName" msprop:Generator_ColumnVarNameInTable="columnScanModeName" msprop:Generator_ColumnPropNameInRow="ScanModeName" msprop:Generator_ColumnPropNameInTable="ScanModeNameColumn" msprop:Generator_UserColumnName="ScanModeName" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanDepthID" msprop:Generator_ColumnVarNameInTable="columnScanDepthID" msprop:Generator_ColumnPropNameInRow="ScanDepthID" msprop:Generator_ColumnPropNameInTable="ScanDepthIDColumn" msprop:Generator_UserColumnName="ScanDepthID" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanDepthName" msprop:Generator_ColumnVarNameInTable="columnScanDepthName" msprop:Generator_ColumnPropNameInRow="ScanDepthName" msprop:Generator_ColumnPropNameInTable="ScanDepthNameColumn" msprop:Generator_UserColumnName="ScanDepthName" type="xs:string" minOccurs="0" />
+              <xs:element name="ResolutionID" msprop:Generator_ColumnVarNameInTable="columnResolutionID" msprop:Generator_ColumnPropNameInRow="ResolutionID" msprop:Generator_ColumnPropNameInTable="ResolutionIDColumn" msprop:Generator_UserColumnName="ResolutionID" type="xs:string" minOccurs="0" />
+              <xs:element name="ResolutionName" msprop:Generator_ColumnVarNameInTable="columnResolutionName" msprop:Generator_ColumnPropNameInRow="ResolutionName" msprop:Generator_ColumnPropNameInTable="ResolutionNameColumn" msprop:Generator_UserColumnName="ResolutionName" type="xs:string" minOccurs="0" />
+              <xs:element name="BrightnessID" msprop:Generator_ColumnVarNameInTable="columnBrightnessID" msprop:Generator_ColumnPropNameInRow="BrightnessID" msprop:Generator_ColumnPropNameInTable="BrightnessIDColumn" msprop:Generator_UserColumnName="BrightnessID" type="xs:string" minOccurs="0" />
+              <xs:element name="BrightnessName" msprop:Generator_ColumnVarNameInTable="columnBrightnessName" msprop:Generator_ColumnPropNameInRow="BrightnessName" msprop:Generator_ColumnPropNameInTable="BrightnessNameColumn" msprop:Generator_UserColumnName="BrightnessName" type="xs:string" minOccurs="0" />
+              <xs:element name="ContrastID" msprop:Generator_ColumnVarNameInTable="columnContrastID" msprop:Generator_ColumnPropNameInRow="ContrastID" msprop:Generator_ColumnPropNameInTable="ContrastIDColumn" msprop:Generator_UserColumnName="ContrastID" type="xs:string" minOccurs="0" />
+              <xs:element name="ContrastName" msprop:Generator_ColumnVarNameInTable="columnContrastName" msprop:Generator_ColumnPropNameInRow="ContrastName" msprop:Generator_ColumnPropNameInTable="ContrastNameColumn" msprop:Generator_UserColumnName="ContrastName" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanSideID" msprop:Generator_ColumnVarNameInTable="columnScanSideID" msprop:Generator_ColumnPropNameInRow="ScanSideID" msprop:Generator_ColumnPropNameInTable="ScanSideIDColumn" msprop:Generator_UserColumnName="ScanSideID" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanSideName" msprop:Generator_ColumnVarNameInTable="columnScanSideName" msprop:Generator_ColumnPropNameInRow="ScanSideName" msprop:Generator_ColumnPropNameInTable="ScanSideNameColumn" msprop:Generator_UserColumnName="ScanSideName" type="xs:string" minOccurs="0" />
+              <xs:element name="SupportedSizeID" msprop:Generator_ColumnVarNameInTable="columnSupportedSizeID" msprop:Generator_ColumnPropNameInRow="SupportedSizeID" msprop:Generator_ColumnPropNameInTable="SupportedSizeIDColumn" msprop:Generator_UserColumnName="SupportedSizeID" type="xs:string" minOccurs="0" />
+              <xs:element name="SupportedSizeName" msprop:Generator_ColumnVarNameInTable="columnSupportedSizeName" msprop:Generator_ColumnPropNameInRow="SupportedSizeName" msprop:Generator_ColumnPropNameInTable="SupportedSizeNameColumn" msprop:Generator_UserColumnName="SupportedSizeName" type="xs:string" minOccurs="0" />
+              <xs:element name="CardLength" msprop:Generator_ColumnVarNameInTable="columnCardLength" msprop:Generator_ColumnPropNameInRow="CardLength" msprop:Generator_ColumnPropNameInTable="CardLengthColumn" msprop:Generator_UserColumnName="CardLength" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="CardLeft" msprop:Generator_ColumnVarNameInTable="columnCardLeft" msprop:Generator_ColumnPropNameInRow="CardLeft" msprop:Generator_ColumnPropNameInTable="CardLeftColumn" msprop:Generator_UserColumnName="CardLeft" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="CardTop" msprop:Generator_ColumnVarNameInTable="columnCardTop" msprop:Generator_ColumnPropNameInRow="CardTop" msprop:Generator_ColumnPropNameInTable="CardTopColumn" msprop:Generator_UserColumnName="CardTop" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="CardWidth" msprop:Generator_ColumnVarNameInTable="columnCardWidth" msprop:Generator_ColumnPropNameInRow="CardWidth" msprop:Generator_ColumnPropNameInTable="CardWidthColumn" msprop:Generator_UserColumnName="CardWidth" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="ShowUI" msprop:Generator_ColumnVarNameInTable="columnShowUI" msprop:Generator_ColumnPropNameInRow="ShowUI" msprop:Generator_ColumnPropNameInTable="ShowUIColumn" msprop:Generator_UserColumnName="ShowUI" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageCount" msprop:Generator_ColumnVarNameInTable="columnImageCount" msprop:Generator_ColumnPropNameInRow="ImageCount" msprop:Generator_ColumnPropNameInTable="ImageCountColumn" msprop:Generator_UserColumnName="ImageCount" type="xs:long" default="0" minOccurs="0" />
+              <xs:element name="ScannedImages" msprop:Generator_TableClassName="ScannedImagesDataTable" msprop:Generator_TableVarName="tableScannedImages" msprop:Generator_RowChangedName="ScannedImagesRowChanged" msprop:Generator_TablePropName="ScannedImages" msprop:Generator_RowDeletingName="ScannedImagesRowDeleting" msprop:Generator_RowChangingName="ScannedImagesRowChanging" msprop:Generator_RowEvHandlerName="ScannedImagesRowChangeEventHandler" msprop:Generator_RowDeletedName="ScannedImagesRowDeleted" msprop:Generator_RowClassName="ScannedImagesRow" msprop:Generator_UserTableName="ScannedImages" msprop:Generator_RowEvArgName="ScannedImagesRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="ScannerSettings_ScannedImages" msdata:parent="ScannerSettings" msdata:child="ScannedImages" msdata:parentkey="ScannerSettingsID" msdata:childkey="ImageID" msprop:Generator_UserChildTable="ScannedImages" msprop:Generator_ChildPropName="GetScannedImagesRows" msprop:Generator_UserRelationName="ScannerSettings_ScannedImages" msprop:Generator_RelationVarName="relationScannerSettings_ScannedImages" msprop:Generator_UserParentTable="ScannerSettings" msprop:Generator_ParentPropName="ScannerSettingsRow" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ImageID" msprop:Generator_ColumnVarNameInTable="columnImageID" msprop:Generator_ColumnPropNameInRow="ImageID" msprop:Generator_ColumnPropNameInTable="ImageIDColumn" msprop:Generator_UserColumnName="ImageID" type="xs:long" default="0" />
+                    <xs:element name="ImagePath" msprop:Generator_ColumnVarNameInTable="columnImagePath" msprop:Generator_ColumnPropNameInRow="ImagePath" msprop:Generator_ColumnPropNameInTable="ImagePathColumn" msprop:Generator_UserColumnName="ImagePath" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ScannedImages_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScannedImages" />
+      <xs:field xpath="mstns:ImageID" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScannerSettings" />
+      <xs:field xpath="mstns:ScannerSettingsID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,46 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:gloSurescriptSecureMessage_InBox="clr-namespace:gloSurescriptSecureMessage_InBox"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="gloSurescriptSecureMessage_InBox.MyNavigationPaneControl"
+	x:Name="myNavigationPaneControl"
+	Width="500" Height="Auto">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="MyStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+  <Grid x:Name="myNavigationGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.402*"/>
+      <ColumnDefinition Width="0.598*"/>
+    </Grid.ColumnDefinitions>
+    <Rectangle Opacity="0.5" OpacityMask="#FF000000" Fill="{x:Null}" StrokeThickness="4" Margin="4,4,-4,-4" Grid.ColumnSpan="1">
+      <Rectangle.Stroke>
+        <LinearGradientBrush EndPoint="1.001,0.535" StartPoint="0.982,0.535">
+          <GradientStop Color="#FF484848" Offset="0.279"/>
+          <GradientStop Color="#FFFFFFFF" Offset="1"/>
+        </LinearGradientBrush>
+      </Rectangle.Stroke>
+    </Rectangle>
+    <Border x:Name="myNavigationBorder1" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5" Grid.ColumnSpan="1">
+      <Border BorderBrush="{DynamicResource MyBrightBlueSolidBrush2}" BorderThickness="5,5,5,5" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="myNavigationBorder2">
+        <Border BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5" Background="#FFFFFFFF" ScrollViewer.HorizontalScrollBarVisibility="Auto" x:Name="myNavigationBorder3">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <gloSurescriptSecureMessage_InBox:MyFoldersExpandersControl Grid.Row="0" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PreviewMouseLeftButtonUp="myTreeView_PreviewMouseLeftButtonUp"/>
+            <ResizeGrip Grid.Row="1"  HorizontalAlignment="Stretch" Width="Auto" Height="Auto" HorizontalContentAlignment="Right" Margin="0,0,2,2"/>
+          </Grid>
+        </Border>
+      </Border>
+    </Border>
+    <GridSplitter HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="5" Background="{DynamicResource MyBrightBlueSolidBrush2}" Foreground="{x:Null}" Grid.Column="0" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" x:Name="myNavigationSplitter" BorderThickness="0,0.5,0.5,0.5"/>
+  </Grid>
+</UserControl>

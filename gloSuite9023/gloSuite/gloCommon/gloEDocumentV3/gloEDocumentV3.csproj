@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{454B2E59-637D-4FBD-AB86-BD16C580CF5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloEDocumentV3</RootNamespace>
+    <AssemblyName>gloEDocumentV3</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="gloDMSMigration, Version=1.0.3297.32149, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\gloDMSMigration.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.Common.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Janus.Windows.UI.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="PDFNet, Version=5.8.2.0, Culture=neutral, PublicKeyToken=36167be3f67ac39c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PegasusImaging.WinForms.ImagXpress9, Version=9.0.31.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL" />
+    <Reference Include="PegasusImaging.WinForms.TwainPro5, Version=5.0.15.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsgloAnnotation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsHotKeys.cs" />
+    <Compile Include="Cls_eDocV3_Admin.cs" />
+    <Compile Include="Cls_eDocV3_Common.cs" />
+    <Compile Include="Cls_eDocV3_ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cls_eDocV3_DBLayer.cs" />
+    <Compile Include="Cls_eDocV3_Document.cs" />
+    <Compile Include="Cls_eDocV3_Enumeration.cs" />
+    <Compile Include="Cls_eDocV3_GetList.cs" />
+    <Compile Include="Cls_eDocV3_Management.cs" />
+    <Compile Include="Cls_eDocV3_Manager.cs" />
+    <Compile Include="Cls_eDocV3_Manipulation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cls_eDocV3_SDKInteraction.cs" />
+    <Compile Include="Cls_eDocV3_Validator.cs" />
+    <Compile Include="Cls_NativeSqlClient.cs" />
+    <Compile Include="Cls_SQLFileStream.cs" />
+    <Compile Include="Cls_verifyPDF.cs" />
+    <Compile Include="Forms\frmEDocEvent_SendToDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_SendToDMS.Designer.cs">
+      <DependentUpon>frmEDocEvent_SendToDMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DMSImportReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DMSImportReport.designer.cs">
+      <DependentUpon>DMSImportReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmaddText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmaddText.designer.cs">
+      <DependentUpon>frmaddText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ ArchiveDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ ArchiveDocuments.Designer.cs">
+      <DependentUpon>frmEDocEvent_ ArchiveDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Acknowledge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Acknowledge.Designer.cs">
+      <DependentUpon>frmEDocEvent_Acknowledge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddCategory.Designer.cs">
+      <DependentUpon>frmEDocEvent_AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddNote.Designer.cs">
+      <DependentUpon>frmEDocEvent_AddNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddUserTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AddUserTag.Designer.cs">
+      <DependentUpon>frmEDocEvent_AddUserTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AuthorizeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_AuthorizeDlg.Designer.cs">
+      <DependentUpon>frmEDocEvent_AuthorizeDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_CleanPatientDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_CleanPatientDocument.Designer.cs">
+      <DependentUpon>frmEDocEvent_CleanPatientDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ExportToPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ExportToPDF.Designer.cs">
+      <DependentUpon>frmEDocEvent_ExportToPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Fax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Fax.Designer.cs">
+      <DependentUpon>frmEDocEvent_Fax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_History.Designer.cs">
+      <DependentUpon>frmEDocEvent_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Import.Designer.cs">
+      <DependentUpon>frmEDocEvent_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Migrate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Migrate.Designer.cs">
+      <DependentUpon>frmEDocEvent_Migrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Print.Designer.cs">
+      <DependentUpon>frmEDocEvent_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ReceivedFax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ReceivedFax.Designer.cs">
+      <DependentUpon>frmEDocEvent_ReceivedFax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Rename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Rename.Designer.cs">
+      <DependentUpon>frmEDocEvent_Rename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ScannerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ScannerSettings.Designer.cs">
+      <DependentUpon>frmEDocEvent_ScannerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ScanNSend_PS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_ScanNSend_PS.Designer.cs">
+      <DependentUpon>frmEDocEvent_ScanNSend_PS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Send.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_Send.Designer.cs">
+      <DependentUpon>frmEDocEvent_Send.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_SendRecFax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocEvent_SendRecFax.Designer.cs">
+      <DependentUpon>frmEDocEvent_SendRecFax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentAdvancedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentAdvancedSearch.Designer.cs">
+      <DependentUpon>frmEDocumentAdvancedSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentArchiveViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentArchiveViewer.Designer.cs">
+      <DependentUpon>frmEDocumentArchiveViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentViewerCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmScanProgress.Designer.cs">
+      <DependentUpon>frmScanProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserList.designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEDocumentViewer.Designer.cs">
+      <DependentUpon>frmEDocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\frmEDocEvent_SendToDMS.resx">
+      <DependentUpon>frmEDocEvent_SendToDMS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DMSImportReport.resx">
+      <DependentUpon>DMSImportReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmaddText.resx">
+      <DependentUpon>frmaddText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_ ArchiveDocuments.resx">
+      <DependentUpon>frmEDocEvent_ ArchiveDocuments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Acknowledge.resx">
+      <DependentUpon>frmEDocEvent_Acknowledge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_AddCategory.resx">
+      <DependentUpon>frmEDocEvent_AddCategory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_AddNote.resx">
+      <DependentUpon>frmEDocEvent_AddNote.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_AddUserTag.resx">
+      <DependentUpon>frmEDocEvent_AddUserTag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_AuthorizeDlg.resx">
+      <DependentUpon>frmEDocEvent_AuthorizeDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_CleanPatientDocument.resx">
+      <DependentUpon>frmEDocEvent_CleanPatientDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_ExportToPDF.resx">
+      <DependentUpon>frmEDocEvent_ExportToPDF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Fax.resx">
+      <DependentUpon>frmEDocEvent_Fax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_History.resx">
+      <DependentUpon>frmEDocEvent_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Import.resx">
+      <DependentUpon>frmEDocEvent_Import.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Migrate.resx">
+      <DependentUpon>frmEDocEvent_Migrate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Print.resx">
+      <DependentUpon>frmEDocEvent_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_ReceivedFax.resx">
+      <DependentUpon>frmEDocEvent_ReceivedFax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Rename.resx">
+      <DependentUpon>frmEDocEvent_Rename.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_ScannerSettings.resx">
+      <DependentUpon>frmEDocEvent_ScannerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_ScanNSend_PS.resx">
+      <DependentUpon>frmEDocEvent_ScanNSend_PS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_Send.resx">
+      <DependentUpon>frmEDocEvent_Send.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocEvent_SendRecFax.resx">
+      <DependentUpon>frmEDocEvent_SendRecFax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocumentAdvancedSearch.resx">
+      <DependentUpon>frmEDocumentAdvancedSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocumentArchiveViewer.resx">
+      <DependentUpon>frmEDocumentArchiveViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmScanProgress.resx">
+      <DependentUpon>frmScanProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEDocumentViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEDocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sunset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_angleHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_img.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CascadeWindowsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Category.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoryBackground.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoryBackgroundGray.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBoxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy of CheckBoxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentAcknowledge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentHasNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentReviwed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnvelopeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaxAll.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaxHS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FaxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagAcknowledge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagAcknowledge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagNone.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagNote.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagNote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HTMLSubmitHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Month.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonthlyViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveToFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewMessageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenSelectedItemHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrganizerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageNew.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageReveiwed.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageTagged.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageWithNotes.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PortraitLandscapeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintAll.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintHS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PropertiesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RecordHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RightArrowHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StopHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbnailView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbnailViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowbtn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProgressBar1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\AxInterop.DSOFramer.dll" />
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\gloDMSMigration.dll" />
+    <Content Include="DLL\Interop.DSOFramer.dll" />
+    <Content Include="DLL\PDFNet.dll" />
+    <Content Include="DLL\PegasusImaging.WinForms.ImagXpress9.dll" />
+    <Content Include="DLL\PegasusImaging.WinForms.TwainPro5.dll" />
+    <None Include="Resources\DMSCategory.ico" />
+    <None Include="Resources\browsePlus.ico" />
+    <None Include="Resources\browseMinus.ico" />
+    <None Include="Resources\browseMinus.png" />
+    <None Include="Resources\browsePlus.png" />
+    <None Include="Resources\browsePlusHover.png" />
+    <None Include="Resources\browseMinusHover.png" />
+    <Content Include="Resources\Down.png" />
+    <Content Include="Resources\DownHover.png" />
+    <Content Include="Resources\Fax All.png" />
+    <Content Include="Resources\First.png" />
+    <Content Include="Resources\First1.png" />
+    <Content Include="Resources\FirstHover.png" />
+    <Content Include="Resources\Forward.png" />
+    <Content Include="Resources\ForwardHover.png" />
+    <Content Include="Resources\HandFree.cur" />
+    <Content Include="Resources\HandHold.cur" />
+    <None Include="Resources\HideAcknowledged.png" />
+    <Content Include="Resources\Img_2003DarkHeader.gif" />
+    <Content Include="Resources\Img_2007Header.gif" />
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <Content Include="Resources\Img_Button.gif" />
+    <Content Include="Resources\Img_Gradient.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <Content Include="Resources\Img_OliveHeader.gif" />
+    <Content Include="Resources\Img_Orange.gif" />
+    <Content Include="Resources\Img_SilverHeader.gif" />
+    <Content Include="Resources\Img_Toolstrip.gif" />
+    <Content Include="Resources\Img_VerticalBtnBrdStrip.gif" />
+    <Content Include="Resources\Img_VerticalBtnStrip.gif" />
+    <Content Include="Resources\Img_Yellow.gif" />
+    <Content Include="Resources\Last.png" />
+    <Content Include="Resources\Last1.png" />
+    <Content Include="Resources\Last11.png" />
+    <Content Include="Resources\LastHover.png" />
+    <Content Include="Resources\Minus.png" />
+    <Content Include="Resources\MinusHover.png" />
+    <None Include="Resources\pamTool.ico" />
+    <None Include="Resources\pamTool.png" />
+    <None Include="Resources\pamToolHover.png" />
+    <Content Include="Resources\Pluse.png" />
+    <Content Include="Resources\pluseHover.png" />
+    <Content Include="Resources\Print All.png" />
+    <None Include="Resources\RCMDocs.ico" />
+    <None Include="Resources\RCMSubCategory.png" />
+    <None Include="Resources\RCMCategory.jpg" />
+    <Content Include="Resources\Remane01.png" />
+    <Content Include="Resources\Rewind.png" />
+    <Content Include="Resources\RewindHover.png" />
+    <None Include="Resources\Scan.ico" />
+    <None Include="Resources\ShowAcknowledged.png" />
+    <None Include="Resources\SendtoDMSFiles.png" />
+    <Content Include="Resources\UP.png" />
+    <Content Include="Resources\UPHover.png" />
+    <None Include="app.config" />
+    <None Include="Resources\Wait.gif" />
+    <EmbeddedResource Include="sqlncli10.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>False</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEMRGeneralLibrary\gloEMRGeneralLibrary.vbproj">
+      <Project>{39D920BB-D15F-41CC-864B-B9786E8130CB}</Project>
+      <Name>gloEMRGeneralLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloOffice\gloOffice.csproj">
+      <Project>{8DCDE259-C9ED-40AC-A4B2-C76D85BD0875}</Project>
+      <Name>gloOffice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPrintDialog\gloPrintDialog.csproj">
+      <Project>{8DD0457B-4AF0-4CB3-A7BB-35DAC5665C50}</Project>
+      <Name>gloPrintDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloRemoteScanGeneral\gloRemoteScanGeneral.csproj">
+      <Project>{73A47044-27C0-4683-8970-4F0351CAC1DC}</Project>
+      <Name>gloRemoteScanGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloScanImaging\gloScanImaging\gloScanImaging.csproj">
+      <Project>{3433B6B1-93EC-4D74-B9E7-DC06327E1449}</Project>
+      <Name>gloScanImaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSecurity\gloSecurity.csproj">
+      <Project>{7BFA9168-E479-4217-B7BB-A9440D38CDFB}</Project>
+      <Name>gloSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloTaskMail\gloTaskMail.csproj">
+      <Project>{82A245FE-5B57-4558-8DA0-536A0D217B05}</Project>
+      <Name>gloTaskMail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloToolStrip\gloToolStrip.vbproj">
+      <Project>{C13FA2BD-8CFB-48C7-9EBE-79B682AE6756}</Project>
+      <Name>gloToolStrip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserControlLibrary\gloUserControlLibrary.vbproj">
+      <Project>{DC24512A-9212-4075-B216-F824EB12D102}</Project>
+      <Name>gloUserControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloWord\gloWord.vbproj">
+      <Project>{DF7A4D19-B508-499E-BF16-347DA844D1D3}</Project>
+      <Name>gloWord</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saraff.Twain\Saraff.Twain.csproj">
+      <Project>{658F9851-4D1C-4D57-904E-F9D7DA7F24FC}</Project>
+      <Name>Saraff.Twain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

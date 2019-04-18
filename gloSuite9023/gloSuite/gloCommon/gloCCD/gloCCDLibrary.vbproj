@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A44632D-0027-49A8-982E-22F018D25678}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gloCCDLibrary</RootNamespace>
+    <AssemblyName>gloCCDLibrary</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>gloCCDLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>gloCCDLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>gloCCDLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>gloCCDLibrary.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CCDAValidationSchema.vb" />
+    <Compile Include="Classes\clsDiagnosisone_BusuinessLayer.vb" />
+    <Compile Include="Classes\clsDiagnosisone_DBLayer.vb" />
+    <Compile Include="Classes\ClseNum.vb" />
+    <Compile Include="Classes\clsgloDataBase.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\ClsMyTreeNode.vb" />
+    <Compile Include="Classes\ClsPatient.vb" />
+    <Compile Include="Classes\ClsUserMappingField.vb" />
+    <Compile Include="Classes\gloCCDBusinessLayer.vb" />
+    <Compile Include="Classes\gloCCDDatabaseLayer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\gloCCDException.vb" />
+    <Compile Include="Classes\gloCCDExchangeWriter.vb" />
+    <Compile Include="Classes\gloCCDInterface.vb" />
+    <Compile Include="Classes\gloCCDReconcilation.vb" />
+    <Compile Include="Classes\gloCCDReader.vb" />
+    <Compile Include="Classes\gloCCRReader.vb" />
+    <Compile Include="Classes\gloCCR_Interface.vb" />
+    <Compile Include="Classes\gloCDADataExtraction.vb" />
+    <Compile Include="Classes\gloCDAReader.vb" />
+    <Compile Include="Classes\gloCDAWriter.vb" />
+    <Compile Include="Classes\gloCQMReader.vb" />
+    <Compile Include="Classes\gloLibCCDGeneral.vb" />
+    <Compile Include="Classes\gloPatientRegDBLayer.vb" />
+    <Compile Include="Classes\gloPatientRegDBLayer_Ext.vb" />
+    <Compile Include="Classes\gloQRDAReader.vb" />
+    <Compile Include="Classes\gloQRDARegPatient.vb" />
+    <Compile Include="Classes\gloQRDAWriter.vb" />
+    <Compile Include="Classes\gloReconciliation.vb" />
+    <Compile Include="Form\frmDataMigMappingForCCD.Designer.vb">
+      <DependentUpon>frmDataMigMappingForCCD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDataMigMappingForCCD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDataMigMapping.Designer.vb">
+      <DependentUpon>frmDataMigMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDataMigMapping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmDisplayCDAErrors.Designer.vb">
+      <DependentUpon>frmDisplayCDAErrors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDisplayCDAErrors.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmFinalizeReconcileList.Designer.vb">
+      <DependentUpon>frmFinalizeReconcileList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmFinalizeReconcileList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmRefTreeNode.designer.vb">
+      <DependentUpon>frmRefTreeNode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmRefTreeNode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmPatspecCDAspc.Designer.vb">
+      <DependentUpon>frmPatspecCDAspc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmPatspecCDAspc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmReviewDialog.Designer.vb">
+      <DependentUpon>frmReviewDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmReviewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Usercontrols\uctl_ClinicalInformation.Designer.vb">
+      <DependentUpon>uctl_ClinicalInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrols\uctl_ClinicalInformation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Web References\com.diagnosisone.glostreampes\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\frmDataMigMappingForCCD.resx">
+      <DependentUpon>frmDataMigMappingForCCD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDataMigMapping.resx">
+      <DependentUpon>frmDataMigMapping.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmDisplayCDAErrors.resx">
+      <DependentUpon>frmDisplayCDAErrors.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmFinalizeReconcileList.resx">
+      <DependentUpon>frmFinalizeReconcileList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmRefTreeNode.resx">
+      <DependentUpon>frmRefTreeNode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmPatspecCDAspc.resx">
+      <DependentUpon>frmPatspecCDAspc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmReviewDialog.resx">
+      <DependentUpon>frmReviewDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrols\uctl_ClinicalInformation.resx">
+      <DependentUpon>uctl_ClinicalInformation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\D1_PESService.wsdl" />
+    <None Include="Web References\com.diagnosisone.glostreampes\enrollProviderInQualityProgramResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\evaluatePatient_hl7_v3_cda_r2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\evaluatePatient_hl7_v3_cda_r2_batchResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\evaluatePatient_hl7_v3_cda_r2_batch_xmlOptionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\evaluatePatient_hl7_v3_cda_r2_xmlOptionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\getProviderQualityProgramEnrollmentsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\getProviderQualityProgramSubscriptionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\getQualityProgramResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\getQualityProgramsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\isCCDValidationOnResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\isDebugOnResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\isProviderEnrolledInQualityProgramResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\pesVersionDetailsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\publishPublicCatalogResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\publishPublicSimpleCatalogResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\reinstateProviderQualityProgramEnrollmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\retrievePublicCatalogResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\setCCDValidationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\setDebugResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\setProviderQualityProgramSubscriptionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\submitPatient_hl7_v3_cda_r2Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\submitPatient_hl7_v3_cda_r2_batchResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\submitPatient_hl7_v3_cda_r2_batch_xmlOptionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\submitPatient_hl7_v3_cda_r2_xmlOptionsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\suspendProviderQualityProgramEnrollmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.diagnosisone.glostreampes\updateProviderQualityProgramEnrollmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCCDSchema\gloCCDSchema.csproj">
+      <Project>{1C1B9365-21D6-48ED-8D17-0C3BDDDB5186}</Project>
+      <Name>gloCCDSchema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSecurity\gloSecurity.csproj">
+      <Project>{7BFA9168-E479-4217-B7BB-A9440D38CDFB}</Project>
+      <Name>gloSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DLL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://glostreampes.diagnosisone.com/PES/D1_PES%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.diagnosisone.glostreampes\</RelPath>
+      <UpdateFromURL>http://glostreampes.diagnosisone.com/PES/D1_PES%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloCCDLibrary_com_diagnosisone_glostreampes_D1_PESService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_LongButton.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_LongYellow.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

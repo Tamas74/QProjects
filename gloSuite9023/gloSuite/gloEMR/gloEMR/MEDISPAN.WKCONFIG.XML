@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<Medispan>
+  <Logging enabled="false">
+    <CustomLogFileLocation />
+    <SQLQuery enabled="false" />
+    <ConstructorCall enabled="false" />
+    <FunctionCall enabled="false" />
+  </Logging>
+  <DataSource id="MsOracle" Database="msOracle9i" XMLContent="dfcContent" Images="dfcImages" />
+  <DataSource id="OraOracle" Database="OraOracle9i" XMLContent="dfcContent" Images="dfcImages" />
+  <DataSource id="SQLOleDb" Database="SQLServerOleDb" XMLContent="dfcContent" Images="dfcImages" />
+  <DataSource id="SQLNative" Database="SQLServerNative" XMLContent="dfcContent" Images="dfcImages" />
+  <DataSource id="DB2" Database="db2" XMLContent="dfcContent" Images="dfcImages" />
+  <DataSource id="MySql" Database="mysql" XMLContent="dfcContent" Images="dfcImages" />
+  <Database id="msOracle9i">
+    <ConnectionString>Data Source=db;User ID=user;Password=password</ConnectionString>
+    <ProviderType>Oracle</ProviderType>
+  </Database>
+  <Database id="OraOracle9i">
+    <ConnectionString>Data Source=db;User Id=user;Password=password</ConnectionString>
+    <ProviderAssemblyFile>c:\your_path\filename</ProviderAssemblyFile>
+  </Database>
+  <Database id="SQLServerOleDb">
+    <ConnectionString>Provider=sqloledb;Data Source=sakarserver;database=gloEMR50_CFM;Integrated Security=SSPI</ConnectionString>
+    <ProviderType>OleDB</ProviderType>
+  </Database>
+  <Database id="SQLServerNative">
+    <ConnectionString>Data Source=server;User Id=user;Password=password;database=db</ConnectionString>
+    <ProviderType>SQLServer</ProviderType>
+  </Database>
+  <Database id="mysql">
+    <ConnectionString>server=server;user id=user; password=password; database=db; pooling=true</ConnectionString>
+    <ProviderAssemblyFile>C:\your_path\filename</ProviderAssemblyFile>
+  </Database>
+  <Database id="db2">
+    <ConnectionString>Database=db;UID=user;PWD=password</ConnectionString>
+    <ProviderAssemblyFile>C:\your_path\filename</ProviderAssemblyFile>
+  </Database>
+  <XMLContent id="dfcContent" dir="c:\your_path" />
+  <Images id="dfcImages" dir="../your_path" />
+  <Cache>
+    <Enabled>true</Enabled>
+    <SecondsTillStale>0</SecondsTillStale>
+    <LastUpdateInterval>1800</LastUpdateInterval>
+  </Cache>
+</Medispan>

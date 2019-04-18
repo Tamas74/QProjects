@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.gloEMRAdminLockScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              mc:Ignorable="d"
+             d:DesignWidth="640" d:DesignHeight="480" Background="#FFDEF8FF">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="408"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="280"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Image Source="/gloUIControlLibrary;component/gloEMRLockScreen_files/waves.png" Stretch="Fill" Grid.ColumnSpan="3" Grid.RowSpan="3" OpacityMask="Black" Margin="0,-1.332,0,1.332"/>
+		<Grid x:Name="LayoutRoot" Grid.Row="1" Grid.Column="1">
+			<Path Data="M118.15436,34.876373 C84.404591,34.654476 68.127641,57.599237 68.19505,101.4639 68.19505,101.4639 171.76207,102.03772 171.76207,102.03772 171.82076,67.796561 167.15773,35.198559 118.15436,34.876373 z M120.26602,0.0015411377 C207.23029,0.052058614 211.48836,74.271627 207.64691,101.95695 207.64691,101.95695 238.16315,101.9875 238.16315,101.9875 L238.99999,333.22051 0,333.22051 0,101.98802 C-1.2866622E-07,101.98802 33.924276,101.98794 33.924276,101.98794 33.924276,101.98794 21.023147,-0.056108973 120.26602,0.0015411377 z" Fill="#FF1794E5" HorizontalAlignment="Right" Height="333.219" Margin="0,-47,0,0" StrokeStartLineCap="Round" Stretch="Fill" VerticalAlignment="Center" Width="253" Stroke="#FF57ADE5">
+				<Path.Effect>
+					<DropShadowEffect Opacity="0.42" Direction="0" ShadowDepth="2" BlurRadius="3"/>
+				</Path.Effect>
+			</Path>
+			<Image Source="/gloUIControlLibrary;component/gloEMRLockScreen_files/gloEMRAdminLock.png" Stretch="Fill" VerticalAlignment="Center" Width="76" Height="76" HorizontalAlignment="Center" Margin="34,-87,0,0"/>
+			<Rectangle Height="54" Margin="27,0,-0.5,6" StrokeStartLineCap="Round" VerticalAlignment="Bottom">
+				<Rectangle.Fill>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#841794E5"/>
+						<GradientStop Offset="1"/>
+					</LinearGradientBrush>
+				</Rectangle.Fill>
+        	
+			</Rectangle>
+			<Path Data="M259,131 L259,326 46,326" Margin="62,146.75,5,66.25" StrokeStartLineCap="Round" Stretch="Fill">
+				<Path.Fill>
+					<LinearGradientBrush EndPoint="1.725,1.668" StartPoint="-0.446,-0.33">
+						<GradientStop Color="#7FFFFFFF" Offset="0.998"/>
+						<GradientStop Offset="0.422"/>
+					</LinearGradientBrush>
+				</Path.Fill>
+			</Path>
+		</Grid>
+		<Path Grid.Column="1" Data="M172,97.499914 C172,97.499914 54.5,96.999601 0,97.499914 -3.5,51.500104 20.999769,2.5304541 86,2.9999592 178.66631,3.6693 172,97.499914 172,97.499914 z" Height="94.506" Margin="67,17,41,0" Grid.Row="1" StrokeStartLineCap="Round" Stretch="Fill" VerticalAlignment="Top">
+			<Path.Fill>
+				<LinearGradientBrush EndPoint="1.07,3.011" StartPoint="-0.081,-0.732">
+					<GradientStop Color="#7FFFFFFF" Offset="0.018"/>
+					<GradientStop Offset="0.393"/>
+				</LinearGradientBrush>
+			</Path.Fill>
+		</Path>
+	</Grid>
+</UserControl>

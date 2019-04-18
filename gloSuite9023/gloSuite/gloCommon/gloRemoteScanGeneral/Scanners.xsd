@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Scanners" targetNamespace="" xmlns:mstns="" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Scanners" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Scanners" msprop:Generator_UserDSName="Scanners">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InstalledScanners" msprop:Generator_TableClassName="InstalledScannersDataTable" msprop:Generator_TableVarName="tableInstalledScanners" msprop:Generator_TablePropName="InstalledScanners" msprop:Generator_RowDeletingName="InstalledScannersRowDeleting" msprop:Generator_RowChangingName="InstalledScannersRowChanging" msprop:Generator_RowEvHandlerName="InstalledScannersRowChangeEventHandler" msprop:Generator_RowDeletedName="InstalledScannersRowDeleted" msprop:Generator_UserTableName="InstalledScanners" msprop:Generator_RowChangedName="InstalledScannersRowChanged" msprop:Generator_RowEvArgName="InstalledScannersRowChangeEvent" msprop:Generator_RowClassName="InstalledScannersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstalledScannersID" msprop:Generator_ColumnVarNameInTable="columnInstalledScannersID" msprop:Generator_ColumnPropNameInRow="InstalledScannersID" msprop:Generator_ColumnPropNameInTable="InstalledScannersIDColumn" msprop:Generator_UserColumnName="InstalledScannersID" type="xs:string" />
+              <xs:element name="Default" msprop:Generator_ColumnVarNameInTable="columnDefault" msprop:Generator_ColumnPropNameInRow="Default" msprop:Generator_ColumnPropNameInTable="DefaultColumn" msprop:Generator_UserColumnName="Default" type="xs:string" minOccurs="0" />
+              <xs:element name="Scanner" msprop:Generator_TableClassName="ScannerDataTable" msprop:Generator_TableVarName="tableScanner" msprop:Generator_TablePropName="Scanner" msprop:Generator_RowDeletingName="ScannerRowDeleting" msprop:Generator_RowChangingName="ScannerRowChanging" msprop:Generator_RowEvHandlerName="ScannerRowChangeEventHandler" msprop:Generator_RowDeletedName="ScannerRowDeleted" msprop:Generator_UserTableName="Scanner" msprop:Generator_RowChangedName="ScannerRowChanged" msprop:Generator_RowEvArgName="ScannerRowChangeEvent" msprop:Generator_RowClassName="ScannerRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="Scanner_InstalledScanners" msdata:parent="InstalledScanners" msdata:child="Scanner" msdata:parentkey="InstalledScannersID" msdata:childkey="ScannerID" msprop:Generator_UserChildTable="Scanner" msprop:Generator_ChildPropName="GetScannerRows" msprop:Generator_UserRelationName="Scanner_InstalledScanners" msprop:Generator_RelationVarName="relationScanner_InstalledScanners" msprop:Generator_UserParentTable="InstalledScanners" msprop:Generator_ParentPropName="InstalledScannersRow" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ScannerID" msprop:Generator_ColumnVarNameInTable="columnScannerID" msprop:Generator_ColumnPropNameInRow="ScannerID" msprop:Generator_ColumnPropNameInTable="ScannerIDColumn" msprop:Generator_UserColumnName="ScannerID" type="xs:string" />
+                    <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                    <xs:element name="IsDefault" msprop:Generator_ColumnVarNameInTable="columnIsDefault" msprop:Generator_ColumnPropNameInRow="IsDefault" msprop:Generator_ColumnPropNameInTable="IsDefaultColumn" msprop:Generator_UserColumnName="IsDefault" type="xs:string" minOccurs="0" />
+                    <xs:element name="Mode" msprop:Generator_ColumnVarNameInTable="columnMode" msprop:Generator_ColumnPropNameInRow="Mode" msprop:Generator_ColumnPropNameInTable="ModeColumn" msprop:Generator_UserColumnName="Mode" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanResolution" msprop:Generator_ColumnVarNameInTable="columnScanResolution" msprop:Generator_ColumnPropNameInRow="ScanResolution" msprop:Generator_ColumnPropNameInTable="ScanResolutionColumn" msprop:Generator_UserColumnName="ScanResolution" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanBrightness" msprop:Generator_ColumnVarNameInTable="columnScanBrightness" msprop:Generator_ColumnPropNameInRow="ScanBrightness" msprop:Generator_ColumnPropNameInTable="ScanBrightnessColumn" msprop:Generator_UserColumnName="ScanBrightness" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanContrast" msprop:Generator_ColumnVarNameInTable="columnScanContrast" msprop:Generator_ColumnPropNameInRow="ScanContrast" msprop:Generator_ColumnPropNameInTable="ScanContrastColumn" msprop:Generator_UserColumnName="ScanContrast" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanScanSide" msprop:Generator_ColumnVarNameInTable="columnScanScanSide" msprop:Generator_ColumnPropNameInRow="ScanScanSide" msprop:Generator_ColumnPropNameInTable="ScanScanSideColumn" msprop:Generator_UserColumnName="ScanScanSide" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanSupportedSize" msprop:Generator_ColumnVarNameInTable="columnScanSupportedSize" msprop:Generator_ColumnPropNameInRow="ScanSupportedSize" msprop:Generator_ColumnPropNameInTable="ScanSupportedSizeColumn" msprop:Generator_UserColumnName="ScanSupportedSize" type="xs:string" minOccurs="0" />
+                    <xs:element name="ScanMode" msprop:Generator_TableClassName="ScanModeDataTable" msprop:Generator_TableVarName="tableScanMode" msprop:Generator_TablePropName="ScanMode" msprop:Generator_RowDeletingName="ScanModeRowDeleting" msprop:Generator_RowChangingName="ScanModeRowChanging" msprop:Generator_RowEvHandlerName="ScanModeRowChangeEventHandler" msprop:Generator_RowDeletedName="ScanModeRowDeleted" msprop:Generator_UserTableName="ScanMode" msprop:Generator_RowChangedName="ScanModeRowChanged" msprop:Generator_RowEvArgName="ScanModeRowChangeEvent" msprop:Generator_RowClassName="ScanModeRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="ScanMode_Scanner" msdata:parent="Scanner" msdata:child="ScanMode" msdata:parentkey="ScannerID" msdata:childkey="ScanModeID" msprop:Generator_UserChildTable="ScanMode" msprop:Generator_ChildPropName="GetScanModeRows" msprop:Generator_UserRelationName="ScanMode_Scanner" msprop:Generator_RelationVarName="relationScanMode_Scanner" msprop:Generator_UserParentTable="Scanner" msprop:Generator_ParentPropName="ScannerRow" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ScanModeID" msprop:Generator_ColumnVarNameInTable="columnScanModeID" msprop:Generator_ColumnPropNameInRow="ScanModeID" msprop:Generator_ColumnPropNameInTable="ScanModeIDColumn" msprop:Generator_UserColumnName="ScanModeID" type="xs:string" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Depth" msprop:Generator_ColumnVarNameInTable="columnDepth" msprop:Generator_ColumnPropNameInRow="Depth" msprop:Generator_ColumnPropNameInTable="DepthColumn" msprop:Generator_UserColumnName="Depth" type="xs:string" minOccurs="0" />
+                          <xs:element name="ScanDepth" msprop:Generator_TableClassName="ScanDepthDataTable" msprop:Generator_TableVarName="tableScanDepth" msprop:Generator_TablePropName="ScanDepth" msprop:Generator_RowDeletingName="ScanDepthRowDeleting" msprop:Generator_RowChangingName="ScanDepthRowChanging" msprop:Generator_RowEvHandlerName="ScanDepthRowChangeEventHandler" msprop:Generator_RowDeletedName="ScanDepthRowDeleted" msprop:Generator_UserTableName="ScanDepth" msprop:Generator_RowChangedName="ScanDepthRowChanged" msprop:Generator_RowEvArgName="ScanDepthRowChangeEvent" msprop:Generator_RowClassName="ScanDepthRow" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:appinfo>
+                                <msdata:Relationship name="ScanDepth_ScanMode" msdata:parent="ScanMode" msdata:child="ScanDepth" msdata:parentkey="ScanModeID" msdata:childkey="ScanDepthId" msprop:Generator_UserChildTable="ScanDepth" msprop:Generator_ChildPropName="GetScanDepthRows" msprop:Generator_UserRelationName="ScanDepth_ScanMode" msprop:Generator_RelationVarName="relationScanDepth_ScanMode" msprop:Generator_UserParentTable="ScanMode" msprop:Generator_ParentPropName="ScanModeRow" />
+                              </xs:appinfo>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ScanDepthId" msprop:Generator_ColumnVarNameInTable="columnScanDepthId" msprop:Generator_ColumnPropNameInRow="ScanDepthId" msprop:Generator_ColumnPropNameInTable="ScanDepthIdColumn" msprop:Generator_UserColumnName="ScanDepthId" type="xs:string" />
+                                <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Resolution" msprop:Generator_TableClassName="ResolutionDataTable" msprop:Generator_TableVarName="tableResolution" msprop:Generator_TablePropName="Resolution" msprop:Generator_RowDeletingName="ResolutionRowDeleting" msprop:Generator_RowChangingName="ResolutionRowChanging" msprop:Generator_RowEvHandlerName="ResolutionRowChangeEventHandler" msprop:Generator_RowDeletedName="ResolutionRowDeleted" msprop:Generator_UserTableName="Resolution" msprop:Generator_RowChangedName="ResolutionRowChanged" msprop:Generator_RowEvArgName="ResolutionRowChangeEvent" msprop:Generator_RowClassName="ResolutionRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="Scanner_Resolution" msdata:parent="Scanner" msdata:child="Resolution" msdata:parentkey="ScannerID" msdata:childkey="ResolutionID" msprop:Generator_UserChildTable="Resolution" msprop:Generator_ChildPropName="GetResolutionRows" msprop:Generator_UserRelationName="Scanner_Resolution" msprop:Generator_ParentPropName="ScannerRow" msprop:Generator_RelationVarName="relationScanner_Resolution" msprop:Generator_UserParentTable="Scanner" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ResolutionID" msprop:Generator_ColumnVarNameInTable="columnResolutionID" msprop:Generator_ColumnPropNameInRow="ResolutionID" msprop:Generator_ColumnPropNameInTable="ResolutionIDColumn" msprop:Generator_UserColumnName="ResolutionID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Brightness" msprop:Generator_TableClassName="BrightnessDataTable" msprop:Generator_TableVarName="tableBrightness" msprop:Generator_TablePropName="Brightness" msprop:Generator_RowDeletingName="BrightnessRowDeleting" msprop:Generator_RowChangingName="BrightnessRowChanging" msprop:Generator_RowEvHandlerName="BrightnessRowChangeEventHandler" msprop:Generator_RowDeletedName="BrightnessRowDeleted" msprop:Generator_UserTableName="Brightness" msprop:Generator_RowChangedName="BrightnessRowChanged" msprop:Generator_RowEvArgName="BrightnessRowChangeEvent" msprop:Generator_RowClassName="BrightnessRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="Scanner_Brightness" msdata:parent="Scanner" msdata:child="Brightness" msdata:parentkey="ScannerID" msdata:childkey="BrightnessID" msprop:Generator_UserChildTable="Brightness" msprop:Generator_ChildPropName="GetBrightnessRows" msprop:Generator_UserRelationName="Scanner_Brightness" msprop:Generator_ParentPropName="ScannerRow" msprop:Generator_RelationVarName="relationScanner_Brightness" msprop:Generator_UserParentTable="Scanner" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BrightnessID" msprop:Generator_ColumnVarNameInTable="columnBrightnessID" msprop:Generator_ColumnPropNameInRow="BrightnessID" msprop:Generator_ColumnPropNameInTable="BrightnessIDColumn" msprop:Generator_UserColumnName="BrightnessID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Contrast" msprop:Generator_TableClassName="ContrastDataTable" msprop:Generator_TableVarName="tableContrast" msprop:Generator_TablePropName="Contrast" msprop:Generator_RowDeletingName="ContrastRowDeleting" msprop:Generator_RowChangingName="ContrastRowChanging" msprop:Generator_RowEvHandlerName="ContrastRowChangeEventHandler" msprop:Generator_RowDeletedName="ContrastRowDeleted" msprop:Generator_UserTableName="Contrast" msprop:Generator_RowChangedName="ContrastRowChanged" msprop:Generator_RowEvArgName="ContrastRowChangeEvent" msprop:Generator_RowClassName="ContrastRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="Scanner_Contrast" msdata:parent="Scanner" msdata:child="Contrast" msdata:parentkey="ScannerID" msdata:childkey="ContrastID" msprop:Generator_UserChildTable="Contrast" msprop:Generator_ChildPropName="GetContrastRows" msprop:Generator_UserRelationName="Scanner_Contrast" msprop:Generator_ParentPropName="ScannerRow" msprop:Generator_RelationVarName="relationScanner_Contrast" msprop:Generator_UserParentTable="Scanner" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ContrastID" msprop:Generator_ColumnVarNameInTable="columnContrastID" msprop:Generator_ColumnPropNameInRow="ContrastID" msprop:Generator_ColumnPropNameInTable="ContrastIDColumn" msprop:Generator_UserColumnName="ContrastID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ScanSide" msprop:Generator_TableClassName="ScanSideDataTable" msprop:Generator_TableVarName="tableScanSide" msprop:Generator_TablePropName="ScanSide" msprop:Generator_RowDeletingName="ScanSideRowDeleting" msprop:Generator_RowChangingName="ScanSideRowChanging" msprop:Generator_RowEvHandlerName="ScanSideRowChangeEventHandler" msprop:Generator_RowDeletedName="ScanSideRowDeleted" msprop:Generator_UserTableName="ScanSide" msprop:Generator_RowChangedName="ScanSideRowChanged" msprop:Generator_RowEvArgName="ScanSideRowChangeEvent" msprop:Generator_RowClassName="ScanSideRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="Scanner_ScanSide" msdata:parent="Scanner" msdata:child="ScanSide" msdata:parentkey="ScannerID" msdata:childkey="ScanSideID" msprop:Generator_UserChildTable="ScanSide" msprop:Generator_ChildPropName="GetScanSideRows" msprop:Generator_UserRelationName="Scanner_ScanSide" msprop:Generator_ParentPropName="ScannerRow" msprop:Generator_RelationVarName="relationScanner_ScanSide" msprop:Generator_UserParentTable="Scanner" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ScanSideID" msprop:Generator_ColumnVarNameInTable="columnScanSideID" msprop:Generator_ColumnPropNameInRow="ScanSideID" msprop:Generator_ColumnPropNameInTable="ScanSideIDColumn" msprop:Generator_UserColumnName="ScanSideID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SupportedSize" msprop:Generator_TableClassName="SupportedSizeDataTable" msprop:Generator_TableVarName="tableSupportedSize" msprop:Generator_TablePropName="SupportedSize" msprop:Generator_RowDeletingName="SupportedSizeRowDeleting" msprop:Generator_RowChangingName="SupportedSizeRowChanging" msprop:Generator_RowEvHandlerName="SupportedSizeRowChangeEventHandler" msprop:Generator_RowDeletedName="SupportedSizeRowDeleted" msprop:Generator_UserTableName="SupportedSize" msprop:Generator_RowChangedName="SupportedSizeRowChanged" msprop:Generator_RowEvArgName="SupportedSizeRowChangeEvent" msprop:Generator_RowClassName="SupportedSizeRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="Scanner_SupportedSize" msdata:parent="Scanner" msdata:child="SupportedSize" msdata:parentkey="ScannerID" msdata:childkey="SupportedSizeID" msprop:Generator_UserChildTable="SupportedSize" msprop:Generator_ChildPropName="GetSupportedSizeRows" msprop:Generator_UserRelationName="Scanner_SupportedSize" msprop:Generator_ParentPropName="ScannerRow" msprop:Generator_RelationVarName="relationScanner_SupportedSize" msprop:Generator_UserParentTable="Scanner" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SupportedSizeID" msprop:Generator_ColumnVarNameInTable="columnSupportedSizeID" msprop:Generator_ColumnPropNameInRow="SupportedSizeID" msprop:Generator_ColumnPropNameInTable="SupportedSizeIDColumn" msprop:Generator_UserColumnName="SupportedSizeID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:string" minOccurs="0" />
+                          <xs:element name="Left" msprop:Generator_ColumnVarNameInTable="columnLeft" msprop:Generator_ColumnPropNameInRow="Left" msprop:Generator_ColumnPropNameInTable="LeftColumn" msprop:Generator_UserColumnName="Left" type="xs:string" minOccurs="0" />
+                          <xs:element name="Top" msprop:Generator_ColumnVarNameInTable="columnTop" msprop:Generator_ColumnPropNameInRow="Top" msprop:Generator_ColumnPropNameInTable="TopColumn" msprop:Generator_UserColumnName="Top" type="xs:string" minOccurs="0" />
+                          <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ScanDepthKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScanDepth" />
+      <xs:field xpath="mstns:ScanDepthId" />
+    </xs:unique>
+    <xs:unique name="ScanModeKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScanMode" />
+      <xs:field xpath="mstns:ScanModeID" />
+    </xs:unique>
+    <xs:unique name="ScannerKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Scanner" />
+      <xs:field xpath="mstns:ScannerID" />
+    </xs:unique>
+    <xs:unique name="InstalledScannersKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InstalledScanners" />
+      <xs:field xpath="mstns:InstalledScannersID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

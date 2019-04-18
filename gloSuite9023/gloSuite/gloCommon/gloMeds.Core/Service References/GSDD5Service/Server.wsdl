@@ -1,0 +1,2165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://gsdd.goldstandard.com/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://gsdd.goldstandard.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://gsdd.goldstandard.com/">
+      <s:include schemaLocation="Schema.xsd" />
+    </s:schema>
+  </types>
+  <message name="ADRAdverseReactionsByDrugIn">
+    <part name="parameters" element="tns:ADRAdverseReactionsByDrugRequest" />
+  </message>
+  <message name="ADRAdverseReactionsByDrugOut">
+    <part name="parameters" element="tns:ADRAdverseReactionsByDrug" />
+  </message>
+  <message name="ADRAdverseReactionsByDrugClassificationIn">
+    <part name="parameters" element="tns:ADRAdverseReactionsByDrugClassificationRequest" />
+  </message>
+  <message name="ADRAdverseReactionsByDrugClassificationOut">
+    <part name="parameters" element="tns:ADRAdverseReactionsByDrugClassification" />
+  </message>
+  <message name="ADRDrugsByAdverseReactionIn">
+    <part name="parameters" element="tns:ADRDrugsByAdverseReactionRequest" />
+  </message>
+  <message name="ADRDrugsByAdverseReactionOut">
+    <part name="parameters" element="tns:ADRDrugsByAdverseReaction" />
+  </message>
+  <message name="ADRMatchDrugsToAdverseReactionsIn">
+    <part name="parameters" element="tns:ADRMatchDrugsToAdverseReactionsRequest" />
+  </message>
+  <message name="ADRMatchDrugsToAdverseReactionsOut">
+    <part name="parameters" element="tns:ADRMatchDrugsToAdverseReactions" />
+  </message>
+  <message name="ADRDrugsByDiagnosisIn">
+    <part name="parameters" element="tns:ADRDrugsByDiagnosisRequest" />
+  </message>
+  <message name="ADRDrugsByDiagnosisOut">
+    <part name="parameters" element="tns:ADRDrugsByDiagnosis" />
+  </message>
+  <message name="ClinicalIn">
+    <part name="parameters" element="tns:ClinicalRequest" />
+  </message>
+  <message name="ClinicalOut">
+    <part name="parameters" element="tns:Clinical" />
+  </message>
+  <message name="ContentMonographIn">
+    <part name="parameters" element="tns:ContentMonographRequest" />
+  </message>
+  <message name="ContentMonographOut">
+    <part name="parameters" element="tns:ContentMonograph" />
+  </message>
+  <message name="ContentMonographXMLIn">
+    <part name="parameters" element="tns:ContentMonographXMLRequest" />
+  </message>
+  <message name="ContentMonographXMLOut">
+    <part name="parameters" element="tns:ContentMonographXML" />
+  </message>
+  <message name="ContentMonographSectionXMLIn">
+    <part name="parameters" element="tns:ContentMonographSectionXMLRequest" />
+  </message>
+  <message name="ContentMonographSectionXMLOut">
+    <part name="parameters" element="tns:ContentMonographSectionXML" />
+  </message>
+  <message name="ContentPatientEducationIn">
+    <part name="parameters" element="tns:ContentPatientEducationRequest" />
+  </message>
+  <message name="ContentPatientEducationOut">
+    <part name="parameters" element="tns:ContentPatientEducation" />
+  </message>
+  <message name="DetailPackageIn">
+    <part name="parameters" element="tns:DetailPackageRequest" />
+  </message>
+  <message name="DetailPackageOut">
+    <part name="parameters" element="tns:DetailPackage" />
+  </message>
+  <message name="DetailProductIn">
+    <part name="parameters" element="tns:DetailProductRequest" />
+  </message>
+  <message name="DetailProductOut">
+    <part name="parameters" element="tns:DetailProduct" />
+  </message>
+  <message name="DoseCheckBySpecificProductIn">
+    <part name="parameters" element="tns:DoseCheckBySpecificProductRequest" />
+  </message>
+  <message name="DoseCheckBySpecificProductOut">
+    <part name="parameters" element="tns:DoseCheckBySpecificProduct" />
+  </message>
+  <message name="DoseCheckByIngredientIn">
+    <part name="parameters" element="tns:DoseCheckByIngredientRequest" />
+  </message>
+  <message name="DoseCheckByIngredientOut">
+    <part name="parameters" element="tns:DoseCheckByIngredient" />
+  </message>
+  <message name="DrugDiseaseContraindicationsByDrugIn">
+    <part name="parameters" element="tns:DrugDiseaseContraindicationsByDrugRequest" />
+  </message>
+  <message name="DrugDiseaseContraindicationsByDrugOut">
+    <part name="parameters" element="tns:DrugDiseaseContraindicationsByDrug" />
+  </message>
+  <message name="DrugDiseaseDrugsByContraindicationIn">
+    <part name="parameters" element="tns:DrugDiseaseDrugsByContraindicationRequest" />
+  </message>
+  <message name="DrugDiseaseDrugsByContraindicationOut">
+    <part name="parameters" element="tns:DrugDiseaseDrugsByContraindication" />
+  </message>
+  <message name="DrugDiseaseDrugsByIndicationIn">
+    <part name="parameters" element="tns:DrugDiseaseDrugsByIndicationRequest" />
+  </message>
+  <message name="DrugDiseaseDrugsByIndicationOut">
+    <part name="parameters" element="tns:DrugDiseaseDrugsByIndication" />
+  </message>
+  <message name="DrugDiseaseIndicationsByDrugIn">
+    <part name="parameters" element="tns:DrugDiseaseIndicationsByDrugRequest" />
+  </message>
+  <message name="DrugDiseaseIndicationsByDrugOut">
+    <part name="parameters" element="tns:DrugDiseaseIndicationsByDrug" />
+  </message>
+  <message name="DrugDiseaseMatchDrugToDiagnosisIn">
+    <part name="parameters" element="tns:DrugDiseaseMatchDrugToDiagnosisRequest" />
+  </message>
+  <message name="DrugDiseaseMatchDrugToDiagnosisOut">
+    <part name="parameters" element="tns:DrugDiseaseMatchDrugToDiagnosis" />
+  </message>
+  <message name="DrugDiseaseScreeningIn">
+    <part name="parameters" element="tns:DrugDiseaseScreeningRequest" />
+  </message>
+  <message name="DrugDiseaseScreeningOut">
+    <part name="parameters" element="tns:DrugDiseaseScreening" />
+  </message>
+  <message name="DrugLabInterferenceByDrugIn">
+    <part name="parameters" element="tns:DrugLabInterferenceByDrugRequest" />
+  </message>
+  <message name="DrugLabInterferenceByDrugOut">
+    <part name="parameters" element="tns:DrugLabInterferenceByDrug" />
+  </message>
+  <message name="DrugLabInterferenceByLabIn">
+    <part name="parameters" element="tns:DrugLabInterferenceByLabRequest" />
+  </message>
+  <message name="DrugLabInterferenceByLabOut">
+    <part name="parameters" element="tns:DrugLabInterferenceByLab" />
+  </message>
+  <message name="DrugLabParametersToMonitorIn">
+    <part name="parameters" element="tns:DrugLabParametersToMonitorRequest" />
+  </message>
+  <message name="DrugLabParametersToMonitorOut">
+    <part name="parameters" element="tns:DrugLabParametersToMonitor" />
+  </message>
+  <message name="DrugLabRecommendedValuesIn">
+    <part name="parameters" element="tns:DrugLabRecommendedValuesRequest" />
+  </message>
+  <message name="DrugLabRecommendedValuesOut">
+    <part name="parameters" element="tns:DrugLabRecommendedValues" />
+  </message>
+  <message name="IVCompatibilityByDrugIn">
+    <part name="parameters" element="tns:IVCompatibilityByDrugRequest" />
+  </message>
+  <message name="IVCompatibilityByDrugOut">
+    <part name="parameters" element="tns:IVCompatibilityByDrug" />
+  </message>
+  <message name="IVCompatibilityParenteralNutritionByDrugIn">
+    <part name="parameters" element="tns:IVCompatibilityParenteralNutritionByDrugRequest" />
+  </message>
+  <message name="IVCompatibilityParenteralNutritionByDrugOut">
+    <part name="parameters" element="tns:IVCompatibilityParenteralNutritionByDrug" />
+  </message>
+  <message name="IVCompatibilitySolutionsByDrugIn">
+    <part name="parameters" element="tns:IVCompatibilitySolutionsByDrugRequest" />
+  </message>
+  <message name="IVCompatibilitySolutionsByDrugOut">
+    <part name="parameters" element="tns:IVCompatibilitySolutionsByDrug" />
+  </message>
+  <message name="LactationAlternateDrugsIn">
+    <part name="parameters" element="tns:LactationAlternateDrugsRequest" />
+  </message>
+  <message name="LactationAlternateDrugsOut">
+    <part name="parameters" element="tns:LactationAlternateDrugs" />
+  </message>
+  <message name="ListAGSBeersQualityOfEvidencesIn">
+    <part name="parameters" element="tns:ListAGSBeersQualityOfEvidencesRequest" />
+  </message>
+  <message name="ListAGSBeersQualityOfEvidencesOut">
+    <part name="parameters" element="tns:ListAGSBeersQualityOfEvidences" />
+  </message>
+  <message name="ListAGSBeersStrengthOfRecommendationsIn">
+    <part name="parameters" element="tns:ListAGSBeersStrengthOfRecommendationsRequest" />
+  </message>
+  <message name="ListAGSBeersStrengthOfRecommendationsOut">
+    <part name="parameters" element="tns:ListAGSBeersStrengthOfRecommendations" />
+  </message>
+  <message name="ListAllergySubstanceClassesIn">
+    <part name="parameters" element="tns:ListAllergySubstanceClassesRequest" />
+  </message>
+  <message name="ListAllergySubstanceClassesOut">
+    <part name="parameters" element="tns:ListAllergySubstanceClasses" />
+  </message>
+  <message name="ListBoxedWarningsIn">
+    <part name="parameters" element="tns:ListBoxedWarningsRequest" />
+  </message>
+  <message name="ListBoxedWarningsOut">
+    <part name="parameters" element="tns:ListBoxedWarnings" />
+  </message>
+  <message name="ListBrandGenericStatusesIn">
+    <part name="parameters" element="tns:ListBrandGenericStatusesRequest" />
+  </message>
+  <message name="ListBrandGenericStatusesOut">
+    <part name="parameters" element="tns:ListBrandGenericStatuses" />
+  </message>
+  <message name="ListCoatingsIn">
+    <part name="parameters" element="tns:ListCoatingsRequest" />
+  </message>
+  <message name="ListCoatingsOut">
+    <part name="parameters" element="tns:ListCoatings" />
+  </message>
+  <message name="ListColorsIn">
+    <part name="parameters" element="tns:ListColorsRequest" />
+  </message>
+  <message name="ListColorsOut">
+    <part name="parameters" element="tns:ListColors" />
+  </message>
+  <message name="ListCompaniesIn">
+    <part name="parameters" element="tns:ListCompaniesRequest" />
+  </message>
+  <message name="ListCompaniesOut">
+    <part name="parameters" element="tns:ListCompanies" />
+  </message>
+  <message name="ListCPTherapeuticClassificationsByProductIn">
+    <part name="parameters" element="tns:ListCPTherapeuticClassificationsByProductRequest" />
+  </message>
+  <message name="ListCPTherapeuticClassificationsByProductOut">
+    <part name="parameters" element="tns:ListCPTherapeuticClassificationsByProduct" />
+  </message>
+  <message name="ListCPTherapeuticClassificationTreeIn">
+    <part name="parameters" element="tns:ListCPTherapeuticClassificationTreeRequest" />
+  </message>
+  <message name="ListCPTherapeuticClassificationTreeOut">
+    <part name="parameters" element="tns:ListCPTherapeuticClassificationTree" />
+  </message>
+  <message name="ListDESIStatusesIn">
+    <part name="parameters" element="tns:ListDESIStatusesRequest" />
+  </message>
+  <message name="ListDESIStatusesOut">
+    <part name="parameters" element="tns:ListDESIStatuses" />
+  </message>
+  <message name="ListDocumentationTypesIn">
+    <part name="parameters" element="tns:ListDocumentationTypesRequest" />
+  </message>
+  <message name="ListDocumentationTypesOut">
+    <part name="parameters" element="tns:ListDocumentationTypes" />
+  </message>
+  <message name="ListDoseFormsIn">
+    <part name="parameters" element="tns:ListDoseFormsRequest" />
+  </message>
+  <message name="ListDoseFormsOut">
+    <part name="parameters" element="tns:ListDoseForms" />
+  </message>
+  <message name="ListDrugInteractionReferencesIn">
+    <part name="parameters" element="tns:ListDrugInteractionReferencesRequest" />
+  </message>
+  <message name="ListDrugInteractionReferencesOut">
+    <part name="parameters" element="tns:ListDrugInteractionReferences" />
+  </message>
+  <message name="ListFederalIn">
+    <part name="parameters" element="tns:ListFederalRequest" />
+  </message>
+  <message name="ListFederalOut">
+    <part name="parameters" element="tns:ListFederal" />
+  </message>
+  <message name="ListFederalDEAClassificationsIn">
+    <part name="parameters" element="tns:ListFederalDEAClassificationsRequest" />
+  </message>
+  <message name="ListFederalDEAClassificationsOut">
+    <part name="parameters" element="tns:ListFederalDEAClassifications" />
+  </message>
+  <message name="ListFlavorsIn">
+    <part name="parameters" element="tns:ListFlavorsRequest" />
+  </message>
+  <message name="ListFlavorsOut">
+    <part name="parameters" element="tns:ListFlavors" />
+  </message>
+  <message name="ListGenericProductClinicalsIn">
+    <part name="parameters" element="tns:ListGenericProductClinicalsRequest" />
+  </message>
+  <message name="ListGenericProductClinicalsOut">
+    <part name="parameters" element="tns:ListGenericProductClinicals" />
+  </message>
+  <message name="ListGSTermsIn">
+    <part name="parameters" element="tns:ListGSTermsRequest" />
+  </message>
+  <message name="ListGSTermsOut">
+    <part name="parameters" element="tns:ListGSTerms" />
+  </message>
+  <message name="ListIngredientNameSourcesIn">
+    <part name="parameters" element="tns:ListIngredientNameSourcesRequest" />
+  </message>
+  <message name="ListIngredientNameSourcesOut">
+    <part name="parameters" element="tns:ListIngredientNameSources" />
+  </message>
+  <message name="ListIngredientsIn">
+    <part name="parameters" element="tns:ListIngredientsRequest" />
+  </message>
+  <message name="ListIngredientsOut">
+    <part name="parameters" element="tns:ListIngredients" />
+  </message>
+  <message name="ListIVContainerMaterialsIn">
+    <part name="parameters" element="tns:ListIVContainerMaterialsRequest" />
+  </message>
+  <message name="ListIVContainerMaterialsOut">
+    <part name="parameters" element="tns:ListIVContainerMaterials" />
+  </message>
+  <message name="ListLanguagesIn">
+    <part name="parameters" element="tns:ListLanguagesRequest" />
+  </message>
+  <message name="ListLanguagesOut">
+    <part name="parameters" element="tns:ListLanguages" />
+  </message>
+  <message name="ListLegendStatusesIn">
+    <part name="parameters" element="tns:ListLegendStatusesRequest" />
+  </message>
+  <message name="ListLegendStatusesOut">
+    <part name="parameters" element="tns:ListLegendStatuses" />
+  </message>
+  <message name="ListLicensesIn">
+    <part name="parameters" element="tns:ListLicensesRequest" />
+  </message>
+  <message name="ListLicensesOut">
+    <part name="parameters" element="tns:ListLicenses" />
+  </message>
+  <message name="ListLifestyleInteractionReferencesIn">
+    <part name="parameters" element="tns:ListLifestyleInteractionReferencesRequest" />
+  </message>
+  <message name="ListLifestyleInteractionReferencesOut">
+    <part name="parameters" element="tns:ListLifestyleInteractionReferences" />
+  </message>
+  <message name="ListMarketClassificationByProductIn">
+    <part name="parameters" element="tns:ListMarketClassificationByProductRequest" />
+  </message>
+  <message name="ListMarketClassificationByProductOut">
+    <part name="parameters" element="tns:ListMarketClassificationByProduct" />
+  </message>
+  <message name="ListMarketedProductsIn">
+    <part name="parameters" element="tns:ListMarketedProductsRequest" />
+  </message>
+  <message name="ListMarketedProductsOut">
+    <part name="parameters" element="tns:ListMarketedProducts" />
+  </message>
+  <message name="ListMedGuidesIn">
+    <part name="parameters" element="tns:ListMedGuidesRequest" />
+  </message>
+  <message name="ListMedGuidesOut">
+    <part name="parameters" element="tns:ListMedGuides" />
+  </message>
+  <message name="ListMorphineEquivalentDosingIn">
+    <part name="parameters" element="tns:ListMorphineEquivalentDosingRequest" />
+  </message>
+  <message name="ListMorphineEquivalentDosingOut">
+    <part name="parameters" element="tns:ListMorphineEquivalentDosing" />
+  </message>
+  <message name="ListNCPDPBillingUnitsIn">
+    <part name="parameters" element="tns:ListNCPDPBillingUnitsRequest" />
+  </message>
+  <message name="ListNCPDPBillingUnitsOut">
+    <part name="parameters" element="tns:ListNCPDPBillingUnits" />
+  </message>
+  <message name="ListOrderableNamesIn">
+    <part name="parameters" element="tns:ListOrderableNamesRequest" />
+  </message>
+  <message name="ListOrderableNamesOut">
+    <part name="parameters" element="tns:ListOrderableNames" />
+  </message>
+  <message name="ListPackagePricesIn">
+    <part name="parameters" element="tns:ListPackagePricesRequest" />
+  </message>
+  <message name="ListPackagePricesOut">
+    <part name="parameters" element="tns:ListPackagePrices" />
+  </message>
+  <message name="ListPackagePricesCurrentIn">
+    <part name="parameters" element="tns:ListPackagePricesCurrentRequest" />
+  </message>
+  <message name="ListPackagePricesCurrentOut">
+    <part name="parameters" element="tns:ListPackagePricesCurrent" />
+  </message>
+  <message name="ListPackagesIn">
+    <part name="parameters" element="tns:ListPackagesRequest" />
+  </message>
+  <message name="ListPackagesOut">
+    <part name="parameters" element="tns:ListPackages" />
+  </message>
+  <message name="ListPackagesByCompanyIn">
+    <part name="parameters" element="tns:ListPackagesByCompanyRequest" />
+  </message>
+  <message name="ListPackagesByCompanyOut">
+    <part name="parameters" element="tns:ListPackagesByCompany" />
+  </message>
+  <message name="ListPatientPackageInsertsIn">
+    <part name="parameters" element="tns:ListPatientPackageInsertsRequest" />
+  </message>
+  <message name="ListPatientPackageInsertsOut">
+    <part name="parameters" element="tns:ListPatientPackageInserts" />
+  </message>
+  <message name="ListPharmEquivalentProductsIn">
+    <part name="parameters" element="tns:ListPharmEquivalentProductsRequest" />
+  </message>
+  <message name="ListPharmEquivalentProductsOut">
+    <part name="parameters" element="tns:ListPharmEquivalentProducts" />
+  </message>
+  <message name="ListPregnancyRatingsIn">
+    <part name="parameters" element="tns:ListPregnancyRatingsRequest" />
+  </message>
+  <message name="ListPregnancyRatingsOut">
+    <part name="parameters" element="tns:ListPregnancyRatings" />
+  </message>
+  <message name="ListPriceChangeReasonsIn">
+    <part name="parameters" element="tns:ListPriceChangeReasonsRequest" />
+  </message>
+  <message name="ListPriceChangeReasonsOut">
+    <part name="parameters" element="tns:ListPriceChangeReasons" />
+  </message>
+  <message name="ListPriceTypesIn">
+    <part name="parameters" element="tns:ListPriceTypesRequest" />
+  </message>
+  <message name="ListPriceTypesOut">
+    <part name="parameters" element="tns:ListPriceTypes" />
+  </message>
+  <message name="ListProductActiveIngredientsIn">
+    <part name="parameters" element="tns:ListProductActiveIngredientsRequest" />
+  </message>
+  <message name="ListProductActiveIngredientsOut">
+    <part name="parameters" element="tns:ListProductActiveIngredients" />
+  </message>
+  <message name="ListProductAttributesIn">
+    <part name="parameters" element="tns:ListProductAttributesRequest" />
+  </message>
+  <message name="ListProductAttributesOut">
+    <part name="parameters" element="tns:ListProductAttributes" />
+  </message>
+  <message name="ListProductImagesIn">
+    <part name="parameters" element="tns:ListProductImagesRequest" />
+  </message>
+  <message name="ListProductImagesOut">
+    <part name="parameters" element="tns:ListProductImages" />
+  </message>
+  <message name="ListProductInactiveIngredientsIn">
+    <part name="parameters" element="tns:ListProductInactiveIngredientsRequest" />
+  </message>
+  <message name="ListProductInactiveIngredientsOut">
+    <part name="parameters" element="tns:ListProductInactiveIngredients" />
+  </message>
+  <message name="ListProductNamesIn">
+    <part name="parameters" element="tns:ListProductNamesRequest" />
+  </message>
+  <message name="ListProductNamesOut">
+    <part name="parameters" element="tns:ListProductNames" />
+  </message>
+  <message name="ListProductNameTypesIn">
+    <part name="parameters" element="tns:ListProductNameTypesRequest" />
+  </message>
+  <message name="ListProductNameTypesOut">
+    <part name="parameters" element="tns:ListProductNameTypes" />
+  </message>
+  <message name="ListProductsIn">
+    <part name="parameters" element="tns:ListProductsRequest" />
+  </message>
+  <message name="ListProductsOut">
+    <part name="parameters" element="tns:ListProducts" />
+  </message>
+  <message name="ListProductsByCompanyIn">
+    <part name="parameters" element="tns:ListProductsByCompanyRequest" />
+  </message>
+  <message name="ListProductsByCompanyOut">
+    <part name="parameters" element="tns:ListProductsByCompany" />
+  </message>
+  <message name="ListProductsByCPTherapeuticClassificationIn">
+    <part name="parameters" element="tns:ListProductsByCPTherapeuticClassificationRequest" />
+  </message>
+  <message name="ListProductsByCPTherapeuticClassificationOut">
+    <part name="parameters" element="tns:ListProductsByCPTherapeuticClassification" />
+  </message>
+  <message name="ListProductsByMarketClassificationIn">
+    <part name="parameters" element="tns:ListProductsByMarketClassificationRequest" />
+  </message>
+  <message name="ListProductsByMarketClassificationOut">
+    <part name="parameters" element="tns:ListProductsByMarketClassification" />
+  </message>
+  <message name="ListProductsByRxNormIn">
+    <part name="parameters" element="tns:ListProductsByRxNormRequest" />
+  </message>
+  <message name="ListProductsByRxNormOut">
+    <part name="parameters" element="tns:ListProductsByRxNorm" />
+  </message>
+  <message name="ListProductStorageIn">
+    <part name="parameters" element="tns:ListProductStorageRequest" />
+  </message>
+  <message name="ListProductStorageOut">
+    <part name="parameters" element="tns:ListProductStorage" />
+  </message>
+  <message name="ListREMSIn">
+    <part name="parameters" element="tns:ListREMSRequest" />
+  </message>
+  <message name="ListREMSOut">
+    <part name="parameters" element="tns:ListREMS" />
+  </message>
+  <message name="ListRxNormByProductIn">
+    <part name="parameters" element="tns:ListRxNormByProductRequest" />
+  </message>
+  <message name="ListRxNormByProductOut">
+    <part name="parameters" element="tns:ListRxNormByProduct" />
+  </message>
+  <message name="ListRoutesOfAdministrationIn">
+    <part name="parameters" element="tns:ListRoutesOfAdministrationRequest" />
+  </message>
+  <message name="ListRoutesOfAdministrationOut">
+    <part name="parameters" element="tns:ListRoutesOfAdministration" />
+  </message>
+  <message name="ListScriptFormsIn">
+    <part name="parameters" element="tns:ListScriptFormsRequest" />
+  </message>
+  <message name="ListScriptFormsOut">
+    <part name="parameters" element="tns:ListScriptForms" />
+  </message>
+  <message name="ListSeverityTypesIn">
+    <part name="parameters" element="tns:ListSeverityTypesRequest" />
+  </message>
+  <message name="ListSeverityTypesOut">
+    <part name="parameters" element="tns:ListSeverityTypes" />
+  </message>
+  <message name="ListShapesIn">
+    <part name="parameters" element="tns:ListShapesRequest" />
+  </message>
+  <message name="ListShapesOut">
+    <part name="parameters" element="tns:ListShapes" />
+  </message>
+  <message name="ListSigAdditionalInstructionsIn">
+    <part name="parameters" element="tns:ListSigAdditionalInstructionsRequest" />
+  </message>
+  <message name="ListSigAdditionalInstructionsOut">
+    <part name="parameters" element="tns:ListSigAdditionalInstructions" />
+  </message>
+  <message name="ListSigAdminMethodsIn">
+    <part name="parameters" element="tns:ListSigAdminMethodsRequest" />
+  </message>
+  <message name="ListSigAdminMethodsOut">
+    <part name="parameters" element="tns:ListSigAdminMethods" />
+  </message>
+  <message name="ListSigFrequenciesIn">
+    <part name="parameters" element="tns:ListSigFrequenciesRequest" />
+  </message>
+  <message name="ListSigFrequenciesOut">
+    <part name="parameters" element="tns:ListSigFrequencies" />
+  </message>
+  <message name="ListSigPrescribingReasonsIn">
+    <part name="parameters" element="tns:ListSigPrescribingReasonsRequest" />
+  </message>
+  <message name="ListSigPrescribingReasonsOut">
+    <part name="parameters" element="tns:ListSigPrescribingReasons" />
+  </message>
+  <message name="ListSigRoutesOfAdministrationIn">
+    <part name="parameters" element="tns:ListSigRoutesOfAdministrationRequest" />
+  </message>
+  <message name="ListSigRoutesOfAdministrationOut">
+    <part name="parameters" element="tns:ListSigRoutesOfAdministration" />
+  </message>
+  <message name="ListSigRouteCategoriesIn">
+    <part name="parameters" element="tns:ListSigRouteCategoriesRequest" />
+  </message>
+  <message name="ListSigRouteCategoriesOut">
+    <part name="parameters" element="tns:ListSigRouteCategories" />
+  </message>
+  <message name="ListSigUnitsIn">
+    <part name="parameters" element="tns:ListSigUnitsRequest" />
+  </message>
+  <message name="ListSigUnitsOut">
+    <part name="parameters" element="tns:ListSigUnits" />
+  </message>
+  <message name="ListSpecificProductsIn">
+    <part name="parameters" element="tns:ListSpecificProductsRequest" />
+  </message>
+  <message name="ListSpecificProductsOut">
+    <part name="parameters" element="tns:ListSpecificProducts" />
+  </message>
+  <message name="ListStateDEAClassificationIn">
+    <part name="parameters" element="tns:ListStateDEAClassificationRequest" />
+  </message>
+  <message name="ListStateDEAClassificationOut">
+    <part name="parameters" element="tns:ListStateDEAClassification" />
+  </message>
+  <message name="ListStateLegendStatusIn">
+    <part name="parameters" element="tns:ListStateLegendStatusRequest" />
+  </message>
+  <message name="ListStateLegendStatusOut">
+    <part name="parameters" element="tns:ListStateLegendStatus" />
+  </message>
+  <message name="ListStatesIn">
+    <part name="parameters" element="tns:ListStatesRequest" />
+  </message>
+  <message name="ListStatesOut">
+    <part name="parameters" element="tns:ListStates" />
+  </message>
+  <message name="ListStorageIn">
+    <part name="parameters" element="tns:ListStorageRequest" />
+  </message>
+  <message name="ListStorageOut">
+    <part name="parameters" element="tns:ListStorage" />
+  </message>
+  <message name="ListSubCandidateProductsIn">
+    <part name="parameters" element="tns:ListSubCandidateProductsRequest" />
+  </message>
+  <message name="ListSubCandidateProductsOut">
+    <part name="parameters" element="tns:ListSubCandidateProducts" />
+  </message>
+  <message name="ListTherapeuticConceptTreeIn">
+    <part name="parameters" element="tns:ListTherapeuticConceptTreeRequest" />
+  </message>
+  <message name="ListTherapeuticConceptTreeOut">
+    <part name="parameters" element="tns:ListTherapeuticConceptTree" />
+  </message>
+  <message name="ListTherapeuticEquivalenceCodesIn">
+    <part name="parameters" element="tns:ListTherapeuticEquivalenceCodesRequest" />
+  </message>
+  <message name="ListTherapeuticEquivalenceCodesOut">
+    <part name="parameters" element="tns:ListTherapeuticEquivalenceCodes" />
+  </message>
+  <message name="ListUnitDoseIndicatorsIn">
+    <part name="parameters" element="tns:ListUnitDoseIndicatorsRequest" />
+  </message>
+  <message name="ListUnitDoseIndicatorsOut">
+    <part name="parameters" element="tns:ListUnitDoseIndicators" />
+  </message>
+  <message name="ListUnitsIn">
+    <part name="parameters" element="tns:ListUnitsRequest" />
+  </message>
+  <message name="ListUnitsOut">
+    <part name="parameters" element="tns:ListUnits" />
+  </message>
+  <message name="ListWarningLabelsIn">
+    <part name="parameters" element="tns:ListWarningLabelsRequest" />
+  </message>
+  <message name="ListWarningLabelsOut">
+    <part name="parameters" element="tns:ListWarningLabels" />
+  </message>
+  <message name="ListWarningLabelVendorsIn">
+    <part name="parameters" element="tns:ListWarningLabelVendorsRequest" />
+  </message>
+  <message name="ListWarningLabelVendorsOut">
+    <part name="parameters" element="tns:ListWarningLabelVendors" />
+  </message>
+  <message name="PregnancyAndLactationByDrugIn">
+    <part name="parameters" element="tns:PregnancyAndLactationByDrugRequest" />
+  </message>
+  <message name="PregnancyAndLactationByDrugOut">
+    <part name="parameters" element="tns:PregnancyAndLactationByDrug" />
+  </message>
+  <message name="PregnancyAndLactationByDrugClassificationIn">
+    <part name="parameters" element="tns:PregnancyAndLactationByDrugClassificationRequest" />
+  </message>
+  <message name="PregnancyAndLactationByDrugClassificationOut">
+    <part name="parameters" element="tns:PregnancyAndLactationByDrugClassification" />
+  </message>
+  <message name="PregnancyAndLactationInfoByDiagnosisIn">
+    <part name="parameters" element="tns:PregnancyAndLactationInfoByDiagnosisRequest" />
+  </message>
+  <message name="PregnancyAndLactationInfoByDiagnosisOut">
+    <part name="parameters" element="tns:PregnancyAndLactationInfoByDiagnosis" />
+  </message>
+  <message name="PregnancyAndLactationScreeningAlertIn">
+    <part name="parameters" element="tns:PregnancyAndLactationScreeningAlertRequest" />
+  </message>
+  <message name="PregnancyAndLactationScreeningAlertOut">
+    <part name="parameters" element="tns:PregnancyAndLactationScreeningAlert" />
+  </message>
+  <message name="PrescriptionOrderIn">
+    <part name="parameters" element="tns:PrescriptionOrderRequest" />
+  </message>
+  <message name="PrescriptionOrderOut">
+    <part name="parameters" element="tns:PrescriptionOrder" />
+  </message>
+  <message name="ProductIdentifierIn">
+    <part name="parameters" element="tns:ProductIdentifierRequest" />
+  </message>
+  <message name="ProductIdentifierOut">
+    <part name="parameters" element="tns:ProductIdentifier" />
+  </message>
+  <message name="ServerInformationIn">
+    <part name="parameters" element="tns:ServerInformationRequest" />
+  </message>
+  <message name="ServerInformationOut">
+    <part name="parameters" element="tns:ServerInformation" />
+  </message>
+  <portType name="GSDDServiceSoap">
+    <operation name="ADRAdverseReactionsByDrug">
+      <input message="tns:ADRAdverseReactionsByDrugIn" />
+      <output message="tns:ADRAdverseReactionsByDrugOut" />
+    </operation>
+    <operation name="ADRAdverseReactionsByDrugClassification">
+      <input message="tns:ADRAdverseReactionsByDrugClassificationIn" />
+      <output message="tns:ADRAdverseReactionsByDrugClassificationOut" />
+    </operation>
+    <operation name="ADRDrugsByAdverseReaction">
+      <input message="tns:ADRDrugsByAdverseReactionIn" />
+      <output message="tns:ADRDrugsByAdverseReactionOut" />
+    </operation>
+    <operation name="ADRMatchDrugsToAdverseReactions">
+      <input message="tns:ADRMatchDrugsToAdverseReactionsIn" />
+      <output message="tns:ADRMatchDrugsToAdverseReactionsOut" />
+    </operation>
+    <operation name="ADRDrugsByDiagnosis">
+      <input message="tns:ADRDrugsByDiagnosisIn" />
+      <output message="tns:ADRDrugsByDiagnosisOut" />
+    </operation>
+    <operation name="Clinical">
+      <input message="tns:ClinicalIn" />
+      <output message="tns:ClinicalOut" />
+    </operation>
+    <operation name="ContentMonograph">
+      <input message="tns:ContentMonographIn" />
+      <output message="tns:ContentMonographOut" />
+    </operation>
+    <operation name="ContentMonographXML">
+      <input message="tns:ContentMonographXMLIn" />
+      <output message="tns:ContentMonographXMLOut" />
+    </operation>
+    <operation name="ContentMonographSectionXML">
+      <input message="tns:ContentMonographSectionXMLIn" />
+      <output message="tns:ContentMonographSectionXMLOut" />
+    </operation>
+    <operation name="ContentPatientEducation">
+      <input message="tns:ContentPatientEducationIn" />
+      <output message="tns:ContentPatientEducationOut" />
+    </operation>
+    <operation name="DetailPackage">
+      <input message="tns:DetailPackageIn" />
+      <output message="tns:DetailPackageOut" />
+    </operation>
+    <operation name="DetailProduct">
+      <input message="tns:DetailProductIn" />
+      <output message="tns:DetailProductOut" />
+    </operation>
+    <operation name="DoseCheckBySpecificProduct">
+      <input message="tns:DoseCheckBySpecificProductIn" />
+      <output message="tns:DoseCheckBySpecificProductOut" />
+    </operation>
+    <operation name="DoseCheckByIngredient">
+      <input message="tns:DoseCheckByIngredientIn" />
+      <output message="tns:DoseCheckByIngredientOut" />
+    </operation>
+    <operation name="DrugDiseaseContraindicationsByDrug">
+      <input message="tns:DrugDiseaseContraindicationsByDrugIn" />
+      <output message="tns:DrugDiseaseContraindicationsByDrugOut" />
+    </operation>
+    <operation name="DrugDiseaseDrugsByContraindication">
+      <input message="tns:DrugDiseaseDrugsByContraindicationIn" />
+      <output message="tns:DrugDiseaseDrugsByContraindicationOut" />
+    </operation>
+    <operation name="DrugDiseaseDrugsByIndication">
+      <input message="tns:DrugDiseaseDrugsByIndicationIn" />
+      <output message="tns:DrugDiseaseDrugsByIndicationOut" />
+    </operation>
+    <operation name="DrugDiseaseIndicationsByDrug">
+      <input message="tns:DrugDiseaseIndicationsByDrugIn" />
+      <output message="tns:DrugDiseaseIndicationsByDrugOut" />
+    </operation>
+    <operation name="DrugDiseaseMatchDrugToDiagnosis">
+      <input message="tns:DrugDiseaseMatchDrugToDiagnosisIn" />
+      <output message="tns:DrugDiseaseMatchDrugToDiagnosisOut" />
+    </operation>
+    <operation name="DrugDiseaseScreening">
+      <input message="tns:DrugDiseaseScreeningIn" />
+      <output message="tns:DrugDiseaseScreeningOut" />
+    </operation>
+    <operation name="DrugLabInterferenceByDrug">
+      <input message="tns:DrugLabInterferenceByDrugIn" />
+      <output message="tns:DrugLabInterferenceByDrugOut" />
+    </operation>
+    <operation name="DrugLabInterferenceByLab">
+      <input message="tns:DrugLabInterferenceByLabIn" />
+      <output message="tns:DrugLabInterferenceByLabOut" />
+    </operation>
+    <operation name="DrugLabParametersToMonitor">
+      <input message="tns:DrugLabParametersToMonitorIn" />
+      <output message="tns:DrugLabParametersToMonitorOut" />
+    </operation>
+    <operation name="DrugLabRecommendedValues">
+      <input message="tns:DrugLabRecommendedValuesIn" />
+      <output message="tns:DrugLabRecommendedValuesOut" />
+    </operation>
+    <operation name="IVCompatibilityByDrug">
+      <input message="tns:IVCompatibilityByDrugIn" />
+      <output message="tns:IVCompatibilityByDrugOut" />
+    </operation>
+    <operation name="IVCompatibilitySolutionsByDrug">
+      <input message="tns:IVCompatibilitySolutionsByDrugIn" />
+      <output message="tns:IVCompatibilitySolutionsByDrugOut" />
+    </operation>
+    <operation name="IVCompatibilityParenteralNutritionByDrug">
+      <input message="tns:IVCompatibilityParenteralNutritionByDrugIn" />
+      <output message="tns:IVCompatibilityParenteralNutritionByDrugOut" />
+    </operation>
+    <operation name="LactationAlternateDrugs">
+      <input message="tns:LactationAlternateDrugsIn" />
+      <output message="tns:LactationAlternateDrugsOut" />
+    </operation>
+    <operation name="ListAGSBeersQualityOfEvidences">
+      <input message="tns:ListAGSBeersQualityOfEvidencesIn" />
+      <output message="tns:ListAGSBeersQualityOfEvidencesOut" />
+    </operation>
+    <operation name="ListAGSBeersStrengthOfRecommendations">
+      <input message="tns:ListAGSBeersStrengthOfRecommendationsIn" />
+      <output message="tns:ListAGSBeersStrengthOfRecommendationsOut" />
+    </operation>
+    <operation name="ListAllergySubstanceClasses">
+      <input message="tns:ListAllergySubstanceClassesIn" />
+      <output message="tns:ListAllergySubstanceClassesOut" />
+    </operation>
+    <operation name="ListBoxedWarnings">
+      <input message="tns:ListBoxedWarningsIn" />
+      <output message="tns:ListBoxedWarningsOut" />
+    </operation>
+    <operation name="ListBrandGenericStatuses">
+      <input message="tns:ListBrandGenericStatusesIn" />
+      <output message="tns:ListBrandGenericStatusesOut" />
+    </operation>
+    <operation name="ListCoatings">
+      <input message="tns:ListCoatingsIn" />
+      <output message="tns:ListCoatingsOut" />
+    </operation>
+    <operation name="ListColors">
+      <input message="tns:ListColorsIn" />
+      <output message="tns:ListColorsOut" />
+    </operation>
+    <operation name="ListCompanies">
+      <input message="tns:ListCompaniesIn" />
+      <output message="tns:ListCompaniesOut" />
+    </operation>
+    <operation name="ListCPTherapeuticClassificationsByProduct">
+      <input message="tns:ListCPTherapeuticClassificationsByProductIn" />
+      <output message="tns:ListCPTherapeuticClassificationsByProductOut" />
+    </operation>
+    <operation name="ListCPTherapeuticClassificationTree">
+      <input message="tns:ListCPTherapeuticClassificationTreeIn" />
+      <output message="tns:ListCPTherapeuticClassificationTreeOut" />
+    </operation>
+    <operation name="ListDESIStatuses">
+      <input message="tns:ListDESIStatusesIn" />
+      <output message="tns:ListDESIStatusesOut" />
+    </operation>
+    <operation name="ListDocumentationTypes">
+      <input message="tns:ListDocumentationTypesIn" />
+      <output message="tns:ListDocumentationTypesOut" />
+    </operation>
+    <operation name="ListDoseForms">
+      <input message="tns:ListDoseFormsIn" />
+      <output message="tns:ListDoseFormsOut" />
+    </operation>
+    <operation name="ListDrugInteractionReferences">
+      <input message="tns:ListDrugInteractionReferencesIn" />
+      <output message="tns:ListDrugInteractionReferencesOut" />
+    </operation>
+    <operation name="ListFederal">
+      <input message="tns:ListFederalIn" />
+      <output message="tns:ListFederalOut" />
+    </operation>
+    <operation name="ListFederalDEAClassifications">
+      <input message="tns:ListFederalDEAClassificationsIn" />
+      <output message="tns:ListFederalDEAClassificationsOut" />
+    </operation>
+    <operation name="ListFlavors">
+      <input message="tns:ListFlavorsIn" />
+      <output message="tns:ListFlavorsOut" />
+    </operation>
+    <operation name="ListGenericProductClinicals">
+      <input message="tns:ListGenericProductClinicalsIn" />
+      <output message="tns:ListGenericProductClinicalsOut" />
+    </operation>
+    <operation name="ListGSTerms">
+      <input message="tns:ListGSTermsIn" />
+      <output message="tns:ListGSTermsOut" />
+    </operation>
+    <operation name="ListIngredientNameSources">
+      <input message="tns:ListIngredientNameSourcesIn" />
+      <output message="tns:ListIngredientNameSourcesOut" />
+    </operation>
+    <operation name="ListIngredients">
+      <input message="tns:ListIngredientsIn" />
+      <output message="tns:ListIngredientsOut" />
+    </operation>
+    <operation name="ListIVContainerMaterials">
+      <input message="tns:ListIVContainerMaterialsIn" />
+      <output message="tns:ListIVContainerMaterialsOut" />
+    </operation>
+    <operation name="ListLanguages">
+      <input message="tns:ListLanguagesIn" />
+      <output message="tns:ListLanguagesOut" />
+    </operation>
+    <operation name="ListLegendStatuses">
+      <input message="tns:ListLegendStatusesIn" />
+      <output message="tns:ListLegendStatusesOut" />
+    </operation>
+    <operation name="ListLicenses">
+      <input message="tns:ListLicensesIn" />
+      <output message="tns:ListLicensesOut" />
+    </operation>
+    <operation name="ListLifestyleInteractionReferences">
+      <input message="tns:ListLifestyleInteractionReferencesIn" />
+      <output message="tns:ListLifestyleInteractionReferencesOut" />
+    </operation>
+    <operation name="ListMarketClassificationByProduct">
+      <input message="tns:ListMarketClassificationByProductIn" />
+      <output message="tns:ListMarketClassificationByProductOut" />
+    </operation>
+    <operation name="ListMarketedProducts">
+      <input message="tns:ListMarketedProductsIn" />
+      <output message="tns:ListMarketedProductsOut" />
+    </operation>
+    <operation name="ListMedGuides">
+      <input message="tns:ListMedGuidesIn" />
+      <output message="tns:ListMedGuidesOut" />
+    </operation>
+    <operation name="ListMorphineEquivalentDosing">
+      <input message="tns:ListMorphineEquivalentDosingIn" />
+      <output message="tns:ListMorphineEquivalentDosingOut" />
+    </operation>
+    <operation name="ListNCPDPBillingUnits">
+      <input message="tns:ListNCPDPBillingUnitsIn" />
+      <output message="tns:ListNCPDPBillingUnitsOut" />
+    </operation>
+    <operation name="ListOrderableNames">
+      <input message="tns:ListOrderableNamesIn" />
+      <output message="tns:ListOrderableNamesOut" />
+    </operation>
+    <operation name="ListPackagePrices">
+      <input message="tns:ListPackagePricesIn" />
+      <output message="tns:ListPackagePricesOut" />
+    </operation>
+    <operation name="ListPackagePricesCurrent">
+      <input message="tns:ListPackagePricesCurrentIn" />
+      <output message="tns:ListPackagePricesCurrentOut" />
+    </operation>
+    <operation name="ListPackages">
+      <input message="tns:ListPackagesIn" />
+      <output message="tns:ListPackagesOut" />
+    </operation>
+    <operation name="ListPackagesByCompany">
+      <input message="tns:ListPackagesByCompanyIn" />
+      <output message="tns:ListPackagesByCompanyOut" />
+    </operation>
+    <operation name="ListPatientPackageInserts">
+      <input message="tns:ListPatientPackageInsertsIn" />
+      <output message="tns:ListPatientPackageInsertsOut" />
+    </operation>
+    <operation name="ListPharmEquivalentProducts">
+      <input message="tns:ListPharmEquivalentProductsIn" />
+      <output message="tns:ListPharmEquivalentProductsOut" />
+    </operation>
+    <operation name="ListPregnancyRatings">
+      <input message="tns:ListPregnancyRatingsIn" />
+      <output message="tns:ListPregnancyRatingsOut" />
+    </operation>
+    <operation name="ListPriceChangeReasons">
+      <input message="tns:ListPriceChangeReasonsIn" />
+      <output message="tns:ListPriceChangeReasonsOut" />
+    </operation>
+    <operation name="ListPriceTypes">
+      <input message="tns:ListPriceTypesIn" />
+      <output message="tns:ListPriceTypesOut" />
+    </operation>
+    <operation name="ListProductActiveIngredients">
+      <input message="tns:ListProductActiveIngredientsIn" />
+      <output message="tns:ListProductActiveIngredientsOut" />
+    </operation>
+    <operation name="ListProductAttributes">
+      <input message="tns:ListProductAttributesIn" />
+      <output message="tns:ListProductAttributesOut" />
+    </operation>
+    <operation name="ListProductImages">
+      <input message="tns:ListProductImagesIn" />
+      <output message="tns:ListProductImagesOut" />
+    </operation>
+    <operation name="ListProductInactiveIngredients">
+      <input message="tns:ListProductInactiveIngredientsIn" />
+      <output message="tns:ListProductInactiveIngredientsOut" />
+    </operation>
+    <operation name="ListProductNames">
+      <input message="tns:ListProductNamesIn" />
+      <output message="tns:ListProductNamesOut" />
+    </operation>
+    <operation name="ListProductNameTypes">
+      <input message="tns:ListProductNameTypesIn" />
+      <output message="tns:ListProductNameTypesOut" />
+    </operation>
+    <operation name="ListProducts">
+      <input message="tns:ListProductsIn" />
+      <output message="tns:ListProductsOut" />
+    </operation>
+    <operation name="ListProductsByCompany">
+      <input message="tns:ListProductsByCompanyIn" />
+      <output message="tns:ListProductsByCompanyOut" />
+    </operation>
+    <operation name="ListProductsByCPTherapeuticClassification">
+      <input message="tns:ListProductsByCPTherapeuticClassificationIn" />
+      <output message="tns:ListProductsByCPTherapeuticClassificationOut" />
+    </operation>
+    <operation name="ListProductsByMarketClassification">
+      <input message="tns:ListProductsByMarketClassificationIn" />
+      <output message="tns:ListProductsByMarketClassificationOut" />
+    </operation>
+    <operation name="ListProductsByRxNorm">
+      <input message="tns:ListProductsByRxNormIn" />
+      <output message="tns:ListProductsByRxNormOut" />
+    </operation>
+    <operation name="ListProductStorage">
+      <input message="tns:ListProductStorageIn" />
+      <output message="tns:ListProductStorageOut" />
+    </operation>
+    <operation name="ListREMS">
+      <input message="tns:ListREMSIn" />
+      <output message="tns:ListREMSOut" />
+    </operation>
+    <operation name="ListRoutesOfAdministration">
+      <input message="tns:ListRoutesOfAdministrationIn" />
+      <output message="tns:ListRoutesOfAdministrationOut" />
+    </operation>
+    <operation name="ListRxNormByProduct">
+      <input message="tns:ListRxNormByProductIn" />
+      <output message="tns:ListRxNormByProductOut" />
+    </operation>
+    <operation name="ListScriptForms">
+      <input message="tns:ListScriptFormsIn" />
+      <output message="tns:ListScriptFormsOut" />
+    </operation>
+    <operation name="ListSeverityTypes">
+      <input message="tns:ListSeverityTypesIn" />
+      <output message="tns:ListSeverityTypesOut" />
+    </operation>
+    <operation name="ListShapes">
+      <input message="tns:ListShapesIn" />
+      <output message="tns:ListShapesOut" />
+    </operation>
+    <operation name="ListSigAdditionalInstructions">
+      <input message="tns:ListSigAdditionalInstructionsIn" />
+      <output message="tns:ListSigAdditionalInstructionsOut" />
+    </operation>
+    <operation name="ListSigAdminMethods">
+      <input message="tns:ListSigAdminMethodsIn" />
+      <output message="tns:ListSigAdminMethodsOut" />
+    </operation>
+    <operation name="ListSigFrequencies">
+      <input message="tns:ListSigFrequenciesIn" />
+      <output message="tns:ListSigFrequenciesOut" />
+    </operation>
+    <operation name="ListSigPrescribingReasons">
+      <input message="tns:ListSigPrescribingReasonsIn" />
+      <output message="tns:ListSigPrescribingReasonsOut" />
+    </operation>
+    <operation name="ListSigRoutesOfAdministration">
+      <input message="tns:ListSigRoutesOfAdministrationIn" />
+      <output message="tns:ListSigRoutesOfAdministrationOut" />
+    </operation>
+    <operation name="ListSigRouteCategories">
+      <input message="tns:ListSigRouteCategoriesIn" />
+      <output message="tns:ListSigRouteCategoriesOut" />
+    </operation>
+    <operation name="ListSigUnits">
+      <input message="tns:ListSigUnitsIn" />
+      <output message="tns:ListSigUnitsOut" />
+    </operation>
+    <operation name="ListSpecificProducts">
+      <input message="tns:ListSpecificProductsIn" />
+      <output message="tns:ListSpecificProductsOut" />
+    </operation>
+    <operation name="ListStateDEAClassification">
+      <input message="tns:ListStateDEAClassificationIn" />
+      <output message="tns:ListStateDEAClassificationOut" />
+    </operation>
+    <operation name="ListStateLegendStatus">
+      <input message="tns:ListStateLegendStatusIn" />
+      <output message="tns:ListStateLegendStatusOut" />
+    </operation>
+    <operation name="ListStates">
+      <input message="tns:ListStatesIn" />
+      <output message="tns:ListStatesOut" />
+    </operation>
+    <operation name="ListStorage">
+      <input message="tns:ListStorageIn" />
+      <output message="tns:ListStorageOut" />
+    </operation>
+    <operation name="ListSubCandidateProducts">
+      <input message="tns:ListSubCandidateProductsIn" />
+      <output message="tns:ListSubCandidateProductsOut" />
+    </operation>
+    <operation name="ListTherapeuticConceptTree">
+      <input message="tns:ListTherapeuticConceptTreeIn" />
+      <output message="tns:ListTherapeuticConceptTreeOut" />
+    </operation>
+    <operation name="ListTherapeuticEquivalenceCodes">
+      <input message="tns:ListTherapeuticEquivalenceCodesIn" />
+      <output message="tns:ListTherapeuticEquivalenceCodesOut" />
+    </operation>
+    <operation name="ListUnitDoseIndicators">
+      <input message="tns:ListUnitDoseIndicatorsIn" />
+      <output message="tns:ListUnitDoseIndicatorsOut" />
+    </operation>
+    <operation name="ListUnits">
+      <input message="tns:ListUnitsIn" />
+      <output message="tns:ListUnitsOut" />
+    </operation>
+    <operation name="ListWarningLabels">
+      <input message="tns:ListWarningLabelsIn" />
+      <output message="tns:ListWarningLabelsOut" />
+    </operation>
+    <operation name="ListWarningLabelVendors">
+      <input message="tns:ListWarningLabelVendorsIn" />
+      <output message="tns:ListWarningLabelVendorsOut" />
+    </operation>
+    <operation name="PregnancyAndLactationByDrug">
+      <input message="tns:PregnancyAndLactationByDrugIn" />
+      <output message="tns:PregnancyAndLactationByDrugOut" />
+    </operation>
+    <operation name="PregnancyAndLactationByDrugClassification">
+      <input message="tns:PregnancyAndLactationByDrugClassificationIn" />
+      <output message="tns:PregnancyAndLactationByDrugClassificationOut" />
+    </operation>
+    <operation name="PregnancyAndLactationInfoByDiagnosis">
+      <input message="tns:PregnancyAndLactationInfoByDiagnosisIn" />
+      <output message="tns:PregnancyAndLactationInfoByDiagnosisOut" />
+    </operation>
+    <operation name="PregnancyAndLactationScreeningAlert">
+      <input message="tns:PregnancyAndLactationScreeningAlertIn" />
+      <output message="tns:PregnancyAndLactationScreeningAlertOut" />
+    </operation>
+    <operation name="PrescriptionOrder">
+      <input message="tns:PrescriptionOrderIn" />
+      <output message="tns:PrescriptionOrderOut" />
+    </operation>
+    <operation name="ProductIdentifier">
+      <input message="tns:ProductIdentifierIn" />
+      <output message="tns:ProductIdentifierOut" />
+    </operation>
+    <operation name="ServerInformation">
+      <input message="tns:ServerInformationIn" />
+      <output message="tns:ServerInformationOut" />
+    </operation>
+  </portType>
+  <binding name="GSDDServiceSoap" type="tns:GSDDServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ADRAdverseReactionsByDrug">
+      <soap:operation soapAction="urn:ADRAdverseReactionsByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ADRAdverseReactionsByDrugClassification">
+      <soap:operation soapAction="urn:ADRAdverseReactionsByDrugClassification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ADRDrugsByAdverseReaction">
+      <soap:operation soapAction="urn:ADRDrugsByAdverseReaction" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ADRMatchDrugsToAdverseReactions">
+      <soap:operation soapAction="urn:ADRMatchDrugsToAdverseReactions" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ADRDrugsByDiagnosis">
+      <soap:operation soapAction="urn:ADRDrugsByDiagnosis" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Clinical">
+      <soap:operation soapAction="urn:Clinical" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ContentMonograph">
+      <soap:operation soapAction="urn:ContentMonograph" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ContentMonographXML">
+      <soap:operation soapAction="urn:ContentMonographXML" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ContentMonographSectionXML">
+      <soap:operation soapAction="urn:ContentMonographSectionXML" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ContentPatientEducation">
+      <soap:operation soapAction="urn:ContentPatientEducation" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DetailPackage">
+      <soap:operation soapAction="DetailPackage" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DetailProduct">
+      <soap:operation soapAction="urn:DetailProduct" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DoseCheckBySpecificProduct">
+      <soap:operation soapAction="urn:DoseCheckBySpecificProduct" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DoseCheckByIngredient">
+      <soap:operation soapAction="urn:DoseCheckByIngredient" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseContraindicationsByDrug">
+      <soap:operation soapAction="urn:DrugDiseaseContraindicationsByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseDrugsByContraindication">
+      <soap:operation soapAction="urn:DrugDiseaseDrugsByContraindication" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseDrugsByIndication">
+      <soap:operation soapAction="urn:DrugDiseaseDrugsByIndication" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseIndicationsByDrug">
+      <soap:operation soapAction="urn:DrugDiseaseIndicationsByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseMatchDrugToDiagnosis">
+      <soap:operation soapAction="urn:DrugDiseaseMatchDrugToDiagnosis" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugDiseaseScreening">
+      <soap:operation soapAction="urn:DrugDiseaseScreening" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugLabInterferenceByDrug">
+      <soap:operation soapAction="urn:DrugLabInterferenceByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugLabInterferenceByLab">
+      <soap:operation soapAction="urn:DrugLabInterferenceByLab" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugLabParametersToMonitor">
+      <soap:operation soapAction="urn:DrugLabParametersToMonitor" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DrugLabRecommendedValues">
+      <soap:operation soapAction="urn:DrugLabRecommendedValues" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IVCompatibilityByDrug">
+      <soap:operation soapAction="urn:IVCompatibilityByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IVCompatibilityParenteralNutritionByDrug">
+      <soap:operation soapAction="urn:IVCompatibilityParenteralNutritionByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IVCompatibilitySolutionsByDrug">
+      <soap:operation soapAction="urn:IVCompatibilitySolutionsByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LactationAlternateDrugs">
+      <soap:operation soapAction="urn:LactationAlternateDrugs" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListAGSBeersQualityOfEvidences">
+      <soap:operation soapAction="urn:ListAGSBeersQualityOfEvidences" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListAGSBeersStrengthOfRecommendations">
+      <soap:operation soapAction="urn:ListAGSBeersStrengthOfRecommendations" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListAllergySubstanceClasses">
+      <soap:operation soapAction="urn:ListAllergySubstanceClasses" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListBoxedWarnings">
+      <soap:operation soapAction="urn:ListBoxedWarnings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListBrandGenericStatuses">
+      <soap:operation soapAction="urn:ListBrandGenericStatuses" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListCoatings">
+      <soap:operation soapAction="urn:ListCoatings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListColors">
+      <soap:operation soapAction="urn:ListColors" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListCompanies">
+      <soap:operation soapAction="urn:ListCompanies" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListCPTherapeuticClassificationsByProduct">
+      <soap:operation soapAction="urn:ListCPTherapeuticClassificationsByProduct" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListCPTherapeuticClassificationTree">
+      <soap:operation soapAction="urn:ListCPTherapeuticClassificationTree" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListDESIStatuses">
+      <soap:operation soapAction="urn:ListDESIStatuses" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListDocumentationTypes">
+      <soap:operation soapAction="urn:ListDocumentationTypes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListDoseForms">
+      <soap:operation soapAction="urn:ListDoseForms" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListDrugInteractionReferences">
+      <soap:operation soapAction="urn:ListDrugInteractionReferences" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListFederal">
+      <soap:operation soapAction="urn:ListFederal" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListFederalDEAClassifications">
+      <soap:operation soapAction="urn:ListFederalDEAClassifications" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListFlavors">
+      <soap:operation soapAction="urn:ListFlavors" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListGenericProductClinicals">
+      <soap:operation soapAction="urn:ListGenericProductClinicals" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListGSTerms">
+      <soap:operation soapAction="urn:ListGSTerms" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListIngredientNameSources">
+      <soap:operation soapAction="urn:ListIngredientNameSources" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListIngredients">
+      <soap:operation soapAction="urn:ListIngredients" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListIVContainerMaterials">
+      <soap:operation soapAction="urn:ListIVContainerMaterials" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListLanguages">
+      <soap:operation soapAction="urn:ListLanguages" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListLegendStatuses">
+      <soap:operation soapAction="urn:ListLegendStatuses" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListLicenses">
+      <soap:operation soapAction="urn:ListLicenses" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListLifestyleInteractionReferences">
+      <soap:operation soapAction="urn:ListLifestyleInteractionReferences" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListMarketClassificationByProduct">
+      <soap:operation soapAction="urn:ListMarketClassificationByProduct" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListMarketedProducts">
+      <soap:operation soapAction="urn:ListMarketedProducts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListMedGuides">
+      <soap:operation soapAction="urn:ListMedGuides" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListMorphineEquivalentDosing">
+      <soap:operation soapAction="urn:ListMorphineEquivalentDosing" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListNCPDPBillingUnits">
+      <soap:operation soapAction="urn:ListNCPDPBillingUnits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListOrderableNames">
+      <soap:operation soapAction="urn:ListOrderableNames" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPackagePrices">
+      <soap:operation soapAction="urn:ListPackagePrices" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPackagePricesCurrent">
+      <soap:operation soapAction="urn:ListPackagePricesCurrent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPackages">
+      <soap:operation soapAction="urn:ListPackages" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPackagesByCompany">
+      <soap:operation soapAction="urn:ListPackagesByCompany" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPatientPackageInserts">
+      <soap:operation soapAction="urn:ListPatientPackageInserts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPharmEquivalentProducts">
+      <soap:operation soapAction="urn:ListPharmEquivalentProducts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPregnancyRatings">
+      <soap:operation soapAction="urn:ListPregnancyRatings" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPriceChangeReasons">
+      <soap:operation soapAction="urn:ListPriceChangeReasons" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListPriceTypes">
+      <soap:operation soapAction="urn:ListPriceTypes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductActiveIngredients">
+      <soap:operation soapAction="urn:ListProductActiveIngredients" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductAttributes">
+      <soap:operation soapAction="urn:ListProductAttributes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductImages">
+      <soap:operation soapAction="urn:ListProductImages" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductInactiveIngredients">
+      <soap:operation soapAction="urn:ListProductInactiveIngredients" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductNames">
+      <soap:operation soapAction="urn:ListProductNames" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductNameTypes">
+      <soap:operation soapAction="urn:ListProductNameTypes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProducts">
+      <soap:operation soapAction="urn:ListProducts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductsByCompany">
+      <soap:operation soapAction="urn:ListProductsByCompany" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductsByCPTherapeuticClassification">
+      <soap:operation soapAction="urn:ListProductsByCPTherapeuticClassification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductsByMarketClassification">
+      <soap:operation soapAction="urn:ListProductsByMarketClassification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductsByRxNorm">
+      <soap:operation soapAction="urn:ListProductsByRxNorm" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListProductStorage">
+      <soap:operation soapAction="urn:ListProductStorage" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListREMS">
+      <soap:operation soapAction="urn:ListREMS" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListRoutesOfAdministration">
+      <soap:operation soapAction="urn:ListRoutesOfAdministration" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListRxNormByProduct">
+      <soap:operation soapAction="urn:ListRxNormByProduct" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListScriptForms">
+      <soap:operation soapAction="urn:ListScriptForms" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSeverityTypes">
+      <soap:operation soapAction="urn:ListSeverityTypes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListShapes">
+      <soap:operation soapAction="urn:ListShapes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigAdditionalInstructions">
+      <soap:operation soapAction="urn:ListSigAdditionalInstructions" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigAdminMethods">
+      <soap:operation soapAction="urn:ListSigAdminMethods" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigFrequencies">
+      <soap:operation soapAction="urn:ListSigFrequencies" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigPrescribingReasons">
+      <soap:operation soapAction="urn:ListSigPrescribingReasons" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigRoutesOfAdministration">
+      <soap:operation soapAction="urn:ListSigRoutesOfAdministration" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigRouteCategories">
+      <soap:operation soapAction="urn:ListSigRouteCategories" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSigUnits">
+      <soap:operation soapAction="urn:ListSigUnits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSpecificProducts">
+      <soap:operation soapAction="urn:ListSpecificProducts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListStateDEAClassification">
+      <soap:operation soapAction="urn:ListStateDEAClassification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListStateLegendStatus">
+      <soap:operation soapAction="urn:ListStateLegendStatus" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListStates">
+      <soap:operation soapAction="urn:ListStates" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListStorage">
+      <soap:operation soapAction="urn:ListStorage" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListSubCandidateProducts">
+      <soap:operation soapAction="urn:ListSubCandidateProducts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListTherapeuticConceptTree">
+      <soap:operation soapAction="urn:ListTherapeuticConceptTree" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListTherapeuticEquivalenceCodes">
+      <soap:operation soapAction="urn:ListTherapeuticEquivalenceCodes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListUnitDoseIndicators">
+      <soap:operation soapAction="urn:ListUnitDoseIndicators" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListUnits">
+      <soap:operation soapAction="urn:ListUnits" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListWarningLabels">
+      <soap:operation soapAction="urn:ListWarningLabels" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListWarningLabelVendors">
+      <soap:operation soapAction="urn:ListWarningLabelVendors" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PregnancyAndLactationByDrug">
+      <soap:operation soapAction="urn:PregnancyAndLactationByDrug" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PregnancyAndLactationByDrugClassification">
+      <soap:operation soapAction="urn:PregnancyAndLactationByDrugClassification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PregnancyAndLactationInfoByDiagnosis">
+      <soap:operation soapAction="urn:PregnancyAndLactationInfoByDiagnosis" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PregnancyAndLactationScreeningAlert">
+      <soap:operation soapAction="urn:PregnancyAndLactationScreeningAlert" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PrescriptionOrder">
+      <soap:operation soapAction="urn:PrescriptionOrder" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ProductIdentifier">
+      <soap:operation soapAction="urn:ProductIdentifier" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ServerInformation">
+      <soap:operation soapAction="urn:ServerInformation" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GSDDService">
+    <port name="GSDDServiceSoap" binding="tns:GSDDServiceSoap">
+      <soap:address location="http://gsdd:3434/gsdd" />
+    </port>
+  </service>
+</definitions>

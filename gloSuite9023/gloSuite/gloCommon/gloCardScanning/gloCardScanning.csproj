@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EE01581-8654-44EB-865F-3B7BB27D3AED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloCardScanning</RootNamespace>
+    <AssemblyName>gloCardScanning</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.MEDICSDKLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="AxInterop.SCANVIEWLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MEDICSDKCOMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Interop.MEDICSDKLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLL\Interop.MEDICSDKLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NetChequeCOM, Version=1.0.0.4, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NetChequeCOM.dll</HintPath>
+    </Reference>
+    <Reference Include="NetMedicSdkCOM, Version=1.0.1.2, Culture=neutral" />
+    <Reference Include="NetScanW, Version=1.0.0.8, Culture=neutral">
+      <HintPath>DLL\NetScanW.dll</HintPath>
+    </Reference>
+    <Reference Include="NetScanWex, Version=1.1.2.4, Culture=neutral">
+      <HintPath>DLL\NetScanWex.dll</HintPath>
+    </Reference>
+    <Reference Include="PegasusImaging.WinForms.ImagXpress9, Version=9.0.31.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL" />
+    <Reference Include="PegasusImaging.WinForms.TwainPRO5, Version=5.0.15.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsgloC1FlexStyle.cs" />
+    <Compile Include="gloCardData.cs" />
+    <Compile Include="gloCardScanWithOCR.cs" />
+    <Compile Include="TwaingloCardScan.cs" />
+    <Compile Include="ClsgloCardScanning.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCardImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCardImage.Designer.cs">
+      <DependentUpon>frmCardImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientList.Designer.cs">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScanCard_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScanCard_New.designer.cs">
+      <DependentUpon>frmScanCard_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCriteria.Designer.cs">
+      <DependentUpon>frmSetupCriteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupScannerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupScannerSettings.Designer.cs">
+      <DependentUpon>frmSetupScannerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClsgloScanConstants.cs" />
+    <Compile Include="frmUpdatePatientImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePatientImage.Designer.cs">
+      <DependentUpon>frmUpdatePatientImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloCardPatientStripControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloCardPatientStripControl.designer.cs">
+      <DependentUpon>gloCardPatientStripControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCardImage.resx">
+      <DependentUpon>frmCardImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientList.resx">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScanCard_New.resx">
+      <DependentUpon>frmScanCard_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCriteria.resx">
+      <DependentUpon>frmSetupCriteria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupScannerSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupScannerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePatientImage.resx">
+      <DependentUpon>frmUpdatePatientImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloCardPatientStripControl.resx">
+      <DependentUpon>gloCardPatientStripControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Toolstrip.gif" />
+    <None Include="Resources\Img_2003DarkHeader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAppointmentBook\gloAppointmentBook.csproj">
+      <Project>{8DDE29B5-495E-49D1-82A0-644B2C4B493C}</Project>
+      <Name>gloAppointmentBook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloContacts\gloContacts.csproj">
+      <Project>{E927ECC9-383B-4812-8167-48F712C5A769}</Project>
+      <Name>gloContacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPrintDialog\gloPrintDialog.csproj">
+      <Project>{8DD0457B-4AF0-4CB3-A7BB-35DAC5665C50}</Project>
+      <Name>gloPrintDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloRemoteScanGeneral\gloRemoteScanGeneral.csproj">
+      <Project>{73A47044-27C0-4683-8970-4F0351CAC1DC}</Project>
+      <Name>gloRemoteScanGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloScanImaging\gloScanImaging\gloScanImaging.csproj">
+      <Project>{3433B6B1-93EC-4D74-B9E7-DC06327E1449}</Project>
+      <Name>gloScanImaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\AxInterop.MEDICSDKLib.dll" />
+    <Content Include="DLL\AxInterop.SCANVIEWLib.dll" />
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <Content Include="DLL\Interop.MEDICSDKCOMLib.dll" />
+    <Content Include="DLL\Interop.MEDICSDKLib.dll" />
+    <Content Include="DLL\Interop.SCANVIEWLib.dll" />
+    <Content Include="DLL\Interop.SCANWEXLib.dll" />
+    <Content Include="DLL\Interop.SCANWLib.dll" />
+    <Content Include="DLL\Interop.stdole.dll" />
+    <Content Include="DLL\NetChequeCOM.dll" />
+    <Content Include="DLL\NetMedicSdkCOM.dll" />
+    <Content Include="DLL\NetScanW.dll" />
+    <Content Include="DLL\NetScanWex.dll" />
+    <Content Include="DLL\PegasusImaging.WinForms.ImagXpress9.dll" />
+    <Content Include="DLL\PegasusImaging.WinForms.TwainPRO5.dll" />
+    <None Include="app.config" />
+    <None Include="Resources\FemalePatient.gif" />
+    <Content Include="Resources\HumanNew.png" />
+    <Content Include="Resources\Img_Button.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <None Include="Resources\Insurance Card scan.ico" />
+    <None Include="Resources\Patient scan card.ico" />
+    <None Include="Resources\MalePatient.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

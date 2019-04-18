@@ -1,0 +1,235 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:gloSurescriptSecureMessage_InBox="clr-namespace:gloSurescriptSecureMessage_InBox"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:gloSurescriptSecureMessage_InBox"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xml:lang="en-US"
+	mc:Ignorable="d"
+	x:Class="gloSurescriptSecureMessage_InBox.Inbox"
+	x:Name="Window"
+	Title="DIRECT Inbox"
+	Width="800" Height="600" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" Closing="Window_Closing" Icon="/gloSurescriptSecureMessage;component/graphics/Inbox.ico" Closed="Window_Closed" Style="{DynamicResource WindowStyles}" Activated="Window_Activated" Deactivated="Window_Deactivated" xmlns:my="clr-namespace:gloSurescriptSecureMessage">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <XmlDataProvider x:Key="inboxDS" d:IsDataSource="True" />
+            <local:InboxAttachmentConverter x:Key="InboxAttachmentConverter"/>
+            <!--<gloSurescriptSecureMessage_InBox:MyFrameSourceConverter x:Key="MyFrameSourceConverter" />-->
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid x:Name="LayoutRoot" Background="{x:Null}" DataContext="{Binding Mode=Default, Source={StaticResource inboxDS}, XPath=/Inbox/Mail}" >
+        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" LastChildFill="True">
+            <gloSurescriptSecureMessage_InBox:MyToolBarTrayControl DockPanel.Dock="Top" x:Name="myToolBarTrayControl"/>
+            <gloSurescriptSecureMessage_InBox:MyStatusBarControl DockPanel.Dock="Bottom"/>
+            <Border Width="Auto" Height="Auto" BorderBrush="{DynamicResource MyBorderBlueGradientBrush}" BorderThickness="5,3,5,5" DockPanel.Dock="Bottom">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MinWidth="27" x:Name="myMainGridFirstColumn"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <GridSplitter HorizontalAlignment="Left" x:Name="myMainGridFirstColumnSplitter" Width="5" Background="{DynamicResource MyBorderBlueGradientBrush}" Grid.Column="1" DragDelta="myMainGridFirstColumnSplitter_DragDelta"/>
+                    <GridSplitter Width="5" Background="{DynamicResource MyBorderBlueGradientBrush}" Grid.Column="1" />
+
+                 
+                    <gloSurescriptSecureMessage_InBox:MyFoldersExpandersControl HorizontalAlignment="Stretch" Margin="0,32,0,0" x:Name="myFoldersExpandersControl" VerticalAlignment="Stretch" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5"/>
+                    <Border VerticalAlignment="Top" Height="31" Background="{DynamicResource MyBlueBackgroundGradientBrush}" BorderBrush="{DynamicResource MyBlueBorderSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5">
+                        <DockPanel x:Name="dp1" Width="Auto" Height="Auto" LastChildFill="False">
+                            <ToggleButton x:Name="myMainGridToggleButton" Style="{DynamicResource MyDoubleArrowToggleButtonStyle}" VerticalAlignment="Center" Width="26" Content="ToggleButton" Background="{x:Null}" BorderBrush="{x:Null}" DockPanel.Dock="Right" Checked="myMainGridToggleButton_Checked" Unchecked="myMainGridToggleButton_Unchecked"/>
+                            <TextBlock Margin="4,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource MyDarkBlueSolidBrush}" Text="Message" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                    </Border>
+                    <Border Margin="5,0" VerticalAlignment="Stretch" Height="Auto" Grid.Column="1" BorderThickness="0">
+                        <Grid x:Name="dp2" Width="Auto" Height="Auto" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"  />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <gloSurescriptSecureMessage_InBox:MyInboxExpanderControl VerticalAlignment="Top" x:Name="myInboxExpanderControl" Grid.Row="0" />
+                            <ListView ContextMenuOpening="myListView_ContextMenuOpening" 
+                                      ButtonBase.Click="myGridViewColumnHeader_Click"   
+                                      SelectedIndex="0" 
+                                      x:Name="myListView" 
+                                      BorderBrush="{x:Null}" 
+                                      BorderThickness="0,0,0,0" 
+                                      Foreground="#FF000000"  
+                                      ItemsSource="{Binding}" 
+                                      IsSynchronizedWithCurrentItem="True"  
+                                      Style="{DynamicResource MyListViewStyle}" 
+                                      ItemContainerStyle="{DynamicResource MyListViewItemContainerStyle}" 
+                                      SelectionChanged="myListView_SelectionChanged" 
+                                      MouseDoubleClick="myListView_MouseDoubleClick" 
+                                      PreviewMouseRightButtonUp="myListView_PreviewMouseRightButtonUp" 
+                                      Grid.Row="1">
+
+                                <ListView.Resources>
+
+                             
+                                    <DataTemplate x:Key="MyReadCellDataTemplate">
+                                        <Image x:Name="myImage" Stretch="None" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding bIsRead}" Value="True" >
+                                                <Setter Property="Source" TargetName="myImage" Value="graphics\read.gif" />
+                                               
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding bIsRead}" Value="False" >
+                                                <Setter Property="Source" TargetName="myImage" Value="graphics\unread.gif"  />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+
+                                    <DataTemplate x:Key="MyAttachmentCellDataTemplate">
+                                        <!--<TextBlock Text="{Binding noOfRAttachements, Converter={StaticResource InboxAttachmentConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />-->
+                                        <Image x:Name="myImage" Source="{Binding  sCDAConfidentiality, Converter={StaticResource InboxAttachmentConverter}}"    RenderOptions.BitmapScalingMode="NearestNeighbor" Stretch="None" />
+                                        
+                                    </DataTemplate>
+
+
+                                    <DataTemplate x:Key="MyArrowUpColumnHeaderTemplate">
+                                        <StackPanel Orientation="Horizontal" >
+                                            <TextBlock Text="{Binding}" />
+                                            <Path StrokeThickness="1" Fill="{DynamicResource MyBlueSolidBrush2}" Data="M 0,4 L 3.5,0 L 7,4 Z" Margin="10,7,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                    <DataTemplate x:Key="MyArrowDownColumnHeaderTemplate">
+                                        <StackPanel Orientation="Horizontal" >
+                                            <TextBlock Text="{Binding}" />
+                                            <Path StrokeThickness="1" Fill="{DynamicResource MyBlueSolidBrush2}" Data="M 0,0 L 3.5,4 L 7,0 Z" Margin="10,7,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+
+                                </ListView.Resources>
+                                
+                                <ListView.View>
+                                
+                                    <GridView >
+
+                                        <GridViewColumn CellTemplate="{DynamicResource MyReadCellDataTemplate}">
+                                            <Image Source="graphics\mailType.gif"
+                                                   RenderOptions.BitmapScalingMode="NearestNeighbor"  Stretch="None"></Image>
+                                                  
+                                        </GridViewColumn>
+
+                                        <GridViewColumn CellTemplate="{DynamicResource MyAttachmentCellDataTemplate}" Width="35" >
+
+                                            <Image Source="graphics\attachment.gif" RenderOptions.BitmapScalingMode="NearestNeighbor" Stretch="None">
+                                                   </Image>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn  x:Name="GrdViewID" Header="ID" DisplayMemberBinding="{Binding nSecureMessageInboxID}" Width="0"/>
+                                        <GridViewColumn  x:Name="GrdViewFrom" Header="From" DisplayMemberBinding="{Binding From}" Width="Auto" />
+                                        <GridViewColumn x:Name="GrdViewTo"  Header="To" DisplayMemberBinding="{Binding sTo}"/>                                        
+                                        <GridViewColumn  x:Name="GrdViewSubject" Header="Subject"  DisplayMemberBinding="{Binding Subject}" Width="250" />
+                                        <GridViewColumn  x:Name="GrdViewStatusCode" Header="Status Code" DisplayMemberBinding="{Binding StatusCode}" Width="Auto" />
+                                        <GridViewColumn  x:Name="GrdViewStatusDescription" Header="Status Description" DisplayMemberBinding="{Binding StatusDescription}" Width="Auto" />
+                                        <GridViewColumn  x:Name="GrdViewReceived" Header="Received" DisplayMemberBinding="{Binding Received}" Width="Auto" />
+                                        <GridViewColumn  x:Name="GrdDelegatedUser" Header="User" DisplayMemberBinding="{Binding DelegatedUser}" Width="Auto" />
+                                       
+                                    </GridView>
+                                </ListView.View>
+                                
+                                <ListView.ContextMenu>
+                                    <ContextMenu x:Name="lstContext">
+                                        
+                                        <!--<MenuItem Header="_Mail Message" InputGestureText="Ctrl+N" >-->
+                                        <MenuItem Header="Mark As Unread"  Visibility="Hidden"  Click="MenuItem_Click" Name="mnuUnRead"  Uid="{Binding gloAuditTrail.ActivityModule.PrescriptionnSecureMessageInboxID}" >
+                                            <MenuItem.Icon>
+                                                <Image  x:Name="ContextUnread" Width="18" Height="18" Source="graphics\message.ico"    RenderOptions.BitmapScalingMode="NearestNeighbor"  Stretch="Fill"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                       
+                                        <MenuItem Header="Mark As Read"  Click="MenuItem_Click" Name="mnuReadUnRead">
+                                            <MenuItem.Icon>
+                                                <Image  x:Name="Contextsss" Width="18" Height="18" Source="graphics\message.ico"    RenderOptions.BitmapScalingMode="NearestNeighbor"  Stretch="Fill"/>
+                                            </MenuItem.Icon>                                                                                       
+                                        </MenuItem>
+
+                                        <MenuItem Header="Delete" Click="MenuItem_Click" Name="mnuDelete">
+                                            <MenuItem.Icon>
+                                                <Image Width="18" Height="18" Source="graphics\delete.gif"    RenderOptions.BitmapScalingMode="NearestNeighbor"  Stretch="Uniform"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+
+                                        <MenuItem Header="Print"  Click="MenuItem_Click" Name="mnuPrint">
+                                            <MenuItem.Icon>
+                                                <Image Width="18" Height="18" Source="graphics\print.ico"    RenderOptions.BitmapScalingMode="NearestNeighbor"  Stretch="Fill"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+
+                                    </ContextMenu>
+                                </ListView.ContextMenu>
+                                
+                            </ListView>
+                            <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="Auto" Name="stackPanel1" Width="Auto" Grid.Row="2" FlowDirection="LeftToRight"  Margin="0,0,0,0"
+                                        Background="{StaticResource MyBrightBlueSolidBrush1}">
+                                <my:PagingControl x:Name="pagingControl1" VerticalContentAlignment="Top"
+                                                  HorizontalContentAlignment="Center"
+                                                  Margin="0,2,0,0" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border VerticalAlignment="Stretch" Height="Auto" Grid.Column="2" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5">
+                        <ScrollViewer BorderThickness="0,0,0,0.5" BorderBrush="#FF6E95D1" VerticalScrollBarVisibility="Auto" >
+                        <DockPanel x:Name="dp3" Width="Auto" Height="Auto" LastChildFill="True">
+
+                            <gloSurescriptSecureMessage_InBox:MyMailHeaderGridControl VerticalAlignment="Top" BorderThickness="0,0,0,0.5" BorderBrush="#FF6E95D1" DockPanel.Dock="Top" x:Name="myMailHeaderGridControl" IsEnabled="True"/>
+                            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">                                                                    
+                                <Border BorderThickness="0,0,0,0.5" BorderBrush="#FF6E95D1"  Name="AttachmentBorder" Visibility="Hidden">
+                                    <ScrollViewer BorderThickness="0,0,0,0.5" BorderBrush="#FF6E95D1" VerticalScrollBarVisibility="Auto" >
+                                        <ListBox  ScrollViewer.HorizontalScrollBarVisibility ="Disabled" HorizontalContentAlignment="Stretch" Margin="6"   ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" x:Name="lstAttachments" BorderThickness="0" HorizontalAlignment="Left"  >
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel   Orientation="Horizontal" Width="Auto" IsItemsHost="True"  />
+                                                </ItemsPanelTemplate>                                                
+                                            </ListBox.ItemsPanel>
+                                            
+                                        </ListBox>
+                                    </ScrollViewer>
+                                </Border>
+                                <TextBlock x:Name="sMessageBody" FontSize="16" Padding="1,3,1,1" Text="{Binding sMessageBody}" TextWrapping="Wrap" Margin="12,5,5,5"/>                                                            
+                            </StackPanel>
+                        </DockPanel>
+                        </ScrollViewer>    
+                    </Border>
+                    <local:MyNavigationPaneControl Visibility="Hidden" HorizontalAlignment="Left" Margin="27,32,0,0" x:Name="myNavigationPaneControl" VerticalAlignment="Top" Width="Auto" Grid.ColumnSpan="3" />
+                    <DockPanel Visibility="Hidden" HorizontalAlignment="Left" Margin="0,32,0,77" x:Name="mySidebarControl" VerticalAlignment="Stretch" Height="27" LastChildFill="True" Grid.ColumnSpan="2">
+                        <DockPanel.LayoutTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform X="0" Y="0"/>
+                            </TransformGroup>
+                        </DockPanel.LayoutTransform>
+                        <Button Style="{DynamicResource MySidebarButtonStyle}" Background="{DynamicResource MyBrightBlueSolidBrush2}" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5">
+                            <StackPanel Width="Auto" Height="Auto" Orientation="Horizontal">
+                                <Image HorizontalAlignment="Center" Margin="4,0,2,0" VerticalAlignment="Center" Width="16" Height="16" Source="graphics\inbox.gif" Stretch="Fill">
+                                    <Image.LayoutTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                            <SkewTransform AngleX="0" AngleY="0"/>
+                                            <RotateTransform Angle="90"/>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </TransformGroup>
+                                    </Image.LayoutTransform>
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center" Margin="2,0,2,0" VerticalAlignment="Center" FontWeight="Bold" Foreground="{DynamicResource MyDarkBlueSolidBrush}" Text="Inbox" TextWrapping="NoWrap"/>
+                                <TextBlock HorizontalAlignment="Center" Margin="2,0,4,0" VerticalAlignment="Center" Foreground="#FF0000FF"  TextWrapping="NoWrap" Name="txtLeftNavInboxCount"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="myNavigationPaneButton" Style="{DynamicResource MySidebarButtonStyle}" Content="Navigation Pane" Background="{DynamicResource MyBrightBlueSolidBrush2}" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.5,0.5,0.5,0.5" FontSize="15" FontWeight="Bold" Foreground="{DynamicResource MyDarkBlueSolidBrush}" DockPanel.Dock="Right" Click="myNavigationPaneButton_Click"/>
+                    </DockPanel>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>

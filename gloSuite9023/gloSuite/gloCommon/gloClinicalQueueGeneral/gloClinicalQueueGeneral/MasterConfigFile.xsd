@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MasterConfigFile" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MasterConfigFile" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False" msprop:Generator_DataSetName="MasterConfigFile" msprop:Generator_UserDSName="MasterConfigFile">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MasterConfig" msprop:Generator_TableClassName="MasterConfigDataTable" msprop:Generator_TableVarName="tableMasterConfig" msprop:Generator_RowChangedName="MasterConfigRowChanged" msprop:Generator_TablePropName="MasterConfig" msprop:Generator_RowDeletingName="MasterConfigRowDeleting" msprop:Generator_RowChangingName="MasterConfigRowChanging" msprop:Generator_RowEvHandlerName="MasterConfigRowChangeEventHandler" msprop:Generator_RowDeletedName="MasterConfigRowDeleted" msprop:Generator_RowClassName="MasterConfigRow" msprop:Generator_UserTableName="MasterConfig" msprop:Generator_RowEvArgName="MasterConfigRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MasterConfigId" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnMasterConfigId" msprop:Generator_ColumnPropNameInRow="MasterConfigId" msprop:Generator_ColumnPropNameInTable="MasterConfigIdColumn" msprop:Generator_UserColumnName="MasterConfigId" type="xs:long" />
+              <xs:element name="InstalledPrintersFile" msprop:Generator_ColumnVarNameInTable="columnInstalledPrintersFile" msprop:Generator_ColumnPropNameInRow="InstalledPrintersFile" msprop:Generator_ColumnPropNameInTable="InstalledPrintersFileColumn" msprop:Generator_UserColumnName="InstalledPrintersFile" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentDefaultPrinter" msprop:Generator_ColumnVarNameInTable="columnCurrentDefaultPrinter" msprop:Generator_ColumnPropNameInRow="CurrentDefaultPrinter" msprop:Generator_ColumnPropNameInTable="CurrentDefaultPrinterColumn" msprop:Generator_UserColumnName="CurrentDefaultPrinter" type="xs:string" minOccurs="0" />
+              <xs:element name="ModulePrinters" msprop:Generator_TableClassName="ModulePrintersDataTable" msprop:Generator_TableVarName="tableModulePrinters" msprop:Generator_RowChangedName="ModulePrintersRowChanged" msprop:Generator_TablePropName="ModulePrinters" msprop:Generator_RowDeletingName="ModulePrintersRowDeleting" msprop:Generator_RowChangingName="ModulePrintersRowChanging" msprop:Generator_RowEvHandlerName="ModulePrintersRowChangeEventHandler" msprop:Generator_RowDeletedName="ModulePrintersRowDeleted" msprop:Generator_RowClassName="ModulePrintersRow" msprop:Generator_UserTableName="ModulePrinters" msprop:Generator_RowEvArgName="ModulePrintersRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="MasterConfig_ModulePrinters" msdata:parent="MasterConfig" msdata:child="ModulePrinters" msdata:parentkey="MasterConfigId" msdata:childkey="ModulePrintersId" msprop:Generator_UserChildTable="ModulePrinters" msprop:Generator_ChildPropName="GetModulePrintersRows" msprop:Generator_UserRelationName="MasterConfig_ModulePrinters" msprop:Generator_RelationVarName="relationMasterConfig_ModulePrinters" msprop:Generator_UserParentTable="MasterConfig" msprop:Generator_ParentPropName="MasterConfigRow" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ModulePrintersId" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnModulePrintersId" msprop:Generator_ColumnPropNameInRow="ModulePrintersId" msprop:Generator_ColumnPropNameInTable="ModulePrintersIdColumn" msprop:Generator_UserColumnName="ModulePrintersId" type="xs:long" />
+                    <xs:element name="ModuleName" msprop:Generator_ColumnVarNameInTable="columnModuleName" msprop:Generator_ColumnPropNameInRow="ModuleName" msprop:Generator_ColumnPropNameInTable="ModuleNameColumn" msprop:Generator_UserColumnName="ModuleName" type="xs:string" minOccurs="0" />
+                    <xs:element name="PrinterName" msprop:Generator_ColumnVarNameInTable="columnPrinterName" msprop:Generator_ColumnPropNameInRow="PrinterName" msprop:Generator_ColumnPropNameInTable="PrinterNameColumn" msprop:Generator_UserColumnName="PrinterName" type="xs:string" minOccurs="0" />
+                    <xs:element name="PrinterType" msprop:Generator_ColumnVarNameInTable="columnPrinterType" msprop:Generator_ColumnPropNameInRow="PrinterType" msprop:Generator_ColumnPropNameInTable="PrinterTypeColumn" msprop:Generator_UserColumnName="PrinterType" type="xs:string" minOccurs="0" />
+                    <xs:element name="SettingFile" msprop:Generator_ColumnVarNameInTable="columnSettingFile" msprop:Generator_ColumnPropNameInRow="SettingFile" msprop:Generator_ColumnPropNameInTable="SettingFileColumn" msprop:Generator_UserColumnName="SettingFile" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ModulePrintersId" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//ModulePrinters" />
+      <xs:field xpath="ModulePrintersId" />
+    </xs:unique>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//MasterConfig" />
+      <xs:field xpath="MasterConfigId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

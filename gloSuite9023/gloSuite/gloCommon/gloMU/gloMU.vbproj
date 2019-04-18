@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F32F6772-92FC-4B52-8090-CB6C1B192CB1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gloMU</RootNamespace>
+    <AssemblyName>gloMU</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>gloMU.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>gloMU.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>gloMU.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>gloMU.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CheckBoxComboBox">
+      <HintPath>..\..\gloEMR\gloEMR\DLL\CheckBoxComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="gloAppointmentBook, Version=7.0.0.3329, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="gloPrintDialog, Version=1.0.0.68, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="gloSnoMed, Version=7.0.0.3260, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\gloEMR\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCQMMeasure.vb" />
+    <Compile Include="clsDataGridTableStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cls_BAL_MU_Detail_Report.vb" />
+    <Compile Include="cls_DAL_MU_Detail_Report.vb" />
+    <Compile Include="cls_MU_CQMSubmission.vb" />
+    <Compile Include="cls_MU_General.vb" />
+    <Compile Include="cls_MU_Measures.vb" />
+    <Compile Include="cls_MU_Measures_Stage3.vb" />
+    <Compile Include="frmCQM_RulesSetup.Designer.vb">
+      <DependentUpon>frmCQM_RulesSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCQM_RulesSetup.Methods.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCQM_RulesSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSrchQrdaPatient.Designer.vb">
+      <DependentUpon>frmSrchQrdaPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSrchQrdaPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewCriteriaReason.Designer.vb">
+      <DependentUpon>frmViewCriteriaReason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewCriteriaReason.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_View_MIPS_2019.Designer.vb">
+      <DependentUpon>frm_View_MIPS_2019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_View_MIPS_2019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports_2019.Designer.vb">
+      <DependentUpon>frm_MIPSQuality_Reports_2019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports_2019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_2017_ACI.Designer.vb">
+      <DependentUpon>frm_2017_ACI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_2017_ACI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports_2017.Designer.vb">
+      <DependentUpon>frm_MIPSQuality_Reports_2017.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports_2017.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPS_PI_2019.Designer.vb">
+      <DependentUpon>frm_MIPS_PI_2019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPS_PI_2019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_View2017_ACI.Designer.vb">
+      <DependentUpon>frm_View2017_ACI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_View2017_ACI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPS_ACI.Designer.vb">
+      <DependentUpon>frm_MIPS_ACI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPS_ACI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports.Designer.vb">
+      <DependentUpon>frm_MIPSQuality_Reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_MIPSQuality_Reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MIPS\frm_ViewMIPS_ACI.Designer.vb">
+      <DependentUpon>frm_ViewMIPS_ACI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MIPS\frm_ViewMIPS_ACI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage2_Modified.Designer.vb">
+      <DependentUpon>frm_MU_Dashboard_Stage2_Modified.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage2_Modified.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage2_Modified.Designer.vb">
+      <DependentUpon>frm_MU_ViewDashboard_Stage2_Modified.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage2_Modified.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExcludedTemplate.Designer.vb">
+      <DependentUpon>frmExcludedTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExcludedTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewListControl.Designer.vb">
+      <DependentUpon>frmViewListControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewListControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CQM_Detail_Report.Designer.vb">
+      <DependentUpon>frm_CQM_Detail_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CQM_Detail_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard.Designer.vb">
+      <DependentUpon>frm_MU_Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage1.Designer.vb">
+      <DependentUpon>frm_MU_Dashboard_Stage1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage2.Designer.vb">
+      <DependentUpon>frm_MU_Dashboard_Stage2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Dashboard_Stage2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Detail_Report.Designer.vb">
+      <DependentUpon>frm_MU_Detail_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Detail_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_Reports.Designer.vb">
+      <DependentUpon>frm_MU_Reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_Reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard.Designer.vb">
+      <DependentUpon>frm_MU_ViewDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage1.Designer.vb">
+      <DependentUpon>frm_MU_ViewDashboard_Stage1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage2.Designer.vb">
+      <DependentUpon>frm_MU_ViewDashboard_Stage2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MU_ViewDashboard_Stage2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gloC1FlexStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Screening Tools\frmMUScreeningForm.Designer.vb">
+      <DependentUpon>frmMUScreeningForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Screening Tools\frmMUScreeningForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screening Tools\ScreeningClasses.vb" />
+    <Compile Include="Stage3\frm_Stage3_2019.Designer.vb">
+      <DependentUpon>frm_Stage3_2019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stage3\frm_Stage3_2019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stage3\frm_ViewStage3_2019.Designer.vb">
+      <DependentUpon>frm_ViewStage3_2019.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stage3\frm_ViewStage3_2019.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stage3\frm_Stage3.Designer.vb">
+      <DependentUpon>frm_Stage3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stage3\frm_Stage3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stage3\frm_ViewStage3.Designer.vb">
+      <DependentUpon>frm_ViewStage3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stage3\frm_ViewStage3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="clsDataGridTableStyle.resx">
+      <DependentUpon>clsDataGridTableStyle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCQM_RulesSetup.resx">
+      <DependentUpon>frmCQM_RulesSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSrchQrdaPatient.resx">
+      <DependentUpon>frmSrchQrdaPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewCriteriaReason.resx">
+      <DependentUpon>frmViewCriteriaReason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_View_MIPS_2019.resx">
+      <DependentUpon>frm_View_MIPS_2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_MIPSQuality_Reports_2019.resx">
+      <DependentUpon>frm_MIPSQuality_Reports_2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_2017_ACI.resx">
+      <DependentUpon>frm_2017_ACI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_MIPSQuality_Reports_2017.resx">
+      <DependentUpon>frm_MIPSQuality_Reports_2017.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_MIPS_PI_2019.resx">
+      <DependentUpon>frm_MIPS_PI_2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_View2017_ACI.resx">
+      <DependentUpon>frm_View2017_ACI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_MIPS_ACI.resx">
+      <DependentUpon>frm_MIPS_ACI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_MIPSQuality_Reports.resx">
+      <DependentUpon>frm_MIPSQuality_Reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MIPS\frm_ViewMIPS_ACI.resx">
+      <DependentUpon>frm_ViewMIPS_ACI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Dashboard_Stage2_Modified.resx">
+      <DependentUpon>frm_MU_Dashboard_Stage2_Modified.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_ViewDashboard_Stage2_Modified.resx">
+      <DependentUpon>frm_MU_ViewDashboard_Stage2_Modified.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExcludedTemplate.resx">
+      <DependentUpon>frmExcludedTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewListControl.resx">
+      <DependentUpon>frmViewListControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CQM_Detail_Report.resx">
+      <DependentUpon>frm_CQM_Detail_Report.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Dashboard.resx">
+      <DependentUpon>frm_MU_Dashboard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Dashboard_Stage1.resx">
+      <DependentUpon>frm_MU_Dashboard_Stage1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Dashboard_Stage2.resx">
+      <DependentUpon>frm_MU_Dashboard_Stage2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Detail_Report.resx">
+      <DependentUpon>frm_MU_Detail_Report.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_Reports.resx">
+      <DependentUpon>frm_MU_Reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_ViewDashboard.resx">
+      <DependentUpon>frm_MU_ViewDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_ViewDashboard_Stage1.resx">
+      <DependentUpon>frm_MU_ViewDashboard_Stage1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MU_ViewDashboard_Stage2.resx">
+      <DependentUpon>frm_MU_ViewDashboard_Stage2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screening Tools\frmMUScreeningForm.resx">
+      <DependentUpon>frmMUScreeningForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stage3\frm_Stage3_2019.resx">
+      <DependentUpon>frm_Stage3_2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stage3\frm_ViewStage3_2019.resx">
+      <DependentUpon>frm_ViewStage3_2019.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stage3\frm_Stage3.resx">
+      <DependentUpon>frm_Stage3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stage3\frm_ViewStage3.resx">
+      <DependentUpon>frm_ViewStage3.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\gloAPPS\QSurvey\QSurvey.Models\QSurvey.Models.csproj">
+      <Project>{968F85D6-188E-4E12-B9EB-CFC76257D09D}</Project>
+      <Name>QSurvey.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloEMR\gloEMRReports\gloEMRReports.csproj">
+      <Project>{8B17E4C5-6705-4EFE-8227-40135A70C42F}</Project>
+      <Name>gloEMRReports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCCDSchema\gloCCDSchema.csproj">
+      <Project>{1C1B9365-21D6-48ED-8D17-0C3BDDDB5186}</Project>
+      <Name>gloCCDSchema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCCD\gloCCDLibrary.vbproj">
+      <Project>{52B1DA57-5930-44B8-8355-325CA49CFFEE}</Project>
+      <Name>gloCCDLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEMRGeneralLibrary\gloEMRGeneralLibrary.vbproj">
+      <Project>{39D920BB-D15F-41CC-864B-B9786E8130CB}</Project>
+      <Name>gloEMRGeneralLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserControlLibrary\gloUserControlLibrary.vbproj">
+      <Project>{DC24512A-9212-4075-B216-F824EB12D102}</Project>
+      <Name>gloUserControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\Img_Button.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Toolstrip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrossCutting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighPriority- CrossCutting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighPriorityNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Outcome-HighPriority-CrossCutting.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

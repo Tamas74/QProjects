@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{64C06BC3-F991-45B9-AC55-AF48894C5C34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChargeRules</RootNamespace>
+    <AssemblyName>gloChargeRules</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\gloPM\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ChargeRules.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ChargeRules.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1Editor.4">
+      <HintPath>..\..\gloDLL\C1.Win.C1Editor.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\gloDLL\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessOperation.cs" />
+    <Compile Include="ClaimObjectModel.cs" />
+    <Compile Include="ClsRuleEngine.cs" />
+    <Compile Include="ExpressionBuilder.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="frmClaimRuleVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimRuleVerification.Designer.cs">
+      <DependentUpon>frmClaimRuleVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportRules.designer.cs">
+      <DependentUpon>frmExportRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportRules.designer.cs">
+      <DependentUpon>frmImportRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPracticeRuleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPracticeRuleEditor.designer.cs">
+      <DependentUpon>frmPracticeRuleEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPublishRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPublishRules.designer.cs">
+      <DependentUpon>frmPublishRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRuleEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRuleEditor.designer.cs">
+      <DependentUpon>frmRuleEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloListControl.Designer.cs">
+      <DependentUpon>gloListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPracticeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPracticeListControl.designer.cs">
+      <DependentUpon>gloPracticeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RuleEngine.cs" />
+    <Compile Include="Rules.cs" />
+    <Compile Include="RulesCache.cs" />
+    <Compile Include="Service References\QCommService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TriggeredRulesObjectModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmClaimRuleVerification.resx">
+      <DependentUpon>frmClaimRuleVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportRules.resx">
+      <DependentUpon>frmExportRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportRules.resx">
+      <DependentUpon>frmImportRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPracticeRuleEditor.resx">
+      <DependentUpon>frmPracticeRuleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPublishRules.resx">
+      <DependentUpon>frmPublishRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRuleEditor.resx">
+      <DependentUpon>frmRuleEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloListControl.resx">
+      <DependentUpon>gloListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPracticeListControl.resx">
+      <DependentUpon>gloPracticeListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\GroupInTwo10.png" />
+    <None Include="Service References\QCommService\ChargeRules.QCommService.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QCommService\QCommunicatorService.wsdl" />
+    <None Include="Service References\QCommService\QCommunicatorService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCommService\QCommunicatorService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCommService\QCommunicatorService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCommService\QCommunicatorService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseTFS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseTFS2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Browse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeselectAllRules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectAllRules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\QCommService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QCommService\QCommunicatorService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QCommService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QCommService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QCommService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

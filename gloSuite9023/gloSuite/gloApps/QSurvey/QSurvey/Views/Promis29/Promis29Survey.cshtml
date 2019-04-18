@@ -1,0 +1,675 @@
+﻿@model QSurvey.Models.Promis29Model
+
+@{
+    ViewBag.Title = "Promis29Survey";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PROMIS–29 Profile v1.0</title>
+</head>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+  @using (Html.BeginForm("PostSurvey", "Promis29", FormMethod.Post))
+    { @Html.HiddenFor(m => m.RequestID)
+<div class="container">
+            <h1>
+                <center>
+                  PROMIS–29 Profile v1.0 
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                     Please respond to each question or statement by marking one box per row.</h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+                          Physical Function
+                        </h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                           1. Are you able to do chores such as vacuuming or yard work? 
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PF1, "Without any difficulty")  Without any difficulty 
+                                @Html.RadioButtonFor(m => m.PF1, "With a little difficulty")     With a little difficulty 
+                                @Html.RadioButtonFor(m => m.PF1, "With some difficulty")     With some difficulty 
+                                @Html.RadioButtonFor(m => m.PF1, "With much difficulty")    With much difficulty 
+                                @Html.RadioButtonFor(m => m.PF1, "Unable to do")             Unable to do
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                          2. Are you able to go up and down stairs at a normal pace? 
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PF2, "Without any difficulty")     Without any difficulty 
+                                @Html.RadioButtonFor(m => m.PF2, "With a little difficulty")        With a little difficulty 
+                                @Html.RadioButtonFor(m => m.PF2, "With some difficulty")        With some difficulty 
+                                @Html.RadioButtonFor(m => m.PF2, "With much difficulty")       With much difficulty 
+                                @Html.RadioButtonFor(m => m.PF2, "Unable to do")                Unable to do
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                   <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                         3. Are you able to go for a walk of at least 15 minutes? 
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PF3, "Without any difficulty")       Without any difficulty 
+                                @Html.RadioButtonFor(m => m.PF3, "With a little difficulty")          With a little difficulty 
+                                @Html.RadioButtonFor(m => m.PF3, "With some difficulty")          With some difficulty 
+                                @Html.RadioButtonFor(m => m.PF3, "With much difficulty")         With much difficulty 
+                                @Html.RadioButtonFor(m => m.PF3, "Unable to do")                  Unable to do
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                       4.  Are you able to run errands and shop?
+                        </p>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PF4, "Without any difficulty")        Without any difficulty 
+                                @Html.RadioButtonFor(m => m.PF4, "With a little difficulty")           With a little difficulty 
+                                @Html.RadioButtonFor(m => m.PF4, "With some difficulty")           With some difficulty 
+                                @Html.RadioButtonFor(m => m.PF4, "With much difficulty")          With much difficulty 
+                                @Html.RadioButtonFor(m => m.PF4, "Unable to do")                   Unable to do
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <h3 class="h3">
+                     Anxiety In the past 7 days… </h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> 5. I felt fearful</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.ANX1 , "never")    Never
+                                @Html.RadioButtonFor(m => m.ANX1, "rarely")   Rarely
+                                @Html.RadioButtonFor(m => m.ANX1, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.ANX1, "often")     Often 
+                                @Html.RadioButtonFor(m => m.ANX1, "always")     Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> 6. I found it hard to focus on anything other than my anxiety </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.ANX2 , "never")    Never
+                                @Html.RadioButtonFor(m => m.ANX2, "rarely")   Rarely
+                                @Html.RadioButtonFor(m => m.ANX2, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.ANX2, "often")     Often 
+                                @Html.RadioButtonFor(m => m.ANX2, "always")     Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> 7. My worries overwhelmed me</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.ANX3 , "never")    Never
+                                @Html.RadioButtonFor(m => m.ANX3, "rarely")   Rarely
+                                @Html.RadioButtonFor(m => m.ANX3, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.ANX3, "often")     Often 
+                                @Html.RadioButtonFor(m => m.ANX3, "always")     Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> 8. I felt uneasy </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.ANX4 , "never")    Never
+                                @Html.RadioButtonFor(m => m.ANX4, "rarely")   Rarely
+                                @Html.RadioButtonFor(m => m.ANX4, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.ANX4, "often")     Often 
+                                @Html.RadioButtonFor(m => m.ANX4, "always")     Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                      <h3 class="h3">Depression In the past 7 days…</h3>  
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p> 9. I felt worthless</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.DP7_1 , "never")   Never
+                                @Html.RadioButtonFor(m => m.DP7_1, "rarely")  Rarely
+                                @Html.RadioButtonFor(m => m.DP7_1, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.DP7_1, "often")    Often 
+                                @Html.RadioButtonFor(m => m.DP7_1, "always")    Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p> 10. I felt helpless</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.DP7_2, "never")   Never
+                                @Html.RadioButtonFor(m => m.DP7_2, "rarely")  Rarely
+                                @Html.RadioButtonFor(m => m.DP7_2, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.DP7_2, "often")    Often 
+                                @Html.RadioButtonFor(m => m.DP7_2, "always")    Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                
+                 <tr>
+                    <td>
+                     <p> 11. I felt depressed </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.DP7_3, "never")   Never
+                                @Html.RadioButtonFor(m => m.DP7_3, "rarely")  Rarely
+                                @Html.RadioButtonFor(m => m.DP7_3, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.DP7_3, "often")    Often 
+                                @Html.RadioButtonFor(m => m.DP7_3, "always")    Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p> 12. I felt hopeless </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.DP7_4, "never")   Never
+                                @Html.RadioButtonFor(m => m.DP7_4, "rarely")  Rarely
+                                @Html.RadioButtonFor(m => m.DP7_4, "sometimes") Sometimes
+                                @Html.RadioButtonFor(m => m.DP7_4, "often")    Often 
+                                @Html.RadioButtonFor(m => m.DP7_4, "always")    Always
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                   <tr>
+                    <td>
+                    <h4 class="h4">
+                        <p> Fatigue During the past 7 days… </p> 
+                    </h4>                                            
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 13. I feel fatigued</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.FDP7_1, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.FDP7_1, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.FDP7_1, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.FDP7_1, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.FDP7_1, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 14. I have trouble starting things because I am tired. </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.FDP7_2, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.FDP7_2, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.FDP7_2, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.FDP7_2, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.FDP7_2, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+               
+                 <tr>
+                    <td>
+                     <p> 15. How run-down did you feel on average?</p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.FDP7_3, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.FDP7_3, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.FDP7_3, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.FDP7_3, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.FDP7_3, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+               
+                 <tr>
+                    <td>
+                     <p> 16. How fatigued were you on average? </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.FDP7_4, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.FDP7_4, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.FDP7_4, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.FDP7_4, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.FDP7_4, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <h4 class="h4">
+                            <p> Sleep Disturbance In the past 7 days… </p> 
+                        </h4>                                            
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 17. My sleep quality was  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.SDP7_1, "very poor")   Very poor
+                                @Html.RadioButtonFor(m => m.SDP7_1, "poor") Poor 
+                                @Html.RadioButtonFor(m => m.SDP7_1, "fair") Fair
+                                @Html.RadioButtonFor(m => m.SDP7_1, "good")  Good 
+                                @Html.RadioButtonFor(m => m.SDP7_1, "very good")    Very good
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                
+                 <tr>
+                    <td>
+                     <p>18. My sleep was refreshing  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                               @Html.RadioButtonFor(m => m.SDP7_2 ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m =>m.SDP7_2, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_2, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m =>m.SDP7_2, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_2, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                     <p>19. I had a problem with my sleep  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                               @Html.RadioButtonFor(m => m.SDP7_3 ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m =>m.SDP7_3, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_3, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m =>m.SDP7_3, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_3, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p>20. I had difficulty falling asleep  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                               @Html.RadioButtonFor(m => m.SDP7_4 ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m =>m.SDP7_4, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_4, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m =>m.SDP7_4, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m =>m.SDP7_4, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6 class="h6">
+                            <p>Satisfaction with Social Role In the past 7 days…  </p> 
+                        </h6>                     
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 21. I am satisfied with how much work I can do (include work at home)   </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.SSR7_1  ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.SSR7_1, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.SSR7_1, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.SSR7_1, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.SSR7_1, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 22. I am satisfied with my ability to work (include work at home)  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.SSR7_2  ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.SSR7_2, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.SSR7_2, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.SSR7_2, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.SSR7_2, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                  <tr>
+                    <td>
+                     <p> 23. I am satisfied with my ability to do regular personal and household responsibilities   </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.SSR7_3  ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.SSR7_3, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.SSR7_3, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.SSR7_3, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.SSR7_3, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                   <tr>
+                    <td>
+                     <p> 24. I am satisfied with my ability to perform my daily routines   </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.SSR7_4  ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.SSR7_4, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.SSR7_4, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.SSR7_4, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.SSR7_4, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                    <tr>
+                    <td>
+                            <p style="font-weight:bold;">Pain Interference In the past 7 days…   </p> 
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 25. How much did pain interfere with your day to day activities?   </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PIFP7_1   ,"not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.PIFP7_1, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_1, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.PIFP7_1, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_1, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p>26. How much did pain interfere with work around the home?  </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PIFP7_2, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.PIFP7_2, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_2, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.PIFP7_2, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_2, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                     <p>27. How much did pain interfere with your ability to participate in social activities?   </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PIFP7_3, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.PIFP7_3, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_3, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.PIFP7_3, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_3, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                     <p>28. How much did pain interfere with your household chores?    </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PIFP7_4, "not at all")   Not at all 
+                                @Html.RadioButtonFor(m => m.PIFP7_4, "a little bit")  A little bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_4, "somewhat") Somewhat
+                                @Html.RadioButtonFor(m => m.PIFP7_4, "quite a bit")    Quite a bit 
+                                @Html.RadioButtonFor(m => m.PIFP7_4, "very much")    Very much
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p style="font-weight:bold;">Pain Intensity In the past 7 days…   </p> 
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                     <p> 29. How would you rate your pain on average?    </p> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.PINP7_1   ,"0")   0
+                                @Html.RadioButtonFor(m => m.PINP7_1, "1")   1
+                                 @Html.RadioButtonFor(m => m.PINP7_1   ,"2")   2
+                                @Html.RadioButtonFor(m => m.PINP7_1, "3")   3
+                                 @Html.RadioButtonFor(m => m.PINP7_1   ,"4")   4
+                                @Html.RadioButtonFor(m => m.PINP7_1, "5")   5
+                                 @Html.RadioButtonFor(m => m.PINP7_1   ,"6")   6
+                                @Html.RadioButtonFor(m => m.PINP7_1, "7")   7
+                                 @Html.RadioButtonFor(m => m.PINP7_1, "8")   8
+                                 @Html.RadioButtonFor(m => m.PINP7_1   ,"9")   9
+                                @Html.RadioButtonFor(m => m.PINP7_1, "10")  10
+                            </p>                              
+                        </ul>
+                    </td>
+                </tr>
+
+                 </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+            <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+    }
+</body> 
+</html> 

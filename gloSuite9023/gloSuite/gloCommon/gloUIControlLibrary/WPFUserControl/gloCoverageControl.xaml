@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.gloCoverageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:gloUIControlLibrary.Classes"
+             FontSize="12" FontFamily="{DynamicResource BaseFontFamily}" Foreground="{DynamicResource InfoBorderBrush}"
+             >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloFormularyInfoRD.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:MinimumAgeConverter x:Key="MinimumAgeConverter"/>
+            <local:RecordTypeVisibilityConverter x:Key="RecordTypeVisibilityConverter"/>
+            <local:MultiVisibilityInverseConverter x:Key="MultiVisibilityInverseConverter"/>
+            <local:SingleVisibilityConverter x:Key="SingleVisibilityConverter"/>
+            <local:DaysConverter x:Key="DaysConverter"/>
+            <local:GenderConverter x:Key="GenderConverter"/>
+            <local:QuanLimitMaxAmtConverter x:Key="QuanLimitMaxAmtConverter"/>
+            <local:QuanLimitMaxTimePeriodConverter x:Key="QuanLimitMaxTimePeriodConverter"/>
+            <local:ResourceTypeConverter x:Key="ResourceTypeConverter"/>
+            <local:EnumerableContainsAnyVisibilityConverter x:Key="EnumerableContainsAnyVisibilityConverter"/>
+            <local:NullVisibilityConverter x:Key="NullVisibilityConverter"/>
+            <local:BolleanVisibilityConverter x:Key="BolleanVisibilityConverter"/>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel >
+        <Border BorderBrush="{StaticResource InfoForegroundBrush}" BorderThickness="0,1" Margin="0,1">
+            <StackPanel  Orientation="Horizontal" Background="{DynamicResource InfoBackgroundHeader}" >
+                <TextBlock 
+                    FontWeight="Bold" 
+    							VerticalAlignment="Center" 
+    							HorizontalAlignment="Left" 
+    							FontFamily="Tahoma" 
+    							FontSize="12.5"  Foreground="{StaticResource InfoForegroundBrush}" Margin="15,5,5,5" 
+					 Text="Coverage Information" />
+            </StackPanel>
+        </Border>
+        
+        <StackPanel Orientation="Vertical" Margin="3,0,0,0">
+            
+            <WrapPanel x:Name="StepMedicationWrapPanel" MinHeight="20" Visibility="{Binding sm, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}" Margin="0,1">
+
+                <ListBox ItemsSource="{Binding sm}" BorderThickness="0" Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="{StaticResource InfoForegroundBrush}" Background="{StaticResource InfoBackgroundBrush}">
+                  <ListBox.ItemContainerStyle>
+                  	<Style TargetType="{x:Type ListBoxItem}">
+                  		  <Setter Property="Focusable" Value="False"/>           	
+					</Style>            
+				  </ListBox.ItemContainerStyle>
+				    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="0,1,0,0">
+                                <TextBlock  Margin="0,1,0,0" Text="Step Medication: " FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                
+                                <WrapPanel Visibility="{Binding Path=order, Converter={StaticResource SingleVisibilityConverter}}" Margin="4,0,0,0">
+                                    <TextBlock  Margin="0,1,0,0" Text="(" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                    <TextBlock  Margin="0,1,0,0" Text="{Binding Path=order}" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                    <TextBlock  Margin="0,1,0,0" Text=") " FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                    <TextBlock  Margin="0,1,0,0" Text="{Binding Path=smnm}"  VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                </WrapPanel>
+                                
+                                <TextBlock  Margin="0,1,0,0" Text="{Binding Path=smid}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </WrapPanel>
+
+            <WrapPanel x:Name="AgeLimitWrapPanel" DataContext="{Binding al}" Visibility="{Binding Path=DataContext, RelativeSource={RelativeSource Self}, Converter={StaticResource NullVisibilityConverter}}" Margin="0,1">
+                <WrapPanel x:Name="minimumAgeWrapPanel">
+                    <TextBlock Margin="0,1,0,0" Text="Age Limit: " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                    <TextBlock Margin="0,1,0,0" Text="No Detail"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma">
+								<TextBlock.Visibility>
+									<MultiBinding
+										Converter="{StaticResource MultiVisibilityInverseConverter}">                                    
+										<Binding Path="minage"/>
+										<Binding Path="maxage"/>
+									</MultiBinding>
+								</TextBlock.Visibility>
+                    </TextBlock>
+
+                    <WrapPanel Visibility="{Binding minage, Converter={StaticResource SingleVisibilityConverter}}" Margin="4,0,0,0">
+                        <TextBlock Text="Minimum: " VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                        <TextBlock Text="{Binding minage}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                        <TextBlock Text="{Binding minageq,StringFormat={} {0}, Converter={StaticResource DaysConverter}}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                    </WrapPanel>
+
+                </WrapPanel>
+
+                <WrapPanel Visibility="{Binding maxage, Converter={StaticResource SingleVisibilityConverter}}" Margin="4,0,0,0">
+                    <TextBlock Text=" Maximum: "  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                    <TextBlock Text="{Binding maxage}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                    <TextBlock Text="{Binding maxageq,StringFormat={} {0}, Converter={StaticResource DaysConverter}}"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                </WrapPanel>
+
+            </WrapPanel>
+
+            <WrapPanel x:Name="GenderWrapPanel" Visibility="{Binding gl, Converter={StaticResource SingleVisibilityConverter}}" Margin="0,1">
+                <TextBlock Text="Gender: " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                <TextBlock Text="{Binding gl, Converter={StaticResource GenderConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+            </WrapPanel>
+
+            <WrapPanel x:Name="PriorAuthorizationWrapPanel" Visibility="{Binding pa, Converter={StaticResource BolleanVisibilityConverter}}" Margin="0,1">
+                <TextBlock Text="Prior Authorization: " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                <TextBlock Text="Required" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+            </WrapPanel>
+
+            <WrapPanel x:Name="QuantityLimitWrapPanel"  MinHeight="20" MinWidth="120" Visibility="{Binding ql, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}" Margin="0,1" >
+                <ListView ItemsSource="{Binding ql}" BorderThickness="0" Margin="-3,0,-3,0" Foreground="{StaticResource InfoForegroundBrush}" Background="{StaticResource InfoBackgroundBrush}" >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Focusable" Value="False"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,1">
+                                <TextBlock Text="Quantity Limit: " FontWeight="Bold" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                <TextBlock Text="No Detail" FontFamily="Tahoma">
+									<TextBlock.Visibility>
+										<MultiBinding
+											Converter="{StaticResource MultiVisibilityInverseConverter}">                                    
+											<Binding Path="maxamt"/>												
+										</MultiBinding>
+									</TextBlock.Visibility>
+                                </TextBlock>
+                                <WrapPanel Visibility="{Binding maxamt, Converter={StaticResource SingleVisibilityConverter}}">
+                                    <TextBlock Text="Maximum Amount: "  FontFamily="Tahoma" TextWrapping="WrapWithOverflow"/>
+                                    <TextBlock Text="{Binding maxamt}"  FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                                    <TextBlock Text="{Binding maxamtq,StringFormat={} {0}, Converter={StaticResource QuanLimitMaxAmtConverter}}"  FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                                    <TextBlock Text=" Per "  FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                                    <TextBlock Text="{Binding maxamtu}"  FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                                    <TextBlock Text="{Binding maxamtp,StringFormat={} {0}, Converter={StaticResource QuanLimitMaxTimePeriodConverter}}" FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                                </WrapPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </WrapPanel>
+            
+            <WrapPanel x:Name="StepTherapyWrapPanel" Visibility="{Binding st, Converter={StaticResource BolleanVisibilityConverter}}" Margin="0,1">
+                <TextBlock Text="Step Therapy: " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                <TextBlock Text="Required" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+            </WrapPanel>
+
+            <WrapPanel x:Name="DrugExclusionWrapPanel" Visibility="{Binding de, Converter={StaticResource BolleanVisibilityConverter}}" Margin="0,1">
+                <TextBlock Text="Coverage Factor: " FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+                <TextBlock Text="Drug Exclusion" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" />
+            </WrapPanel>
+
+            <WrapPanel x:Name="LongMessageWrapPanel" MinHeight="20" Visibility="{Binding msg, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}" Margin="0,1">
+
+                <ListBox ItemsSource="{Binding msg}" BorderThickness="0"  Margin="-3,0,-3,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="{StaticResource InfoForegroundBrush}" Background="{StaticResource InfoBackgroundBrush}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Focusable" Value="False"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel  Margin="0,1,0,0">
+                                <TextBlock  Margin="0,1,0,0" Text="Coverage Message: " FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Tahoma" TextTrimming="WordEllipsis" />
+                                <TextBlock  Margin="0,1,0,0" Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Tahoma" TextWrapping="WrapWithOverflow" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </WrapPanel>
+
+            <WrapPanel x:Name="CoverageResourceListPanel" MinHeight="20" Visibility="{Binding rl, Converter={StaticResource EnumerableContainsAnyVisibilityConverter}}" Margin="0,1">
+
+                <ListBox ItemsSource="{Binding rl}" BorderThickness="0"  Margin="-3,0,-3,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="{DynamicResource InfoForegroundBrush}" Background="{DynamicResource InfoBackgroundBrush}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Focusable" Value="False"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel x:Name="CoverageResourceLink"  Margin="0,1,0,0" >
+                                <TextBlock   Margin="0,1,0,0" Text="{Binding type, Converter={StaticResource ResourceTypeConverter}}" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" />
+                                <TextBlock  Margin="0,1,0,0" Text=" Drug Specific Resource Link: " VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" />
+
+                                <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Left" ><Hyperlink NavigateUri="{Binding url}" RequestNavigate="Hyperlink_RequestNavigate"><InlineUIContainer>
+										<TextBlock Text="{Binding url}"/>                                                                              
+									</InlineUIContainer></Hyperlink></TextBlock>
+
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </WrapPanel>
+            <WrapPanel  MinHeight="10" Margin="0,1"/>
+
+        </StackPanel>
+
+    </StackPanel> 
+
+</UserControl>

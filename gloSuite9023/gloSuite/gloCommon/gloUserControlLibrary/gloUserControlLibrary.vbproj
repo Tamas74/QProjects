@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC24512A-9212-4075-B216-F824EB12D102}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gloUserControlLibrary</RootNamespace>
+    <AssemblyName>gloUserControlLibrary</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/gloUserControlLibrary/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>gloUserControlLibrary.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>gloUserControlLibrary.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>gloUserControlLibrary.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>gloUserControlLibrary.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloEMR\gloEMR\DLL\AxInterop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2">
+      <HintPath>..\..\gloDLL\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\gloEMR\gloEMR\DLL\Interop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Core">
+      <HintPath>..\..\gloDLL\Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CheckedListBoxDroDown.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\clsDataGridTableStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\clsmyTreeNode.vb" />
+    <Compile Include="Classes\Cls_TabIndexSettings.vb" />
+    <Compile Include="Classes\gloBitmapResources.vb" />
+    <Compile Include="Classes\gloC1FlexStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\gloUserControlExceptions.vb" />
+    <Compile Include="Classes\Hyperlink.vb" />
+    <Compile Include="Classes\myList.vb" />
+    <Compile Include="ControlResource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmeRxSummary.Designer.vb">
+      <DependentUpon>frmeRxSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmeRxSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabUC_ResultSet.xaml.vb">
+      <DependentUpon>LabUC_ResultSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\mdlGeneral.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\clsDataGrid.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomTask.designer.vb">
+      <DependentUpon>CustomTask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomTask.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateManagement.Designer.vb">
+      <DependentUpon>DateManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DateManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\frmDosageCalculator.Designer.vb">
+      <DependentUpon>frmDosageCalculator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmDosageCalculator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\frmViewQuickStatus.Designer.vb">
+      <DependentUpon>frmViewQuickStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmViewQuickStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\frmLabURLdocument.Designer.vb">
+      <DependentUpon>frmLabURLdocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmLabURLdocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\frmViewListControl.Designer.vb">
+      <DependentUpon>frmViewListControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\frmViewListControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloDrugListRevised.Designer.vb">
+      <DependentUpon>gloDrugListRevised.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloDrugListRevised.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloFormularlyToolBarUserCtrl.Designer.vb">
+      <DependentUpon>gloFormularlyToolBarUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloFormularlyToolBarUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_LabFlowSheet.Designer.vb">
+      <DependentUpon>gloLabUC_LabFlowSheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_LabFlowSheet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_LabHistory.Designer.vb">
+      <DependentUpon>gloLabUC_LabHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_LabHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_Transaction.designer.vb">
+      <DependentUpon>gloLabUC_Transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloLabUC_Transaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloAcceleratorEPA.Designer.vb">
+      <DependentUpon>gloAcceleratorEPA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloAcceleratorEPA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxFillNotification.Designer.vb">
+      <DependentUpon>gloRxFillNotification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxFillNotification.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloSearchTextBox.designer.vb">
+      <DependentUpon>gloSearchTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloSearchTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUCGeneralSearch.Designer.vb">
+      <DependentUpon>gloUCGeneralSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUCGeneralSearch.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_AddRefreshDic.Designer.vb">
+      <DependentUpon>gloUC_AddRefreshDic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_AddRefreshDic.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_GridList.designer.vb">
+      <DependentUpon>gloUC_GridList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_GridList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabOrderDetail.designer.vb">
+      <DependentUpon>gloUC_LabOrderDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabOrderDetail.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_PastWordNotes.Designer.vb">
+      <DependentUpon>gloUC_PastWordNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_PastWordNotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TaskInfo.Designer.vb">
+      <DependentUpon>gloUC_TaskInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TaskInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TransactionHistory.designer.vb">
+      <DependentUpon>gloUC_TransactionHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TransactionHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomDataGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomMedication.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomPrescription.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloC1FlexgridUserCtrl.Designer.vb">
+      <DependentUpon>gloC1FlexgridUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloC1FlexgridUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloHistoryUserCtrl.Designer.vb">
+      <DependentUpon>gloHistoryUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloHistoryUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloListUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloListUserCtrl.Designer.vb">
+      <DependentUpon>gloListUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\gloMedHistoryUserCtrl.Designer.vb">
+      <DependentUpon>gloMedHistoryUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloMedHistoryUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloMedicationC1FlexGrdUserCtrl.Designer.vb">
+      <DependentUpon>gloMedicationC1FlexGrdUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloMedicationC1FlexGrdUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloMedicationToolBarUserCtrl.Designer.vb">
+      <DependentUpon>gloMedicationToolBarUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloMedicationToolBarUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloMedRefillC1FlexGridUserCtrl.Designer.vb">
+      <DependentUpon>gloMedRefillC1FlexGridUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloMedRefillC1FlexGridUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloPatientDataGrid.Designer.vb">
+      <DependentUpon>gloPatientDataGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloPatientDataGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxC1FlexGrdPrescriptionUserCtrl.designer.vb">
+      <DependentUpon>gloRxC1FlexGrdPrescriptionUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxC1FlexGrdPrescriptionUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxHistoryUserCtrl.Designer.vb">
+      <DependentUpon>gloRxHistoryUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxHistoryUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxListUserCtrl.designer.vb">
+      <DependentUpon>gloRxListUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxListUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxSearchC1FlexPrescUserCtrl.Designer.vb">
+      <DependentUpon>gloRxSearchC1FlexPrescUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxSearchC1FlexPrescUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloRxToolbarUserCtrl.Designer.vb">
+      <DependentUpon>gloRxToolbarUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloRxToolbarUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloSearchC1FlexgridUserCtrl.Designer.vb">
+      <DependentUpon>gloSearchC1FlexgridUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloSearchC1FlexgridUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloToolBarUserCtrl.Designer.vb">
+      <DependentUpon>gloToolBarUserCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloToolBarUserCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_CustomSearchInC1Flexgrid.designer.vb">
+      <DependentUpon>gloUC_CustomSearchInC1Flexgrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_CustomSearchInC1Flexgrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabHistory.Designer.vb">
+      <DependentUpon>gloUC_LabHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabTest.designer.vb">
+      <DependentUpon>gloUC_LabTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_LabTest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_PatientStrip.Designer.vb">
+      <DependentUpon>gloUC_PatientStrip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_PatientStrip.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_Transaction.designer.vb">
+      <DependentUpon>gloUC_Transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_Transaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_Treatment.designer.vb">
+      <DependentUpon>gloUC_Treatment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_Treatment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TemplateTreeControl.Designer.vb">
+      <DependentUpon>gloUC_TemplateTreeControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TemplateTreeControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TreeView.Designer.vb">
+      <DependentUpon>gloUC_TreeView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\gloUC_TreeView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Classes\CheckedListBoxDroDown.resx">
+      <DependentUpon>CheckedListBoxDroDown.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\clsDataGridTableStyle.resx">
+      <DependentUpon>clsDataGridTableStyle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlResource.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlResource.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="UserControls\frmeRxSummary.resx">
+      <DependentUpon>frmeRxSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomTask.resx">
+      <DependentUpon>CustomTask.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateManagement.resx">
+      <DependentUpon>DateManagement.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\frmDosageCalculator.resx">
+      <DependentUpon>frmDosageCalculator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\frmViewQuickStatus.resx">
+      <DependentUpon>frmViewQuickStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\frmLabURLdocument.resx">
+      <DependentUpon>frmLabURLdocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\frmViewListControl.resx">
+      <DependentUpon>frmViewListControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloDrugListRevised.resx">
+      <DependentUpon>gloDrugListRevised.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloFormularlyToolBarUserCtrl.resx">
+      <DependentUpon>gloFormularlyToolBarUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloLabUC_LabFlowSheet.resx">
+      <DependentUpon>gloLabUC_LabFlowSheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloLabUC_LabHistory.resx">
+      <DependentUpon>gloLabUC_LabHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloLabUC_Transaction.resx">
+      <DependentUpon>gloLabUC_Transaction.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloAcceleratorEPA.resx">
+      <DependentUpon>gloAcceleratorEPA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxFillNotification.resx">
+      <DependentUpon>gloRxFillNotification.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloSearchTextBox.resx">
+      <DependentUpon>gloSearchTextBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUCGeneralSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloUCGeneralSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_AddRefreshDic.resx">
+      <DependentUpon>gloUC_AddRefreshDic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_GridList.resx">
+      <DependentUpon>gloUC_GridList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_LabOrderDetail.resx">
+      <DependentUpon>gloUC_LabOrderDetail.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_PastWordNotes.resx">
+      <DependentUpon>gloUC_PastWordNotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_TaskInfo.resx">
+      <DependentUpon>gloUC_TaskInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_TransactionHistory.resx">
+      <DependentUpon>gloUC_TransactionHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomDataGrid.resx">
+      <DependentUpon>CustomDataGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomMedication.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomMedication.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomPrescription.resx">
+      <DependentUpon>CustomPrescription.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloC1FlexgridUserCtrl.resx">
+      <DependentUpon>gloC1FlexgridUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloHistoryUserCtrl.resx">
+      <DependentUpon>gloHistoryUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloListUserCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloListUserCtrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloMedHistoryUserCtrl.resx">
+      <DependentUpon>gloMedHistoryUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloMedicationC1FlexGrdUserCtrl.resx">
+      <DependentUpon>gloMedicationC1FlexGrdUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloMedicationToolBarUserCtrl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloMedicationToolBarUserCtrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloMedRefillC1FlexGridUserCtrl.resx">
+      <DependentUpon>gloMedRefillC1FlexGridUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloPatientDataGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloPatientDataGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxC1FlexGrdPrescriptionUserCtrl.resx">
+      <DependentUpon>gloRxC1FlexGrdPrescriptionUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxHistoryUserCtrl.resx">
+      <DependentUpon>gloRxHistoryUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxListUserCtrl.resx">
+      <DependentUpon>gloRxListUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxSearchC1FlexPrescUserCtrl.resx">
+      <DependentUpon>gloRxSearchC1FlexPrescUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloRxToolbarUserCtrl.resx">
+      <DependentUpon>gloRxToolbarUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloSearchC1FlexgridUserCtrl.resx">
+      <DependentUpon>gloSearchC1FlexgridUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloToolBarUserCtrl.resx">
+      <DependentUpon>gloToolBarUserCtrl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_CustomSearchInC1Flexgrid.resx">
+      <DependentUpon>gloUC_CustomSearchInC1Flexgrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_LabHistory.resx">
+      <DependentUpon>gloUC_LabHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_LabTest.resx">
+      <DependentUpon>gloUC_LabTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_PatientStrip.resx">
+      <DependentUpon>gloUC_PatientStrip.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_Transaction.resx">
+      <DependentUpon>gloUC_Transaction.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_Treatment.resx">
+      <DependentUpon>gloUC_Treatment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_TemplateTreeControl.resx">
+      <DependentUpon>gloUC_TemplateTreeControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\gloUC_TreeView.resx">
+      <DependentUpon>gloUC_TreeView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infobutton.png" />
+    <None Include="Resources\strip.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Control\buttons\bluebtn.gif" />
+    <None Include="Control\buttons\btnover.gif" />
+    <None Include="Control\buttons\btnnormal.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloContacts\gloContacts.csproj">
+      <Project>{E927ECC9-383B-4812-8167-48F712C5A769}</Project>
+      <Name>gloContacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEMRGeneralLibrary\gloEMRGeneralLibrary.vbproj">
+      <Project>{39D920BB-D15F-41CC-864B-B9786E8130CB}</Project>
+      <Name>gloEMRGeneralLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatientPortalCommon\gloPatientPortalCommon\gloPatientPortalCommon.vbproj">
+      <Project>{E13714AA-CE10-4A69-85A0-3EAF21227265}</Project>
+      <Name>gloPatientPortalCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloRxHub\gloRxHub.csproj">
+      <Project>{5192BCFC-17BC-4298-81C9-CEB9CDE99497}</Project>
+      <Name>gloRxHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSnoMed\gloSnoMed.csproj">
+      <Project>{93A18F4F-252C-4A03-A82E-930075606135}</Project>
+      <Name>gloSnoMed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSureScript\gloSureScript.vbproj">
+      <Project>{D30C09DC-7C58-465F-91BE-FAB082655926}</Project>
+      <Name>gloSureScript</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloTaskMail\gloTaskMail.csproj">
+      <Project>{82A245FE-5B57-4558-8DA0-536A0D217B05}</Project>
+      <Name>gloTaskMail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <Resource Include="Image\Attachment.jpg" />
+    <Resource Include="Image\Attachment.png" />
+    <Resource Include="Image\Bullet06.ico" />
+    <Resource Include="Image\clip1.png" />
+    <Resource Include="Image\Dicom01.ico" />
+    <Resource Include="Image\download.png" />
+    <Resource Include="Image\Forward Email.png" />
+    <Resource Include="Image\Symbol Cancel.png" />
+    <Resource Include="Image\Symbol Ok.png" />
+    <Resource Include="Image\View Result Document.ico" />
+    <Resource Include="Image\View Result URL Doc.ico" />
+    <Resource Include="Image\Yes.png" />
+    <Resource Include="Resources\Attachment.jpg" />
+    <Resource Include="Resources\Yes.png" />
+    <None Include="Resources\Down19.png" />
+    <None Include="Resources\DownHover19.png" />
+    <Content Include="Images\clip1.png" />
+    <Content Include="Images\clip11.png" />
+    <None Include="Resources\AgreementGreen.ico" />
+    <None Include="Resources\AgreementRed.ico" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\FemalePatient.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <None Include="Resources\Patient reference material img.bmp" />
+    <None Include="Resources\Provider reference material img.bmp" />
+    <None Include="Resources\RX-eligibilityNotChecked.png" />
+    <None Include="Resources\RX-eligibilityPassed.png" />
+    <None Include="Resources\RX-eligibilityFailed.png" />
+    <None Include="Resources\IntuitSecureMessaging.png" />
+    <None Include="Resources\NONEIntuitSecureMessaging.png" />
+    <Content Include="MedicalCategoryImages\2-Blue\BottomBlue.png" />
+    <Content Include="MedicalCategoryImages\2-Blue\TopBlue.png" />
+    <Resource Include="Resources\MedicalCategoryImages_1-Brown_BottomBrown.png" />
+    <Resource Include="Resources\MedicalCategoryImages_1-Brown_TopBrown.png" />
+    <None Include="Resources\MedicalCategory.ico" />
+    <Content Include="Resources\MedicalCategoryImages_2-Blue_BottomSkyBlue.png" />
+    <Content Include="Resources\MedicalCategoryImages_2-Blue_TopSkyBlue.png" />
+    <Content Include="Resources\MedicalCategoryImages_3-Gray_BottomGray.png" />
+    <Content Include="Resources\MedicalCategoryImages_3-Gray_TopGray.png" />
+    <Content Include="Resources\MedicalCategoryImages_4-GreenTopLightGreen.png" />
+    <Content Include="Resources\MedicalCategoryImages_4-Green_BottomLightGreen.png" />
+    <Content Include="Resources\MedicalCategoryImages_5-BottomOrange.png" />
+    <Content Include="Resources\MedicalCategoryImages_5-TopOrange.png" />
+    <Content Include="Resources\MedicalCategoryImages_6-Pink_BottomPink.png" />
+    <Content Include="Resources\MedicalCategoryImages_6-Pink_TopPink.png" />
+    <Content Include="Resources\MedicalCategoryImages_7-Red_BottomRed.png" />
+    <Content Include="Resources\MedicalCategoryImages_7-Red_TopRed.png" />
+    <Content Include="Resources\MedicalCategoryImages_8-Violet_BottomViolet.png" />
+    <Content Include="Resources\MedicalCategoryImages_8-Violet_TopViolet.png" />
+    <Content Include="Resources\MedicalCategoryImages_9-Yellow_BottomYellow.png" />
+    <Content Include="Resources\MedicalCategoryImages_9-Yellow_TopYellow.png" />
+    <None Include="Resources\PDRGray.png" />
+    <None Include="Resources\PDR20.png" />
+    <None Include="Resources\PDRWaiting.png" />
+    <None Include="Resources\Progress.gif" />
+    <None Include="Resources\Rx_PartiallyFilled.png" />
+    <None Include="Resources\Rx_Filled.png" />
+    <None Include="Resources\Rx_NotFilled.png" />
+    <Content Include="Resources\U.png" />
+    <None Include="Resources\UPHover19.png" />
+    <None Include="Resources\UP19.png" />
+    <None Include="Resources\ePharmacy1.gif" />
+    <None Include="Resources\ePharmacy2.gif" />
+    <None Include="Resources\yellowbtn.gif" />
+    <None Include="Resources\btn_img.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="LabUC_ResultSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
+    <Folder Include="MedicalCategoryImages\1-Brown\" />
+    <Folder Include="Resources\MedicalCategoryImages\9-Yellow\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

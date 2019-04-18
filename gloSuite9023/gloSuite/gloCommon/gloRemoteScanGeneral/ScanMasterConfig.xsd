@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ScanMasterConfig" targetNamespace="" xmlns:mstns="" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ScanMasterConfig" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ScanMasterConfig" msprop:Generator_UserDSName="ScanMasterConfig">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MasterConfig" msprop:Generator_TableClassName="MasterConfigDataTable" msprop:Generator_TableVarName="tableMasterConfig" msprop:Generator_TablePropName="MasterConfig" msprop:Generator_RowDeletingName="MasterConfigRowDeleting" msprop:Generator_RowChangingName="MasterConfigRowChanging" msprop:Generator_RowEvHandlerName="MasterConfigRowChangeEventHandler" msprop:Generator_RowDeletedName="MasterConfigRowDeleted" msprop:Generator_UserTableName="MasterConfig" msprop:Generator_RowChangedName="MasterConfigRowChanged" msprop:Generator_RowEvArgName="MasterConfigRowChangeEvent" msprop:Generator_RowClassName="MasterConfigRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScanSettingsFile" msprop:Generator_ColumnVarNameInTable="columnScanSettingsFile" msprop:Generator_ColumnPropNameInRow="ScanSettingsFile" msprop:Generator_ColumnPropNameInTable="ScanSettingsFileColumn" msprop:Generator_UserColumnName="ScanSettingsFile" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

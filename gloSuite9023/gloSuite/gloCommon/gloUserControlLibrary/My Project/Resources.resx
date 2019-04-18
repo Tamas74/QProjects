@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bluebtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Control\buttons\bluebtn.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellowbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellowbtn.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="strip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\strip.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnnormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Control\buttons\btnnormal.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Control\buttons\btnover.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ePharmacy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ePharmacy1.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ePharmacy2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ePharmacy2.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FemalePatient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FemalePatient.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_2003DarkHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_2003DarkHeader.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_2007Header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_2007Header.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Button.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Button_Reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Button_Reports.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_ButtonHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_ButtonHover.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_CloseBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_CloseBlue.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_CloseYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_CloseYellow.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_DownarrowWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_DownarrowWhite.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_OliveHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_OliveHeader.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Orange.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_SilverHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_SilverHeader.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Toolstrip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Toolstrip.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_UparrowWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_UparrowWhite.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MalePatient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MalePatient.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_DownBlueArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_DownBlueArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_UPBlueArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_UPBlueArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Blue2007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Blue2007.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_Gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_Gradient.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_LongButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_LongButton.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_LongOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_LongOrange.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgDOWN20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgDOWN20.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgHOVERDOWN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgHOVERDOWN.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgHOVERUP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgHOVERUP.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImgUP20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgUP20.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownHover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forward.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForwardHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForwardHover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_LongYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_LongYellow.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rewind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rewind.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RewindHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RewindHover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UP.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UPHover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Not_Reimbursable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Not Reimbursable.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Off_Formulary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Off Formulary.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="On_Formulary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\On Formulary.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Preferred" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preferred.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unknown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copay_dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copay_dollar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coverage_False01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coverage_False01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coverage_True01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coverage_True01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copay_dollarClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copay_dollarClose.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="U" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\U.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Approved_Rx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Approved Rx.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Denied_Prescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Denied Prescription.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_OrangeBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_OrangeBig.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Down19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Down19.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownHover19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownHover19.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UP19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UP19.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPHover19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UPHover19.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Attachment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Attachment.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\Yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infobutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infobutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Patient_reference_material_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Patient reference material img.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Provider_reference_material_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Provider reference material img.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RX_eligibilityFailed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RX-eligibilityFailed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RX_eligibilityNotChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RX-eligibilityNotChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RX_eligibilityPassed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RX-eligibilityPassed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IntuitSecureMessaging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IntuitSecureMessaging.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NONEIntuitSecureMessaging" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NONEIntuitSecureMessaging.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_1_Brown_BottomBrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_1-brown_bottombrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_1_Brown_TopBrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_1-brown_topbrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_2_Blue_BottomSkyBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_2-blue_bottomskyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_2_Blue_TopSkyBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_2-blue_topskyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_3_Gray_BottomGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_3-gray_bottomgray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_3_Gray_TopGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_3-gray_topgray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_4_GreenTopLightGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_4-greentoplightgreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_4_Green_BottomLightGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_4-green_bottomlightgreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_6_Pink_BottomPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_6-pink_bottompink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_6_Pink_TopPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_6-pink_toppink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_7_Red_BottomRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_7-red_bottomred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_7_Red_TopRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_7-red_topred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_8_Violet_BottomViolet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_8-violet_bottomviolet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_8_Violet_TopViolet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_8-violet_topviolet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_5_BottomOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_5-bottomorange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_5_TopOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_5-toporange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_9_Yellow_BottomYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_9-yellow_bottomyellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_9_Yellow_TopYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_9-yellow_topyellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_91_BottomDark_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_91_bottomdark blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategoryImages_91_TopDark_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medicalcategoryimages_91_topdark blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicalCategory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MedicalCategory.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PDR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDR20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PDRGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDRGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PDRWaiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDRWaiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Progress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Progress.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rx_Filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rx_Filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rx_NotFilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rx_NotFilled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rx_PartiallyFilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rx_PartiallyFilled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AgreementGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AgreementGreen.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AgreementRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AgreementRed.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

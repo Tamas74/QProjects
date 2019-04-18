@@ -1,0 +1,600 @@
+﻿<UserControl x:Class="gloPatientSavingMessage.UC_GenericAlternative"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xd="http://schemas.microsoft.com/netfx/2007/xaml/presentation" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" FontFamily="Tahoma" Foreground="#FF1F497D"
+               >
+	<UserControl.Resources>
+
+        <!-- Blue Expander Template--> 
+        <ControlTemplate x:Key="BlueExpanderButtonTemp" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="ExpanderButtonBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}"
+                    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Transparent"
+                               Grid.ColumnSpan="2"/>
+                    <Ellipse Name="Circle"
+                         Grid.Column="0"
+                         
+                         Width="15"
+						 
+                         Height="15"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         >
+                        <Ellipse.Fill >
+                            <RadialGradientBrush>
+                                <GradientStop Color="white" Offset="1"/>
+                                <GradientStop Color="white"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Path x:Name="Sign"
+                      Grid.Column="0"
+                      Data="M 0,5 H 10 M 5,0 V 10 Z"
+                      Stroke="#FF567ED3"
+                      Width="10"
+                      Height="10"
+                      StrokeThickness="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      RenderTransformOrigin="0.5,0.5"
+                      />
+                    <ContentPresenter x:Name="HeaderContent"
+                                  Grid.Column="1"
+                                  Margin="4,0,0,0"
+                                  ContentSource="Content"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <!--Change the sign to minus when toggled-->
+                <Trigger Property="IsChecked"
+                         Value="True">
+                    <Setter Property="Data" TargetName="Sign" Value="M 0,5 H 10 Z"/>
+                </Trigger>
+
+                <!-- MouseOver, Pressed behaviours-->
+                <Trigger Property="IsMouseOver"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF3C7FB1"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#222"
+                                    TargetName="Sign"/>
+                </Trigger>
+                <Trigger Property="IsPressed"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF526C7B"
+                                    TargetName="Circle"/>
+                    <Setter Property="StrokeThickness"
+                                    Value="1.5"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#FF003366"
+                                    TargetName="Sign"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="BlueExpanderTemp" TargetType="{x:Type Expander}">
+            <DockPanel>
+                <ToggleButton x:Name="ExpanderButton" 
+                              DockPanel.Dock="Top"
+                              Template="{StaticResource BlueExpanderButtonTemp}"
+                              Content="{TemplateBinding Header}"
+                              IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                              OverridesDefaultStyle="True" Background="#FF567ED3" Foreground="White" Margin="0" Padding="3"/>
+                <ContentPresenter x:Name="ExpanderContent"
+                                  Grid.Row="1" 
+                                  Visibility="Collapsed"
+                                  DockPanel.Dock="Bottom"/>
+            </DockPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsExpanded" Value="True">
+                    <Setter TargetName="ExpanderContent" Property="Visibility" Value="Visible"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <!-- Simple Expander Template-->
+        <ControlTemplate x:Key="SimpleExpanderButtonTemp" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="ExpanderButtonBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}"
+                    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Transparent"
+                               Grid.ColumnSpan="2"/>
+                    <Ellipse Name="Circle"
+                         Grid.Column="0"
+                         
+                         Width="15"
+						 
+                         Height="15"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         >
+                        <Ellipse.Fill >
+                            <RadialGradientBrush>
+                                <GradientStop Color="white" Offset="1"/>
+                                <GradientStop Color="white"/>
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Path x:Name="Sign"
+                      Grid.Column="0"
+                      Data="M 0,5 H 10 M 5,0 V 10 Z"
+                      Stroke="#FF1F497D"
+                      Width="10"
+                      Height="10"
+                      StrokeThickness="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      RenderTransformOrigin="0.5,0.5"
+                      />
+                    <ContentPresenter x:Name="HeaderContent"
+                                  Grid.Column="1"
+                                  Margin="4,0,0,0"
+                                  ContentSource="Content"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <!--Change the sign to minus when toggled-->
+                <Trigger Property="IsChecked"
+                         Value="True">
+                    <Setter Property="Data" TargetName="Sign" Value="M 0,5 H 10 Z"/>
+                </Trigger>
+
+                <!-- MouseOver, Pressed behaviours-->
+                <Trigger Property="IsMouseOver"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF3C7FB1"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#222"
+                                    TargetName="Sign"/>
+                </Trigger>
+                <Trigger Property="IsPressed"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF526C7B"
+                                    TargetName="Circle"/>
+                    <Setter Property="StrokeThickness"
+                                    Value="1.5"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#FF003366"
+                                    TargetName="Sign"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="SimpleExpanderTemp" TargetType="{x:Type Expander}">
+            <DockPanel>
+                <ToggleButton x:Name="ExpanderButton" 
+                              DockPanel.Dock="Top"
+                              Template="{StaticResource SimpleExpanderButtonTemp}"
+                              Content="{TemplateBinding Header}"
+                              IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                              OverridesDefaultStyle="True"
+                              Padding="1.5,0" Foreground="#FF1F497D">
+                </ToggleButton>
+                <ContentPresenter x:Name="ExpanderContent"
+                                  Grid.Row="1" 
+                                  Visibility="Collapsed"
+                                  DockPanel.Dock="Bottom"/>
+            </DockPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsExpanded" Value="True">
+                    <Setter TargetName="ExpanderContent" Property="Visibility" Value="Visible"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <!-- Orange Expander Template-->
+        <ControlTemplate x:Key="SimpleExpanderOrangeTemp" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="ExpanderButtonBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}"
+                    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="Transparent"
+                               Grid.ColumnSpan="2"/>
+                    <Ellipse Name="Circle"
+                         Grid.Column="0"
+                         
+                         Width="20"
+						 
+                         Height="20"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         >
+                        <Ellipse.Fill >
+                            <LinearGradientBrush EndPoint="0.474,-0.027" MappingMode="RelativeToBoundingBox" StartPoint="1.145,0.779">
+                                <GradientStop Color="#FFF9942E" Offset="1"/>
+                                <GradientStop Color="#FFC7420A" Offset="0.482"/>
+                                <GradientStop Color="#FFC7420A" Offset="0.193"/>
+                                <GradientStop Color="#FFB14113"/>
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Path x:Name="Sign"
+                      Grid.Column="0"
+                      Data="M 0,5 H 10 M 5,0 V 10 Z"
+                      Stroke="White"
+                      Width="10"
+                      Height="10"
+                      StrokeThickness="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      RenderTransformOrigin="0.5,0.5"
+                      />
+                    <ContentPresenter x:Name="HeaderContent"
+                                  Grid.Column="1"
+                                  Margin="4,0,0,0"
+                                  ContentSource="Content"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <!--Change the sign to minus when toggled-->
+                <Trigger Property="IsChecked"
+                         Value="True">
+                    <Setter Property="Data" TargetName="Sign" Value="M 0,5 H 10 Z"/>
+                </Trigger>
+
+                <!-- MouseOver, Pressed behaviours-->
+                <Trigger Property="IsMouseOver"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF3C7FB1"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#222"
+                                    TargetName="Sign"/>
+                </Trigger>
+                <Trigger Property="IsPressed"
+                                 Value="true">
+                    <Setter Property="Stroke"
+                                    Value="#FF526C7B"
+                                    TargetName="Circle"/>
+                    <Setter Property="StrokeThickness"
+                                    Value="1.5"
+                                    TargetName="Circle"/>
+                    <Setter Property="Stroke"
+                                    Value="#FF003366"
+                                    TargetName="Sign"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ExpanderOrangeTemp" TargetType="{x:Type Expander}">
+            <Border BorderBrush="#FF1F497D" Height="Auto" Width="Auto">
+                <DockPanel Margin="0" VerticalAlignment="Top" d:LayoutOverrides="Width">
+                	<DockPanel.Background>
+                		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                			<GradientStop Color="#FF8CB1E3" Offset="0.044"/>
+                			<GradientStop Color="#FF799BCA" Offset="0.956"/>
+                		</LinearGradientBrush>
+                	</DockPanel.Background>
+                    <ToggleButton x:Name="ExpanderButton" 
+        				DockPanel.Dock="Top"
+        				Template="{StaticResource SimpleExpanderOrangeTemp}"
+        				Content="{TemplateBinding Header}"
+        				IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+        				OverridesDefaultStyle="True"
+        				Padding="1.5,0" Foreground="White" Margin="2"/>
+                    <ContentPresenter x:Name="ExpanderContent"
+        				Grid.Row="1" 
+        				Visibility="Collapsed"
+        				DockPanel.Dock="Bottom"/>
+                </DockPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsExpanded" Value="True">
+                    <Setter TargetName="ExpanderContent" Property="Visibility" Value="Visible"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+        
+    </UserControl.Resources>
+   
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+			<Border BorderBrush="White">
+            <DockPanel Margin="0"  >
+                  <Expander DockPanel.Dock="Top"  Foreground="#FF1F497D" FontWeight="Bold" x:Name="ExpOpportunity" Template="{StaticResource ExpanderOrangeTemp}" OverridesDefaultStyle="True" 	HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="White" IsExpanded="False" Margin="0" Background="White" BorderThickness="1,1,1,0">
+                        <Expander.Header>
+							<WrapPanel Orientation="Horizontal">
+                  				 <Label Padding="0" x:Name="lblOppHeader" VerticalAlignment="Center"  Foreground="White" FontSize="14.667" Margin="4" HorizontalAlignment="Left" VerticalContentAlignment="Center" IsHitTestVisible="True" >
+                                 	<TextBlock x:Name="txtOppHeader" TextTrimming="WordEllipsis" Width="Auto" LineStackingStrategy="BlockLineHeight" TextWrapping="WrapWithOverflow"></TextBlock>
+ 								 </Label>
+	                  				<!-- <Button Content="Deny" x:Name="btnDeny" Width="75" Background="#FF24B04F" Foreground="#FF004314" BorderBrush="White"  d:LayoutOverrides="HorizontalAlignment, VerticalMargin" Margin="0,5,4.999,5" HorizontalAlignment="Right" Grid.Column="1" Click="btnDeny_Click"  />
+	                                <Button Content="Accept" x:Name="btnAccept" Width="75" Background="#FF24B04F" Foreground="#FF004314" BorderBrush="White" d:LayoutOverrides="VerticalMargin" Margin="0,5,89.999,5" HorizontalAlignment="Right" Grid.Column="1" Click="btnAccept_Click" Height="24" />-->
+	                  		</WrapPanel>
+                  	</Expander.Header>
+                        <Grid Background="#FFCFE0F8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel  Margin="0" x:Name="stkGenOpportunity" d:LayoutOverrides="Height" Background="#FFCFE0F8" >
+                                <Border BorderBrush="#FF1F497D" Margin="0,0,0,5" HorizontalAlignment="Stretch" BorderThickness="0" >
+                                    <Expander  Header="More Information"  Template="{StaticResource SimpleExpanderTemp}"
+									OverridesDefaultStyle="True"
+									Foreground="White" Background="#FFCFE0F8" BorderBrush="#FF1F497D" Margin="5" IsExpanded="True">
+                                        <StackPanel  Margin="0,4,0,0" Background="#FFCFE0F8" >
+
+                                            <Border x:Name="BrdOpportunityHeadline" BorderThickness="1" BorderBrush="#FFFFC56C" Background="#FFFDF3E0" Margin="0,3,0,0">
+                                                <StackPanel x:Name="pnlOpportunityHeadline1">
+                                                    <TextBlock TextWrapping="Wrap" Text="Opportunity Headline" VerticalAlignment="Top" FontWeight="Bold" Background="#FFFFC56C" Foreground="Black" Padding="2"/>
+                                                    <TextBlock x:Name="lblOpportunityHeadline" TextWrapping="Wrap" Foreground="Black" Text="{Binding OpportunityHeadline}" FontWeight="Bold"  Margin="6" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Border>
+                                            <Border x:Name="BrdOpportunity" BorderBrush="#FFA0B5DA" BorderThickness="1" Background="#FFF3F7FB" Margin="0,3,0,0">
+                                            	<Expander Header="Opportunity" Foreground="#FF1F497D" FontWeight="Bold"  Template="{StaticResource BlueExpanderTemp}"
+                                            		OverridesDefaultStyle="True" Background="#FF567ED3" BorderBrush="White" IsExpanded="True">
+
+                                            		<Grid  Margin="0">
+                                            			<Grid.RowDefinitions>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				
+                                            			</Grid.RowDefinitions>
+                                            			<Grid.ColumnDefinitions>
+                                            				<ColumnDefinition Width="150"/>
+                                            				<ColumnDefinition Width="*"/>
+                                            			</Grid.ColumnDefinitions>
+                                            			<Border Margin="0" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA">
+                                            				<TextBlock TextWrapping="Wrap" Text="Opportunity ID:" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="#FF1F497D"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblOpportunityID" TextWrapping="Wrap" Text="{Binding OpportunityID}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF1F497D"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="1" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Opportunity Type:" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="#FF1F497D" />
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF">
+                                            				<TextBlock x:Name="lblOpportunityType" TextWrapping="Wrap" Text="{Binding OpportunityType}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF1F497D"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="2" BorderThickness="0,0,1,0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Opportunity Body:" FontWeight="Normal" Margin="20,0,0,-1" VerticalAlignment="Center" Foreground="#FF1F497D"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="2" BorderThickness="0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblOpportunityBody" TextWrapping="Wrap" Text="{Binding OpportunityBody}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF1F497D"/>
+                                            			</Border>
+                                            		</Grid>
+                                            	</Expander>
+                                            </Border>
+                                            <Border x:Name="BrdOriginalPrescription" BorderBrush="#FFA0B5DA" BorderThickness="1" Background="White" Margin="0,3,0,0">
+                                                <Expander Header="Original Prescription" Foreground="#FF3D6394" FontWeight="Bold"  Template="{StaticResource BlueExpanderTemp}"
+												OverridesDefaultStyle="True" Background="#FF567ED3" BorderBrush="#FFF0F7FF" IsExpanded="True" BorderThickness="1">
+
+                                                    <Grid  Margin="0">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+                                                            <RowDefinition Height="*" MinHeight="20"/>
+															<RowDefinition Height="*" MinHeight="20"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Border Margin="0" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA">
+                                                            <TextBlock TextWrapping="Wrap" Text="Drug Code:" Foreground="#FF1F497D" FontWeight="Normal" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                            <TextBlock x:Name="lblProductCode" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxDrugCode}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Margin="0" Grid.Row="1" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                                            <TextBlock TextWrapping="Wrap" Text="Drug Description:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="1" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF">
+                                                            <TextBlock x:Name="lblDrugDescription" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxDrugDesc}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Margin="0" Grid.Row="2" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                            <TextBlock TextWrapping="Wrap" Text="Qualifier:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                        <TextBlock x:Name="lblQualifier" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxDrugQlfr}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Margin="0" Grid.Row="3" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                                        	<TextBlock TextWrapping="Wrap" Text="Quantity:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="3" BorderBrush="#FFA0B5DA" BorderThickness="0,0,0,1" Background="#FFF0F7FF" >
+                                                        	<TextBlock x:Name="lblQuantity1" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxDrugQty}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Margin="0" Grid.Row="4" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                        	<TextBlock TextWrapping="Wrap" Text="Days Supply:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                        	<TextBlock x:Name="lblDaysSupply1" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxDaysSupply}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Margin="0" Grid.Row="5" BorderBrush="#FFA0B5DA" BorderThickness="0,0,1,1" Background="#FFF0F7FF" >
+                                                        	<TextBlock TextWrapping="Wrap" Text="Written Date:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,1" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="5" BorderThickness="0,0,0,1"  BorderBrush="#FFA0B5DA" Background="#FFF0F7FF"  >
+                                                        	<TextBlock x:Name="lblWrittenDate" TextWrapping="Wrap" Foreground="#FF1F497D" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+														 <Border Margin="0" Grid.Row="6" BorderBrush="#FFA0B5DA" BorderThickness="0,0,1,1" Background="#FFDEE7FA" >
+                                                        	<TextBlock TextWrapping="Wrap" Text="Last Fill Date:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,1" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+														 <Border Grid.Column="1" Margin="0" Grid.Row="6" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA"  >
+                                                        	 <TextBlock x:Name="lblLastFillDate" TextWrapping="Wrap" Foreground="#FF1F497D" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+														<Border Margin="0" Grid.Row="7" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF"  >
+                                                            <TextBlock TextWrapping="Wrap" Text="Prescriber NPI:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="7" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                                            <TextBlock x:Name="lblNPI1"  TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPrescNPI}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+														<Border Margin="0" Grid.Row="8" BorderThickness="0,0,1,0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA"  >
+                                                            <TextBlock TextWrapping="Wrap" Text="Prescriber Name:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                                        </Border>
+                                                        <Border Grid.Column="1" Margin="0" Grid.Row="8" d:LayoutOverrides="Height" BorderThickness="0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                                        <DockPanel x:Name="pnlPrescriber_Name" LastChildFill="True"  Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" OpacityMask="Black" >
+                                                            <TextBlock x:Name="lblPrescriberFName" Text="{Binding OrgRxPrescFirstName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right"  HorizontalAlignment="Left" Foreground="#FF1F497D" FontWeight="Bold" Margin="0"/>
+                                                            <TextBlock x:Name="lblPrescriberMName" Margin="4,0,0,0" Text="{Binding OrgRxPrescMiddleName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right"  HorizontalAlignment="Left" Foreground="#FF1F497D" FontWeight="Bold" />
+                                                            <TextBlock x:Name="lblPrescriberLName" Margin="4,0,0,0" Text="{Binding OrgRxPrescLastName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right"  HorizontalAlignment="Left" Foreground="#FF1F497D" FontWeight="Bold"/>
+                                                        </DockPanel>
+                                                    </Border>
+                                                    </Grid>
+                                                </Expander>
+                                            </Border>
+                                            <Border x:Name="BrdPharmacy" BorderBrush="#FFA0B5DA" BorderThickness="1" Background="White" Margin="0,3,0,0">
+                                            	<Expander Header="Pharmacy" Foreground="#FF3D6394" FontWeight="Bold"  Template="{StaticResource BlueExpanderTemp}"
+                                            		OverridesDefaultStyle="True" Background="#FF6CCFF6" BorderBrush="White" IsExpanded="True">
+                                            		<Grid  Margin="0">
+                                            			<Grid.RowDefinitions>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+                                            				<RowDefinition Height="*" MinHeight="20"/>
+															<RowDefinition Height="*" MinHeight="20"/>
+                                            			</Grid.RowDefinitions>
+                                            			<Grid.ColumnDefinitions>
+                                            				<ColumnDefinition Width="150"/>
+                                            				<ColumnDefinition Width="*"/>
+                                            			</Grid.ColumnDefinitions>
+                                                        
+                                            			<Border Margin="0,-0.006,0,0" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="NCPDPID:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0,-0.006,0,0" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" OpacityMask="Black" >
+                                            				<TextBlock x:Name="lblNCPDPID2" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhNCPDPID}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                                            			</Border>
+                                            			<Border Margin="0,-0.006,0,0" Grid.Row="1" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Business Name:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0,-0.006,0,0" Grid.Row="1" d:LayoutOverrides="Height" BorderBrush="#FFA0B5DA" BorderThickness="0,0,0,1" Background="#FFF0F7FF" >
+                                            				<TextBlock x:Name="lblLastFillDate1" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhBusinessName}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="2" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Address Line1:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0,-0.006,0,0" Grid.Row="2" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblAddressLine1" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhAddressLine1}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="3" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Address Line2:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="3" BorderBrush="#FFA0B5DA" BorderThickness="0,0,0,1" d:LayoutOverrides="Height" Background="#FFF0F7FF" >
+                                            				<TextBlock x:Name="lblPAddressLine1" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhAddressLine2}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="4" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="City:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="4" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblCity2" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhCity}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="5" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock TextWrapping="Wrap" Text="State:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0,-0.006" Grid.Row="5" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock x:Name="lblState2" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhState}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="6" d:LayoutOverrides="Height" BorderBrush="#FFA0B5DA" BorderThickness="0,0,1,1" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Zip Code:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>	
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="6" d:LayoutOverrides="Height" BorderBrush="#FFA0B5DA" BorderThickness="0,0,0,1" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblZipCode2" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhZipCode}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Margin="0" Grid.Row="7" BorderThickness="0,0,1,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Primary Telephone:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+                                            			<Border Grid.Column="1" Margin="0" Grid.Row="7" d:LayoutOverrides="Height" BorderThickness="0,0,0,1" BorderBrush="#FFA0B5DA" Background="#FFF0F7FF" >
+                                            				<TextBlock x:Name="lblPrimaryTelephone2" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhTelephone}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black" />
+                                            			</Border>
+														<Border Margin="0" Grid.Row="8" BorderThickness="0,0,1,0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock TextWrapping="Wrap" Text="Extension Number:" Foreground="#FF1F497D" FontWeight="Normal" Margin="20,0,0,0" VerticalAlignment="Center" OpacityMask="Black"/>
+                                            			</Border>
+														<Border Grid.Column="1" Margin="0" Grid.Row="8" d:LayoutOverrides="Height" BorderThickness="0" BorderBrush="#FFA0B5DA" Background="#FFDEE7FA" >
+                                            				<TextBlock x:Name="lblExtensionNumber" TextWrapping="Wrap" Foreground="#FF1F497D" Text="{Binding OrgRxPhTelephExt}" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" OpacityMask="Black" />
+                                            			</Border>
+														                                                                                                              
+                                            		</Grid>
+                                            	</Expander>
+                                            </Border>
+                                        </StackPanel>
+                                    </Expander>
+                                </Border>
+
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="4" Width="156">
+                                <Border Background="#FF24B04F" BorderThickness="1" BorderBrush="#FF008529" Padding="5">
+                                    <WrapPanel Background="#FF24B04F" Orientation="Horizontal" HorizontalAlignment="Left"  >
+                                		<TextBlock x:Name="lblGenAlternative" TextAlignment="Right" Margin="0" FontSize="16" Foreground="White" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" IsEnabled="False" />
+                                	</WrapPanel>
+                                </Border>
+                                <StackPanel Orientation="Horizontal" Margin="0">
+                                    <Button Content="Accept" x:Name="btnAcceptMax" Width="75" Background="#FF24B04F" Margin="0,4,6,4" HorizontalAlignment="Right" Foreground="#FF004314" BorderBrush="#FF008529" Height="24" Click="btnAccept_Click"/>
+                                    <Button Content="Deny" x:Name="btnDenyMax" Width="75" Background="#FF24B04F" HorizontalAlignment="Right" Foreground="#FF004314" BorderBrush="#FF008529"  Height="24" d:LayoutOverrides="HorizontalAlignment" Click="btnDeny_Click"  />
+                                
+                                </StackPanel>
+                                	
+                                	<StackPanel x:Name="DisposePnl" Orientation="Vertical" Margin="0,0,2,0" Visibility="Hidden" Background="#FF6B9BFF">
+                                <DockPanel >
+                                    <Label Visibility="Visible" x:Name="lblDisposition" FontWeight="Bold" Content="Disposition Code:" Foreground="White"/>
+                                	<Label Visibility="Visible" x:Name="lblDisposition_Code" Content ="{Binding DispositionCode}" FontWeight="Bold" Tag="0" Foreground="White"/>
+                                </DockPanel>
+                                <WrapPanel x:Name="Dispose_DecPnl" Orientation="Horizontal" Width="145" MinWidth="153" Height="Auto" Margin="0.5,0,2.5,0" Visibility="Visible" Background="#FF567ED3" >
+                                            <TextBlock x:Name="txbDisposition_Des" Visibility="Visible" Width="145" MinWidth="145" Height="Auto"  TextWrapping="WrapWithOverflow" Foreground="White" FontSize="10" FontStyle="Italic" Margin="6,5,0,8"  />
+                                        </WrapPanel>
+                                    </StackPanel>
+                          </StackPanel>
+                       
+                        </Grid>
+                    </Expander>
+               
+                    <Popup  Height="Auto" Width="Auto" Name="DenyPopUp" StaysOpen="True" AllowsTransparency="True" MouseLeave="DenyPopUp_MouseLeave" >
+                        <Border BorderThickness="1" CornerRadius="15" BorderBrush="#FF59769C" >
+                        	<Border.Background>
+                        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        			<GradientStop Color="#FF8BB0E1" Offset="0.025"/>
+                        			<GradientStop Color="#FF7B9ECD" Offset="0.899"/>
+                        		</LinearGradientBrush>
+                        	</Border.Background>
+                            <StackPanel Margin="15"  Orientation="Vertical" Name="DenyPanel">
+                            <RadioButton Content="Rx Savings Opportunity declined due to clinical reason, med(s) not changed" Tag="02" GroupName = "DenyRadioButton" Checked="RadioButton_Click" Margin="5" Foreground="White" />
+                            <RadioButton Content="Opportunity presented to the patient but declined, med(s) not changed" Tag="03" GroupName = "DenyRadioButton" Checked="RadioButton_Click" Margin="5" Foreground="White" />
+                            <RadioButton Content="Prescriber declined because prescriber is not the patient's usual provider, med(s) not changed" Tag="04" GroupName = "DenyRadioButton" Checked="RadioButton_Click" Margin="5" Foreground="White" />
+                            <RadioButton Content="Opportunity declined because message contains invalid information" Tag="05" GroupName = "DenyRadioButton" Checked="RadioButton_Click" Margin="5" Foreground="White" />
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </DockPanel>
+ 
+			</Border>
+	</ScrollViewer>
+    
+</UserControl>

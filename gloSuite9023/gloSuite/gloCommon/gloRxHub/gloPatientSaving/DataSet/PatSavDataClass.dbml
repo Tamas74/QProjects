@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="glo8000_DEV_POC" Class="PatSavDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GLOSVR02\SQL2008R2;Initial Catalog=glo8000_DEV_POC;Integrated Security=True" SettingsObjectName="gloPatientSavingMessage.Properties.Settings" SettingsPropertyName="glo8000_DEV_POCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PatSav_Codes" Member="PatSav_Codes">
+    <Type Name="PatSav_Code">
+      <Column Name="nID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sCodeType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sCodeValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sCodeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatSav_Mst" Member="PatSav_Msts">
+    <Type Name="PatSav_Mst">
+      <Column Name="PSID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrescNPI" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PrescLastName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PrescFirstName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PrescMiddleName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PrescSuffix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PrescPrefix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PatMedicalRecIdNumberEHR" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatLastName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatFirstName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatMiddleName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatGender" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatDOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PatAddressLine1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PatAddressLine2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PatCity" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PatZipCode" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="PatTelephone" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="BenefitCoordinationPBMMemberID" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="nPatientID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nPatSavQID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="PatSav_Mst_PatSavOpportunity_Mst" Member="PatSavOpportunity_Msts" ThisKey="PSID" OtherKey="PSID" Type="PatSavOpportunity_Mst" />
+      <Association Name="PatSav_Queue_PatSav_Mst" Member="PatSav_Queue" ThisKey="nPatSavQID" OtherKey="nPatSavQID" Type="PatSav_Queue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatSav_Queue" Member="PatSav_Queues">
+    <Type Name="PatSav_Queue">
+      <Column Name="nPatSavQID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="sPatientCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sFirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="sLastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dtDOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sGender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="iXMLData" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="sStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nPatientID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nTaskId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nAttachmentID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="dtSavedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sComments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sMessageID" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+      <Association Name="PatSav_Queue_PatSav_Mst" Member="PatSav_Msts" ThisKey="nPatSavQID" OtherKey="nPatSavQID" Type="PatSav_Mst" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatSavOpportunityAlternativeMed_Dtl" Member="PatSavOpportunityAlternativeMed_Dtls">
+    <Type Name="PatSavOpportunityAlternativeMed_Dtl">
+      <Column Name="PSOppAltMedID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PSOppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="AltMedDrugDesc" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
+      <Column Name="AltMedDrugCode" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="AltMedDrugQlfr" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="bIsSelected" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PatSavOpportunity_Mst_PatSavOpportunityAlternativeMed_Dtl" Member="PatSavOpportunity_Mst" ThisKey="PSOppID" OtherKey="PSOppID" Type="PatSavOpportunity_Mst" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PatSavOpportunity_Mst" Member="PatSavOpportunity_Msts">
+    <Type Name="PatSavOpportunity_Mst">
+      <Column Name="PSOppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PSID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="OpportunityID" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OpportunityType" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OpportunityHeadline" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OpportunityBody" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="AnnualCostSavings" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="OrgRxDrugDesc" Type="System.String" DbType="VarChar(105)" CanBeNull="true" />
+      <Column Name="OrgRxDrugCode" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxDrugQlfr" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxDrugQty" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
+      <Column Name="OrgRxDaysSupply" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="OrgRxWrittenDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrgRxLastFillDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrgRxPhNCPDPID" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhBusinessName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhAddressLine1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OrgRxPhAddressLine2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OrgRxPhCity" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrgRxPhZipCode" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhTelephone" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhTelephExt" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPhFax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrgRxPrescNPI" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPrescLastName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPrescFirstName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPrescMiddleName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="OrgRxPrescSuffix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OrgRxPrescPrefix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DispositionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DispositionCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DispositionFile" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="PatSavOpportunity_Mst_PatSavOpportunityAlternativeMed_Dtl" Member="PatSavOpportunityAlternativeMed_Dtls" ThisKey="PSOppID" OtherKey="PSOppID" Type="PatSavOpportunityAlternativeMed_Dtl" />
+      <Association Name="PatSav_Mst_PatSavOpportunity_Mst" Member="PatSav_Mst" ThisKey="PSID" OtherKey="PSID" Type="PatSav_Mst" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

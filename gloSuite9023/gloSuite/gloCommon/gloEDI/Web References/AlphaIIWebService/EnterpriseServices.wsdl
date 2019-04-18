@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://filestaker.net/" xmlns:s1="https://filestaker.net/AlphaII" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://filestaker.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://filestaker.net/">
+      <s:import namespace="https://filestaker.net/AlphaII" />
+      <s:element name="Scrub">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDIServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Submitter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RPTType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EDIData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScrubResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScrubResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditCodeFlags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="submitterId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patientGender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patientDOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditCodeFlagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditCodeFlagsResult" type="tns:ArrayOfEditItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEditItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EditItem" nillable="true" type="s1:EditItem" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://filestaker.net/AlphaII">
+      <s:complexType name="EditItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdjDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Severity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sequence" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ScrubSoapIn">
+    <wsdl:part name="parameters" element="tns:Scrub" />
+  </wsdl:message>
+  <wsdl:message name="ScrubSoapOut">
+    <wsdl:part name="parameters" element="tns:ScrubResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditCodeFlagsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditCodeFlags" />
+  </wsdl:message>
+  <wsdl:message name="EditCodeFlagsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditCodeFlagsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EnterpriseServicesSoap">
+    <wsdl:operation name="Scrub">
+      <wsdl:input message="tns:ScrubSoapIn" />
+      <wsdl:output message="tns:ScrubSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCodeFlags">
+      <wsdl:input message="tns:EditCodeFlagsSoapIn" />
+      <wsdl:output message="tns:EditCodeFlagsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EnterpriseServicesSoap" type="tns:EnterpriseServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Scrub">
+      <soap:operation soapAction="https://filestaker.net/Scrub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCodeFlags">
+      <soap:operation soapAction="https://filestaker.net/EditCodeFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EnterpriseServicesSoap12" type="tns:EnterpriseServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Scrub">
+      <soap12:operation soapAction="https://filestaker.net/Scrub" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCodeFlags">
+      <soap12:operation soapAction="https://filestaker.net/EditCodeFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnterpriseServices">
+    <wsdl:port name="EnterpriseServicesSoap" binding="tns:EnterpriseServicesSoap">
+      <soap:address location="https://filestaker.net/AlphaII/EnterpriseServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EnterpriseServicesSoap12" binding="tns:EnterpriseServicesSoap12">
+      <soap12:address location="https://filestaker.net/AlphaII/EnterpriseServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

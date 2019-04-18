@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PrinterDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InstalledPrinters" msprop:Generator_TableClassName="InstalledPrintersDataTable" msprop:Generator_TableVarName="tableInstalledPrinters" msprop:Generator_TablePropName="InstalledPrinters" msprop:Generator_RowDeletingName="InstalledPrintersRowDeleting" msprop:Generator_RowChangingName="InstalledPrintersRowChanging" msprop:Generator_RowEvHandlerName="InstalledPrintersRowChangeEventHandler" msprop:Generator_RowDeletedName="InstalledPrintersRowDeleted" msprop:Generator_UserTableName="InstalledPrinters" msprop:Generator_RowChangedName="InstalledPrintersRowChanged" msprop:Generator_RowEvArgName="InstalledPrintersRowChangeEvent" msprop:Generator_RowClassName="InstalledPrintersRow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InstalledPrintersID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnInstalledPrintersID" msprop:Generator_ColumnPropNameInRow="InstalledPrintersID" msprop:Generator_ColumnPropNameInTable="InstalledPrintersIDColumn" msprop:Generator_UserColumnName="InstalledPrintersID" type="xs:long" />
+        <xs:element name="Default" msprop:Generator_ColumnVarNameInTable="columnDefault" msprop:Generator_ColumnPropNameInRow="Default" msprop:Generator_ColumnPropNameInTable="DefaultColumn" msprop:Generator_UserColumnName="Default" type="xs:string" minOccurs="0" />
+        <xs:element name="Printer" msprop:Generator_TableClassName="PrinterDataTable" msprop:Generator_TableVarName="tablePrinter" msprop:Generator_TablePropName="Printer" msprop:Generator_RowDeletingName="PrinterRowDeleting" msprop:Generator_RowChangingName="PrinterRowChanging" msprop:Generator_RowEvHandlerName="PrinterRowChangeEventHandler" msprop:Generator_RowDeletedName="PrinterRowDeleted" msprop:Generator_UserTableName="Printer" msprop:Generator_RowChangedName="PrinterRowChanged" msprop:Generator_RowEvArgName="PrinterRowChangeEvent" msprop:Generator_RowClassName="PrinterRow" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:appinfo>
+              <msdata:Relationship name="InstalledPrinters_Printer" msdata:parent="InstalledPrinters" msdata:child="Printer" msdata:parentkey="InstalledPrintersID" msdata:childkey="PrinterID" msprop:Generator_UserChildTable="Printer" msprop:Generator_ChildPropName="GetPrinterRows" msprop:Generator_UserRelationName="InstalledPrinters_Printer" msprop:Generator_ParentPropName="InstalledPrintersRow" msprop:Generator_RelationVarName="relationInstalledPrinters_Printer" msprop:Generator_UserParentTable="InstalledPrinters" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PrinterID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnPrinterID" msprop:Generator_ColumnPropNameInRow="PrinterID" msprop:Generator_ColumnPropNameInTable="PrinterIDColumn" msprop:Generator_UserColumnName="PrinterID" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="IsDefault" msprop:Generator_ColumnVarNameInTable="columnIsDefault" msprop:Generator_ColumnPropNameInRow="IsDefault" msprop:Generator_ColumnPropNameInTable="IsDefaultColumn" msprop:Generator_UserColumnName="IsDefault" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="CanDuplex" msprop:Generator_ColumnVarNameInTable="columnCanDuplex" msprop:Generator_ColumnPropNameInRow="CanDuplex" msprop:Generator_ColumnPropNameInTable="CanDuplexColumn" msprop:Generator_UserColumnName="CanDuplex" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Duplex" msprop:Generator_ColumnVarNameInTable="columnDuplex" msprop:Generator_ColumnPropNameInRow="Duplex" msprop:Generator_ColumnPropNameInTable="DuplexColumn" msprop:Generator_UserColumnName="Duplex" type="xs:int" default="1" minOccurs="0" />
+              <xs:element name="Size" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_UserColumnName="Size" type="xs:string" minOccurs="0" />
+              <xs:element name="Tray" msprop:Generator_ColumnVarNameInTable="columnTray" msprop:Generator_ColumnPropNameInRow="Tray" msprop:Generator_ColumnPropNameInTable="TrayColumn" msprop:Generator_UserColumnName="Tray" type="xs:string" minOccurs="0" />
+              <xs:element name="PrinterSettings" msprop:Generator_ColumnVarNameInTable="columnPrinterSettings" msprop:Generator_ColumnPropNameInRow="PrinterSettings" msprop:Generator_ColumnPropNameInTable="PrinterSettingsColumn" msprop:Generator_UserColumnName="PrinterSettings" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeTray" msprop:Generator_TableClassName="SizeTrayDataTable" msprop:Generator_TableVarName="tableSizeTray" msprop:Generator_TablePropName="SizeTray" msprop:Generator_RowDeletingName="SizeTrayRowDeleting" msprop:Generator_RowChangingName="SizeTrayRowChanging" msprop:Generator_RowEvHandlerName="SizeTrayRowChangeEventHandler" msprop:Generator_RowDeletedName="SizeTrayRowDeleted" msprop:Generator_UserTableName="SizeTray" msprop:Generator_RowChangedName="SizeTrayRowChanged" msprop:Generator_RowEvArgName="SizeTrayRowChangeEvent" msprop:Generator_RowClassName="SizeTrayRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="Printer_SizeTray" msdata:parent="Printer" msdata:child="SizeTray" msdata:parentkey="PrinterID" msdata:childkey="SizeTrayID" msprop:Generator_UserChildTable="SizeTray" msprop:Generator_ChildPropName="GetSizeTrayRows" msprop:Generator_UserRelationName="Printer_SizeTray" msprop:Generator_RelationVarName="relationPrinter_SizeTray" msprop:Generator_UserParentTable="Printer" msprop:Generator_ParentPropName="PrinterRow" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SizeTrayID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnSizeTrayID" msprop:Generator_ColumnPropNameInRow="SizeTrayID" msprop:Generator_ColumnPropNameInTable="SizeTrayIDColumn" msprop:Generator_UserColumnName="SizeTrayID" type="xs:long" />
+                    <xs:element name="Size" msprop:Generator_TableClassName="SizeDataTable" msprop:Generator_TableVarName="tableSize" msprop:Generator_TablePropName="Size" msprop:Generator_RowDeletingName="SizeRowDeleting" msprop:Generator_RowChangingName="SizeRowChanging" msprop:Generator_RowEvHandlerName="SizeRowChangeEventHandler" msprop:Generator_RowDeletedName="SizeRowDeleted" msprop:Generator_UserTableName="Size" msprop:Generator_RowChangedName="SizeRowChanged" msprop:Generator_RowEvArgName="SizeRowChangeEvent" msprop:Generator_RowClassName="SizeRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="SizeTray_Size" msdata:parent="SizeTray" msdata:child="Size" msdata:parentkey="SizeTrayID" msdata:childkey="SizeID" msprop:Generator_UserChildTable="Size" msprop:Generator_ChildPropName="GetSizeRows" msprop:Generator_UserRelationName="SizeTray_Size" msprop:Generator_ParentPropName="SizeTrayRow" msprop:Generator_RelationVarName="relationSizeTray_Size" msprop:Generator_UserParentTable="SizeTray" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SizeID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnSizeID" msprop:Generator_ColumnPropNameInRow="SizeID" msprop:Generator_ColumnPropNameInTable="SizeIDColumn" msprop:Generator_UserColumnName="SizeID" type="xs:long" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:double" default="0" minOccurs="0" />
+                          <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" type="xs:double" default="0" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Tray" msprop:Generator_TableClassName="TrayDataTable" msprop:Generator_TableVarName="tableTray" msprop:Generator_TablePropName="Tray" msprop:Generator_RowDeletingName="TrayRowDeleting" msprop:Generator_RowChangingName="TrayRowChanging" msprop:Generator_RowEvHandlerName="TrayRowChangeEventHandler" msprop:Generator_RowDeletedName="TrayRowDeleted" msprop:Generator_UserTableName="Tray" msprop:Generator_RowChangedName="TrayRowChanged" msprop:Generator_RowEvArgName="TrayRowChangeEvent" msprop:Generator_RowClassName="TrayRow" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>
+                          <msdata:Relationship name="SizeTray_Tray" msdata:parent="SizeTray" msdata:child="Tray" msdata:parentkey="SizeTrayID" msdata:childkey="TrayID" msprop:Generator_UserChildTable="Tray" msprop:Generator_ChildPropName="GetTrayRows" msprop:Generator_UserRelationName="SizeTray_Tray" msprop:Generator_ParentPropName="SizeTrayRow" msprop:Generator_RelationVarName="relationSizeTray_Tray" msprop:Generator_UserParentTable="SizeTray" />
+                        </xs:appinfo>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TrayID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTrayID" msprop:Generator_ColumnPropNameInRow="TrayID" msprop:Generator_ColumnPropNameInTable="TrayIDColumn" msprop:Generator_UserColumnName="TrayID" type="xs:long" />
+                          <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrinterDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="PrinterDataSet" msprop:Generator_UserDSName="PrinterDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="InstalledPrinters" />
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="SizeKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//Size" />
+      <xs:field xpath="SizeID" />
+    </xs:unique>
+    <xs:unique name="TrayKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//Tray" />
+      <xs:field xpath="TrayID" />
+    </xs:unique>
+    <xs:unique name="SizeTrayKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//SizeTray" />
+      <xs:field xpath="SizeTrayID" />
+    </xs:unique>
+    <xs:unique name="PrinterID" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//Printer" />
+      <xs:field xpath="PrinterID" />
+    </xs:unique>
+    <xs:unique name="InstalledPrintersKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//InstalledPrinters" />
+      <xs:field xpath="InstalledPrintersID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,204 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:userControl="clr-namespace:gloUIControlLibrary.WPFUserControl.ICD10" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+    x:Class="gloUIControlLibrary.WPFForms.frmCodeGuide"
+    Title="Code Guide" 
+    Height="1079" Width="1841" 
+    WindowStartupLocation="CenterScreen" 
+    FontFamily="{DynamicResource BaseFontFamily}" 
+    FontSize="{DynamicResource BaseFontSize}" 
+    UseLayoutRounding="True" 
+    ResizeMode="CanResize" 
+    Background="{DynamicResource BaseBackColor}" 
+    Foreground="{DynamicResource BaseForeColor}" 
+    TextOptions.TextFormattingMode="Display" 
+    Icon="/gloUIControlLibrary;component/Resources/ICO/CodeGuide.ico" WindowState="Maximized" ShowInTaskbar="False" Closing="Window_Closing">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+   </Window.Resources>
+
+    <DockPanel Margin="0">
+            
+    	<Popup 
+            DockPanel.Dock="Bottom" 
+            x:Name="popSearch" 
+            Placement="Bottom"
+            StaysOpen="False" 
+            PlacementTarget="{Binding ElementName=txtSearch}"                               
+            >
+    		<StackPanel Background="Aqua">
+    			<userControl:ICD10CodesGrid x:Name="ICD10CodesGrid"/>
+    		</StackPanel>
+    	</Popup>
+            
+    	<StackPanel Background="{DynamicResource Img_ToolstripStyle}" Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,0,0,3" Height="Auto">
+    				
+    		<Button x:Name="btnClose" Style="{DynamicResource SimpleButton}" d:LayoutOverrides="Width" Margin="0"
+                   Click="btnClose_Click">
+    			<Button.ToolTip>
+    				<ToolTip>
+    					<TextBlock TextWrapping="Wrap"><Run Text="Close"/></TextBlock>
+    				</ToolTip>
+    			</Button.ToolTip>
+    			<Border  Style="{DynamicResource ToolStripButtonHover}"
+    				BorderThickness="1"
+    				Margin="4,0,0,0">
+    				<StackPanel>                       
+                        <Image Margin="2"
+                               Width="32" Height="32" Source="/gloUIControlLibrary;component/Resources/Close.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                        <Label Margin="2,0"
+                               FontWeight="Bold"                                
+                               Foreground="{DynamicResource BaseForeColor}" 
+                               FontFamily="{DynamicResource BaseFontFamily}" 
+                               Content="_Close" 
+                               TextOptions.TextFormattingMode="Display" HorizontalContentAlignment="Stretch" Padding="1" />
+
+                    </StackPanel>
+    			</Border>
+    		</Button>
+    	</StackPanel>
+    	<Grid Width="Auto" Margin="0">
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="1*"/>
+    			<ColumnDefinition Width="4"/>
+    			<ColumnDefinition Width="*"/>
+    		</Grid.ColumnDefinitions>
+            <Grid>
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="*"/>
+            		<RowDefinition Height="4"/>
+            		<RowDefinition Height="*"/>
+            	</Grid.RowDefinitions>
+    			<Border  Height="Auto" Margin="0" d:LayoutOverrides="Height">
+    				<Grid>
+    					<Grid.RowDefinitions>
+    						<RowDefinition Height="28" />
+    						<RowDefinition Height="31" />
+    						<RowDefinition Height="*" />
+    					</Grid.RowDefinitions>
+    					<Border Margin="3,3,0,0" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Background="{DynamicResource Img_DarkHeaderStyle}">
+    						<TextBlock Text="ICD 9 To 10 Mapping"
+    							TextWrapping="Wrap"
+    							Margin="10,0,0,0"
+    							VerticalAlignment="Center"
+    							Foreground="{DynamicResource BaseWhiteColor}"
+    							FontWeight="Bold" Height="16" />
+    					</Border>
+                      
+                          <Border Height="28"  Margin="3,3,0,0" Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Background="{StaticResource BaseWhiteColor}">
+                            <Grid x:Name="CLearSearch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="btnClearSearch_Copy"  Cursor="Arrow" Template="{DynamicResource Browse}" Style="{DynamicResource ClearSearchButtonStyle}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="19.75" Width="19.67"/>
+                                <Button Click="btnClearSearch_Click" x:Name="btnClearSearch" VerticalAlignment="Stretch"  Grid.Column="2" Style="{DynamicResource ClearSearchButtonStyle}" Width="20" Height="18" Cursor="Hand"/>
+                                <TextBox TextChanged="txtSearch_TextChanged" Margin="0" x:Name="txtSearch" Grid.Column="1" BorderBrush="{x:Null}"  Background="{x:Null}" d:LayoutOverrides="GridBox" VerticalAlignment="Center" KeyUp="txtSearch_KeyUp" GotFocus="txtSearch_GotFocus" />
+                            </Grid>
+                        </Border>
+
+                        <Border HorizontalAlignment="Stretch"
+    						VerticalAlignment="Stretch"
+    						BorderThickness="1"
+    						BorderBrush="{StaticResource BaseForeColor}" Margin="3,3,0,0" Grid.Row="2">
+    						<userControl:ICD9To10MappingTreeView x:Name="gloICD9To10MappingTreeView"
+    							Height="Auto" />
+    					</Border>
+    				</Grid>
+    			</Border>
+    			<GridSplitter
+    				Background="{DynamicResource BaseBackColor}" Margin="0" Grid.Row="1" HorizontalAlignment="Stretch" />
+                <Border Grid.Row="2" >
+    				<Grid>
+    					<Grid.RowDefinitions>
+    						<RowDefinition Height="26"/>
+    						<RowDefinition Height="*"/>
+    					</Grid.RowDefinitions>
+    					<Border Margin="3,0,0,2.333" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Background="{DynamicResource Img_DarkHeaderStyle}">
+    						
+                            <WrapPanel VerticalAlignment="Center" Margin="0,0,10,0">
+                                <TextBlock Text="Code Family"
+    							TextWrapping="Wrap"
+    							Margin="10,0,0,0"
+    							VerticalAlignment="Center"
+    							Foreground="{DynamicResource BaseWhiteColor}"
+    							FontWeight="Bold" Height="16" />
+                                
+                                <TextBlock TextWrapping="Wrap"
+    							Margin="10,0,0,0"
+    							VerticalAlignment="Center"
+    							Foreground="{DynamicResource BaseWhiteColor}"
+    							FontWeight="Bold" Height="16" x:Name="txtCodeII"/>
+                                
+                            </WrapPanel>
+                            
+                            
+    					</Border>
+                        <Border                            
+                            HorizontalAlignment="Stretch" 
+                            BorderThickness="1" 
+                            Margin="3,0,0,3" 
+                            BorderBrush="{DynamicResource BaseForeColor}" 
+                            Grid.Row="1" 
+                            >
+    						<userControl:ICD10DataSetTreeView x:Name="gloICD10DataSetTreeView"
+    							Height="Auto" />
+    					</Border>
+    				</Grid>
+    			</Border>
+    		</Grid>
+    		<GridSplitter
+    			Background="{DynamicResource BaseBackColor}" Margin="0" Width="4" HorizontalAlignment="Stretch" Grid.Column="1" /> 
+    		<Border x:Name="pnlgloCodingRules" Margin="0" d:LayoutOverrides="Width" Grid.Column="2">
+    			<Grid Margin="0,0,3,0" d:LayoutOverrides="Height" >
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="30"/>
+    					<RowDefinition Height="*"/>
+    				</Grid.RowDefinitions>
+    				<Border Margin="0,3,0,2" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Background="{DynamicResource Img_DarkHeaderStyle}" d:LayoutOverrides="Height">
+                        
+                        <WrapPanel VerticalAlignment="Center" Margin="0,0,10,0">
+                            <TextBlock Text="ICD 10 Coding Rules"
+    						TextWrapping="Wrap"
+    						Margin="10,0,0,0"
+    						VerticalAlignment="Center"
+    						Foreground="{DynamicResource BaseWhiteColor}"
+    						FontWeight="Bold"
+                           TextAlignment="Left" />
+                            
+                            <TextBlock
+                                TextWrapping="Wrap"
+    							Margin="10,0,0,0"
+    							VerticalAlignment="Center"
+    							Foreground="{DynamicResource BaseWhiteColor}"
+    							FontWeight="Bold" Height="16"
+                                x:Name="txtCodeI"/>
+                            
+                        </WrapPanel>
+                        
+    				
+                        
+    				</Border>
+    				<Border HorizontalAlignment="Stretch" Height="Auto" Margin="0,1,0,3" BorderThickness="1" BorderBrush="{DynamicResource BaseForeColor}" Grid.Row="1" Background="{DynamicResource BaseWhiteColor}">
+    					<userControl:gloCodingRules x:Name="gloCodingRules"/>
+    				</Border>
+    			</Grid>
+    		</Border>
+		
+    	</Grid>
+
+	</DockPanel>
+
+</Window>

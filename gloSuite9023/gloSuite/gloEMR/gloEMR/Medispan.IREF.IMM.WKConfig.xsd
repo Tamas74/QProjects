@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<xs:schema id="MediSpan.IREF" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="MediSpan.IREF" msdata:IsDataSet="true" msdata:EnforceConstraints="False">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="IMM" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:all maxOccurs="1">
+              <xs:element name="ContentDir" type="xs:string" maxOccurs="1"/>
+              <xs:element name="PrerenderInputFilename" type="xs:string" maxOccurs="1"/>
+              <xs:element name="PrerenderOutputDir" type="xs:string" maxOccurs="1"/>
+              <xs:element name="TransformParamsXSDFilename" type="xs:string" maxOccurs="1"/>
+              <xs:element name="XSLFilename" type="xs:string" maxOccurs="1"/>
+              <xs:element name="XMLXSLFilename" type="xs:string" maxOccurs="1"/>
+              <xs:element name="XSLFOFilename" type="xs:string" maxOccurs="1"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

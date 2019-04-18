@@ -1,0 +1,27 @@
+﻿<Window x:Class="gloUIControlLibrary.WPFForms.frmShowCodingRules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:userControl="clr-namespace:gloUIControlLibrary.WPFUserControl.ICD10"        
+        xmlns:visibility="clr-namespace:gloUIControlLibrary.Classes"
+        Width="770" BorderThickness="0" 
+        ShowInTaskbar="False" WindowStyle="SingleBorderWindow" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True" TextOptions.TextFormattingMode="Display" Background="{x:Null}" Height="600" Icon="/gloUIControlLibrary;component/Resources/ICO/CodeGuide.ico" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>            
+            <ResourceDictionary.MergedDictionaries>                
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>                       
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <DockPanel>
+            <userControl:gloCodingRules x:Name="gloCodingRules"/>
+
+        </DockPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="glo8010_DEV" Class="DataClassICD10DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GLOSVR02\SQL2008R2;Initial Catalog=glo8010_DEV;Persist Security Info=True;User ID=sa" SettingsObjectName="gloEMRAdmin.My.MySettings" SettingsPropertyName="glo8010_DEVConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BL_ICD10TransitionSettings" Member="BL_ICD10TransitionSettings">
+    <Type Name="BL_ICD10TransitionSetting">
+      <Column Name="nID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nContactID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nClinicID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="dtDOSDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dtCreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contacts_MST" Member="Contacts_MSTs">
+    <Type Name="Contacts_MST">
+      <Column Name="nContactID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="sContact" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sStreet" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sState" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="sZIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sPhone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sFax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sMobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sPager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sURL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sNotes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sFirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sMiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sLastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sGender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="nSpecialtyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nInsuranceID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="sHospitalAffiliation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sContactType" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="sExternalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sDegree" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ActiveStartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActiveEndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sServiceLevel" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="sPartnerAccount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sLastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sPharmacyStatus" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="sSpecialtytype1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sSpecialtytype2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sSpecialtytype3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sSpecialtytype4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sAddressLine2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sNCPDPID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nClinicID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="bIsBlocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sAddressLine1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMAddressLine1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMAddressLine2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMCity" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMState" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMZip" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMPhone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMFax" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMEail" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sBMURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracAddressLine1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracAddressLine2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracCity" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracState" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracZIP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracPhone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracFax" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracEmail" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sPracURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="nEMRContactID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="sCounty" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sCountry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sBMCounty" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sBMCountry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sPracCounty" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sPracCountry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sDirectAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="sSPI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sPharmacyNPI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA95D4E0-5AC5-4DDF-AE0F-085395C8B6C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WordToolStrip</RootNamespace>
+    <AssemblyName>WordToolStrip</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <Win32Resource>
+    </Win32Resource>
+    <ApplicationIcon>arrow_01.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gloWordToolStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloWordToolStrip.Designer.cs">
+      <DependentUpon>gloWordToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gloWordToolStrip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloWordToolStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="arrow_01.ico" />
+    <None Include="Resources\About us.png" />
+    <Content Include="Resources\Associate EM code01.png" />
+    <None Include="Resources\Bibliography.png" />
+    <Content Include="Resources\Close.png" />
+    <Content Include="Resources\Disclosure Set.ico" />
+    <None Include="Resources\Export01.png" />
+    <Content Include="Resources\Img_Toolstrip.gif" />
+    <Content Include="Resources\Redo.png" />
+    <Content Include="Resources\RXMed.png" />
+    <None Include="Resources\Send secure message.png" />
+    <None Include="Resources\SendtoPortal.png" />
+    <Content Include="Resources\StrikeThtough.png" />
+    <Content Include="Resources\Time Stamp.png" />
+    <Content Include="Resources\Undo.png" />
+    <None Include="Resources\Mic ON.png" />
+    <None Include="Resources\Mic OFF.png" />
+    <None Include="Resources\Save As Green.png" />
+    <None Include="Resources\Sacn.png" />
+    <None Include="Resources\View Acknowledgement.png" />
+    <None Include="Resources\Hide.png" />
+    <None Include="Resources\Show.png" />
+    <None Include="Resources\ShowHide-BOokMark.png" />
+    <None Include="Resources\Save&amp;Cls.png" />
+    <None Include="Resources\Remove-BookMark.png" />
+    <None Include="Resources\Redo01.png" />
+    <None Include="Resources\Undo01.png" />
+    <None Include="Resources\Print All.png" />
+    <None Include="Resources\Next02.png" />
+    <None Include="Resources\Previous.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Previous01.png" />
+    <None Include="Resources\Prescription02.png" />
+    <None Include="Resources\Radiology%28Order%29.png" />
+    <None Include="Resources\New.png" />
+    <None Include="Resources\Lab.png" />
+    <None Include="Resources\Insert- Header.png" />
+    <None Include="Resources\Insert-CheckBox.png" />
+    <None Include="Resources\Disclosure Set.png" />
+    <None Include="Resources\Insert-Signature.png" />
+    <None Include="Resources\Insert-DropDownList.png" />
+    <None Include="Resources\Insert-File.png" />
+    <None Include="Resources\CO-Signature.png" />
+    <None Include="Resources\Finish_Red.png" />
+    <None Include="Resources\Fax All.png" />
+    <None Include="Resources\Add-BookMark.png" />
+    <None Include="Resources\Fax.png" />
+    <None Include="Resources\Capture-Signature.png" />
+    <None Include="Resources\Add_Addendum.png" />
+    <None Include="Resources\Close01.png" />
+    <None Include="Resources\Acknowledgement.png" />
+    <None Include="Resources\Save_Green01.png" />
+    <None Include="Resources\View-Acknowledgement.png" />
+    <None Include="Resources\Save.bmp" />
+    <None Include="Resources\Img_Button.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloToolStrip\gloToolStrip.vbproj">
+      <Project>{C13FA2BD-8CFB-48C7-9EBE-79B682AE6756}</Project>
+      <Name>gloToolStrip</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DLL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,678 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mcl="clr-namespace:gloUserControlLibrary;assembly=gloUserControlLibrary"  
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gloSurescriptSecureMessage_InBox="clr-namespace:gloSurescriptSecureMessage_InBox" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" mc:Ignorable="d" x:Class="InBox.NewMail"
+        Title="New Message" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Loaded="Window_Loaded" Closed="Window_Closed"
+        Icon="/gloSurescriptSecureMessage;component/graphics/NewMail.ico" 
+        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+        SizeToContent="WidthAndHeight" Background="#FFBFDBFF" ResizeMode="CanResizeWithGrip" d:DesignHeight="642" d:DesignWidth="736" SizeChanged="Window_SizeChanged" Closing="Window_Closing" Style="{DynamicResource WindowStyles}" Topmost="False" Activated="Window_Activated" Deactivated="Window_Deactivated">
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="MyStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+			<Geometry x:Key="UpArrow">M 0,4 L 3.5,0 L 7,4 Z</Geometry>
+			<Style x:Key="MenuScrollButton" BasedOn="{x:Null}" TargetType="{x:Type RepeatButton}">
+				<Setter Property="ClickMode" Value="Hover"/>
+				<Setter Property="MinWidth" Value="0"/>
+				<Setter Property="MinHeight" Value="0"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type RepeatButton}">
+							<DockPanel SnapsToDevicePixels="true" Background="Transparent">
+								<Rectangle Fill="Transparent" x:Name="R1" Width="1" DockPanel.Dock="Right"/>
+								<Rectangle Fill="Transparent" x:Name="B1" Height="1" DockPanel.Dock="Bottom"/>
+								<Rectangle Fill="Transparent" x:Name="L1" Width="1" DockPanel.Dock="Left"/>
+								<Rectangle Fill="Transparent" x:Name="T1" Height="1" DockPanel.Dock="Top"/>
+								<ContentPresenter HorizontalAlignment="Center" Margin="2,2,2,2" x:Name="ContentContainer" VerticalAlignment="Center"/>
+							</DockPanel>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsPressed" Value="true">
+									<Setter Property="Fill" TargetName="R1" Value="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+									<Setter Property="Fill" TargetName="B1" Value="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+									<Setter Property="Fill" TargetName="L1" Value="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+									<Setter Property="Fill" TargetName="T1" Value="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+									<Setter Property="Margin" TargetName="ContentContainer" Value="3,3,1,1"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter"/>
+			<Geometry x:Key="DownArrow">M 0,0 L 3.5,4 L 7,0 Z</Geometry>
+			<Style x:Key="{ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}" BasedOn="{x:Null}" TargetType="{x:Type ScrollViewer}">
+				<Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+				<Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ScrollViewer}">
+							<Grid SnapsToDevicePixels="true">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<Border Grid.Column="0" Grid.Row="1">
+									<ScrollContentPresenter Margin="{TemplateBinding Padding}"/>
+								</Border>
+								<RepeatButton Focusable="false" Style="{StaticResource MenuScrollButton}" Grid.Column="0" Grid.Row="0" Command="{x:Static ScrollBar.LineUpCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+									<RepeatButton.Visibility>
+										<MultiBinding FallbackValue="Visibility.Collapsed" Converter="{StaticResource MenuScrollingVisibilityConverter}" ConverterParameter="0">
+											<Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="VerticalOffset" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="ExtentHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
+										</MultiBinding>
+									</RepeatButton.Visibility>
+									<Path Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" Data="{StaticResource UpArrow}"/>
+								</RepeatButton>
+								<RepeatButton Focusable="false" Style="{StaticResource MenuScrollButton}" Grid.Column="0" Grid.Row="2" Command="{x:Static ScrollBar.LineDownCommand}" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+									<RepeatButton.Visibility>
+										<MultiBinding FallbackValue="Visibility.Collapsed" Converter="{StaticResource MenuScrollingVisibilityConverter}" ConverterParameter="100">
+											<Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="VerticalOffset" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="ExtentHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
+										</MultiBinding>
+									</RepeatButton.Visibility>
+									<Path Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}" Data="{StaticResource DownArrow}"/>
+								</RepeatButton>
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		<!-- *************************************************************************************** -->
+			<Style x:Key="MyContextMenuStyle" TargetType="{x:Type ContextMenu}">
+				<Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+				<Setter Property="BorderThickness" Value="1,1,1,1"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ContextMenu}">
+							<Microsoft_Windows_Themes:SystemDropShadowChrome x:Name="Shdw" Color="#00FFFFFF" >
+								<Border Width="Auto" Background="{DynamicResource MyDropDownGraySolidBrush2}" BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0.7" x:Name="border">
+									<Grid Grid.IsSharedSizeScope="True">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition SharedSizeGroup="MenuItemIconColumnGroup" MinWidth="24" Width="Auto"/>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<Rectangle Margin="0,0,0,0" Fill="{DynamicResource MyDropDownGraySolidBrush1}"/>
+										<Rectangle Fill="#00F6F6F6" HorizontalAlignment="Left" Margin="0,-1,0,0" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=Header}" Height="{Binding ActualHeight, ElementName=Header}" Grid.ColumnSpan="2"/>
+										<ScrollViewer Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}" Grid.ColumnSpan="2" CanContentScroll="True">
+											<ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,0,0,1" KeyboardNavigation.DirectionalNavigation="Cycle" KeyboardNavigation.TabNavigation="Cycle"/>
+										</ScrollViewer>
+									</Grid>
+								</Border>
+							</Microsoft_Windows_Themes:SystemDropShadowChrome>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsOpen" Value="True">
+									<Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+									<Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+	<!-- Style for MyImageTextButton controls which contain one Image and one TextBlock -->
+			<Style x:Key="MyImageTextButtonStyle" TargetType="{x:Type gloSurescriptSecureMessage_InBox:MyImageTextButton}">
+				<Setter Property="BorderThickness" Value="0.7"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="Padding" Value="1"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type gloSurescriptSecureMessage_InBox:MyImageTextButton}">
+							<Border x:Name="border" Width="Auto" Height="Auto" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  BorderThickness="{TemplateBinding BorderThickness}">
+								<StackPanel x:Name="stackPanel" Width="Auto" Height="Auto" Orientation="Horizontal">
+									<Image Margin="2,0,2,0" VerticalAlignment="Center" Width="18" Height="18" Source="{TemplateBinding MySource}"/>
+									<TextBlock HorizontalAlignment="Left" Margin="0,0,5,0" VerticalAlignment="Center" Text="{TemplateBinding MyText}" TextWrapping="Wrap"/>
+								</StackPanel>
+							</Border>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsKeyboardFocused" Value="true"/>
+								<Trigger Property="IsPressed" Value="True">
+									<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+									<Setter Property="Background" TargetName="border" Value="{DynamicResource MyButtonPressedOrangeGradientBrush}" />
+								</Trigger>
+								<Trigger Property="IsEnabled" Value="false">
+									<Setter Property="Foreground" Value="#ADADAD"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+      <!-- Style for the triangle button used in MyImageTextMenuButton -->
+			<Style x:Key="MyTriangleButtonStyle" TargetType="{x:Type Button}">
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="Padding" Value="1"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Border Width="12" Height="Auto" BorderBrush="{TemplateBinding BorderBrush}"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+								<Path Fill="{DynamicResource GlyphBrush}" Data="M 0 0 L 4 4 L 8 0 Z" Width="8" Height="5" Margin="0,5,0,0"/>
+							</Border>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsKeyboardFocused" Value="true"/>
+								<Trigger Property="IsEnabled" Value="false">
+									<Setter Property="Foreground" Value="#ADADAD"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+
+      <!-- Style for MyImageTextMenuButton controls which contain one MyImageTextButton and one button with a triangle used to display the ContextMenu -->
+			<Style x:Key="MyImageTextMenuButtonStyle" TargetType="{x:Type gloSurescriptSecureMessage_InBox:MyImageTextMenuButton}">
+				<Setter Property="BorderThickness" Value="1"/>
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+				<Setter Property="VerticalContentAlignment" Value="Center"/>
+				<Setter Property="Padding" Value="1"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type gloSurescriptSecureMessage_InBox:MyImageTextMenuButton}">
+							<Border SnapsToDevicePixels="True" x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContextMenu="{TemplateBinding ContextMenu}" >
+								<Grid Width="Auto" Height="Auto" x:Name="Grid">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="Auto"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
+									<gloSurescriptSecureMessage_InBox:MyImageTextButton Grid.Column="0" MySource="{TemplateBinding MyButtonImageSource}"  MyText="{TemplateBinding MyButtonText}" Style="{DynamicResource MyImageTextButtonStyle}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0.7,0.7,0.7,0.7" Padding="0,0,0,0" />
+									<Button x:Name="triangleButton" Grid.Column="1" BorderThickness="0.7,0,0,0"  Background="#00DE2424" BorderBrush="{x:Null}" Padding="0,0,0,0" />
+								</Grid>
+							</Border>
+							<ControlTemplate.Triggers>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition Property="IsMouseOver" Value="True"/>
+										<Condition Property="IsFocused" Value="False"/>
+									</MultiTrigger.Conditions>
+									<Setter Property="Background" TargetName="Bd" Value="{DynamicResource MyMouseOverOrangeGradientBrush3}"/>
+									<Setter Property="BorderBrush" TargetName="Bd" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+									<Setter Property="BorderBrush" TargetName="triangleButton" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+								</MultiTrigger>
+								<Trigger Property="IsEnabled" Value="false">
+									<Setter Property="Foreground" Value="#ADADAD"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+      <!-- **************************************************** -->
+			<Style x:Key="MyVerticalSeparatorStyle" TargetType="{x:Type Separator}">
+				<Setter Property="MinWidth" Value="1"/>
+				<Setter Property="MinHeight" Value="1"/>
+				<Setter Property="Margin" Value="2,2,2,2"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Separator}">
+							<Border SnapsToDevicePixels="true" Width="1.5">
+								<Image Source="graphics/toolbarSeparator.gif" Stretch="Fill"/>
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+    <!-- Style for the ToolBar buttons which don't have a ContextMenu -->
+			<Style x:Key="MyToolBarButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+              <!-- We use Grid as a root because it is easy to add more elements to customize the button -->
+							<Grid x:Name="Grid">
+								<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"/>
+								<!-- Content Presenter is where the text content etc is placed by the control -->
+                <!-- The bindings are useful so that the control can be parameterized without editing the template -->
+								<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+							</Grid>
+              <!--Each state sets a brush on the Border in the template -->
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsKeyboardFocused" Value="true">
+									<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+								</Trigger>
+								<Trigger Property="IsMouseOver" Value="true">
+									<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}" TargetName="Border"/>
+									<Setter Property="BorderThickness" Value="0.7" TargetName="Border" />
+									<Setter Property="Background" TargetName="Border" Value="{DynamicResource MyMouseOverOrangeGradientBrush3}"/>
+								</Trigger>
+								<Trigger Property="IsPressed" Value="true">
+									<Setter Property="Background" Value="{DynamicResource MyButtonPressedOrangeGradientBrush}" TargetName="Border"/>
+									<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}" TargetName="Border"/>
+									<Setter Property="BorderThickness" Value="0.7" TargetName="Border" />
+								</Trigger>
+								<Trigger Property="IsEnabled" Value="true"/>
+								<Trigger Property="IsEnabled" Value="false">
+									<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+									<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+									<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="ClickMode" Value="Press"/>
+			</Style>
+
+      <!-- The style for the editable TextBox in the ComboBox -->
+			<Style x:Key="MyComboBoxEditableTextBoxStyle" TargetType="{x:Type TextBox}">
+				<Setter Property="OverridesDefaultStyle" Value="true"/>
+				<Setter Property="AllowDrop" Value="true"/>
+				<Setter Property="MinWidth" Value="0"/>
+				<Setter Property="MinHeight" Value="0"/>
+				<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type TextBox}">
+							<ScrollViewer Focusable="false" x:Name="PART_ContentHost" Background="Transparent" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+      <!-- Geometry (down arrow) used in the ToggleButton in the editable ComboBox controls -->
+			<Geometry x:Key="MyDownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
+
+      <!-- The style for the ToggleButtons in the two editable ComboBoxes in the ToolBarTray control -->
+			<Style x:Key="MyEditableComboBoxToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+				<Setter Property="OverridesDefaultStyle" Value="true"/>
+				<Setter Property="IsTabStop" Value="false"/>
+				<Setter Property="Focusable" Value="false"/>
+				<Setter Property="ClickMode" Value="Press"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ToggleButton}">
+							<Grid x:Name="Cbtb" Margin="2,2,2,2" Width="Auto" Height="18" Background="{TemplateBinding Background}">
+								<Path Fill="Black" x:Name="Arrow" Data="{DynamicResource MyDownArrowGeometry}" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="2,0,1,0" VerticalAlignment="Center">
+									<Path.RenderTransform>
+										<TransformGroup>
+											<ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+											<SkewTransform AngleX="0" AngleY="0"/>
+											<RotateTransform Angle="0"/>
+											<TranslateTransform X="0" Y="0"/>
+										</TransformGroup>
+									</Path.RenderTransform>
+								</Path>
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsChecked" Value="true"/>
+								<Trigger Property="IsEnabled" Value="false"/>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+      <!-- The control template for the two editable ComboBoxes in the ToolBarTray control -->
+			<ControlTemplate x:Key="MyEditableComboBoxControlTemplate" TargetType="{x:Type ComboBox}">
+				<Grid SnapsToDevicePixels="true" x:Name="Placement">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<Popup AllowsTransparency="true" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" x:Name="PART_Popup" Grid.ColumnSpan="2">
+						<Microsoft_Windows_Themes:SystemDropShadowChrome MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=Placement}" x:Name="Shdw" Color="Transparent">
+							<Border x:Name="DropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1">
+								<ScrollViewer>
+									<ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Contained"/>
+								</ScrollViewer>
+							</Border>
+						</Microsoft_Windows_Themes:SystemDropShadowChrome>
+					</Popup>
+					<Microsoft_Windows_Themes:ListBoxChrome x:Name="Border" Grid.ColumnSpan="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" RenderMouseOver="{TemplateBinding IsMouseOver}"/>
+					<TextBox Margin="{TemplateBinding Padding}" x:Name="PART_EditableTextBox" Style="{DynamicResource MyComboBoxEditableTextBoxStyle}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"/>
+					<ToggleButton x:Name="TB" Background="{DynamicResource MyBrightBlueSolidBrush1}" Style="{DynamicResource MyEditableComboBoxToggleButtonStyle}" Grid.Column="1" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+				</Grid>
+				<ControlTemplate.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+						<Setter Property="BorderThickness" Value="1.1"/>
+						<Setter Property="Background" TargetName="TB" Value="{DynamicResource MyMouseOverOrangeGradientBrush3}"/>
+					</Trigger>
+					<Trigger Property="IsKeyboardFocusWithin" Value="true">
+						<Setter Property="Foreground" Value="Black"/>
+						<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+						<Setter Property="BorderThickness" Value="1.1"/>
+						<Setter Property="Background" TargetName="TB" Value="{DynamicResource MyMouseOverOrangeGradientBrush3}"/>
+					</Trigger>
+					<Trigger Property="IsDropDownOpen" Value="true">
+						<Setter Property="RenderFocused" TargetName="Border" Value="true"/>
+						<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+						<Setter Property="BorderThickness" Value="1.1"/>
+						<Setter Property="Background" TargetName="TB" Value="{DynamicResource MyDarkOrangeSolidBrush}"/>
+					</Trigger>
+					<Trigger Property="HasItems" Value="false">
+						<Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
+					</Trigger>
+					<Trigger Property="IsEnabled" Value="false">
+						<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						<Setter Property="Background" Value="#FFF4F4F4"/>
+					</Trigger>
+					<Trigger Property="IsGrouping" Value="true">
+						<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+					</Trigger>
+					<Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+						<Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+						<Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+
+      <!-- *************************************************** -->
+			<Style x:Key="MyEditableComboBoxStyle" TargetType="{x:Type ComboBox}">
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+				<Setter Property="BorderBrush" Value="{x:Null}"/>
+				<Setter Property="BorderThickness" Value="1"/>
+				<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+				<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+				<Setter Property="Padding" Value="4,3"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ComboBox}">
+							<Grid SnapsToDevicePixels="True" x:Name="MainGrid">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
+								</Grid.ColumnDefinitions>
+								<Popup AllowsTransparency="True" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Margin="1" x:Name="PART_Popup" Grid.ColumnSpan="2">
+									<Microsoft_Windows_Themes:SystemDropShadowChrome MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=MainGrid}" x:Name="Shdw" Color="Transparent">
+										<Border x:Name="DropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1">
+											<ScrollViewer CanContentScroll="true">
+												<ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Contained"/>
+											</ScrollViewer>
+										</Border>
+									</Microsoft_Windows_Themes:SystemDropShadowChrome>
+								</Popup>
+								<ToggleButton Background="#FFFFFFFF" BorderBrush="{x:Null}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+								<ContentPresenter IsHitTestVisible="False" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+									<Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+									<Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+								</Trigger>
+								<Trigger Property="HasItems" Value="false">
+									<Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
+								</Trigger>
+								<Trigger Property="IsEnabled" Value="false">
+									<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+									<Setter Property="Background" Value="#FFF4F4F4"/>
+								</Trigger>
+								<Trigger Property="IsGrouping" Value="true">
+									<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Style.Triggers>
+					<Trigger Property="IsEditable" Value="true">
+						<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+						<Setter Property="IsTabStop" Value="false"/>
+						<Setter Property="Padding" Value="3"/>
+						<Setter Property="Template" Value="{DynamicResource MyEditableComboBoxControlTemplate}"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+		</ResourceDictionary>
+	</Window.Resources>
+
+    <Grid  Width="Auto" Height="Auto" >
+
+		<DockPanel Height="Auto" Width="Auto" LastChildFill="True" >
+			<StackPanel x:Name="LayoutRoot" Background="{DynamicResource MyBrightBlueSolidBrush1}" DockPanel.Dock="Top">
+
+                <StackPanel x:Name="ToolBar" DockPanel.Dock="Top"  Orientation="Horizontal" Margin="0,0,0,4" VerticalAlignment="Stretch" Background="{DynamicResource Img_ToolstripStyle}" Height="55">
+
+
+                    <Button x:Name="btnPatList" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand" Click="btnPatList_Click">
+                        <Border  x:Name="PatList" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/PatientList.png"></Image>
+                                <Label Margin="2" Content="_Patient List" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Patient List"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="btnAddbook"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand" Click="btnAddbook_Click">
+                        <Border  x:Name="Addbook" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/AddressBook.png"></Image>
+                                <Label Margin="2" Content="Address _Book" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Address Book"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="btnAttFile" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand" Click="btnAttFile_Click">
+                        <Border   x:Name="AttFile"  Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/Attachment.png"></Image>
+                                <Label Margin="2" Content="_Attach File" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Attach File"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="btnAddScanDoc"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand" Click="btnAddScanDoc_Click" >
+                        <Border   x:Name="pnlAddScanDoc" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/ScanDocument.png"></Image>
+                                <Label Margin="2" Content="_Scan Document" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Scan Document"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button  x:Name="btnAddCCD"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand"  Click="btnAddCCD_Click">
+                        <Border  x:Name="pnlAddCCD" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/CCDFiles.png"></Image>
+                                <Label Margin="2" Content="CC_D Files" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="CCD Files"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button  x:Name="btnAddCDA"   Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand"  Click="btnAddCDA_Click">
+                        <Border  x:Name="stkAddCDAGroup" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/CDAFiles.png"></Image>
+                                <Label Margin="2" Content="CDA _Files" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="CDA Files"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+
+                    <Button  x:Name="btnClose" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="0,2,0,0" Cursor="Hand" Click="btnClose_Click">
+                        <Border  x:Name="pnlClose" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/gloUIControlLibrary;component/Resources/Close.png"></Image>
+                                <Label Margin="2" Content="_Close" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Close"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+				</StackPanel>
+                
+				<StackPanel Orientation="Vertical" Margin="0,0,2,0">
+					<Border x:Name="PatientStrip"  BorderThickness="0.5" BorderBrush="#FF4E4617" Margin="4,0,2,4">
+						<StackPanel Orientation="Horizontal" Height="24.093">
+							<StackPanel.Background>
+								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+									<GradientStop Color="#FFFFE0B4" Offset="0"/>
+									<GradientStop Color="#FFFDC577" Offset="0.25"/>
+									<GradientStop Color="#FFFFAB31" Offset="0.333"/>
+									<GradientStop Color="#FFFFDA57" Offset="0.976"/>
+									<GradientStop Color="#FFD2B85B" Offset="1"/>
+								</LinearGradientBrush>
+							</StackPanel.Background>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientName"  Text="" FontWeight="Bold" FontSize="13.333" Margin="8,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Born:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientBorn" Text="" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Gender:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientGender" Text="" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Code:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+							<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientCode" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4"/>
+						</StackPanel>
+					</Border>
+					<StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4,0,0,0">
+						<Button x:Name="btnSend"   Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="{DynamicResource MyBorderBlueGradientBrush}" BorderThickness="0,0.2,0,0.2"    Tag="PhysicanContacts" Margin="0" Click="btnSend_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="vertical" VerticalAlignment="Top">
+								<Image Margin="0,5,0,0" Source="graphics/send.gif" Stretch="Fill"/>
+								<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="{DynamicResource MyBlueSolidBrush2}" Text="Send" TextWrapping="Wrap" Margin="4" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667" />
+							</StackPanel>
+						</Button>
+					</StackPanel>
+					<StackPanel Margin="44,-67,0,0" Orientation="Vertical">
+				
+						<DockPanel LastChildFill="True" Margin="4,0,4,4">
+							
+								<StackPanel Orientation="vertical" VerticalAlignment="Center"  DockPanel.Dock="Left"   Tag="PhysicanContacts" Margin="0" Width="66.733"  >
+									<TextBlock HorizontalAlignment="Right" VerticalAlignment="Center"  Foreground="{DynamicResource MyBlueSolidBrush2}" Text="From :" TextWrapping="Wrap" Margin="0,0,0,4" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667" />
+								</StackPanel>
+						
+                            <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                                <Label x:Name="lblFrom" Content="" Foreground="{DynamicResource MyBlueSolidBrush2}" FontSize="10.667" Margin="5,0,0,0" Height="24" HorizontalAlignment="Left"/>
+                                <ComboBox x:Name="cmbProviders" SelectionChanged="cmbProviders_SelectionChanged" HorizontalAlignment="Left" MinWidth="350" Visibility="Collapsed"></ComboBox>
+                            </StackPanel>							
+						</DockPanel>
+						<Grid Height="Auto" MinHeight="24"  Margin="0,0,6,0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="73"/>
+								<ColumnDefinition/>
+							</Grid.ColumnDefinitions>
+				
+							<Button x:Name="btnTo"   Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="{DynamicResource MyBorderBlueGradientBrush}" BorderThickness="0"   Tag="PhysicanContacts" Margin="0" Height="24" VerticalAlignment="Top" Click="btnTo_Click">
+								<StackPanel Orientation="vertical">
+									<TextBlock  Foreground="{DynamicResource MyBlueSolidBrush2}" Text="To..." TextWrapping="Wrap" Margin="4,0,4,4" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667" />
+								</StackPanel>
+							</Button>
+							<ListBox  ScrollViewer.HorizontalScrollBarVisibility ="Disabled" Width="520" HorizontalContentAlignment="Stretch" Margin="4,0,64,0" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False" x:Name="lstTo" BorderBrush="#FF919090" BorderThickness="0.5" Grid.Column="1" VerticalContentAlignment="Stretch">
+								<ListBox.ItemsPanel>
+									<ItemsPanelTemplate>
+                                        <WrapPanel x:Name="wrapTo" Width="Auto" ScrollViewer.HorizontalScrollBarVisibility ="Disabled" IsItemsHost="False"  Orientation="Horizontal" HorizontalAlignment="Left"   />
+									</ItemsPanelTemplate>
+								</ListBox.ItemsPanel>
+							</ListBox>
+							<Button x:Name="btnTo_Copy"  Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="{DynamicResource MyBorderBlueGradientBrush}" BorderThickness="0,0.2,0,0.2"   Tag="PhysicanContacts" Click="btnTo_Copy_Click" HorizontalAlignment="Right" Width="60" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" Margin="0" VerticalAlignment="Top">
+								<StackPanel  Orientation="vertical" VerticalAlignment="Top">
+                                   
+									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"  Foreground="{DynamicResource MyBlueSolidBrush2}" Text="Add" TextWrapping="Wrap" Margin="4,0" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667" />
+								</StackPanel>
+							</Button>
+				
+						</Grid>
+				
+						<Grid Margin="4,2,6,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="74" />
+                                                  
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock TextWrapping="Wrap" Text="Subject :  " DockPanel.Dock="Left" HorizontalAlignment="Right" TextAlignment="Right" Foreground="{DynamicResource MyBlueSolidBrush2}" Width="73.397" VerticalAlignment="Center" Grid.Column="0" Margin="0,4" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667" />
+							<TextBox x:Name="txtSubject" TextWrapping="Wrap" ScrollBar.Scroll="txtSubject_Scroll" FontSize="10.667" Margin="0" Height="24" Width="585" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" BorderBrush="#FF919090" MaxLength="255" BorderThickness="0.5" HorizontalAlignment="Stretch" Grid.ColumnSpan="1" Grid.Column="1" Grid.Row="0" />
+						</Grid>
+						<DockPanel x:Name="Disclaimer" LastChildFill="True"  Margin="4,0,6,0">
+							<TextBlock TextWrapping="Wrap" DockPanel.Dock="Left" Text="Disclaimer :  " HorizontalAlignment="Left" TextAlignment="Right" Foreground="Red" VerticalAlignment="Top" Width="73.743" Margin="0,4"  FontSize="10.667" FontFamily="{DynamicResource BaseFontFamily}"/>
+							<TextBlock TextWrapping="Wrap" DockPanel.Dock="Left" Text=" Protected Health Information (PHI) under HIPAA must not be included in a message’s subject line." TextAlignment="Right" Margin="0,4"  FontSize="10.667" Foreground="Red" HorizontalAlignment="Left" FontFamily="{DynamicResource BaseFontFamily}"/>
+							
+						</DockPanel>
+				
+						<DockPanel LastChildFill="True"  Margin="0,0,6,4">
+                            <Button x:Name="btnAttachment"   Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="{DynamicResource MyBorderBlueGradientBrush}" BorderThickness="0"   Tag="PhysicanContacts" Margin="0" VerticalAlignment="Top" FontFamily="{DynamicResource BaseFontFamily}" Height="24" Padding="0" Width="72.11" Click="btnAttachment_Click">
+                                <StackPanel Orientation="vertical">
+                                    <TextBlock TextWrapping="Wrap" DockPanel.Dock="Left" Text="Attachment..." TextAlignment="Right" Foreground="{DynamicResource MyBlueSolidBrush2}" Margin="0" FontFamily="{DynamicResource BaseFontFamily}" FontSize="10.667"/>
+                                </StackPanel>
+                            </Button>
+							<ListBox  ScrollViewer.HorizontalScrollBarVisibility ="Disabled"     HorizontalContentAlignment="Stretch" Width="585.89" Grid.Row="5" Grid.Column="2"  SelectionChanged="lstAttachment_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="False" x:Name="lstAttachment" BorderThickness="0.5" BorderBrush="#FF919090" Margin="9,0,0,0">
+								<ListBox.ItemsPanel>
+									<ItemsPanelTemplate>
+										<WrapPanel Width="Auto"  IsItemsHost="False" ScrollViewer.HorizontalScrollBarVisibility ="Disabled"  Orientation="Horizontal" HorizontalAlignment="Left"   />
+									</ItemsPanelTemplate>
+								</ListBox.ItemsPanel>
+							</ListBox> 					
+						</DockPanel>
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+			<TextBox x:Name="txtMessage" 
+				Foreground="#FF313131" 
+				Background="White" 
+				BorderBrush="#FF919090" 
+				TextWrapping="Wrap" 
+				BorderThickness="0.5" 
+				HorizontalScrollBarVisibility="Auto"
+				VerticalScrollBarVisibility="Auto" 
+				Margin="8,0,8,8" 
+				AcceptsReturn="True"
+				HorizontalContentAlignment="Stretch"
+				VerticalContentAlignment="Stretch" 
+								Height="365
+                     " Width="704" MinHeight="280" />
+		</DockPanel>
+
+	</Grid>
+
+</Window>

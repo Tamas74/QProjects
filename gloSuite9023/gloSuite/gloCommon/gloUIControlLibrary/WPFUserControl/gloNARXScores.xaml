@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.gloNARXScores"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:gloUIControlLibrary.Classes"
+             xmlns:coverage="clr-namespace:gloUIControlLibrary.WPFUserControl"
+             mc:Ignorable="d"  FontSize="12"
+             Foreground="{DynamicResource InfoBorderBrush}" Background="White">
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloFormularyInfoRD.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+         <local:BolleanVisibilityConverter x:Key="BooleanVisibilityConverter"/>    
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    
+    <StackPanel Orientation="Vertical">
+        <Label Visibility="{Binding NoContent, Converter={StaticResource BooleanVisibilityConverter}}" Content="No prescription drug monitoring programs found..." Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" FontSize="10.667" Background="{x:Null}" Foreground="#FF331010"/>
+		<Label Visibility="{Binding Loading, Converter={StaticResource BooleanVisibilityConverter}}" Content="Loading prescription drug monitoring programs..." Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tahoma" FontSize="10.667" Background="{x:Null}" Foreground="#FF331010"/>
+		<Grid Margin="0" Visibility="{Binding HasContent, Converter={StaticResource BooleanVisibilityConverter}}" d:LayoutOverrides="Width">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="20"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="20"/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+			<Rectangle Fill="#CCFBEDDA" Margin="0"/>
+			<TextBlock FontFamily="Tahoma" Margin="20,0,0,0" FontSize="10.667" Foreground="#FF660000" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" ><Run Text="NARX SCORES"/></TextBlock>
+			<Grid Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="White" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="1"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="1"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.617*"/>
+						<RowDefinition Height="0.383*"/>
+					</Grid.RowDefinitions>
+					<TextBlock FontFamily="Tahoma" Text="{Binding Narcotic}" FontSize="18.667" FontWeight="Bold" Margin="0" d:LayoutOverrides="Width, Height" RenderTransformOrigin="0.869,0.475" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB17D41" />
+					<TextBlock VerticalAlignment="Center" FontFamily="Tahoma" Text="NARCOTIC" d:LayoutOverrides="Width" Grid.Row="1" Foreground="#FF727272" HorizontalAlignment="Center" />
+				</Grid>
+				<Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.617*"/>
+						<RowDefinition Height="0.383*"/>
+					</Grid.RowDefinitions>
+					<TextBlock FontFamily="Tahoma" FontSize="18.667" FontWeight="Bold" Margin="0" RenderTransformOrigin="0.869,0.475" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB17D41" Text="{Binding Stimulant}" />
+					<TextBlock VerticalAlignment="Center" FontFamily="Tahoma" Text="STIMULANT" Grid.Row="1" HorizontalAlignment="Center" Foreground="#FF727272" />
+				</Grid>
+				<Grid Margin="0" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Top">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.617*"/>
+						<RowDefinition Height="0.383*"/>
+					</Grid.RowDefinitions>
+					<TextBlock FontFamily="Tahoma" Text="{Binding Sedative}" FontSize="18.667" FontWeight="Bold" Margin="0" d:LayoutOverrides="Width, Height" RenderTransformOrigin="0.869,0.475" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB17D41" />
+					<TextBlock VerticalAlignment="Center" FontFamily="Tahoma" d:LayoutOverrides="Width" Grid.Row="1" HorizontalAlignment="Center" Foreground="#FF727272" Text="SEDATIVE" />
+				</Grid>
+				<Path Data="M65.571667,33 L65.571667,63.506667" Fill="#FFF4F4F5" Margin="0" Stretch="Fill" Stroke="#FFDFDFDF" Width="1" Grid.Column="1"/>
+				<Path Data="M65.571667,33 L65.571667,63.506667" Fill="#FFF4F4F5" Margin="0" Stretch="Fill" Stroke="#FFDFDFDF" Width="1" Grid.Column="3"/>
+			</Grid>
+			<Rectangle Fill="#CCFBF0E0" Margin="0" Grid.Row="2"/>
+			<TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Tahoma" Grid.Row="2" Text="OVERDOSE RISK SCORE" Foreground="#FF660000" FontWeight="Bold" FontSize="10.667" Margin="20,0,0,0" />
+			<Grid Margin="0" Grid.Row="3" d:LayoutOverrides="Width" Background="White" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="1"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="1"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Path Data="M65.571667,33 L65.571667,63.506667" Fill="White" Margin="0" Stretch="Fill" Stroke="White" Width="1" Grid.Column="1"/>
+				<Path Data="M65.571667,33 L65.571667,63.506667" Fill="#FFF4F4F5" Margin="0" Stretch="Fill" Stroke="White" Width="1" Grid.Column="3"/>
+				<Grid Margin="0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.617*"/>
+						<RowDefinition Height="0.383*"/>
+					</Grid.RowDefinitions>
+					<TextBlock FontFamily="Tahoma" Text="{Binding Overdose}" FontSize="18.667" FontWeight="Bold" Margin="0" d:LayoutOverrides="Width, Height" RenderTransformOrigin="0.869,0.475" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB17D41" />
+					<TextBlock VerticalAlignment="Center" FontFamily="Tahoma" Text="(Range 000-999)" d:LayoutOverrides="Width" Grid.Row="1" HorizontalAlignment="Center" Foreground="#FF727272" FontSize="10.667" />
+				</Grid>
+			</Grid>
+			<Grid Margin="0" Grid.Row="3">
+				<Grid.ColumnDefinitions>					
+					<ColumnDefinition Width="92"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+                <TextBlock 
+                    FontFamily="Tahoma" 
+                    Margin="120,0,10,8" Foreground="#FF003EFF" 
+                    FontSize="11" TextAlignment="Right" 
+                    VerticalAlignment="Bottom" Grid.Column="2" 
+                    Height="16.6">
+                    
+                    <Hyperlink FlowDirection="LeftToRight" FontWeight="Normal" 
+                               Click="Hyperlink_Click">
+                        <Run Text="PMP Report"/></Hyperlink></TextBlock>
+			</Grid>
+		</Grid>                
+	</StackPanel>
+
+
+</UserControl>

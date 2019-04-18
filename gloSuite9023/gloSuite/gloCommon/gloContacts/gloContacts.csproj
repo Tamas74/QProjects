@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E927ECC9-383B-4812-8167-48F712C5A769}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloContacts</RootNamespace>
+    <AssemblyName>gloContacts</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCollectionAgency.cs" />
+    <Compile Include="ClsContact.cs">
+    </Compile>
+    <Compile Include="ClsCo_Contacts.cs" />
+    <Compile Include="ClsgloC1FlexStyle.cs" />
+    <Compile Include="frmAssignFeeScheduled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignFeeScheduled.Designer.cs">
+      <DependentUpon>frmAssignFeeScheduled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceMultipleCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceMultipleCopy.Designer.cs">
+      <DependentUpon>frmInsuranceMultipleCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceReportingCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceReportingCategory.Designer.cs">
+      <DependentUpon>frmInsuranceReportingCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsuranceCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsuranceCompany.Designer.cs">
+      <DependentUpon>frmInsuranceCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanHold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanHold.Designer.cs">
+      <DependentUpon>frmPlanHold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCollectionAgency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCollectionAgency.Designer.cs">
+      <DependentUpon>frmSetupCollectionAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupCountry.Designer.cs">
+      <DependentUpon>frmSetupCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupHospital.Designer.cs">
+      <DependentUpon>frmSetupHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupInsurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupInsurance.Designer.cs">
+      <DependentUpon>frmSetupInsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupPharmacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupPharmacy.Designer.cs">
+      <DependentUpon>frmSetupPharmacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupPhysician.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupPhysician.Designer.cs">
+      <DependentUpon>frmSetupPhysician.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupZipCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupZipCode.Designer.cs">
+      <DependentUpon>frmSetupZipCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlternatePayerID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlternatePayerID.designer.cs">
+      <DependentUpon>frmAlternatePayerID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetup_InsuranceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup_InsuranceType.designer.cs">
+      <DependentUpon>frmSetup_InsuranceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewContacts.Designer.cs">
+      <DependentUpon>frmViewContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloGridListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloGridListControl.designer.cs">
+      <DependentUpon>gloGridListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPlanBillingSettins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAssignFeeScheduled.resx">
+      <DependentUpon>frmAssignFeeScheduled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceMultipleCopy.resx">
+      <DependentUpon>frmInsuranceMultipleCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceReportingCategory.resx">
+      <DependentUpon>frmInsuranceReportingCategory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsuranceCompany.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInsuranceCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanHold.resx">
+      <DependentUpon>frmPlanHold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCollectionAgency.resx">
+      <DependentUpon>frmSetupCollectionAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupCountry.resx">
+      <DependentUpon>frmSetupCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupHospital.resx">
+      <DependentUpon>frmSetupHospital.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupInsurance.resx">
+      <DependentUpon>frmSetupInsurance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupPharmacy.resx">
+      <DependentUpon>frmSetupPharmacy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupPhysician.resx">
+      <DependentUpon>frmSetupPhysician.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupZipCode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetupZipCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlternatePayerID.resx">
+      <DependentUpon>frmAlternatePayerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup_InsuranceType.resx">
+      <DependentUpon>frmSetup_InsuranceType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewContacts.resx">
+      <DependentUpon>frmViewContacts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloGridListControl.resx">
+      <DependentUpon>gloGridListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserRights\gloUserRights.csproj">
+      <Project>{9487621F-F5AF-473F-A6FD-794890C10B39}</Project>
+      <Name>gloUserRights</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <None Include="Resources\ajax-loader%282%29.gif" />
+    <Content Include="Resources\Img_2007Header.gif" />
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <Content Include="Resources\Img_DownBlueArrow.png" />
+    <Content Include="Resources\Img_Gradient.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <Content Include="Resources\Img_OliveHeader.gif" />
+    <Content Include="Resources\Img_Orange.gif" />
+    <Content Include="Resources\Img_SilverHeader.gif" />
+    <Content Include="Resources\Img_UparrowWhite.png" />
+    <Content Include="Resources\Img_UPBlueArrow.png" />
+    <Content Include="Resources\Img_VerticalBtnBrdStrip.gif" />
+    <Content Include="Resources\Img_Yellow.gif" />
+    <None Include="Resources\Other.ico" />
+    <None Include="Resources\Img_Toolstrip.gif" />
+    <None Include="Resources\Img_Button.gif" />
+    <None Include="Resources\Img_2003DarkHeader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+gloWord
+</name>
+</assembly>
+<members>
+<member name="T:gloWord.frmSelectPatientGuarantor">
+	<summary>
+ Form is used to select patient guarantor for pull data in data dictionary fields.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.KillOtherWord">
+	<summary>
+ To exit the Unwanted WinWord processes for optimization
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.InitializeWord">
+	<summary>
+ To initialize the global gloEMR Word instance for Voice and Word Documents
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.ExitWord">
+	<summary>
+ Exit the gloEMR Word Instance 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.GoToBegin">
+	<summary>
+ To Go to the Begining of the Template
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.GoToEnd">
+	<summary>
+ To Go to the End of the Template
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.gloWord.InsertTable(System.Collections.ArrayList,System.Boolean)">
+	<summary>
+ To Generate Table in Word Control
+ </summary>
+	<remarks></remarks>
+</member><member name="M:gloWord.LoadAndCloseWord.gloMessageFilter.Register">
+	<summary>Start the filter.</summary>
+</member><member name="M:gloWord.LoadAndCloseWord.gloMessageFilter.Revoke">
+	<summary>Done with the filter, close it.</summary>
+</member><member name="M:gloWord.LoadAndCloseWord.gloMessageFilter.HandleInComingCall(System.Int32,System.IntPtr,System.Int32,System.IntPtr)">
+	<summary>Handle incoming thread requests.</summary>
+</member><member name="M:gloWord.LoadAndCloseWord.gloMessageFilter.RetryRejectedCall(System.IntPtr,System.Int32,System.Int32)">
+	<summary>Thread call was rejected, so try again.</summary>
+</member><member name="M:gloWord.LoadAndCloseWord.gloMessageFilter.CoRegisterMessageFilter(gloWord.LoadAndCloseWord.IOleMessageFilter,gloWord.LoadAndCloseWord.IOleMessageFilter@)">
+	<summary>Implement the IOleMessageFilter interface.</summary>
+</member><member name="T:gloWord.LoadAndCloseWord.gloMessageFilter">
+	<summary>
+ Class containing the IOleMessageFilter
+ thread error-handling functions.
+</summary>
+</member><member name="M:gloWord.WordDialogBoxBackgroundCloser.GetChildWindowHandle(System.String,System.String,System.Boolean,System.Boolean)">
+	<summary>
+ Utility function using Windows API cals to loop though
+ child windows of Word and see if there are any that
+ match the passed in child class name. If there are
+ then we return the pointer to that window.
+ </summary>
+	<param name="winClass"></param>
+	<returns></returns>
+</member><member name="T:gloWord.WordDialogBoxBackgroundCloser.ParentProcessUtilities">
+	<summary>
+ A utility class to determine a process parent.
+ </summary>
+</member><member name="M:gloWord.WordDialogBoxBackgroundCloser.GetParentProcess">
+	<summary>
+ Gets the parent process of the current process.
+ </summary>
+	<returns>An instance of the Process class.</returns>
+</member><member name="M:gloWord.WordDialogBoxBackgroundCloser.GetParentProcess(System.Int32)">
+	<summary>
+ Gets the parent process of specified process.
+ </summary>
+	<param name="id">The process id.</param>
+	<returns>An instance of the Process class.</returns>
+</member><member name="M:gloWord.WordDialogBoxBackgroundCloser.GetParentProcess(System.IntPtr)">
+	<summary>
+ Gets the parent process of a specified process.
+ </summary>
+	<param name="handle">The process handle.</param>
+	<returns>An instance of the Process class or null if an error occurred.</returns>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Hide">
+	<summary>
+ Hides the window and activates another window.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Normal">
+	<summary>
+ Activates and displays a window. If the window is minimized or 
+ maximized, the system restores it to its original size and position.
+ An application should specify this flag when displaying the window 
+ for the first time.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowMinimized">
+	<summary>
+ Activates the window and displays it as a minimized window.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Maximize">
+	<summary>
+ Maximizes the specified window.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowMaximized">
+	<summary>
+ Activates the window and displays it as a maximized window.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowNoActivate">
+	<summary>
+ Displays a window in its most recent size and position. This value 
+ is similar to see cref="Win32.ShowWindowCommands.Normal", except 
+ the window is not actived.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Show">
+	<summary>
+ Activates the window and displays it in its current size and position. 
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Minimize">
+	<summary>
+ Minimizes the specified window and activates the next top-level 
+ window in the Z order.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowMinNoActive">
+	<summary>
+ Displays the window as a minimized window. This value is similar to
+ see cref="Win32.ShowWindowCommands.ShowMinimized", except the 
+ window is not activated.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowNA">
+	<summary>
+ Displays the window in its current size and position. This value is 
+ similar to see cref="Win32.ShowWindowCommands.Show", except the 
+ window is not activated.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.Restore">
+	<summary>
+ Activates and displays the window. If the window is minimized or 
+ maximized, the system restores it to its original size and position. 
+ An application should specify this flag when restoring a minimized window.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ShowDefault">
+	<summary>
+ Sets the show state based on the SW_* value specified in the 
+ STARTUPINFO structure passed to the CreateProcess function by the 
+ program that started the application.
+ </summary>
+</member><member name="F:gloWord.WordDialogBoxBackgroundCloser.ShowWindowCommands.ForceMinimize">
+	<summary>
+		<b>Windows 2000/XP:</b> Minimizes a window, even if the thread 
+ that owns the window is not responding. This flag should only be 
+ used when minimizing windows from a different thread.
+ </summary>
+</member><member name="P:gloWord.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:gloWord.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:gloWord.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

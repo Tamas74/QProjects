@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="gloUIControlLibrary.WPFUserControl.ClearSearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" FontFamily="{DynamicResource BaseFontFamily}">
+	<UserControl.Resources>
+		<Style x:Key="FocusVisual">
+			<Setter Property="Control.Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+		<SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+		<SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+		<SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+		<SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+		<SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+		<SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+		<Style x:Key="ClearButtonStyle" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+			<Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border x:Name="border" SnapsToDevicePixels="true" Background="White" BorderBrush="#FF1F497D" BorderThickness="0,0.5,0.5,0.5">
+							<Path Data="M225.0262,115.26885 C197.52647,95.657622 167.7052,71.094777 138.36217,48.011245 117.6865,31.746136 88.634624,48.510476 90.203928,78.298166 91.294858,99.005607 99.203587,81.964439 190.86952,142.9642 159.15223,175.54064 132.66012,210.24041 119.46497,237.5004 101.0764,271.44012 139.2577,295.09316 157.29107,284.10618 172.68542,274.42875 150.6935,263.00168 227.83367,170.16633 268.73332,206.72855 294.52067,248.03803 331.4671,290.25359 328.72181,257.50334 318.73277,226.86079&#xa;296.93978,193.09013 283.79264,172.62995 272.0964,162.10795 254.37637,143.30765 275.07025,122.08506 300.16589,98.833804 327.16569,80.167213 L364.16575,54.833648 C349.32324,55.838411 329.77705,59.972896 313.83281,64.832998 282.95059,76.781744 250.43244,93.918695 225.0262,115.26885 z" HorizontalAlignment="Center" Height="16" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Center" Width="16" StrokeThickness="0">
+								<Path.Fill>
+									<RadialGradientBrush>
+										<GradientStop Color="#FFE85D4A" Offset="1"/>
+										<GradientStop Color="#FFDB2E14"/>
+									</RadialGradientBrush>
+								</Path.Fill>
+							</Path>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsDefaulted" Value="true">
+								<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+								<Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="60"/>
+			<ColumnDefinition Width="*"  MinWidth="220"/>
+			<ColumnDefinition Width="22"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock x:Name="SearchLabel" Text="Search : " TextAlignment="Right" Padding="3" FontFamily="Tahoma" FontWeight="Bold" Foreground="{DynamicResource BaseForeColor}" Margin="0" VerticalAlignment="Center" />
+		<TextBox x:Name="SearchTextBox" Text="" VerticalAlignment="Stretch" TextAlignment="Left" FontFamily="Tahoma" BorderBrush="#FF1F497D" BorderThickness="0.5,0.5,0,0.5" Margin="0" Grid.Column="1" />
+		<Button x:Name="ClearButton" Content="" VerticalAlignment="Stretch" Margin="0" Grid.Column="3" Style="{DynamicResource ClearButtonStyle}" BorderThickness="0"/>
+	</Grid>
+</UserControl>

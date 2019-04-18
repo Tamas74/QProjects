@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="glo6060_DEVModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EFCollection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PA_Accounts" EntityType="glo6060_DEVModel.PA_Accounts" />
+    <EntitySet Name="Patients" EntityType="glo6060_DEVModel.Patient" />
+    <EntitySet Name="PA_Accounts_Patients" EntityType="glo6060_DEVModel.PA_Accounts_Patients" />
+    <EntitySet Name="Patient_OtherContacts" EntityType="glo6060_DEVModel.Patient_OtherContacts" />
+    <EntitySet Name="Provider_MST" EntityType="glo6060_DEVModel.Provider_MST" />
+    <EntitySet Name="CL_FollowupSchedule_Acct" EntityType="glo6060_DEVModel.CL_FollowupSchedule_Acct" />
+  </EntityContainer>
+  <EntityType Name="PA_Accounts">
+    <Key>
+      <PropertyRef Name="nPAccountID" />
+    </Key>
+    <Property Name="nPAccountID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="sAccountNo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sAccountDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="nGuarantorID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="sGuarantorCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="dtAccountClosedDate" Type="DateTime" />
+    <Property Name="sFirstName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sMiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sLastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="nEntityType" Type="Int32" Nullable="false" />
+    <Property Name="sAddressLine1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sAddressLine2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sCity" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="sState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sZip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sCountry" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sCounty" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sAreaCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="bIsExcludeStatement" Type="Boolean" />
+    <Property Name="bIsSentToCollection" Type="Boolean" />
+    <Property Name="nClinicID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nSiteID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="sMachineName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="nUserID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dtRecordDate" Type="DateTime" />
+    <Property Name="bIsActive" Type="Boolean" Nullable="false" />
+    <Property Name="dtAccountCreatedDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="nPatientID" />
+      <PropertyRef Name="sPatientCode" />
+      <PropertyRef Name="sFirstName" />
+      <PropertyRef Name="sMiddleName" />
+      <PropertyRef Name="sLastName" />
+      <PropertyRef Name="nSSN" />
+      <PropertyRef Name="nProviderID" />
+    </Key>
+    <Property Type="Decimal" Name="nPatientID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="sPatientCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMiddleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sLastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nSSN" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtDOB" />
+    <Property Type="String" Name="sGender" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMaritalStatus" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sAddressLine1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sAddressLine2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCity" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sState" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCounty" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sOccupation" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmploymentStatus" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPlaceofEmployment" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkAddressLine1" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkAddressLine2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkCity" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkState" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkFAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sChiefComplaints" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nProviderID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nPCPId" Precision="18" Scale="0" />
+    <Property Type="String" Name="sGuarantor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nPharmacyID" Precision="18" Scale="0" />
+    <Property Type="String" Name="sSpouseName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sSpousePhone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sRace" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPatientStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="iPhoto" MaxLength="Max" FixedLength="false" />
+    <Property Type="DateTime" Name="dtRegistrationDate" />
+    <Property Type="DateTime" Name="dtInjuryDate" />
+    <Property Type="DateTime" Name="dtSurgeryDate" />
+    <Property Type="String" Name="sHandDominance" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sLocation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_fName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_mName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_lName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Address1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_City" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_State" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_ZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_County" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Mobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_FAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_fName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_mName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_lName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Address1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_City" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_State" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_ZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_County" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Mobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_FAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_fName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_mName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_lName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Address1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_City" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_State" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_ZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_County" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Mobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_FAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nPatientDirective" />
+    <Property Type="Int32" Name="nExemptFromReport" />
+    <Property Type="String" Name="sExternalCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sUserName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMachineName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sInsuranceNotes" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bIsWorkersComp" />
+    <Property Type="String" Name="sWorkersCompClaimNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bIsAuto" />
+    <Property Type="String" Name="sAutoClaimNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bitIsGuarantor" />
+    <Property Type="Boolean" Name="bitIsBlock" />
+    <Property Type="String" Name="sWorkCounty" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkMobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkEmail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nGuarantorID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nClinicID" Precision="18" Scale="0" />
+    <Property Type="String" Name="sEmployerName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtRetirementDate" />
+    <Property Type="String" Name="sEmploymentType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmergencyContact" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmergencyPhone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmergencyMobile" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bIsAutoClaim" />
+    <Property Type="Boolean" Name="bSetToCollection" />
+    <Property Type="Decimal" Name="nEMRPatientID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nMigrationType" Precision="18" Scale="0" />
+    <Property Type="String" Name="sEmergencyRelationshipCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmergencyRelationshipDesc" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="iSignature" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="sCountry" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sWorkCountry" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMother_Country" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFather_Country" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_Country" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sLang" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEthn" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPrefix" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_RelationshipCD" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGuardian_RelationshipDS" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCommunicationPreference" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBirthTime" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bIsYesLab" />
+  </EntityType>
+  <EntityType Name="PA_Accounts_Patients">
+    <Key>
+      <PropertyRef Name="nAccountPatientID" />
+    </Key>
+    <Property Type="Decimal" Name="nAccountPatientID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nPAccountID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nPatientID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="sAccountNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPatientCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtAccountClosedDate" />
+    <Property Type="Decimal" Name="nClinicID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nSiteID" Precision="18" Scale="0" />
+    <Property Type="String" Name="sMachineName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nUserID" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtRecordDate" />
+    <Property Type="Boolean" Name="bIsOwnAccount" Nullable="false" />
+    <Property Type="Boolean" Name="bIsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient_OtherContacts">
+    <Key>
+      <PropertyRef Name="nPatientID" />
+      <PropertyRef Name="nPatientContactID" />
+      <PropertyRef Name="nLineNumber" />
+      <PropertyRef Name="nClinicID" />
+      <PropertyRef Name="nGuarantorType" />
+      <PropertyRef Name="nPAccountID" />
+      <PropertyRef Name="bIsAccountGuarantor" />
+    </Key>
+    <Property Type="Decimal" Name="nPatientID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nPatientContactID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nLineNumber" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="nPatientContactType" />
+    <Property Type="String" Name="sFirstName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMiddleName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sLastName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nDOB" />
+    <Property Type="String" Name="sGender" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sRelation" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sAddressLine1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sAddressLine2" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCity" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sState" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sZIP" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMobile" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFax" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="bIsActive" />
+    <Property Type="Decimal" Name="nVisitID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nAppointmentID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nGuarantorAsPatientID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nClinicID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="nPatientContactTypeFlag" />
+    <Property Type="String" Name="sSSN" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCounty" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCountry" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nGuarantorType" Nullable="false" />
+    <Property Type="Decimal" Name="nPAccountID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="bIsAccountGuarantor" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider_MST">
+    <Key>
+      <PropertyRef Name="nProviderID" />
+    </Key>
+    <Property Type="Decimal" Name="nProviderID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="sFirstName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMiddleName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sLastName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sGender" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sDEA" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sAddress" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sStreet" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCity" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sState" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMobileNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPagerNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sURL" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="imgSignature" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="nProviderType" />
+    <Property Type="String" Name="sNPI" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sUPIN" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sMedicalLicenseNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPrefix" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sExternalCode" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sServiceLevel" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtActiveStartTime" />
+    <Property Type="DateTime" Name="dtActiveEndTime" />
+    <Property Type="String" Name="sSPIID" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nClinicID" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="bIsblocked" />
+    <Property Type="String" Name="sBusinessAddressline1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessAddressline2" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessCity" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessState" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessZIP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeAddressline1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeAddressline2" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeCity" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeState" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeZIP" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusPhoneNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusFAX" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusPagerNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusURL" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracPhoneNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracFAX" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracPagerNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracURL" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sTaxonomy" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sTaxonomyDesc" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyAddressline1" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyAddressline2" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyCity" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyState" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyZIP" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyPhone" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyFax" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyEmail" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyContactName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessContactName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracContactName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sSSN" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sEmployerID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sSuffix" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyNPI" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyTaxID" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBussinessCountry" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBussinessCounty" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeCountry" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeCounty" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyCountry" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyCounty" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sgloLabId" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nIsPARequired" />
+    <Property Type="String" Name="sCompanyAreaCode" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sPracticeAreaCode" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sBusinessAreaCode" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sDPSNumber" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sCompanyTaxonomyCode" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CL_FollowupSchedule_Acct">
+    <Key>
+      <PropertyRef Name="nID" />
+    </Key>
+    <Property Type="Decimal" Name="nID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nAccountID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="nPatientID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtAcctFollowUpDate" />
+    <Property Type="String" Name="sFollowupCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sFollowupDescription" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nUserID" Precision="18" Scale="0" />
+    <Property Type="String" Name="sUserName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtCreatedDateTime" />
+    <Property Type="Int32" Name="nScheduleType" />
+  </EntityType>
+</Schema>

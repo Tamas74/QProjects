@@ -1,0 +1,996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4601138-47DB-42C7-AF2B-DA050DDFB3D0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>gloPMAdminXP.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>gloPMAdmin</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>gloPMAdmin</RootNamespace>
+    <StartupObject>gloPMAdmin.frmSplash</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/gloPMAdmin/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>gloPMAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>gloPMAdmin.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>gloPMAdmin.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>gloPMAdmin.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SIGPLUSLib, Version=2.23.0.0, Culture=neutral" />
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO, Version=8.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\gloEMRAdmin\gloEMRAdmin\DLL\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFNet, Version=5.8.2.0, Culture=neutral, PublicKeyToken=36167be3f67ac39c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UNCPath, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\UNCPath.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsAudit.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsBackupSchedule.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsBusinessCenter.vb" />
+    <Compile Include="Class\ClsClearinghouse.vb" />
+    <Compile Include="Class\clsClientMachines.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsClientMessage.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsClinic.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsClinicalChartPrinting.vb" />
+    <Compile Include="Class\clsCMSSettings.vb" />
+    <Compile Include="Class\clsCMSSettingsNew.vb" />
+    <Compile Include="Class\clsCSZ.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsCustomCompare.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsDatabaseTool.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsDBUpdation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsEncryption.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsFollowUpUtility.vb" />
+    <Compile Include="Class\ClsGeniusPath.vb" />
+    <Compile Include="Class\clsgloDataBase.vb" />
+    <Compile Include="Class\clsgloDMS.vb" />
+    <Compile Include="Class\clsgloDMSSynchronization.vb" />
+    <Compile Include="Class\ClsgloReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsICD10Settings.vb" />
+    <Compile Include="Class\clsKeyBoardState.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsLogin.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsMultiLineColumn.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class\ClsMultipleDb.vb" />
+    <Compile Include="Class\clsOnlineUpdates.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsProvider.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsProviderSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsProviderType.vb" />
+    <Compile Include="Class\ClsReportExplorer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsRights.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsRxPrinter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsRxReportDictionary.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsSelfNotes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\ClsServiceConfiguration.vb" />
+    <Compile Include="Class\clsSettings.vb" />
+    <Compile Include="Class\clsStartUpSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsSuggestions.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsUB04Setting.vb" />
+    <Compile Include="Class\clsUserGroups.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsUsers.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsVoiceTrainingDocument.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\clsWindowsGroupsUsers.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\CLS_ANSIversion.vb" />
+    <Compile Include="Class\DataClassICD10.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassICD10.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\gloC1FlexStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class\myList.vb" />
+    <Compile Include="Control\clsDataGrid.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\clsDataGridTableStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\DataGridPasswordcharTextBoxColumn.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsAdminSettingsTVP.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAdminSettingsTVP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsAdminSettingsTVP.vb">
+      <DependentUpon>dsAdminSettingsTVP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedPrintPreviewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAboutUs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccBusCenterUtility.Designer.vb">
+      <DependentUpon>frmAccBusCenterUtility.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccBusCenterUtility.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchiveAudit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssociatePatients.Designer.vb">
+      <DependentUpon>frmAssociatePatients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAssociatePatients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutoFollowupUtility.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusinessCenterRulesSetup.Designer.vb">
+      <DependentUpon>frmBusinessCenterRulesSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusinessCenterRulesSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClinicNew.Designer.vb">
+      <DependentUpon>frmClinicNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClinicNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCMSPrinterSettings.Designer.vb">
+      <DependentUpon>frmCMSPrinterSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCMSPrinterSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCMSPrinterSettingsNew.Designer.vb">
+      <DependentUpon>frmCMSPrinterSettingsNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCMSPrinterSettingsNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCMS_UBFontSetup.Designer.vb">
+      <DependentUpon>frmCMS_UBFontSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCMS_UBFontSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCriteria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDBCredentials.designer.vb">
+      <DependentUpon>frmDBCredentials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDBCredentials.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctorType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEDISettings.Designer.vb">
+      <DependentUpon>frmEDISettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEDISettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFollowUpCalculator.Designer.vb">
+      <DependentUpon>frmFollowUpCalculator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFollowUpCalculator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmgloEMRAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGloService.Designer.vb">
+      <DependentUpon>frmGloService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGloService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportFeeSchedule.Designer.vb">
+      <DependentUpon>frmImportFeeSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportFeeSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocationStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLockScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinterSetup.Designer.vb">
+      <DependentUpon>frmPrinterSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinterSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProviderReferralSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProviderUserTaskConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPwdSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestrictAccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRxReportDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings_New.Designer.vb">
+      <DependentUpon>frmSettings_New.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings_New.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupClearingHouse.Designer.vb">
+      <DependentUpon>frmSetupClearingHouse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupClearingHouse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartupSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJrSrAssociation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUB04PrinterSettings.Designer.vb">
+      <DependentUpon>frmUB04PrinterSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUB04PrinterSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnArchive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePayerID.Designer.vb">
+      <DependentUpon>frmUpdatePayerID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePayerID.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroups.Designer.vb">
+      <DependentUpon>frmUserGroups.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserGroups.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserMgt.Designer.vb">
+      <DependentUpon>frmUserMgt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserMgt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\clsmdlgloDMS.vb" />
+    <Compile Include="Module\mdlFunctions.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Module\mdlGeneral.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Module\mdlHotkey.vb" />
+    <Compile Include="Module\mdlProcedureFunctions.vb" />
+    <Compile Include="Module\mdlStartup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <None Include="Class\DataClassICD10.dbml.layout">
+      <DependentUpon>DataClassICD10.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Control\clsDataGrid.resx">
+      <DependentUpon>clsDataGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\clsDataGridTableStyle.resx">
+      <DependentUpon>clsDataGridTableStyle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DataGridPasswordcharTextBoxColumn.resx">
+      <DependentUpon>DataGridPasswordcharTextBoxColumn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendedPrintPreviewDialog.resx">
+      <DependentUpon>ExtendedPrintPreviewDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutUs.resx">
+      <DependentUpon>frmAboutUs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccBusCenterUtility.resx">
+      <DependentUpon>frmAccBusCenterUtility.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchiveAudit.resx">
+      <DependentUpon>frmArchiveAudit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssociatePatients.resx">
+      <DependentUpon>frmAssociatePatients.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutoFollowupUtility.resx">
+      <DependentUpon>frmAutoFollowupUtility.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackup.resx">
+      <DependentUpon>frmBackup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusinessCenterRulesSetup.resx">
+      <DependentUpon>frmBusinessCenterRulesSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClient.resx">
+      <DependentUpon>frmClient.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClinicNew.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClinicNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCMSPrinterSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCMSPrinterSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCMSPrinterSettingsNew.resx">
+      <DependentUpon>frmCMSPrinterSettingsNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCMS_UBFontSetup.resx">
+      <DependentUpon>frmCMS_UBFontSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCriteria.resx">
+      <DependentUpon>frmCriteria.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDBCredentials.resx">
+      <DependentUpon>frmDBCredentials.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctor.resx">
+      <DependentUpon>frmDoctor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctorType.resx">
+      <DependentUpon>frmDoctorType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEDISettings.resx">
+      <DependentUpon>frmEDISettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFollowUpCalculator.resx">
+      <DependentUpon>frmFollowUpCalculator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmgloEMRAdmin.resx">
+      <DependentUpon>frmgloEMRAdmin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGloService.resx">
+      <DependentUpon>frmGloService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportFeeSchedule.resx">
+      <DependentUpon>frmImportFeeSchedule.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocationStatus.resx">
+      <DependentUpon>frmLocationStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLockScreen.resx">
+      <DependentUpon>frmLockScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinterSetup.resx">
+      <DependentUpon>frmPrinterSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProviderReferralSettings.resx">
+      <DependentUpon>frmProviderReferralSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProviderUserTaskConfiguration.resx">
+      <DependentUpon>frmProviderUserTaskConfiguration.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPwdSettings.resx">
+      <DependentUpon>frmPwdSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestrictAccess.resx">
+      <DependentUpon>frmRestrictAccess.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRxReportDesigner.resx">
+      <DependentUpon>frmRxReportDesigner.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings_New.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSettings_New.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupClearingHouse.resx">
+      <DependentUpon>frmSetupClearingHouse.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartupSettings.resx">
+      <DependentUpon>frmStartupSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJrSrAssociation.resx">
+      <DependentUpon>frmJrSrAssociation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUB04PrinterSettings.resx">
+      <DependentUpon>frmUB04PrinterSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnArchive.resx">
+      <DependentUpon>frmUnArchive.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePayerID.resx">
+      <DependentUpon>frmUpdatePayerID.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroup.resx">
+      <DependentUpon>frmUserGroup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroups.resx">
+      <DependentUpon>frmUserGroups.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserMgt.resx">
+      <DependentUpon>frmUserMgt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="DLL\AxInterop.SIGPLUSLib.dll" />
+    <Content Include="DLL\AxInterop.SIGSIGNLib.dll" />
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <Content Include="DLL\CMS1500_BLANK.TIF" />
+    <Content Include="DLL\DevComponents.DotNetBar2.dll" />
+    <Content Include="DLL\gloAuditTrail.dll" />
+    <Content Include="DLL\gloDatabaseLayer.dll" />
+    <Content Include="DLL\gloGeneralItem.dll" />
+    <Content Include="DLL\gloListControl.dll" />
+    <Content Include="DLL\gloMaskBox.dll" />
+    <Content Include="DLL\gloSecurity.dll" />
+    <Content Include="DLL\gloSettings.dll" />
+    <Content Include="DLL\gloSureScript.dll" />
+    <Content Include="DLL\Interop.AgentObjects.dll" />
+    <Content Include="DLL\Interop.SIGPLUSLib.dll" />
+    <Content Include="DLL\Interop.SIGSIGNLib.dll" />
+    <Content Include="DLL\Interop.SQLDMO.dll" />
+    <Content Include="DLL\Interop.stdole.dll" />
+    <Content Include="DLL\Microsoft.SqlServer.BatchParser.dll" />
+    <Content Include="DLL\Microsoft.SqlServer.Replication.dll" />
+    <Content Include="DLL\UNCPath.dll" />
+    <Content Include="gloEMRAdmin.ico" />
+    <Content Include="gloPMAdminXP.ico" />
+    <Content Include="Images\administrator.jpg" />
+    <Content Include="Images\administratorovr.jpg" />
+    <Content Include="Images\archive.jpg" />
+    <Content Include="Images\archiveaudit.jpg" />
+    <Content Include="Images\archiveauditovr.jpg" />
+    <Content Include="Images\archiveovr.jpg" />
+    <Content Include="Images\audit.jpg" />
+    <Content Include="Images\auditovr.jpg" />
+    <Content Include="Images\backup.jpg" />
+    <Content Include="Images\backupovr.jpg" />
+    <Content Include="Images\bgaccessrestricted.gif" />
+    <Content Include="Images\bluearchiveaudit.JPG" />
+    <Content Include="Images\blueauditreport.JPG" />
+    <Content Include="Images\blueclientmessage.JPG" />
+    <Content Include="Images\bluedatabasearchive.JPG" />
+    <Content Include="Images\bluedatabasetool.JPG" />
+    <Content Include="Images\bluehidetoolbar.gif" />
+    <Content Include="Images\bluemainadministrator.gif" />
+    <Content Include="Images\bluemainaudit.gif" />
+    <Content Include="Images\bluemaindbmgmt.gif" />
+    <Content Include="Images\bluemaindbtools.gif" />
+    <Content Include="Images\bluemaindbtoos.gif" />
+    <Content Include="Images\bluemainhelp.gif" />
+    <Content Include="Images\bluemainhidetoolbar.gif" />
+    <Content Include="Images\bluemainsummary.gif" />
+    <Content Include="Images\bluemaintools.gif" />
+    <Content Include="Images\blueonlineupdate.JPG" />
+    <Content Include="Images\bluereplication.JPG" />
+    <Content Include="Images\bluesuggestion.JPG" />
+    <Content Include="Images\clinic.jpg" />
+    <Content Include="Images\clinicover.jpg" />
+    <Content Include="Images\close.jpg" />
+    <Content Include="Images\closeovr.jpg" />
+    <Content Include="Images\databaseMGMT.jpg" />
+    <Content Include="Images\databasemgmtovr.jpg" />
+    <Content Include="Images\databasetool.jpg" />
+    <Content Include="Images\databasetoolovr.jpg" />
+    <Content Include="Images\gloEMRgroup.jpg" />
+    <Content Include="Images\gloEMRgroupovr.jpg" />
+    <Content Include="Images\help.jpg" />
+    <Content Include="Images\helpovr.jpg" />
+    <Content Include="Images\onlineupdates.jpg" />
+    <Content Include="Images\onlineupdatesovr.jpg" />
+    <Content Include="Images\orangearchiveaudit.JPG" />
+    <Content Include="Images\orangeauditreport.JPG" />
+    <Content Include="Images\orangeclientmessage.JPG" />
+    <Content Include="Images\orangedatabasearchive.JPG" />
+    <Content Include="Images\orangedatabasebtool.JPG" />
+    <Content Include="Images\orangedatabasetool.JPG" />
+    <Content Include="Images\orangeonlineupdate.JPG" />
+    <Content Include="Images\orangereplication.JPG" />
+    <Content Include="Images\orangesuggestion.JPG" />
+    <Content Include="Images\replication.jpg" />
+    <Content Include="Images\replicationovr.jpg" />
+    <Content Include="Images\report.jpg" />
+    <Content Include="Images\reportovr.jpg" />
+    <Content Include="Images\restore.jpg" />
+    <Content Include="Images\restoreovr.jpg" />
+    <Content Include="Images\selfnotes.jpg" />
+    <Content Include="Images\selfnotesovr.jpg" />
+    <Content Include="Images\suggestions.jpg" />
+    <Content Include="Images\suggestionsovr.jpg" />
+    <Content Include="Images\tools.jpg" />
+    <Content Include="Images\toolsovr.jpg" />
+    <Content Include="Images\topadministrator.JPG" />
+    <Content Include="Images\toparchivedauditreport.gif" />
+    <Content Include="Images\topaudit.JPG" />
+    <Content Include="Images\topauditreport.JPG" />
+    <Content Include="Images\topbackup.JPG" />
+    <Content Include="Images\topclientmessage.JPG" />
+    <Content Include="Images\topclientsettings.gif" />
+    <Content Include="Images\topclinic.JPG" />
+    <Content Include="Images\topdatabase.JPG" />
+    <Content Include="Images\topDatabasearchive.JPG" />
+    <Content Include="Images\topdatabasemangement.JPG" />
+    <Content Include="Images\topdbtools.JPG" />
+    <Content Include="Images\topdoctors.gif" />
+    <Content Include="Images\topgloemrgroup.JPG" />
+    <Content Include="Images\toploginuserstrip.gif" />
+    <Content Include="Images\toponlineupdates.JPG" />
+    <Content Include="Images\toprestore.JPG" />
+    <Content Include="Images\topselfnotes.JPG" />
+    <Content Include="Images\topsetting.gif" />
+    <Content Include="Images\topsuggestionstogloStream.JPG" />
+    <Content Include="Images\toptools.JPG" />
+    <Content Include="Images\topusergroup.gif" />
+    <Content Include="Images\topusermanagement.JPG" />
+    <Content Include="Images\topvoicetrainingdoc.gif" />
+    <Content Include="Images\topwindowsgroupsanduser.JPG" />
+    <Content Include="Images\usermanagement.jpg" />
+    <Content Include="Images\usermanagementovr.jpg" />
+    <Content Include="Images\windowsgroup.jpg" />
+    <Content Include="Images\windowsgroupovr.jpg" />
+    <Content Include="Images\yellowhidetoolbar.gif" />
+    <Content Include="Images\yellowmainadministrator.gif" />
+    <Content Include="Images\yellowmainaudit.gif" />
+    <Content Include="Images\yellowmaindbmgmt.gif" />
+    <Content Include="Images\yellowmaindbtools.gif" />
+    <Content Include="Images\yellowmaindbtoos.gif" />
+    <Content Include="Images\yellowmainhelp.gif" />
+    <Content Include="Images\yellowmainhidetoolbar.gif" />
+    <Content Include="Images\yellowmainsummary.gif" />
+    <Content Include="Images\yellowmaintools.gif" />
+    <None Include="Class\DataClassICD10.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassICD10.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Add Below row.ico" />
+    <Content Include="Resources\CMS1500_NEW.JPG" />
+    <None Include="Resources\Delete Rows.ico" />
+    <Content Include="Resources\Down.png" />
+    <Content Include="Resources\DownHover.png" />
+    <Content Include="Resources\Forward.png" />
+    <Content Include="Resources\ForwardHover.png" />
+    <None Include="dsAdminSettingsTVP.xsc">
+      <DependentUpon>dsAdminSettingsTVP.xsd</DependentUpon>
+    </None>
+    <None Include="dsAdminSettingsTVP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAdminSettingsTVP.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsAdminSettingsTVP.xss">
+      <DependentUpon>dsAdminSettingsTVP.xsd</DependentUpon>
+    </None>
+    <None Include="help\gloPM_Admin_User_Manual.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="help\help.mapping">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\gloPM login Screen_New.png" />
+    <None Include="Resources\gloPM2009AdminNew 02.png" />
+    <None Include="Resources\gloSuite-PMAdmin.png" />
+    <Content Include="Resources\Img_2003DarkHeader.gif" />
+    <Content Include="Resources\Img_2007Header.gif" />
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <None Include="Resources\Img_BlueBtnHoverSplashScreen.png" />
+    <None Include="Resources\Img_BlueBtnSplashScreen.png" />
+    <Content Include="Resources\Img_Button.gif" />
+    <Content Include="Resources\Img_Gradient.gif" />
+    <Content Include="Resources\Img_LongBlueButton.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <Content Include="Resources\Img_OliveHeader.gif" />
+    <None Include="Resources\Img_OrangeBtnHoverSplashScreen.png" />
+    <None Include="Resources\Img_OrangeBtnSplashScreen.png" />
+    <Content Include="Resources\Img_SilverHeader.gif" />
+    <Content Include="Resources\Img_Toolstrip.gif" />
+    <Content Include="Resources\Img_VerticalBtnBrdStrip.gif" />
+    <None Include="Resources\ParticalySuccessNew.png" />
+    <Content Include="Resources\Rewind.png" />
+    <Content Include="Resources\RewindHover.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\TORSASplashScreen.png" />
+    <None Include="Resources\TORSASplashScreenBase.png" />
+    <Content Include="Resources\UP.png" />
+    <Content Include="Resources\UPHover.png" />
+    <None Include="DLL\admin.ini" />
+    <None Include="Resources\gloPMLoginScreen.jpg" />
+    <None Include="Resources\gloEMRLoginScreen.png" />
+    <None Include="Resources\btn_img.gif" />
+    <None Include="Resources\yellowhidetoolbar.gif" />
+    <None Include="Resources\bluehidetoolbar.gif" />
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\gloCommon\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloAUSdll\gloAUSLibrary\gloAUSLibrary.csproj">
+      <Project>{FEBB8F47-F62A-419F-AC1B-B10E672DE624}</Project>
+      <Name>gloAUSLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloClinicalQueueGeneral\gloClinicalQueueGeneral\gloClinicalQueueGeneral.csproj">
+      <Project>{F4774319-666F-44A3-8178-7E719ECDEF56}</Project>
+      <Name>gloClinicalQueueGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloContactsMerge\gloContactsMerge.csproj">
+      <Project>{6A8961A3-A462-4E79-B0A2-E832F49CFC40}</Project>
+      <Name>gloContactsMerge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloEMR.Help\gloEMR.Help.csproj">
+      <Project>{F96993F9-C5D6-4AB0-B626-8DF4EDDBD88C}</Project>
+      <Name>gloEMR.Help</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

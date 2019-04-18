@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <form action="https://uiservice-staging.surescripts.net/uiservice/" method="post" id="AcceleratorPage">
+    <div style="text-align: center; vertical-align: middle;">
+        <label id="lblStatus" style="position: absolute; top: 50%; left: 45%; color:Blue; font-family:Georgia; font-size:x-large;">
+            Please wait...
+        </label>
+    </div>
+    <input type="hidden" id="Keytoken" name="authToken" value="xxxxx" />
+    <input type="hidden" name="appPrimaryColor" value="#0099FF" />
+    <input type="hidden" name="appNavbar" value="none" />
+    <input style="display: none" type="submit" id="SubmitXML" value="Work List" />
+    </form>
+    <iframe style="display: none" name="worklist" id="process" style="width: 810px; height: 410px">
+    </iframe>
+</body>
+</html>

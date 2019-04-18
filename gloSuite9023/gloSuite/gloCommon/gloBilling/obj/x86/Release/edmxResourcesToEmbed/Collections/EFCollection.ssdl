@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="glo6060_DEVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="glo6060_DEVModelStoreContainer">
+    <EntitySet Name="CL_FollowupSchedule_Acct" EntityType="glo6060_DEVModel.Store.CL_FollowupSchedule_Acct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PA_Accounts" EntityType="glo6060_DEVModel.Store.PA_Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PA_Accounts_Patients" EntityType="glo6060_DEVModel.Store.PA_Accounts_Patients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Patient" EntityType="glo6060_DEVModel.Store.Patient" store:Type="Tables" store:Schema="dbo" store:Name="Patient">
+      <DefiningQuery>SELECT 
+      [Patient].[nPatientID] AS [nPatientID], 
+      [Patient].[sPatientCode] AS [sPatientCode], 
+      [Patient].[sFirstName] AS [sFirstName], 
+      [Patient].[sMiddleName] AS [sMiddleName], 
+      [Patient].[sLastName] AS [sLastName], 
+      [Patient].[nSSN] AS [nSSN], 
+      [Patient].[dtDOB] AS [dtDOB], 
+      [Patient].[sGender] AS [sGender], 
+      [Patient].[sMaritalStatus] AS [sMaritalStatus], 
+      [Patient].[sAddressLine1] AS [sAddressLine1], 
+      [Patient].[sAddressLine2] AS [sAddressLine2], 
+      [Patient].[sCity] AS [sCity], 
+      [Patient].[sState] AS [sState], 
+      [Patient].[sZIP] AS [sZIP], 
+      [Patient].[sCounty] AS [sCounty], 
+      [Patient].[sPhone] AS [sPhone], 
+      [Patient].[sMobile] AS [sMobile], 
+      [Patient].[sEmail] AS [sEmail], 
+      [Patient].[sFAX] AS [sFAX], 
+      [Patient].[sOccupation] AS [sOccupation], 
+      [Patient].[sEmploymentStatus] AS [sEmploymentStatus], 
+      [Patient].[sPlaceofEmployment] AS [sPlaceofEmployment], 
+      [Patient].[sWorkAddressLine1] AS [sWorkAddressLine1], 
+      [Patient].[sWorkAddressLine2] AS [sWorkAddressLine2], 
+      [Patient].[sWorkCity] AS [sWorkCity], 
+      [Patient].[sWorkState] AS [sWorkState], 
+      [Patient].[sWorkZIP] AS [sWorkZIP], 
+      [Patient].[sWorkPhone] AS [sWorkPhone], 
+      [Patient].[sWorkFAX] AS [sWorkFAX], 
+      [Patient].[sChiefComplaints] AS [sChiefComplaints], 
+      [Patient].[nProviderID] AS [nProviderID], 
+      [Patient].[nPCPId] AS [nPCPId], 
+      [Patient].[sGuarantor] AS [sGuarantor], 
+      [Patient].[nPharmacyID] AS [nPharmacyID], 
+      [Patient].[sSpouseName] AS [sSpouseName], 
+      [Patient].[sSpousePhone] AS [sSpousePhone], 
+      [Patient].[sRace] AS [sRace], 
+      [Patient].[sPatientStatus] AS [sPatientStatus], 
+      [Patient].[iPhoto] AS [iPhoto], 
+      [Patient].[dtRegistrationDate] AS [dtRegistrationDate], 
+      [Patient].[dtInjuryDate] AS [dtInjuryDate], 
+      [Patient].[dtSurgeryDate] AS [dtSurgeryDate], 
+      [Patient].[sHandDominance] AS [sHandDominance], 
+      [Patient].[sLocation] AS [sLocation], 
+      [Patient].[sMother_fName] AS [sMother_fName], 
+      [Patient].[sMother_mName] AS [sMother_mName], 
+      [Patient].[sMother_lName] AS [sMother_lName], 
+      [Patient].[sMother_Address1] AS [sMother_Address1], 
+      [Patient].[sMother_Address2] AS [sMother_Address2], 
+      [Patient].[sMother_City] AS [sMother_City], 
+      [Patient].[sMother_State] AS [sMother_State], 
+      [Patient].[sMother_ZIP] AS [sMother_ZIP], 
+      [Patient].[sMother_County] AS [sMother_County], 
+      [Patient].[sMother_Phone] AS [sMother_Phone], 
+      [Patient].[sMother_Mobile] AS [sMother_Mobile], 
+      [Patient].[sMother_FAX] AS [sMother_FAX], 
+      [Patient].[sMother_Email] AS [sMother_Email], 
+      [Patient].[sFather_fName] AS [sFather_fName], 
+      [Patient].[sFather_mName] AS [sFather_mName], 
+      [Patient].[sFather_lName] AS [sFather_lName], 
+      [Patient].[sFather_Address1] AS [sFather_Address1], 
+      [Patient].[sFather_Address2] AS [sFather_Address2], 
+      [Patient].[sFather_City] AS [sFather_City], 
+      [Patient].[sFather_State] AS [sFather_State], 
+      [Patient].[sFather_ZIP] AS [sFather_ZIP], 
+      [Patient].[sFather_County] AS [sFather_County], 
+      [Patient].[sFather_Phone] AS [sFather_Phone], 
+      [Patient].[sFather_Mobile] AS [sFather_Mobile], 
+      [Patient].[sFather_FAX] AS [sFather_FAX], 
+      [Patient].[sFather_Email] AS [sFather_Email], 
+      [Patient].[sGuardian_fName] AS [sGuardian_fName], 
+      [Patient].[sGuardian_mName] AS [sGuardian_mName], 
+      [Patient].[sGuardian_lName] AS [sGuardian_lName], 
+      [Patient].[sGuardian_Address1] AS [sGuardian_Address1], 
+      [Patient].[sGuardian_Address2] AS [sGuardian_Address2], 
+      [Patient].[sGuardian_City] AS [sGuardian_City], 
+      [Patient].[sGuardian_State] AS [sGuardian_State], 
+      [Patient].[sGuardian_ZIP] AS [sGuardian_ZIP], 
+      [Patient].[sGuardian_County] AS [sGuardian_County], 
+      [Patient].[sGuardian_Phone] AS [sGuardian_Phone], 
+      [Patient].[sGuardian_Mobile] AS [sGuardian_Mobile], 
+      [Patient].[sGuardian_FAX] AS [sGuardian_FAX], 
+      [Patient].[sGuardian_Email] AS [sGuardian_Email], 
+      [Patient].[nPatientDirective] AS [nPatientDirective], 
+      [Patient].[nExemptFromReport] AS [nExemptFromReport], 
+      [Patient].[sExternalCode] AS [sExternalCode], 
+      [Patient].[sUserName] AS [sUserName], 
+      [Patient].[sMachineName] AS [sMachineName], 
+      [Patient].[sInsuranceNotes] AS [sInsuranceNotes], 
+      [Patient].[bIsWorkersComp] AS [bIsWorkersComp], 
+      [Patient].[sWorkersCompClaimNo] AS [sWorkersCompClaimNo], 
+      [Patient].[bIsAuto] AS [bIsAuto], 
+      [Patient].[sAutoClaimNo] AS [sAutoClaimNo], 
+      [Patient].[bitIsGuarantor] AS [bitIsGuarantor], 
+      [Patient].[bitIsBlock] AS [bitIsBlock], 
+      [Patient].[sWorkCounty] AS [sWorkCounty], 
+      [Patient].[sWorkMobile] AS [sWorkMobile], 
+      [Patient].[sWorkEmail] AS [sWorkEmail], 
+      [Patient].[nGuarantorID] AS [nGuarantorID], 
+      [Patient].[nClinicID] AS [nClinicID], 
+      [Patient].[sEmployerName] AS [sEmployerName], 
+      [Patient].[dtRetirementDate] AS [dtRetirementDate], 
+      [Patient].[sEmploymentType] AS [sEmploymentType], 
+      [Patient].[sEmergencyContact] AS [sEmergencyContact], 
+      [Patient].[sEmergencyPhone] AS [sEmergencyPhone], 
+      [Patient].[sEmergencyMobile] AS [sEmergencyMobile], 
+      [Patient].[bIsAutoClaim] AS [bIsAutoClaim], 
+      [Patient].[bSetToCollection] AS [bSetToCollection], 
+      [Patient].[nEMRPatientID] AS [nEMRPatientID], 
+      [Patient].[nMigrationType] AS [nMigrationType], 
+      [Patient].[sEmergencyRelationshipCode] AS [sEmergencyRelationshipCode], 
+      [Patient].[sEmergencyRelationshipDesc] AS [sEmergencyRelationshipDesc], 
+      [Patient].[iSignature] AS [iSignature], 
+      [Patient].[sCountry] AS [sCountry], 
+      [Patient].[sWorkCountry] AS [sWorkCountry], 
+      [Patient].[sMother_Country] AS [sMother_Country], 
+      [Patient].[sFather_Country] AS [sFather_Country], 
+      [Patient].[sGuardian_Country] AS [sGuardian_Country], 
+      [Patient].[sLang] AS [sLang], 
+      [Patient].[sEthn] AS [sEthn], 
+      [Patient].[sPrefix] AS [sPrefix], 
+      [Patient].[sGuardian_RelationshipCD] AS [sGuardian_RelationshipCD], 
+      [Patient].[sGuardian_RelationshipDS] AS [sGuardian_RelationshipDS], 
+      [Patient].[sCommunicationPreference] AS [sCommunicationPreference], 
+      [Patient].[sBirthTime] AS [sBirthTime], 
+      [Patient].[bIsYesLab] AS [bIsYesLab]
+      FROM [dbo].[Patient] AS [Patient]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Patient_OtherContacts" EntityType="glo6060_DEVModel.Store.Patient_OtherContacts" store:Type="Tables" store:Schema="dbo" store:Name="Patient_OtherContacts">
+      <DefiningQuery>SELECT 
+      [Patient_OtherContacts].[nPatientID] AS [nPatientID], 
+      [Patient_OtherContacts].[nPatientContactID] AS [nPatientContactID], 
+      [Patient_OtherContacts].[nLineNumber] AS [nLineNumber], 
+      [Patient_OtherContacts].[nPatientContactType] AS [nPatientContactType], 
+      [Patient_OtherContacts].[sFirstName] AS [sFirstName], 
+      [Patient_OtherContacts].[sMiddleName] AS [sMiddleName], 
+      [Patient_OtherContacts].[sLastName] AS [sLastName], 
+      [Patient_OtherContacts].[nDOB] AS [nDOB], 
+      [Patient_OtherContacts].[sGender] AS [sGender], 
+      [Patient_OtherContacts].[sRelation] AS [sRelation], 
+      [Patient_OtherContacts].[sAddressLine1] AS [sAddressLine1], 
+      [Patient_OtherContacts].[sAddressLine2] AS [sAddressLine2], 
+      [Patient_OtherContacts].[sCity] AS [sCity], 
+      [Patient_OtherContacts].[sState] AS [sState], 
+      [Patient_OtherContacts].[sZIP] AS [sZIP], 
+      [Patient_OtherContacts].[sPhone] AS [sPhone], 
+      [Patient_OtherContacts].[sMobile] AS [sMobile], 
+      [Patient_OtherContacts].[sFax] AS [sFax], 
+      [Patient_OtherContacts].[sEmail] AS [sEmail], 
+      [Patient_OtherContacts].[bIsActive] AS [bIsActive], 
+      [Patient_OtherContacts].[nVisitID] AS [nVisitID], 
+      [Patient_OtherContacts].[nAppointmentID] AS [nAppointmentID], 
+      [Patient_OtherContacts].[nGuarantorAsPatientID] AS [nGuarantorAsPatientID], 
+      [Patient_OtherContacts].[nClinicID] AS [nClinicID], 
+      [Patient_OtherContacts].[nPatientContactTypeFlag] AS [nPatientContactTypeFlag], 
+      [Patient_OtherContacts].[sSSN] AS [sSSN], 
+      [Patient_OtherContacts].[sCounty] AS [sCounty], 
+      [Patient_OtherContacts].[sCountry] AS [sCountry], 
+      [Patient_OtherContacts].[nGuarantorType] AS [nGuarantorType], 
+      [Patient_OtherContacts].[nPAccountID] AS [nPAccountID], 
+      [Patient_OtherContacts].[bIsAccountGuarantor] AS [bIsAccountGuarantor]
+      FROM [dbo].[Patient_OtherContacts] AS [Patient_OtherContacts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Provider_MST" EntityType="glo6060_DEVModel.Store.Provider_MST" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CL_FollowupSchedule_Acct">
+    <Key>
+      <PropertyRef Name="nID" />
+    </Key>
+    <Property Name="nID" Type="numeric" Nullable="false" />
+    <Property Name="nAccountID" Type="numeric" Nullable="false" />
+    <Property Name="nPatientID" Type="numeric" Nullable="false" />
+    <Property Name="dtAcctFollowUpDate" Type="date" />
+    <Property Name="sFollowupCode" Type="varchar" MaxLength="50" />
+    <Property Name="sFollowupDescription" Type="varchar" MaxLength="255" />
+    <Property Name="nUserID" Type="numeric" />
+    <Property Name="sUserName" Type="varchar" MaxLength="255" />
+    <Property Name="dtCreatedDateTime" Type="datetime" />
+    <Property Name="nScheduleType" Type="int" />
+  </EntityType>
+  <EntityType Name="PA_Accounts">
+    <Key>
+      <PropertyRef Name="nPAccountID" />
+    </Key>
+    <Property Name="nPAccountID" Type="numeric" Nullable="false" />
+    <Property Name="sAccountNo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sAccountDesc" Type="varchar" MaxLength="255" />
+    <Property Name="nGuarantorID" Type="numeric" Nullable="false" />
+    <Property Name="sGuarantorCode" Type="varchar" MaxLength="50" />
+    <Property Name="dtAccountClosedDate" Type="datetime" />
+    <Property Name="sFirstName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="sMiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="sLastName" Type="varchar" MaxLength="50" />
+    <Property Name="nEntityType" Type="int" Nullable="false" />
+    <Property Name="sAddressLine1" Type="varchar" MaxLength="255" />
+    <Property Name="sAddressLine2" Type="varchar" MaxLength="255" />
+    <Property Name="sCity" Type="varchar" MaxLength="255" />
+    <Property Name="sState" Type="varchar" MaxLength="50" />
+    <Property Name="sZip" Type="varchar" MaxLength="50" />
+    <Property Name="sCountry" Type="varchar" MaxLength="50" />
+    <Property Name="sCounty" Type="varchar" MaxLength="50" />
+    <Property Name="sAreaCode" Type="varchar" MaxLength="50" />
+    <Property Name="bIsExcludeStatement" Type="bit" />
+    <Property Name="bIsSentToCollection" Type="bit" />
+    <Property Name="nClinicID" Type="numeric" />
+    <Property Name="nSiteID" Type="numeric" />
+    <Property Name="sMachineName" Type="varchar" MaxLength="50" />
+    <Property Name="nUserID" Type="numeric" />
+    <Property Name="dtRecordDate" Type="datetime" />
+    <Property Name="bIsActive" Type="bit" Nullable="false" />
+    <Property Name="dtAccountCreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PA_Accounts_Patients">
+    <Key>
+      <PropertyRef Name="nAccountPatientID" />
+    </Key>
+    <Property Name="nAccountPatientID" Type="numeric" Nullable="false" />
+    <Property Name="nPAccountID" Type="numeric" Nullable="false" />
+    <Property Name="nPatientID" Type="numeric" Nullable="false" />
+    <Property Name="sAccountNo" Type="varchar" MaxLength="50" />
+    <Property Name="sPatientCode" Type="varchar" MaxLength="50" />
+    <Property Name="dtAccountClosedDate" Type="datetime" />
+    <Property Name="nClinicID" Type="numeric" />
+    <Property Name="nSiteID" Type="numeric" />
+    <Property Name="sMachineName" Type="varchar" MaxLength="50" />
+    <Property Name="nUserID" Type="numeric" />
+    <Property Name="dtRecordDate" Type="datetime" />
+    <Property Name="bIsOwnAccount" Type="bit" Nullable="false" />
+    <Property Name="bIsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'glo6060_DEV.dbo.Patient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="nPatientID" />
+      <PropertyRef Name="sPatientCode" />
+      <PropertyRef Name="sFirstName" />
+      <PropertyRef Name="sMiddleName" />
+      <PropertyRef Name="sLastName" />
+      <PropertyRef Name="nSSN" />
+      <PropertyRef Name="nProviderID" />
+    </Key>
+    <Property Name="nPatientID" Type="numeric" Nullable="false" />
+    <Property Name="sPatientCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sMiddleName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sLastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="nSSN" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="dtDOB" Type="datetime" />
+    <Property Name="sGender" Type="varchar" MaxLength="10" />
+    <Property Name="sMaritalStatus" Type="varchar" MaxLength="10" />
+    <Property Name="sAddressLine1" Type="varchar" MaxLength="255" />
+    <Property Name="sAddressLine2" Type="varchar" MaxLength="50" />
+    <Property Name="sCity" Type="varchar" MaxLength="255" />
+    <Property Name="sState" Type="varchar" MaxLength="50" />
+    <Property Name="sZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sCounty" Type="varchar" MaxLength="50" />
+    <Property Name="sPhone" Type="varchar" MaxLength="50" />
+    <Property Name="sMobile" Type="varchar" MaxLength="50" />
+    <Property Name="sEmail" Type="varchar" MaxLength="50" />
+    <Property Name="sFAX" Type="varchar" MaxLength="50" />
+    <Property Name="sOccupation" Type="varchar" MaxLength="255" />
+    <Property Name="sEmploymentStatus" Type="varchar" MaxLength="20" />
+    <Property Name="sPlaceofEmployment" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkAddressLine1" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkAddressLine2" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkCity" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkState" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkPhone" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkFAX" Type="varchar" MaxLength="50" />
+    <Property Name="sChiefComplaints" Type="varchar" MaxLength="1500" />
+    <Property Name="nProviderID" Type="numeric" Nullable="false" />
+    <Property Name="nPCPId" Type="numeric" />
+    <Property Name="sGuarantor" Type="varchar" MaxLength="50" />
+    <Property Name="nPharmacyID" Type="numeric" />
+    <Property Name="sSpouseName" Type="varchar" MaxLength="50" />
+    <Property Name="sSpousePhone" Type="varchar" MaxLength="50" />
+    <Property Name="sRace" Type="varchar" MaxLength="50" />
+    <Property Name="sPatientStatus" Type="varchar" MaxLength="50" />
+    <Property Name="iPhoto" Type="image" />
+    <Property Name="dtRegistrationDate" Type="datetime" />
+    <Property Name="dtInjuryDate" Type="datetime" />
+    <Property Name="dtSurgeryDate" Type="datetime" />
+    <Property Name="sHandDominance" Type="varchar" MaxLength="50" />
+    <Property Name="sLocation" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_fName" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_mName" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_lName" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_Address1" Type="varchar" MaxLength="255" />
+    <Property Name="sMother_Address2" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_City" Type="varchar" MaxLength="255" />
+    <Property Name="sMother_State" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_ZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_County" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_Email" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_fName" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_mName" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_lName" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_Address1" Type="varchar" MaxLength="255" />
+    <Property Name="sFather_Address2" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_City" Type="varchar" MaxLength="255" />
+    <Property Name="sFather_State" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_ZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_County" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_Email" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_fName" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_mName" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_lName" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_Address1" Type="varchar" MaxLength="255" />
+    <Property Name="sGuardian_Address2" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_City" Type="varchar" MaxLength="255" />
+    <Property Name="sGuardian_State" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_ZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_County" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_FAX" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_Email" Type="varchar" MaxLength="50" />
+    <Property Name="nPatientDirective" Type="int" />
+    <Property Name="nExemptFromReport" Type="int" />
+    <Property Name="sExternalCode" Type="varchar" MaxLength="50" />
+    <Property Name="sUserName" Type="varchar" MaxLength="50" />
+    <Property Name="sMachineName" Type="varchar" MaxLength="50" />
+    <Property Name="sInsuranceNotes" Type="varchar" MaxLength="1500" />
+    <Property Name="bIsWorkersComp" Type="bit" />
+    <Property Name="sWorkersCompClaimNo" Type="varchar" MaxLength="50" />
+    <Property Name="bIsAuto" Type="bit" />
+    <Property Name="sAutoClaimNo" Type="varchar" MaxLength="50" />
+    <Property Name="bitIsGuarantor" Type="bit" />
+    <Property Name="bitIsBlock" Type="bit" />
+    <Property Name="sWorkCounty" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkMobile" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkEmail" Type="varchar" MaxLength="50" />
+    <Property Name="nGuarantorID" Type="numeric" />
+    <Property Name="nClinicID" Type="numeric" />
+    <Property Name="sEmployerName" Type="varchar" MaxLength="100" />
+    <Property Name="dtRetirementDate" Type="datetime" />
+    <Property Name="sEmploymentType" Type="varchar" MaxLength="50" />
+    <Property Name="sEmergencyContact" Type="varchar" MaxLength="50" />
+    <Property Name="sEmergencyPhone" Type="varchar" MaxLength="50" />
+    <Property Name="sEmergencyMobile" Type="varchar" MaxLength="50" />
+    <Property Name="bIsAutoClaim" Type="bit" />
+    <Property Name="bSetToCollection" Type="bit" />
+    <Property Name="nEMRPatientID" Type="numeric" />
+    <Property Name="nMigrationType" Type="numeric" />
+    <Property Name="sEmergencyRelationshipCode" Type="varchar" MaxLength="50" />
+    <Property Name="sEmergencyRelationshipDesc" Type="varchar" MaxLength="255" />
+    <Property Name="iSignature" Type="image" />
+    <Property Name="sCountry" Type="varchar" MaxLength="50" />
+    <Property Name="sWorkCountry" Type="varchar" MaxLength="50" />
+    <Property Name="sMother_Country" Type="varchar" MaxLength="50" />
+    <Property Name="sFather_Country" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_Country" Type="varchar" MaxLength="50" />
+    <Property Name="sLang" Type="varchar" MaxLength="50" />
+    <Property Name="sEthn" Type="varchar" MaxLength="50" />
+    <Property Name="sPrefix" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_RelationshipCD" Type="varchar" MaxLength="50" />
+    <Property Name="sGuardian_RelationshipDS" Type="varchar" MaxLength="250" />
+    <Property Name="sCommunicationPreference" Type="varchar" MaxLength="50" />
+    <Property Name="sBirthTime" Type="varchar" MaxLength="50" />
+    <Property Name="bIsYesLab" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'glo6060_DEV.dbo.Patient_OtherContacts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Patient_OtherContacts">
+    <Key>
+      <PropertyRef Name="nPatientID" />
+      <PropertyRef Name="nPatientContactID" />
+      <PropertyRef Name="nLineNumber" />
+      <PropertyRef Name="nClinicID" />
+      <PropertyRef Name="nGuarantorType" />
+      <PropertyRef Name="nPAccountID" />
+      <PropertyRef Name="bIsAccountGuarantor" />
+    </Key>
+    <Property Name="nPatientID" Type="numeric" Nullable="false" />
+    <Property Name="nPatientContactID" Type="numeric" Nullable="false" />
+    <Property Name="nLineNumber" Type="numeric" Nullable="false" />
+    <Property Name="nPatientContactType" Type="int" />
+    <Property Name="sFirstName" Type="varchar" MaxLength="255" />
+    <Property Name="sMiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="sLastName" Type="varchar" MaxLength="50" />
+    <Property Name="nDOB" Type="int" />
+    <Property Name="sGender" Type="varchar" MaxLength="10" />
+    <Property Name="sRelation" Type="varchar" MaxLength="255" />
+    <Property Name="sAddressLine1" Type="varchar" MaxLength="255" />
+    <Property Name="sAddressLine2" Type="varchar" MaxLength="255" />
+    <Property Name="sCity" Type="varchar" MaxLength="50" />
+    <Property Name="sState" Type="varchar" MaxLength="50" />
+    <Property Name="sZIP" Type="varchar" MaxLength="10" />
+    <Property Name="sPhone" Type="varchar" MaxLength="20" />
+    <Property Name="sMobile" Type="varchar" MaxLength="20" />
+    <Property Name="sFax" Type="varchar" MaxLength="50" />
+    <Property Name="sEmail" Type="varchar" MaxLength="100" />
+    <Property Name="bIsActive" Type="bit" />
+    <Property Name="nVisitID" Type="numeric" />
+    <Property Name="nAppointmentID" Type="numeric" />
+    <Property Name="nGuarantorAsPatientID" Type="numeric" />
+    <Property Name="nClinicID" Type="numeric" Nullable="false" />
+    <Property Name="nPatientContactTypeFlag" Type="int" />
+    <Property Name="sSSN" Type="varchar" MaxLength="15" />
+    <Property Name="sCounty" Type="varchar" MaxLength="50" />
+    <Property Name="sCountry" Type="varchar" MaxLength="50" />
+    <Property Name="nGuarantorType" Type="int" Nullable="false" />
+    <Property Name="nPAccountID" Type="numeric" Nullable="false" />
+    <Property Name="bIsAccountGuarantor" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider_MST">
+    <Key>
+      <PropertyRef Name="nProviderID" />
+    </Key>
+    <Property Name="nProviderID" Type="numeric" Nullable="false" />
+    <Property Name="sFirstName" Type="varchar" MaxLength="255" />
+    <Property Name="sMiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="sLastName" Type="varchar" MaxLength="100" />
+    <Property Name="sGender" Type="varchar" MaxLength="100" />
+    <Property Name="sDEA" Type="varchar" MaxLength="100" />
+    <Property Name="sAddress" Type="varchar" MaxLength="255" />
+    <Property Name="sStreet" Type="varchar" MaxLength="255" />
+    <Property Name="sCity" Type="varchar" MaxLength="100" />
+    <Property Name="sState" Type="varchar" MaxLength="100" />
+    <Property Name="sZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sPhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="sFAX" Type="varchar" MaxLength="50" />
+    <Property Name="sMobileNo" Type="varchar" MaxLength="50" />
+    <Property Name="sPagerNo" Type="varchar" MaxLength="50" />
+    <Property Name="sEmail" Type="varchar" MaxLength="100" />
+    <Property Name="sURL" Type="varchar" MaxLength="100" />
+    <Property Name="imgSignature" Type="image" />
+    <Property Name="nProviderType" Type="int" />
+    <Property Name="sNPI" Type="varchar" MaxLength="100" />
+    <Property Name="sUPIN" Type="varchar" MaxLength="100" />
+    <Property Name="sMedicalLicenseNo" Type="varchar" MaxLength="100" />
+    <Property Name="sPrefix" Type="varchar" MaxLength="50" />
+    <Property Name="sExternalCode" Type="varchar" MaxLength="500" />
+    <Property Name="sServiceLevel" Type="varchar" MaxLength="16" />
+    <Property Name="dtActiveStartTime" Type="datetime" />
+    <Property Name="dtActiveEndTime" Type="datetime" />
+    <Property Name="sSPIID" Type="varchar" MaxLength="50" />
+    <Property Name="nClinicID" Type="numeric" />
+    <Property Name="bIsblocked" Type="bit" />
+    <Property Name="sBusinessAddressline1" Type="varchar" MaxLength="255" />
+    <Property Name="sBusinessAddressline2" Type="varchar" MaxLength="255" />
+    <Property Name="sBusinessCity" Type="varchar" MaxLength="100" />
+    <Property Name="sBusinessState" Type="varchar" MaxLength="100" />
+    <Property Name="sBusinessZIP" Type="varchar" MaxLength="50" />
+    <Property Name="sPracticeAddressline1" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeAddressline2" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeCity" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeState" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeZIP" Type="varchar" MaxLength="255" />
+    <Property Name="sBusPhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="sBusFAX" Type="varchar" MaxLength="50" />
+    <Property Name="sBusPagerNo" Type="varchar" MaxLength="50" />
+    <Property Name="sBusEmail" Type="varchar" MaxLength="100" />
+    <Property Name="sBusURL" Type="varchar" MaxLength="100" />
+    <Property Name="sPracPhoneNo" Type="varchar" MaxLength="100" />
+    <Property Name="sPracFAX" Type="varchar" MaxLength="100" />
+    <Property Name="sPracPagerNo" Type="varchar" MaxLength="100" />
+    <Property Name="sPracEmail" Type="varchar" MaxLength="100" />
+    <Property Name="sPracURL" Type="varchar" MaxLength="100" />
+    <Property Name="sTaxonomy" Type="varchar" MaxLength="100" />
+    <Property Name="sTaxonomyDesc" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyName" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyAddressline1" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyAddressline2" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyCity" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyState" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyZIP" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyPhone" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyFax" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyEmail" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyContactName" Type="varchar" MaxLength="255" />
+    <Property Name="sBusinessContactName" Type="varchar" MaxLength="255" />
+    <Property Name="sPracContactName" Type="varchar" MaxLength="255" />
+    <Property Name="sSSN" Type="varchar" MaxLength="20" />
+    <Property Name="sEmployerID" Type="varchar" MaxLength="10" />
+    <Property Name="sSuffix" Type="varchar" MaxLength="50" />
+    <Property Name="sCompanyNPI" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyTaxID" Type="varchar" MaxLength="255" />
+    <Property Name="sBussinessCountry" Type="varchar" MaxLength="255" />
+    <Property Name="sBussinessCounty" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeCountry" Type="varchar" MaxLength="255" />
+    <Property Name="sPracticeCounty" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyCountry" Type="varchar" MaxLength="255" />
+    <Property Name="sCompanyCounty" Type="varchar" MaxLength="255" />
+    <Property Name="sgloLabId" Type="varchar" MaxLength="50" />
+    <Property Name="nIsPARequired" Type="int" />
+    <Property Name="sCompanyAreaCode" Type="varchar" MaxLength="10" />
+    <Property Name="sPracticeAreaCode" Type="varchar" MaxLength="10" />
+    <Property Name="sBusinessAreaCode" Type="varchar" MaxLength="10" />
+    <Property Name="sDPSNumber" Type="varchar" MaxLength="16" />
+    <Property Name="sCompanyTaxonomyCode" Type="varchar" MaxLength="255" />
+  </EntityType>
+</Schema>

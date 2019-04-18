@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="glo6060_DEVModelStoreContainer" CdmEntityContainer="EFCollection">
+    <EntitySetMapping Name="PA_Accounts">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.PA_Accounts">
+        <MappingFragment StoreEntitySet="PA_Accounts">
+          <ScalarProperty Name="nPAccountID" ColumnName="nPAccountID" />
+          <ScalarProperty Name="sAccountNo" ColumnName="sAccountNo" />
+          <ScalarProperty Name="sAccountDesc" ColumnName="sAccountDesc" />
+          <ScalarProperty Name="nGuarantorID" ColumnName="nGuarantorID" />
+          <ScalarProperty Name="sGuarantorCode" ColumnName="sGuarantorCode" />
+          <ScalarProperty Name="dtAccountClosedDate" ColumnName="dtAccountClosedDate" />
+          <ScalarProperty Name="sFirstName" ColumnName="sFirstName" />
+          <ScalarProperty Name="sMiddleName" ColumnName="sMiddleName" />
+          <ScalarProperty Name="sLastName" ColumnName="sLastName" />
+          <ScalarProperty Name="nEntityType" ColumnName="nEntityType" />
+          <ScalarProperty Name="sAddressLine1" ColumnName="sAddressLine1" />
+          <ScalarProperty Name="sAddressLine2" ColumnName="sAddressLine2" />
+          <ScalarProperty Name="sCity" ColumnName="sCity" />
+          <ScalarProperty Name="sState" ColumnName="sState" />
+          <ScalarProperty Name="sZip" ColumnName="sZip" />
+          <ScalarProperty Name="sCountry" ColumnName="sCountry" />
+          <ScalarProperty Name="sCounty" ColumnName="sCounty" />
+          <ScalarProperty Name="sAreaCode" ColumnName="sAreaCode" />
+          <ScalarProperty Name="bIsExcludeStatement" ColumnName="bIsExcludeStatement" />
+          <ScalarProperty Name="bIsSentToCollection" ColumnName="bIsSentToCollection" />
+          <ScalarProperty Name="nClinicID" ColumnName="nClinicID" />
+          <ScalarProperty Name="nSiteID" ColumnName="nSiteID" />
+          <ScalarProperty Name="sMachineName" ColumnName="sMachineName" />
+          <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+          <ScalarProperty Name="dtRecordDate" ColumnName="dtRecordDate" />
+          <ScalarProperty Name="bIsActive" ColumnName="bIsActive" />
+          <ScalarProperty Name="dtAccountCreatedDate" ColumnName="dtAccountCreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="bIsYesLab" ColumnName="bIsYesLab" />
+          <ScalarProperty Name="sBirthTime" ColumnName="sBirthTime" />
+          <ScalarProperty Name="sCommunicationPreference" ColumnName="sCommunicationPreference" />
+          <ScalarProperty Name="sGuardian_RelationshipDS" ColumnName="sGuardian_RelationshipDS" />
+          <ScalarProperty Name="sGuardian_RelationshipCD" ColumnName="sGuardian_RelationshipCD" />
+          <ScalarProperty Name="sPrefix" ColumnName="sPrefix" />
+          <ScalarProperty Name="sEthn" ColumnName="sEthn" />
+          <ScalarProperty Name="sLang" ColumnName="sLang" />
+          <ScalarProperty Name="sGuardian_Country" ColumnName="sGuardian_Country" />
+          <ScalarProperty Name="sFather_Country" ColumnName="sFather_Country" />
+          <ScalarProperty Name="sMother_Country" ColumnName="sMother_Country" />
+          <ScalarProperty Name="sWorkCountry" ColumnName="sWorkCountry" />
+          <ScalarProperty Name="sCountry" ColumnName="sCountry" />
+          <ScalarProperty Name="iSignature" ColumnName="iSignature" />
+          <ScalarProperty Name="sEmergencyRelationshipDesc" ColumnName="sEmergencyRelationshipDesc" />
+          <ScalarProperty Name="sEmergencyRelationshipCode" ColumnName="sEmergencyRelationshipCode" />
+          <ScalarProperty Name="nMigrationType" ColumnName="nMigrationType" />
+          <ScalarProperty Name="nEMRPatientID" ColumnName="nEMRPatientID" />
+          <ScalarProperty Name="bSetToCollection" ColumnName="bSetToCollection" />
+          <ScalarProperty Name="bIsAutoClaim" ColumnName="bIsAutoClaim" />
+          <ScalarProperty Name="sEmergencyMobile" ColumnName="sEmergencyMobile" />
+          <ScalarProperty Name="sEmergencyPhone" ColumnName="sEmergencyPhone" />
+          <ScalarProperty Name="sEmergencyContact" ColumnName="sEmergencyContact" />
+          <ScalarProperty Name="sEmploymentType" ColumnName="sEmploymentType" />
+          <ScalarProperty Name="dtRetirementDate" ColumnName="dtRetirementDate" />
+          <ScalarProperty Name="sEmployerName" ColumnName="sEmployerName" />
+          <ScalarProperty Name="nClinicID" ColumnName="nClinicID" />
+          <ScalarProperty Name="nGuarantorID" ColumnName="nGuarantorID" />
+          <ScalarProperty Name="sWorkEmail" ColumnName="sWorkEmail" />
+          <ScalarProperty Name="sWorkMobile" ColumnName="sWorkMobile" />
+          <ScalarProperty Name="sWorkCounty" ColumnName="sWorkCounty" />
+          <ScalarProperty Name="bitIsBlock" ColumnName="bitIsBlock" />
+          <ScalarProperty Name="bitIsGuarantor" ColumnName="bitIsGuarantor" />
+          <ScalarProperty Name="sAutoClaimNo" ColumnName="sAutoClaimNo" />
+          <ScalarProperty Name="bIsAuto" ColumnName="bIsAuto" />
+          <ScalarProperty Name="sWorkersCompClaimNo" ColumnName="sWorkersCompClaimNo" />
+          <ScalarProperty Name="bIsWorkersComp" ColumnName="bIsWorkersComp" />
+          <ScalarProperty Name="sInsuranceNotes" ColumnName="sInsuranceNotes" />
+          <ScalarProperty Name="sMachineName" ColumnName="sMachineName" />
+          <ScalarProperty Name="sUserName" ColumnName="sUserName" />
+          <ScalarProperty Name="sExternalCode" ColumnName="sExternalCode" />
+          <ScalarProperty Name="nExemptFromReport" ColumnName="nExemptFromReport" />
+          <ScalarProperty Name="nPatientDirective" ColumnName="nPatientDirective" />
+          <ScalarProperty Name="sGuardian_Email" ColumnName="sGuardian_Email" />
+          <ScalarProperty Name="sGuardian_FAX" ColumnName="sGuardian_FAX" />
+          <ScalarProperty Name="sGuardian_Mobile" ColumnName="sGuardian_Mobile" />
+          <ScalarProperty Name="sGuardian_Phone" ColumnName="sGuardian_Phone" />
+          <ScalarProperty Name="sGuardian_County" ColumnName="sGuardian_County" />
+          <ScalarProperty Name="sGuardian_ZIP" ColumnName="sGuardian_ZIP" />
+          <ScalarProperty Name="sGuardian_State" ColumnName="sGuardian_State" />
+          <ScalarProperty Name="sGuardian_City" ColumnName="sGuardian_City" />
+          <ScalarProperty Name="sGuardian_Address2" ColumnName="sGuardian_Address2" />
+          <ScalarProperty Name="sGuardian_Address1" ColumnName="sGuardian_Address1" />
+          <ScalarProperty Name="sGuardian_lName" ColumnName="sGuardian_lName" />
+          <ScalarProperty Name="sGuardian_mName" ColumnName="sGuardian_mName" />
+          <ScalarProperty Name="sGuardian_fName" ColumnName="sGuardian_fName" />
+          <ScalarProperty Name="sFather_Email" ColumnName="sFather_Email" />
+          <ScalarProperty Name="sFather_FAX" ColumnName="sFather_FAX" />
+          <ScalarProperty Name="sFather_Mobile" ColumnName="sFather_Mobile" />
+          <ScalarProperty Name="sFather_Phone" ColumnName="sFather_Phone" />
+          <ScalarProperty Name="sFather_County" ColumnName="sFather_County" />
+          <ScalarProperty Name="sFather_ZIP" ColumnName="sFather_ZIP" />
+          <ScalarProperty Name="sFather_State" ColumnName="sFather_State" />
+          <ScalarProperty Name="sFather_City" ColumnName="sFather_City" />
+          <ScalarProperty Name="sFather_Address2" ColumnName="sFather_Address2" />
+          <ScalarProperty Name="sFather_Address1" ColumnName="sFather_Address1" />
+          <ScalarProperty Name="sFather_lName" ColumnName="sFather_lName" />
+          <ScalarProperty Name="sFather_mName" ColumnName="sFather_mName" />
+          <ScalarProperty Name="sFather_fName" ColumnName="sFather_fName" />
+          <ScalarProperty Name="sMother_Email" ColumnName="sMother_Email" />
+          <ScalarProperty Name="sMother_FAX" ColumnName="sMother_FAX" />
+          <ScalarProperty Name="sMother_Mobile" ColumnName="sMother_Mobile" />
+          <ScalarProperty Name="sMother_Phone" ColumnName="sMother_Phone" />
+          <ScalarProperty Name="sMother_County" ColumnName="sMother_County" />
+          <ScalarProperty Name="sMother_ZIP" ColumnName="sMother_ZIP" />
+          <ScalarProperty Name="sMother_State" ColumnName="sMother_State" />
+          <ScalarProperty Name="sMother_City" ColumnName="sMother_City" />
+          <ScalarProperty Name="sMother_Address2" ColumnName="sMother_Address2" />
+          <ScalarProperty Name="sMother_Address1" ColumnName="sMother_Address1" />
+          <ScalarProperty Name="sMother_lName" ColumnName="sMother_lName" />
+          <ScalarProperty Name="sMother_mName" ColumnName="sMother_mName" />
+          <ScalarProperty Name="sMother_fName" ColumnName="sMother_fName" />
+          <ScalarProperty Name="sLocation" ColumnName="sLocation" />
+          <ScalarProperty Name="sHandDominance" ColumnName="sHandDominance" />
+          <ScalarProperty Name="dtSurgeryDate" ColumnName="dtSurgeryDate" />
+          <ScalarProperty Name="dtInjuryDate" ColumnName="dtInjuryDate" />
+          <ScalarProperty Name="dtRegistrationDate" ColumnName="dtRegistrationDate" />
+          <ScalarProperty Name="iPhoto" ColumnName="iPhoto" />
+          <ScalarProperty Name="sPatientStatus" ColumnName="sPatientStatus" />
+          <ScalarProperty Name="sRace" ColumnName="sRace" />
+          <ScalarProperty Name="sSpousePhone" ColumnName="sSpousePhone" />
+          <ScalarProperty Name="sSpouseName" ColumnName="sSpouseName" />
+          <ScalarProperty Name="nPharmacyID" ColumnName="nPharmacyID" />
+          <ScalarProperty Name="sGuarantor" ColumnName="sGuarantor" />
+          <ScalarProperty Name="nPCPId" ColumnName="nPCPId" />
+          <ScalarProperty Name="nProviderID" ColumnName="nProviderID" />
+          <ScalarProperty Name="sChiefComplaints" ColumnName="sChiefComplaints" />
+          <ScalarProperty Name="sWorkFAX" ColumnName="sWorkFAX" />
+          <ScalarProperty Name="sWorkPhone" ColumnName="sWorkPhone" />
+          <ScalarProperty Name="sWorkZIP" ColumnName="sWorkZIP" />
+          <ScalarProperty Name="sWorkState" ColumnName="sWorkState" />
+          <ScalarProperty Name="sWorkCity" ColumnName="sWorkCity" />
+          <ScalarProperty Name="sWorkAddressLine2" ColumnName="sWorkAddressLine2" />
+          <ScalarProperty Name="sWorkAddressLine1" ColumnName="sWorkAddressLine1" />
+          <ScalarProperty Name="sPlaceofEmployment" ColumnName="sPlaceofEmployment" />
+          <ScalarProperty Name="sEmploymentStatus" ColumnName="sEmploymentStatus" />
+          <ScalarProperty Name="sOccupation" ColumnName="sOccupation" />
+          <ScalarProperty Name="sFAX" ColumnName="sFAX" />
+          <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+          <ScalarProperty Name="sMobile" ColumnName="sMobile" />
+          <ScalarProperty Name="sPhone" ColumnName="sPhone" />
+          <ScalarProperty Name="sCounty" ColumnName="sCounty" />
+          <ScalarProperty Name="sZIP" ColumnName="sZIP" />
+          <ScalarProperty Name="sState" ColumnName="sState" />
+          <ScalarProperty Name="sCity" ColumnName="sCity" />
+          <ScalarProperty Name="sAddressLine2" ColumnName="sAddressLine2" />
+          <ScalarProperty Name="sAddressLine1" ColumnName="sAddressLine1" />
+          <ScalarProperty Name="sMaritalStatus" ColumnName="sMaritalStatus" />
+          <ScalarProperty Name="sGender" ColumnName="sGender" />
+          <ScalarProperty Name="dtDOB" ColumnName="dtDOB" />
+          <ScalarProperty Name="nSSN" ColumnName="nSSN" />
+          <ScalarProperty Name="sLastName" ColumnName="sLastName" />
+          <ScalarProperty Name="sMiddleName" ColumnName="sMiddleName" />
+          <ScalarProperty Name="sFirstName" ColumnName="sFirstName" />
+          <ScalarProperty Name="sPatientCode" ColumnName="sPatientCode" />
+          <ScalarProperty Name="nPatientID" ColumnName="nPatientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PA_Accounts_Patients">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.PA_Accounts_Patients">
+        <MappingFragment StoreEntitySet="PA_Accounts_Patients">
+          <ScalarProperty Name="bIsActive" ColumnName="bIsActive" />
+          <ScalarProperty Name="bIsOwnAccount" ColumnName="bIsOwnAccount" />
+          <ScalarProperty Name="dtRecordDate" ColumnName="dtRecordDate" />
+          <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+          <ScalarProperty Name="sMachineName" ColumnName="sMachineName" />
+          <ScalarProperty Name="nSiteID" ColumnName="nSiteID" />
+          <ScalarProperty Name="nClinicID" ColumnName="nClinicID" />
+          <ScalarProperty Name="dtAccountClosedDate" ColumnName="dtAccountClosedDate" />
+          <ScalarProperty Name="sPatientCode" ColumnName="sPatientCode" />
+          <ScalarProperty Name="sAccountNo" ColumnName="sAccountNo" />
+          <ScalarProperty Name="nPatientID" ColumnName="nPatientID" />
+          <ScalarProperty Name="nPAccountID" ColumnName="nPAccountID" />
+          <ScalarProperty Name="nAccountPatientID" ColumnName="nAccountPatientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_OtherContacts">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.Patient_OtherContacts">
+        <MappingFragment StoreEntitySet="Patient_OtherContacts">
+          <ScalarProperty Name="bIsAccountGuarantor" ColumnName="bIsAccountGuarantor" />
+          <ScalarProperty Name="nPAccountID" ColumnName="nPAccountID" />
+          <ScalarProperty Name="nGuarantorType" ColumnName="nGuarantorType" />
+          <ScalarProperty Name="sCountry" ColumnName="sCountry" />
+          <ScalarProperty Name="sCounty" ColumnName="sCounty" />
+          <ScalarProperty Name="sSSN" ColumnName="sSSN" />
+          <ScalarProperty Name="nPatientContactTypeFlag" ColumnName="nPatientContactTypeFlag" />
+          <ScalarProperty Name="nClinicID" ColumnName="nClinicID" />
+          <ScalarProperty Name="nGuarantorAsPatientID" ColumnName="nGuarantorAsPatientID" />
+          <ScalarProperty Name="nAppointmentID" ColumnName="nAppointmentID" />
+          <ScalarProperty Name="nVisitID" ColumnName="nVisitID" />
+          <ScalarProperty Name="bIsActive" ColumnName="bIsActive" />
+          <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+          <ScalarProperty Name="sFax" ColumnName="sFax" />
+          <ScalarProperty Name="sMobile" ColumnName="sMobile" />
+          <ScalarProperty Name="sPhone" ColumnName="sPhone" />
+          <ScalarProperty Name="sZIP" ColumnName="sZIP" />
+          <ScalarProperty Name="sState" ColumnName="sState" />
+          <ScalarProperty Name="sCity" ColumnName="sCity" />
+          <ScalarProperty Name="sAddressLine2" ColumnName="sAddressLine2" />
+          <ScalarProperty Name="sAddressLine1" ColumnName="sAddressLine1" />
+          <ScalarProperty Name="sRelation" ColumnName="sRelation" />
+          <ScalarProperty Name="sGender" ColumnName="sGender" />
+          <ScalarProperty Name="nDOB" ColumnName="nDOB" />
+          <ScalarProperty Name="sLastName" ColumnName="sLastName" />
+          <ScalarProperty Name="sMiddleName" ColumnName="sMiddleName" />
+          <ScalarProperty Name="sFirstName" ColumnName="sFirstName" />
+          <ScalarProperty Name="nPatientContactType" ColumnName="nPatientContactType" />
+          <ScalarProperty Name="nLineNumber" ColumnName="nLineNumber" />
+          <ScalarProperty Name="nPatientContactID" ColumnName="nPatientContactID" />
+          <ScalarProperty Name="nPatientID" ColumnName="nPatientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provider_MST">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.Provider_MST">
+        <MappingFragment StoreEntitySet="Provider_MST">
+          <ScalarProperty Name="sCompanyTaxonomyCode" ColumnName="sCompanyTaxonomyCode" />
+          <ScalarProperty Name="sDPSNumber" ColumnName="sDPSNumber" />
+          <ScalarProperty Name="sBusinessAreaCode" ColumnName="sBusinessAreaCode" />
+          <ScalarProperty Name="sPracticeAreaCode" ColumnName="sPracticeAreaCode" />
+          <ScalarProperty Name="sCompanyAreaCode" ColumnName="sCompanyAreaCode" />
+          <ScalarProperty Name="nIsPARequired" ColumnName="nIsPARequired" />
+          <ScalarProperty Name="sgloLabId" ColumnName="sgloLabId" />
+          <ScalarProperty Name="sCompanyCounty" ColumnName="sCompanyCounty" />
+          <ScalarProperty Name="sCompanyCountry" ColumnName="sCompanyCountry" />
+          <ScalarProperty Name="sPracticeCounty" ColumnName="sPracticeCounty" />
+          <ScalarProperty Name="sPracticeCountry" ColumnName="sPracticeCountry" />
+          <ScalarProperty Name="sBussinessCounty" ColumnName="sBussinessCounty" />
+          <ScalarProperty Name="sBussinessCountry" ColumnName="sBussinessCountry" />
+          <ScalarProperty Name="sCompanyTaxID" ColumnName="sCompanyTaxID" />
+          <ScalarProperty Name="sCompanyNPI" ColumnName="sCompanyNPI" />
+          <ScalarProperty Name="sSuffix" ColumnName="sSuffix" />
+          <ScalarProperty Name="sEmployerID" ColumnName="sEmployerID" />
+          <ScalarProperty Name="sSSN" ColumnName="sSSN" />
+          <ScalarProperty Name="sPracContactName" ColumnName="sPracContactName" />
+          <ScalarProperty Name="sBusinessContactName" ColumnName="sBusinessContactName" />
+          <ScalarProperty Name="sCompanyContactName" ColumnName="sCompanyContactName" />
+          <ScalarProperty Name="sCompanyEmail" ColumnName="sCompanyEmail" />
+          <ScalarProperty Name="sCompanyFax" ColumnName="sCompanyFax" />
+          <ScalarProperty Name="sCompanyPhone" ColumnName="sCompanyPhone" />
+          <ScalarProperty Name="sCompanyZIP" ColumnName="sCompanyZIP" />
+          <ScalarProperty Name="sCompanyState" ColumnName="sCompanyState" />
+          <ScalarProperty Name="sCompanyCity" ColumnName="sCompanyCity" />
+          <ScalarProperty Name="sCompanyAddressline2" ColumnName="sCompanyAddressline2" />
+          <ScalarProperty Name="sCompanyAddressline1" ColumnName="sCompanyAddressline1" />
+          <ScalarProperty Name="sCompanyName" ColumnName="sCompanyName" />
+          <ScalarProperty Name="sTaxonomyDesc" ColumnName="sTaxonomyDesc" />
+          <ScalarProperty Name="sTaxonomy" ColumnName="sTaxonomy" />
+          <ScalarProperty Name="sPracURL" ColumnName="sPracURL" />
+          <ScalarProperty Name="sPracEmail" ColumnName="sPracEmail" />
+          <ScalarProperty Name="sPracPagerNo" ColumnName="sPracPagerNo" />
+          <ScalarProperty Name="sPracFAX" ColumnName="sPracFAX" />
+          <ScalarProperty Name="sPracPhoneNo" ColumnName="sPracPhoneNo" />
+          <ScalarProperty Name="sBusURL" ColumnName="sBusURL" />
+          <ScalarProperty Name="sBusEmail" ColumnName="sBusEmail" />
+          <ScalarProperty Name="sBusPagerNo" ColumnName="sBusPagerNo" />
+          <ScalarProperty Name="sBusFAX" ColumnName="sBusFAX" />
+          <ScalarProperty Name="sBusPhoneNo" ColumnName="sBusPhoneNo" />
+          <ScalarProperty Name="sPracticeZIP" ColumnName="sPracticeZIP" />
+          <ScalarProperty Name="sPracticeState" ColumnName="sPracticeState" />
+          <ScalarProperty Name="sPracticeCity" ColumnName="sPracticeCity" />
+          <ScalarProperty Name="sPracticeAddressline2" ColumnName="sPracticeAddressline2" />
+          <ScalarProperty Name="sPracticeAddressline1" ColumnName="sPracticeAddressline1" />
+          <ScalarProperty Name="sBusinessZIP" ColumnName="sBusinessZIP" />
+          <ScalarProperty Name="sBusinessState" ColumnName="sBusinessState" />
+          <ScalarProperty Name="sBusinessCity" ColumnName="sBusinessCity" />
+          <ScalarProperty Name="sBusinessAddressline2" ColumnName="sBusinessAddressline2" />
+          <ScalarProperty Name="sBusinessAddressline1" ColumnName="sBusinessAddressline1" />
+          <ScalarProperty Name="bIsblocked" ColumnName="bIsblocked" />
+          <ScalarProperty Name="nClinicID" ColumnName="nClinicID" />
+          <ScalarProperty Name="sSPIID" ColumnName="sSPIID" />
+          <ScalarProperty Name="dtActiveEndTime" ColumnName="dtActiveEndTime" />
+          <ScalarProperty Name="dtActiveStartTime" ColumnName="dtActiveStartTime" />
+          <ScalarProperty Name="sServiceLevel" ColumnName="sServiceLevel" />
+          <ScalarProperty Name="sExternalCode" ColumnName="sExternalCode" />
+          <ScalarProperty Name="sPrefix" ColumnName="sPrefix" />
+          <ScalarProperty Name="sMedicalLicenseNo" ColumnName="sMedicalLicenseNo" />
+          <ScalarProperty Name="sUPIN" ColumnName="sUPIN" />
+          <ScalarProperty Name="sNPI" ColumnName="sNPI" />
+          <ScalarProperty Name="nProviderType" ColumnName="nProviderType" />
+          <ScalarProperty Name="imgSignature" ColumnName="imgSignature" />
+          <ScalarProperty Name="sURL" ColumnName="sURL" />
+          <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+          <ScalarProperty Name="sPagerNo" ColumnName="sPagerNo" />
+          <ScalarProperty Name="sMobileNo" ColumnName="sMobileNo" />
+          <ScalarProperty Name="sFAX" ColumnName="sFAX" />
+          <ScalarProperty Name="sPhoneNo" ColumnName="sPhoneNo" />
+          <ScalarProperty Name="sZIP" ColumnName="sZIP" />
+          <ScalarProperty Name="sState" ColumnName="sState" />
+          <ScalarProperty Name="sCity" ColumnName="sCity" />
+          <ScalarProperty Name="sStreet" ColumnName="sStreet" />
+          <ScalarProperty Name="sAddress" ColumnName="sAddress" />
+          <ScalarProperty Name="sDEA" ColumnName="sDEA" />
+          <ScalarProperty Name="sGender" ColumnName="sGender" />
+          <ScalarProperty Name="sLastName" ColumnName="sLastName" />
+          <ScalarProperty Name="sMiddleName" ColumnName="sMiddleName" />
+          <ScalarProperty Name="sFirstName" ColumnName="sFirstName" />
+          <ScalarProperty Name="nProviderID" ColumnName="nProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CL_FollowupSchedule_Acct">
+      <EntityTypeMapping TypeName="glo6060_DEVModel.CL_FollowupSchedule_Acct">
+        <MappingFragment StoreEntitySet="CL_FollowupSchedule_Acct">
+          <ScalarProperty Name="nScheduleType" ColumnName="nScheduleType" />
+          <ScalarProperty Name="dtCreatedDateTime" ColumnName="dtCreatedDateTime" />
+          <ScalarProperty Name="sUserName" ColumnName="sUserName" />
+          <ScalarProperty Name="nUserID" ColumnName="nUserID" />
+          <ScalarProperty Name="sFollowupDescription" ColumnName="sFollowupDescription" />
+          <ScalarProperty Name="sFollowupCode" ColumnName="sFollowupCode" />
+          <ScalarProperty Name="dtAcctFollowUpDate" ColumnName="dtAcctFollowUpDate" />
+          <ScalarProperty Name="nPatientID" ColumnName="nPatientID" />
+          <ScalarProperty Name="nAccountID" ColumnName="nAccountID" />
+          <ScalarProperty Name="nID" ColumnName="nID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

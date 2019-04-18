@@ -1,0 +1,368 @@
+﻿<Window x:Class="gloUIControlLibrary.WPFForms.frmClinicalChartQueue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clinical Chart Print Queue" 
+        Height="800" 
+        Width="1100"
+        TextOptions.TextFormattingMode="Display"
+        Background="{DynamicResource BaseBackColor}"
+        Foreground="{DynamicResource BaseForeColor}"
+        FontFamily="{DynamicResource BaseFontFamily}"
+        FontSize="{DynamicResource BaseFontSize}" 
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        ShowInTaskbar="False" 
+        WindowState="Maximized" 
+        Icon="ICO/ClinicalChartPrintQueue.ico"
+        Closing="Window_Closing" Closed="Window_Closed" Activated="Window_Activated">
+
+    
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloFormularyInfoRD.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <DockPanel Margin="0">
+
+      
+            <!--<Grid>-->
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="59"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>-->
+       
+        
+    <!--</Grid>-->
+
+        <StackPanel DockPanel.Dock="Top" x:Name="pnlToolStrip" Orientation="Horizontal" Margin="0,0,0,4" Height="53" Background="{DynamicResource Img_ToolstripStyle}" >
+            <!-- View eButton -->
+            <Border x:Name="ViewButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                <Grid>
+                    <Button x:Name="btnView"
+                            IsDefault="True"
+                            Style="{DynamicResource SimpleButton}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Height="32"
+                            Width="32"
+                            Margin="0,2,0,0"
+                            Cursor="Arrow"
+                            Content="{DynamicResource ViewClinicalChartQUEUE}" Click="btnView_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="View"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Label x:Name="lblView"  Margin="2" Content ="_View" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}">
+                        <Label.Template>
+                            <ControlTemplate TargetType="Label" >
+                                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+                            </ControlTemplate>
+                        </Label.Template>
+                    </Label>
+                </Grid>
+            </Border>
+
+            <!-- Print Button -->
+            <!--<Border x:Name="OKButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0">
+                <Grid>
+                    <Button x:Name="btnOK" IsDefault="True" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource Print}" Click="btnOK_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Print"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Label  Margin="2" Content ="Print" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                </Grid>
+            </Border>-->
+
+            <!-- Refresh Button -->
+            <Border x:Name="RefreshButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                <Grid>
+                    <Button x:Name="btnRefresh"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Arrow" Content="{DynamicResource RefreshButton}" Click="btnRefresh_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Refresh"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Label  Margin="2" Content ="_Refresh" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}">
+                        <Label.Template>
+                            <ControlTemplate TargetType="Label" >
+                                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+                            </ControlTemplate>
+                        </Label.Template>
+                    </Label>
+                </Grid>
+            </Border>
+
+            <!-- History Button -->
+            <Border x:Name="HistoryButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                <Grid>
+                    <Button x:Name="btnHistory"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Arrow" Content="{DynamicResource History}" Click="btnHistory_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Queue History"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Label  Margin="2" Content="Queue _History" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}">
+                        <Label.Template>
+                            <ControlTemplate TargetType="Label" >
+                                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+                            </ControlTemplate>
+                        </Label.Template>
+                    </Label>
+                </Grid>
+            </Border>
+            <!-- Close Button -->
+            <Border x:Name="CloseButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+                <Grid>
+                    <Button x:Name="btnClose"  IsCancel ="True"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Arrow" Content="{DynamicResource Close}" Click="btnClose_Click">
+                        <Button.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Close"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Label  Margin="2" Content="_Close"  Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}">
+                        <!--<StackPanel Orientation="Horizontal">
+                            <TextBlock TextDecorations="Underline">C</TextBlock>
+                            <TextBlock >lose</TextBlock>
+                        </StackPanel>-->
+                        <Label.Template>
+                            <ControlTemplate TargetType="Label" >
+                                <ContentPresenter RecognizesAccessKey="True"></ContentPresenter>
+                            </ControlTemplate>
+                        </Label.Template>
+                    </Label>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <DockPanel>
+            
+        
+        <Border DockPanel.Dock="Top"  BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,0,3,3" x:Name="pnlQueueFilter" >
+            <StackPanel x:Name="pnlClaim" Orientation="Horizontal" Margin="0,3" >
+                <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" RenderTransformOrigin="0.634,1.476" VerticalAlignment="Center" Text="Queue Type : " HorizontalAlignment="Right" Width="Auto" TextAlignment="Right"/>
+                    <ComboBox x:Name="cmbFilter" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" VerticalAlignment="Center" Width="344" IsEditable="False" IsSynchronizedWithCurrentItem="True" DropDownOpened="cmbFilter_DropDownOpened"></ComboBox>
+            </StackPanel>
+        </Border>
+       
+        
+            <Border DockPanel.Dock="Top" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,0,3,3" x:Name="pnlQueue" >
+
+                <DataGrid Name="dgQueue" 
+					              HorizontalGridLinesBrush="{DynamicResource DataGridLinesBrush}"
+					              VerticalGridLinesBrush="{DynamicResource DataGridLinesBrush}" 
+                                  Background="{DynamicResource DataGridBackground}"
+					              BorderBrush="{DynamicResource BaseForeColor}" 					
+                                  AlternatingRowBackground="{StaticResource DataGridAlternatingRowBackground}" 
+                                  RowBackground="{StaticResource DataGridRowBackground}" 
+                                  Foreground="{StaticResource BaseForeColor}" 
+                               
+                                  BorderThickness="0.5"
+                                  HorizontalAlignment="Stretch"
+					              VerticalAlignment="Stretch"
+					              AlternationCount="2"
+					              AutoGenerateColumns="False"
+                                  CanUserReorderColumns="False" 
+                                  CanUserDeleteRows="False"       
+                                  RowHeaderWidth="0"
+                                  CanUserAddRows="false" 
+                                  GridLinesVisibility="All"
+                                  ScrollViewer.CanContentScroll="False" 
+                                  Grid.IsSharedSizeScope="True" 
+                                  TextOptions.TextFormattingMode="Display" 
+                                  IsSynchronizedWithCurrentItem="True"
+                                  ItemsSource="{Binding}"         
+                          RowHeight="22"
+			ColumnHeaderHeight="23"
+			IsTabStop="True" 
+                          SelectionUnit="FullRow" 
+			CanUserResizeColumns="True"
+			RowDetailsVisibilityMode="Visible" 
+                          Padding="0"
+                          FontFamily="Tahoma" 
+			FontSize="12.5"
+                    CanUserSortColumns="False"
+                    IsReadOnly="True"
+                    Margin="0" 
+                    SelectionMode="Single" PreviewMouseRightButtonDown="dgQueue_PreviewMouseRightButtonDown">
+
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF567ED3"/>
+                            <Setter Property="Height" Value="23"/>
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="BorderBrush" Value="#FF9FB5DD"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="Padding" Value="5,0,0,0" />
+                            <Setter Property="HorizontalContentAlignment"  Value="Stretch" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},Path=Content.Text}"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter  Property="Background" Value="#FFFFDD8A"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="BorderBrush" Value="#FFD8B082"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=Content.Text}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},Path=Content.Text}" Value="">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    
+                    </DataGrid.CellStyle>
+                    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Queue ID" Binding="{Binding QueueID}" Width="50*" Visibility="Hidden" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Queue #" Binding="{Binding QueueName}" Width="60*" IsReadOnly="True"  />
+                        <DataGridTextColumn Header="Insurance" Binding="{Binding InsurancePlan}" Width="100*" IsReadOnly="True"  >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style >
+                                    <Setter Property="TextBlock.TextWrapping" Value="NoWrap"/>
+                                    <Setter Property="TextBlock.TextTrimming" Value="WordEllipsis" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Patient ID" Binding="{Binding PatientID}" Width="80*" Visibility="Hidden" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Patient Code" Binding="{Binding PatientCode}" Width="65*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="65*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="65*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding QueueStatus}" Width="60*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="User ID" Binding="{Binding UserID}" Width="80*" Visibility="Hidden" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="User Name" Binding="{Binding UserName}" Width="60*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Note" Binding="{Binding Notes}" Width="150*" IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style >
+                                    <Setter Property="TextBlock.TextWrapping" Value="NoWrap"/>
+                                    <Setter Property="TextBlock.TextTrimming" Value="WordEllipsis" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Created Date Time" Binding="{Binding CreatedDateTime}" Width="100*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Claim Printer" Binding="{Binding QueuePrinter}" Width="100*" IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style >
+                                    <Setter Property="TextBlock.TextWrapping" Value="NoWrap"/>
+                                    <Setter Property="TextBlock.TextTrimming" Value="WordEllipsis" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        
+                    </DataGrid.Columns>
+                    <!--<DataGrid.RowDetailsTemplate>
+                                <DataTemplate>
+                                    <ListView Name="mailView" 
+                                          ItemsSource="{Binding ViewBinding}"
+                                           AlternationCount="2"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="0"
+										Padding="5"
+                                    
+                                        HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Background="White" BorderThickness="0"
+                                       >
+                                        <ListBox.GroupStyle>
+                                            <GroupStyle ContainerStyle="{StaticResource QueueListboxContainerStyle}" />
+                                        </ListBox.GroupStyle>
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsSelected" Value="True">
+                                                        <Setter Property="FontWeight" Value="Bold" />
+                                                        <Setter Property="Background" Value="Transparent" />
+                                                        <Setter Property="Foreground" Value="Black" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                                <Style.Resources>
+                                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                             Color="Transparent" />
+                                                </Style.Resources>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderThickness="0"
+                                Padding="2"
+                                Margin="1,0,3,0"
+                                BorderBrush="#FFDC810E">
+                                                    <StackPanel Orientation="Horizontal" x:Name="stkTreatment">
+                                                        <TextBlock   Margin="3" Text="{Binding DisplayText}"/>
+                                                    </StackPanel>
+                                                </Border>
+
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListView>
+                                </DataTemplate>
+                            </DataGrid.RowDetailsTemplate>-->
+                    <DataGrid.ContextMenu>
+                        <ContextMenu x:Name="cmnu">
+                            <MenuItem Header="Re-Queue" x:Name="cmReQueue" Click="Update_Status">
+                                <MenuItem.Icon>
+                                    <Image Width="12"  Height="12" Source="ICO/Re-Queue.ico" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Processed" x:Name="cmProcessed" Click="Update_Status">
+                                <MenuItem.Icon>
+                                    <Image Width="12" Height="12"  Source="ICO/Process.ico" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Cancel" x:Name="cmCancel" Click="Update_Status">
+                                <MenuItem.Icon>
+                                    <Image Width="12"  Height="12"  Source="ICO/Cancel.ico" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+
+            </Border>
+
+        </DockPanel>
+    </DockPanel> 
+</Window>

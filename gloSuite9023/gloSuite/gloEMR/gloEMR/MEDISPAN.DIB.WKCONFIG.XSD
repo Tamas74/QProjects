@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<xs:schema id="Medispan.DIB" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="Medispan.DIB" msdata:IsDataSet="true" msdata:EnforceConstraints="False">
+        <xs:complexType>
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            <!-- Cache settings -->
+            <xs:element name="Cache" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+                <xs:sequence minOccurs="1" maxOccurs="1">
+                <!-- Screening -->
+                <xs:element name="Screening" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                    <xs:all maxOccurs="1">
+                        <xs:element name="PackagedDrugs" type="typeEnablable" maxOccurs="1"/>
+                        <xs:element name="DispensableDrugs" type="typeEnablable" maxOccurs="1"/>
+                        <xs:element name="RoutedDrugs" type="typeEnablable" maxOccurs="1"/>
+                        <xs:element name="DrugNames" type="typeEnablable" maxOccurs="1"/>
+                    </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Defines a type which accepts a boolean attribute of Enabled -->
+    <xs:complexType name="typeEnablable">
+        <xs:attributeGroup ref="attribGrpEnabled" />
+    </xs:complexType>
+    <!-- Defines an attribute group with one attibute named "Enabled" and valid values of "true" and "false" -->
+    <xs:attributeGroup name="attribGrpEnabled">
+        <xs:attribute name="Enabled" use="required">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+            <xs:enumeration value="true" />
+            <xs:enumeration value="false" />
+            </xs:restriction>
+        </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+</xs:schema>

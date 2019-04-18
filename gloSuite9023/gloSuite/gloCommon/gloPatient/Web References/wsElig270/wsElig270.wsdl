@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://claims.realmed.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://claims.realmed.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://claims.realmed.com">
+      <s:element name="ProcessEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:RequestHeader" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RequestHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SubmitterID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnsiRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalPayerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDefined1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDefined2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcessEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessEligibilityResult" type="tns:ResponseHeader" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserDefined1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDefined2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnsiResponse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessEligibility" />
+  </wsdl:message>
+  <wsdl:message name="ProcessEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsElig270Soap">
+    <wsdl:operation name="ProcessEligibility">
+      <wsdl:input message="tns:ProcessEligibilitySoapIn" />
+      <wsdl:output message="tns:ProcessEligibilitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wsElig270HttpGet" />
+  <wsdl:portType name="wsElig270HttpPost" />
+  <wsdl:binding name="wsElig270Soap" type="tns:wsElig270Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessEligibility">
+      <soap:operation soapAction="https://claims.realmed.com/ProcessEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsElig270Soap12" type="tns:wsElig270Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessEligibility">
+      <soap12:operation soapAction="https://claims.realmed.com/ProcessEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsElig270HttpGet" type="tns:wsElig270HttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="wsElig270HttpPost" type="tns:wsElig270HttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="wsElig270">
+    <wsdl:port name="wsElig270Soap" binding="tns:wsElig270Soap">
+      <soap:address location="https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsElig270Soap12" binding="tns:wsElig270Soap12">
+      <soap12:address location="https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsElig270HttpGet" binding="tns:wsElig270HttpGet">
+      <http:address location="https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsElig270HttpPost" binding="tns:wsElig270HttpPost">
+      <http:address location="https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

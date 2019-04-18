@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D486B7E3-390D-4824-97E1-A94B6DCF9325}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloSurescriptSecureMessage</RootNamespace>
+    <AssemblyName>gloSurescriptSecureMessage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="clsSecureMessage.cs" />
+    <Compile Include="clsSecureMessageDB.cs" />
+    <Compile Include="clsSecureMessageXSD.cs" />
+    <Compile Include="frmCCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCCD.Designer.cs">
+      <DependentUpon>frmCCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCCDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCCDA.Designer.cs">
+      <DependentUpon>frmCCDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDefaultPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefaultPatient.Designer.cs">
+      <DependentUpon>frmDefaultPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientList.Designer.cs">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReferralsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReferralsList.Designer.cs">
+      <DependentUpon>frmReferralsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmToList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmToList.Designer.cs">
+      <DependentUpon>frmToList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloBitmapResources.cs" />
+    <Compile Include="gloSecureMessageXSD.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyApp.xaml.cs">
+      <DependentUpon>MyApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyFoldersExpandersControl.xaml.cs">
+      <DependentUpon>MyFoldersExpandersControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyInbox.xaml.cs">
+      <DependentUpon>MyInbox.xaml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="MyInboxExpanderControl.xaml.cs">
+      <DependentUpon>MyInboxExpanderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyMailHeaderGridControl.xaml.cs">
+      <DependentUpon>MyMailHeaderGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyNavigationPaneControl.xaml.cs">
+      <DependentUpon>MyNavigationPaneControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MySidebarControl.xaml.cs">
+      <DependentUpon>MySidebarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyStatusBarControl.xaml.cs">
+      <DependentUpon>MyStatusBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyToolBarTrayControl.xaml.cs">
+      <DependentUpon>MyToolBarTrayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewMail.xaml.cs">
+      <DependentUpon>NewMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagingControl.xaml.cs">
+      <DependentUpon>PagingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PagingViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\gloDirectservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMessage.xaml.cs">
+      <DependentUpon>ViewMessage.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCCD.resx">
+      <DependentUpon>frmCCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCCDA.resx">
+      <DependentUpon>frmCCDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDefaultPatient.resx">
+      <DependentUpon>frmDefaultPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientList.resx">
+      <DependentUpon>frmPatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReferralsList.resx">
+      <DependentUpon>frmReferralsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmToList.resx">
+      <DependentUpon>frmToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="resources\mail1-Dateien\themedata.thmx" />
+    <None Include="resources\mail10-Dateien\themedata.thmx" />
+    <None Include="resources\mail2-Dateien\themedata.thmx" />
+    <None Include="resources\mail3-Dateien\themedata.thmx" />
+    <None Include="resources\mail4-Dateien\themedata.thmx" />
+    <None Include="resources\mail5-Dateien\themedata.thmx" />
+    <None Include="resources\mail6-Dateien\themedata.thmx" />
+    <None Include="resources\mail7-Dateien\themedata.thmx" />
+    <None Include="resources\mail8-Dateien\themedata.thmx" />
+    <None Include="resources\mail9-Dateien\themedata.thmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyApp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyFoldersExpandersControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyInbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="MyInboxExpanderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyMailHeaderGridControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyNavigationPaneControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MySidebarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyStatusBarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyToolBarTrayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewMail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PagingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="close-new.png" />
+    <Resource Include="graphics\CDA-Files.png" />
+    <Resource Include="inbox.xml" />
+    <Resource Include="Outlook 2007.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\gloDirectservice\gloDirect1.disco" />
+    <None Include="Service References\gloDirectservice\gloDirect1.wsdl" />
+    <None Include="Service References\gloDirectservice\gloDirect3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\gloDirectservice\gloDirect4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\gloDirectservice\gloDirect5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\gloDirectservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\gloDirectservice\configuration.svcinfo" />
+    <None Include="Service References\gloDirectservice\configuration91.svcinfo" />
+    <Resource Include="graphics\addCategories.gif" />
+    <Resource Include="graphics\addressbook.gif" />
+    <Resource Include="graphics\calendar.ico" />
+    <Resource Include="graphics\category.gif" />
+    <Resource Include="graphics\chooseForm.ico" />
+    <Resource Include="graphics\connected.ico" />
+    <Resource Include="graphics\contacts.ico" />
+    <Resource Include="graphics\createrule.gif" />
+    <Resource Include="graphics\delete.gif" />
+    <Resource Include="graphics\distributionList.ico" />
+    <Resource Include="graphics\done.gif" />
+    <Resource Include="graphics\drafts.bmp" />
+    <Resource Include="graphics\flag.gif" />
+    <Resource Include="graphics\flagColumn.gif" />
+    <Resource Include="graphics\folder.ico" />
+    <Resource Include="graphics\forward.gif" />
+    <Resource Include="graphics\help.gif" />
+    <Resource Include="graphics\importance.gif" />
+    <Resource Include="graphics\important.gif" />
+    <Resource Include="graphics\inbox.bmp" />
+    <Resource Include="graphics\inbox.gif" />
+    <Resource Include="graphics\infoPath.ico" />
+    <Resource Include="graphics\journalEntry.ico" />
+    <Resource Include="graphics\junk.bmp" />
+    <Resource Include="graphics\magnifier.gif" />
+    <Resource Include="graphics\mail.ico" />
+    <Resource Include="graphics\mailType.gif" />
+    <Resource Include="graphics\meetingRequest.ico" />
+    <Resource Include="graphics\message.ico" />
+    <Resource Include="graphics\moveto.gif" />
+    <Resource Include="graphics\noflag.gif" />
+    <Resource Include="graphics\notes.ico" />
+    <Resource Include="graphics\onenote.gif" />
+    <Resource Include="graphics\outbox.bmp" />
+    <Resource Include="graphics\outlookToday.bmp" />
+    <Resource Include="graphics\postInFolder.ico" />
+    <Resource Include="graphics\print.gif" />
+    <Resource Include="graphics\print.ico" />
+    <Resource Include="graphics\read.gif" />
+    <Resource Include="graphics\recycle.bmp" />
+    <Resource Include="graphics\reply.gif" />
+    <Resource Include="graphics\replyall.gif" />
+    <Resource Include="graphics\replyed.gif" />
+    <Resource Include="graphics\rss.bmp" />
+    <Resource Include="graphics\saveAs.ico" />
+    <Resource Include="graphics\search.bmp" />
+    <Resource Include="graphics\sendreceive.gif" />
+    <Resource Include="graphics\sent.bmp" />
+    <Resource Include="graphics\taskRequest.ico" />
+    <Resource Include="graphics\tasks.ico" />
+    <Resource Include="graphics\toolbarSeparator.gif" />
+    <Resource Include="graphics\unread.gif" />
+    <Resource Include="resources\mail1-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail1-Dateien\filelist.xml" />
+    <Resource Include="graphics\send.gif" />
+    <Resource Include="graphics\AddBook.gif" />
+    <Resource Include="graphics\Attach.gif" />
+    <Resource Include="Image\close-black.ico" />
+    <Resource Include="Image\Close.ico" />
+    <Resource Include="Image\Forward Email.png" />
+    <Resource Include="Image\Symbol Cancel.png" />
+    <Resource Include="Image\Symbol Create.png" />
+    <Resource Include="Image\Symbol Delete.png" />
+    <Resource Include="Image\Symbol New.png" />
+    <Resource Include="Image\Symbol Ok.png" />
+    <Resource Include="Image\Symbol Print.png" />
+    <Resource Include="Image\Symbol Reply.png" />
+    <Resource Include="Image\Symbol unread.png" />
+    <Resource Include="graphics\PatientList.png" />
+    <Resource Include="graphics\Scanner.png" />
+    <Resource Include="graphics\Deletes.png" />
+    <Resource Include="graphics\NewMail.png" />
+    <Resource Include="graphics\Prints.png" />
+    <Resource Include="graphics\SendReceiveMail.png" />
+    <Resource Include="graphics\CCDsFile.png" />
+    <Resource Include="graphics\AddressBook.ico" />
+    <Resource Include="graphics\NewMail.ico" />
+    <Resource Include="graphics\Inbox.ico" />
+    <Resource Include="graphics\Download.ico" />
+    <Resource Include="graphics\Scanner-attach.png" />
+    <Resource Include="graphics\CCD-Files.png" />
+    <Resource Include="graphics\close-new.png" />
+    <Resource Include="graphics\MapPatient.ico" />
+    <Resource Include="graphics\ImportDMSFiles.ico" />
+    <Resource Include="graphics\attachment.gif" />
+    <Resource Include="graphics\RestrictedAttachemnt.gif" />
+    <Resource Include="graphics\RestrictedMessage.gif" />
+    <Content Include="resources\mail1.htm" />
+    <Resource Include="resources\mail10-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail10-Dateien\filelist.xml" />
+    <Resource Include="resources\mail10-Dateien\image001.jpg" />
+    <Resource Include="resources\mail10-Dateien\image002.jpg" />
+    <Resource Include="resources\mail10-Dateien\image003.jpg" />
+    <Resource Include="resources\mail10-Dateien\image004.jpg" />
+    <Content Include="resources\mail10.htm" />
+    <Resource Include="resources\mail2-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail2-Dateien\filelist.xml" />
+    <Resource Include="resources\mail2-Dateien\image001.png" />
+    <Resource Include="resources\mail2-Dateien\image002.jpg" />
+    <Resource Include="resources\mail2-Dateien\image003.jpg" />
+    <Content Include="resources\mail2.htm" />
+    <Resource Include="resources\mail3-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail3-Dateien\filelist.xml" />
+    <Content Include="resources\mail3.htm" />
+    <Resource Include="resources\mail4-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail4-Dateien\filelist.xml" />
+    <Resource Include="resources\mail4-Dateien\image001.jpg" />
+    <Resource Include="resources\mail4-Dateien\image002.jpg" />
+    <Resource Include="resources\mail4-Dateien\image003.jpg" />
+    <Resource Include="resources\mail4-Dateien\image004.jpg" />
+    <Resource Include="resources\mail4-Dateien\image005.jpg" />
+    <Resource Include="resources\mail4-Dateien\image006.jpg" />
+    <Resource Include="resources\mail4-Dateien\image007.jpg" />
+    <Content Include="resources\mail4.htm" />
+    <Resource Include="resources\mail5-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail5-Dateien\filelist.xml" />
+    <Resource Include="resources\mail5-Dateien\image001.gif" />
+    <Resource Include="resources\mail5-Dateien\image002.gif" />
+    <Content Include="resources\mail5.htm" />
+    <Resource Include="resources\mail6-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail6-Dateien\filelist.xml" />
+    <Content Include="resources\mail6.htm" />
+    <Resource Include="resources\mail7-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail7-Dateien\filelist.xml" />
+    <Resource Include="resources\mail7-Dateien\image001.gif" />
+    <Resource Include="resources\mail7-Dateien\image002.gif" />
+    <Content Include="resources\mail7.htm" />
+    <Resource Include="resources\mail8-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail8-Dateien\filelist.xml" />
+    <Content Include="resources\mail8.htm" />
+    <Resource Include="resources\mail9-Dateien\colorschememapping.xml" />
+    <Resource Include="resources\mail9-Dateien\filelist.xml" />
+    <Resource Include="resources\mail9-Dateien\image001.gif" />
+    <Resource Include="resources\mail9-Dateien\image002.gif" />
+    <Resource Include="resources\mail9-Dateien\image003.jpg" />
+    <Resource Include="resources\mail9-Dateien\image004.jpg" />
+    <Resource Include="resources\mail9-Dateien\image005.jpg" />
+    <Resource Include="resources\mail9-Dateien\image006.jpg" />
+    <Resource Include="resources\mail9-Dateien\image007.jpg" />
+    <Resource Include="resources\mail9-Dateien\image008.jpg" />
+    <Resource Include="resources\mail9-Dateien\image009.gif" />
+    <Resource Include="resources\mail9-Dateien\image010.gif" />
+    <Content Include="resources\mail9.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCCDSchema\gloCCDSchema.csproj">
+      <Project>{1C1B9365-21D6-48ED-8D17-0C3BDDDB5186}</Project>
+      <Name>gloCCDSchema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCCD\gloCCDLibrary.vbproj">
+      <Project>{52B1DA57-5930-44B8-8355-325CA49CFFEE}</Project>
+      <Name>gloCCDLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloEDocumentV3\gloEDocumentV3.csproj">
+      <Project>{454B2E59-637D-4FBD-AB86-BD16C580CF5A}</Project>
+      <Name>gloEDocumentV3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserControlLibrary\gloUserControlLibrary.vbproj">
+      <Project>{DC24512A-9212-4075-B216-F824EB12D102}</Project>
+      <Name>gloUserControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnZip\UnZipFile.csproj">
+      <Project>{221A48C7-BF0D-4A67-8721-32083907B388}</Project>
+      <Name>UnZipFile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\gloDirectservice\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

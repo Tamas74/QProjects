@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="PatSavDataClass">
+  <DataContextMoniker Name="/PatSavDataClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a7c6ffa1-6d95-4e65-8de4-3911d6e8d73e" absoluteBounds="3.875, 6.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PatSavDataClassDataContext/PatSav_Code" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f946b18c-8e3f-415a-a2e8-06f58c90799c" absoluteBounds="3.8899999999999997, 6.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c27258eb-09ab-4837-a135-a627192e919a" absoluteBounds="3.875, 0.5, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/PatSavDataClassDataContext/PatSav_Mst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12425db2-70fa-452d-8b02-8dfd6acee4c1" absoluteBounds="3.8900000000000006, 0.96, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ac70294-b0f7-43ae-b70f-7bc3900aa927" absoluteBounds="1, 0.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PatSavDataClassDataContext/PatSav_Queue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44e13fbf-6a1c-4d70-b01b-0ccc4ea2d7b5" absoluteBounds="1.0149999999999997, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="546dc3b3-8eb8-4b30-ac40-d079258922f3" absoluteBounds="9.5, 0.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PatSavDataClassDataContext/PatSavOpportunityAlternativeMed_Dtl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbbc2838-924f-408b-8f6c-d300cb21f9a2" absoluteBounds="9.515, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 2.25080485026042); (3.875 : 2.25080485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatSavDataClassDataContext/PatSav_Queue/PatSav_Queue_PatSav_Mst" />
+      <nodes>
+        <classShapeMoniker Id="5ac70294-b0f7-43ae-b70f-7bc3900aa927" />
+        <classShapeMoniker Id="c27258eb-09ab-4837-a135-a627192e919a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="071891b8-4c74-4e4b-8aee-5aa62b86ce7a" absoluteBounds="6.625, 0.5, 2, 7.1553369140625">
+      <DataClassMoniker Name="/PatSavDataClassDataContext/PatSavOpportunity_Mst" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd27e010-90a1-4df7-9af5-df68142afa9b" absoluteBounds="6.64, 0.96, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 3.02001057942708); (6.625 : 3.02001057942708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatSavDataClassDataContext/PatSav_Mst/PatSav_Mst_PatSavOpportunity_Mst" />
+      <nodes>
+        <classShapeMoniker Id="c27258eb-09ab-4837-a135-a627192e919a" />
+        <classShapeMoniker Id="071891b8-4c74-4e4b-8aee-5aa62b86ce7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 1.48159912109375); (9.5 : 1.48159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PatSavDataClassDataContext/PatSavOpportunity_Mst/PatSavOpportunity_Mst_PatSavOpportunityAlternativeMed_Dtl" />
+      <nodes>
+        <classShapeMoniker Id="071891b8-4c74-4e4b-8aee-5aa62b86ce7a" />
+        <classShapeMoniker Id="546dc3b3-8eb8-4b30-ac40-d079258922f3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

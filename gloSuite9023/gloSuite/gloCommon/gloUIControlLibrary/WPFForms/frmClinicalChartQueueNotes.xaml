@@ -1,0 +1,222 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="gloUIControlLibrary.WPFForms.frmClinicalChartQueueNotes"
+        Title="Clinical Chart Queue Notes"
+        Height="442"
+        Width="625"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        ResizeMode="NoResize"
+        SizeToContent="Height"
+        FontFamily="{DynamicResource BaseFontFamily}"
+        FontSize="{DynamicResource BaseFontSize}"
+        Background="{DynamicResource BaseBackColor}"
+        Foreground="{DynamicResource BaseForeColor}" 
+        Icon="ICO/Notes.ico"
+       Loaded="Window_Loaded" Closing="Window_Closing" ShowInTaskbar="False" Activated="Window_Activated">
+    <Window.Resources>        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloFormularyInfoRD.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml" />
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Margin="0">
+        <StackPanel x:Name="pnlToolStrip" Background="{DynamicResource Img_ToolstripStyle}"
+                    Orientation="Horizontal"
+                    DockPanel.Dock="Top"
+                    Margin="0,0,0,3"
+                    Height="54">
+            <Button x:Name="btnSaveandClose"
+                    Style="{DynamicResource SimpleButton}"
+                    Margin="0"
+                    Cursor="Arrow" Click="btnSaveandClose_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock TextWrapping="Wrap"><Run Text="Save and Close" /></TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+                <Border  Style="{DynamicResource ToolStripButtonHover}"
+                         BorderThickness="1"
+                         Margin="4,0,0,0">
+                    <StackPanel>
+                        <Image Margin="2"
+                               Width="32"
+                               Height="32"
+                               Source="/gloUIControlLibrary;component/Resources/SaveCls.png"
+                               Stretch="Fill"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    	<Label Margin="2,0"
+                    		FontWeight="Bold"
+                    		Foreground="{DynamicResource BaseForeColor}"
+                    		FontFamily="{DynamicResource BaseFontFamily}"
+                    		Content="_Save&amp;Cls"
+                    		TextOptions.TextFormattingMode="Display"
+                    		HorizontalContentAlignment="Stretch"
+                    		Padding="1" />
+                    </StackPanel>
+                </Border>
+            </Button>
+            <Button x:Name="btnClose"
+                    Style="{DynamicResource SimpleButton}"
+                    Margin="0" Cursor="Arrow" Click="btnClose_Click">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock TextWrapping="Wrap"><Run Text="Close" /></TextBlock>
+                    </ToolTip>
+                </Button.ToolTip>
+                <Border  Style="{DynamicResource ToolStripButtonHover}"
+                         BorderThickness="1"
+                         Margin="4,0,0,0">
+                    <StackPanel>
+                        <Image Margin="2"
+                               Width="32"
+                               Height="32"
+                               Source="/gloUIControlLibrary;component/Resources/Close.png"
+                               Stretch="Fill"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                        <Label Margin="2,0"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource BaseForeColor}"
+                               FontFamily="{DynamicResource BaseFontFamily}"
+                               Content="_Close"
+                               TextOptions.TextFormattingMode="Display"
+                               HorizontalContentAlignment="Stretch"
+                               Padding="1" />
+                    </StackPanel>
+                </Border>
+            </Button>
+        </StackPanel>
+        
+        <DockPanel>
+
+            <Border DockPanel.Dock="Top"  BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,0,3,3" x:Name="pnlClaim" >
+                <StackPanel Orientation="Horizontal" Margin="0,3" >
+                    <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" RenderTransformOrigin="0.634,1.476" VerticalAlignment="Center" Text="Claim Printer Configuration : " HorizontalAlignment="Right" Width="Auto" TextAlignment="Right"/>
+                    <ComboBox x:Name="cmbPrinter" SelectedIndex="0"  VerticalAlignment="Center" Width="425" IsEditable="False" DropDownOpened="cmbPrinter_DropDownOpened"></ComboBox>
+                </StackPanel>
+            </Border>
+            <Border DockPanel.Dock="Top" x:Name="pnlInsurancePlan" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,0,3,0" Padding="2" Grid.Row="1" Grid.ColumnSpan="2">
+                <DataGrid
+                Height="150"
+                ItemsSource="{Binding}"            
+			RowHeight="22" 
+			CanUserReorderColumns="False" 
+			ColumnHeaderHeight="23"
+			IsTabStop="True" SelectionUnit="FullRow" 
+			ColumnWidth="*" 
+			CanUserResizeColumns="True"
+			RowDetailsVisibilityMode="Visible" 
+			AutoGenerateColumns="False"
+			RowHeaderWidth="0" 
+			x:Name="dgInsurancePlans" 
+			Padding="0"
+			Background="{DynamicResource BaseWhiteColor}" 
+			BorderBrush="{DynamicResource BaseForeColor}" 
+			Foreground="{DynamicResource BaseForeColor}" 
+			HorizontalGridLinesBrush="{DynamicResource DataGridLinesBrush}" 
+			VerticalGridLinesBrush="{DynamicResource DataGridLinesBrush}" 
+			FontFamily="Tahoma" 
+			FontSize="12.5"
+                
+			ScrollViewer.CanContentScroll="False" Grid.IsSharedSizeScope="True" CanUserSortColumns="False" IsReadOnly="True" Margin="0" BorderThickness="0" SelectionMode="Single" RowBackground="{DynamicResource DataGridRowBackground}" TextOptions.TextFormattingMode="Display" SelectedIndex="-1" IsSynchronizedWithCurrentItem="{x:Null}" TabIndex="1" Width="600">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF567ED3"/>
+                            <Setter Property="Height" Value="23"/>
+                            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            <Setter Property="BorderBrush" Value="#FF9FB5DD"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="Padding" Value="5,0,0,0" />
+                            <Setter Property="HorizontalContentAlignment"  Value="Stretch" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter  Property="Background" Value="#FFFFDD8A"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="BorderBrush" Value="#FFD8B082"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Width="30*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <RadioButton                                         
+                                        IsChecked="{Binding Path=Selected, Mode=TwoWay}" 
+                                        VerticalContentAlignment="Center" 
+                                        HorizontalAlignment="Center"
+                                        GroupName="A" Checked="RadioButton_Checked" Unchecked="RadioButton_Unchecked">
+
+                                    </RadioButton>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+
+                        <DataGridTextColumn Header="Insurance Plan" Binding="{Binding InsuranceName}" FontFamily="{DynamicResource BaseFontFamily}" Width="270*"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" FontFamily="{DynamicResource BaseFontFamily}" Width="120*"/>
+                        <DataGridTextColumn Header="Subscriber ID" Binding="{Binding SubscriberID}" FontFamily="{DynamicResource BaseFontFamily}" Width="180*"/>
+
+                        <!--<DataGridTextColumn Header="Address Line 1" Binding="{Binding Address}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+                        <DataGridTextColumn Header="Address Line 2" Binding="{Binding AddressTwo}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+                        <DataGridTextColumn Header="City" Binding="{Binding City}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+
+                        <DataGridTextColumn Header="State" Binding="{Binding State}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+                        <DataGridTextColumn Header="Zip Code" Binding="{Binding ZipCode}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+                        <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>
+
+                        <DataGridTextColumn  Header="Fax" Binding="{Binding Fax}" FontFamily="{DynamicResource BaseFontFamily}" Width="120"/>-->
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Border>
+            <Border DockPanel.Dock="Top" x:Name="pnlNotes"  HorizontalAlignment="Stretch" 
+        		BorderThickness="1" 
+        		BorderBrush="{DynamicResource BaseForeColor}" d:LayoutOverrides="Height" Margin="3,3,3,3" Grid.ColumnSpan="2"
+                    
+                    >
+                <StackPanel Orientation="Horizontal" d:LayoutOverrides="Width, Height" Margin="3,3,3,3">
+                    <TextBlock TextWrapping="Wrap" Margin="5,4,0,0" RenderTransformOrigin="0.634,1.476" Text="Notes : " Width="46" TextAlignment="Right" Height="138" />
+                    <TextBox x:Name="txtNotes" Width="530" Height="135" AcceptsReturn="True" TextWrapping="Wrap" MaxLength="230">
+                    </TextBox>
+                </StackPanel>
+            </Border>
+            <!--<Border x:Name="pnlClaimBrowse" BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,3,3,0" Padding="2" Grid.Row="1" Grid.ColumnSpan="2">
+                <StackPanel x:Name="pnlClaim" Orientation="Horizontal" Margin="0,3">
+                    <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" RenderTransformOrigin="0.634,1.476" VerticalAlignment="Center" Text="Claim : " HorizontalAlignment="Right" Width="67" TextAlignment="Right"/>
+
+                    <ComboBox x:Name="cmbClaims" DisplayMemberPath="displayClaimno" SelectedValuePath="nTransactionMasterID" VerticalAlignment="Center" Width="342"/>
+                </StackPanel>
+            </Border>-->
+
+            
+
+        </DockPanel>               
+    </DockPanel>
+</Window>

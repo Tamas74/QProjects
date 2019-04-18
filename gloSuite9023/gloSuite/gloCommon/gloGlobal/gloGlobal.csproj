@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloGlobal</RootNamespace>
+    <AssemblyName>gloGlobal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\gloPM\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\gloGlobal.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\gloGlobal.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\gloDLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\gloDLL\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\NPOI\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\NPOI\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseMeds\DIB\gloGSHelper.cs" />
+    <Compile Include="BaseMeds\DIB\ServiceEnums.cs" />
+    <Compile Include="BaseMeds\DIB\ServiceObjects.cs" />
+    <Compile Include="BaseMeds\DI\gloDIServiceHelper.cs" />
+    <Compile Include="BaseMeds\DI\ServiceEnums.cs" />
+    <Compile Include="BaseMeds\DI\ServiceObjects.cs" />
+    <Compile Include="BaseMeds\EPA\gloEPAHelper.cs" />
+    <Compile Include="BaseMeds\EPA\ServiceEnums.cs" />
+    <Compile Include="BaseMeds\EPA\ServiceObjects.cs" />
+    <Compile Include="BaseMeds\FS3\CopayConverter.cs" />
+    <Compile Include="BaseMeds\FS3\gloFSHelper.cs" />
+    <Compile Include="BaseMeds\FS3\gloSuiteDBHelper.cs" />
+    <Compile Include="BaseMeds\FS3\ServiceEnums.cs" />
+    <Compile Include="BaseMeds\FS3\ServiceObjects.cs" />
+    <Compile Include="BaseMeds\FS3\StatusConverter.cs" />
+    <Compile Include="BaseMeds\PDMP\PDMPModel.cs" />
+    <Compile Include="BaseMeds\PDMP\PDMPXSD.cs" />
+    <Compile Include="BaseMeds\PDR\gloPDRHelper.cs" />
+    <Compile Include="BaseMeds\Schemas\epaXSD.cs" />
+    <Compile Include="BaseMeds\Schemas\PDR\AcknowledgementRequest.cs" />
+    <Compile Include="BaseMeds\Schemas\PDR\ProgramRequest.cs" />
+    <Compile Include="BaseMeds\Schemas\PDR\ProgramResponse.cs" />
+    <Compile Include="BaseMeds\Schemas\SS_SCRIPT_XML_10_6_V1.cs" />
+    <Compile Include="BaseMeds\SS\ServiceEnums.cs" />
+    <Compile Include="BaseMeds\SS\ServiceObjects.cs" />
+    <Compile Include="BitmapRegion.cs" />
+    <Compile Include="ChangePassword\clsEncryption.cs" />
+    <Compile Include="ChangePassword\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword\frmChangePassword.designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMeds\BaseServiceHelper.cs" />
+    <Compile Include="Common\GotFocusListener.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMeds\ServiceObjectBase.cs" />
+    <Compile Include="SBPQuestionnaire\DynamicSBP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\DynamicSBP.Designer.cs">
+      <DependentUpon>DynamicSBP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Support\frmSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Support\frmSupport.designer.cs">
+      <DependentUpon>frmSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TIN\frmSelectProviderTaxID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TIN\frmSelectProviderTaxID.Designer.cs">
+      <DependentUpon>frmSelectProviderTaxID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloGlobal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ICD\gloUC_ICDNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ICD\gloUC_ICDNotes.Designer.cs">
+      <DependentUpon>gloUC_ICDNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\DynamicHTMLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\DynamicHTMLForm.designer.cs">
+      <DependentUpon>DynamicHTMLForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\frmSBPAuditHxData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\frmSBPAuditHxData.Designer.cs">
+      <DependentUpon>frmSBPAuditHxData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\frmSBPHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SBPQuestionnaire\frmSBPHistory.Designer.cs">
+      <DependentUpon>frmSBPHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewController\PreviewHandlerHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TIN\TaxIdentification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangePassword\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBPQuestionnaire\DynamicSBP.resx">
+      <DependentUpon>DynamicSBP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Support\frmSupport.resx">
+      <DependentUpon>frmSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TIN\frmSelectProviderTaxID.resx">
+      <DependentUpon>frmSelectProviderTaxID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ICD\gloUC_ICDNotes.resx">
+      <DependentUpon>gloUC_ICDNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBPQuestionnaire\DynamicHTMLForm.resx">
+      <DependentUpon>DynamicHTMLForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBPQuestionnaire\frmSBPAuditHxData.resx">
+      <DependentUpon>frmSBPAuditHxData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SBPQuestionnaire\frmSBPHistory.resx">
+      <DependentUpon>frmSBPHistory.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ICD10CM_FY2014_Full_XML_Tabular.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\whitebitmap.bmp" />
+    <EmbeddedResource Include="Resources\Aboutus.bmp" />
+    <EmbeddedResource Include="Resources\gloEMRAboutUs.bmp" />
+    <EmbeddedResource Include="Resources\SplashTransperentBack.bmp" />
+    <EmbeddedResource Include="Resources\SplashTransperentFront.bmp" />
+    <EmbeddedResource Include="Resources\TORSASplashScreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TORSASplashScreenBase.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Twain\twain_32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\U.png" />
+    <None Include="Resources\On Formulary.png" />
+    <None Include="Resources\Off Formulary.png" />
+    <None Include="Resources\Not Reimbursable.png" />
+    <None Include="Twain\TWAINDSM32.msm" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://gloophit.net/eRx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://gloophit.net/eRx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://gloophit.net/eRx/">
+      <s:element name="PostClientRxMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cntFromDB" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_MsgType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostClientRxMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostClientRxMessageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrescribers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponsesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResponsesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDownloadStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDownloadStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveSurescriptRxMessages">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveSurescriptRxMessagesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DirectoryDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DirectoryDownloadResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PostClientRxMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:PostClientRxMessage" />
+  </wsdl:message>
+  <wsdl:message name="PostClientRxMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:PostClientRxMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResponses" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSurescriptRxMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveSurescriptRxMessages" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSurescriptRxMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveSurescriptRxMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:DirectoryDownload" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:DirectoryDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentHttpGetIn">
+    <wsdl:part name="inURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesHttpGetIn">
+    <wsdl:part name="strPrescribers" type="s:string" />
+    <wsdl:part name="strMessageType" type="s:string" />
+    <wsdl:part name="_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusHttpGetIn">
+    <wsdl:part name="Transactions" type="s:string" />
+    <wsdl:part name="_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusHttpGetOut" />
+  <wsdl:message name="RetrieveSurescriptRxMessagesHttpGetIn" />
+  <wsdl:message name="RetrieveSurescriptRxMessagesHttpGetOut" />
+  <wsdl:message name="DirectoryDownloadHttpGetIn">
+    <wsdl:part name="eType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentHttpPostIn">
+    <wsdl:part name="inURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesHttpPostIn">
+    <wsdl:part name="strPrescribers" type="s:string" />
+    <wsdl:part name="strMessageType" type="s:string" />
+    <wsdl:part name="_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusHttpPostIn">
+    <wsdl:part name="Transactions" type="s:string" />
+    <wsdl:part name="_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusHttpPostOut" />
+  <wsdl:message name="RetrieveSurescriptRxMessagesHttpPostIn" />
+  <wsdl:message name="RetrieveSurescriptRxMessagesHttpPostOut" />
+  <wsdl:message name="DirectoryDownloadHttpPostIn">
+    <wsdl:part name="eType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:portType name="eRxMessageSoap">
+    <wsdl:operation name="PostClientRxMessage">
+      <wsdl:input message="tns:PostClientRxMessageSoapIn" />
+      <wsdl:output message="tns:PostClientRxMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <wsdl:input message="tns:GetXMLDocumentSoapIn" />
+      <wsdl:output message="tns:GetXMLDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <wsdl:input message="tns:GetResponsesSoapIn" />
+      <wsdl:output message="tns:GetResponsesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <wsdl:input message="tns:UpdateDownloadStatusSoapIn" />
+      <wsdl:output message="tns:UpdateDownloadStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <wsdl:input message="tns:RetrieveSurescriptRxMessagesSoapIn" />
+      <wsdl:output message="tns:RetrieveSurescriptRxMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <wsdl:input message="tns:DirectoryDownloadSoapIn" />
+      <wsdl:output message="tns:DirectoryDownloadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eRxMessageHttpGet">
+    <wsdl:operation name="GetXMLDocument">
+      <wsdl:input message="tns:GetXMLDocumentHttpGetIn" />
+      <wsdl:output message="tns:GetXMLDocumentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <wsdl:input message="tns:GetResponsesHttpGetIn" />
+      <wsdl:output message="tns:GetResponsesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <wsdl:input message="tns:UpdateDownloadStatusHttpGetIn" />
+      <wsdl:output message="tns:UpdateDownloadStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <wsdl:input message="tns:RetrieveSurescriptRxMessagesHttpGetIn" />
+      <wsdl:output message="tns:RetrieveSurescriptRxMessagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <wsdl:input message="tns:DirectoryDownloadHttpGetIn" />
+      <wsdl:output message="tns:DirectoryDownloadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eRxMessageHttpPost">
+    <wsdl:operation name="GetXMLDocument">
+      <wsdl:input message="tns:GetXMLDocumentHttpPostIn" />
+      <wsdl:output message="tns:GetXMLDocumentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <wsdl:input message="tns:GetResponsesHttpPostIn" />
+      <wsdl:output message="tns:GetResponsesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <wsdl:input message="tns:UpdateDownloadStatusHttpPostIn" />
+      <wsdl:output message="tns:UpdateDownloadStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <wsdl:input message="tns:RetrieveSurescriptRxMessagesHttpPostIn" />
+      <wsdl:output message="tns:RetrieveSurescriptRxMessagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <wsdl:input message="tns:DirectoryDownloadHttpPostIn" />
+      <wsdl:output message="tns:DirectoryDownloadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eRxMessageSoap" type="tns:eRxMessageSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostClientRxMessage">
+      <soap:operation soapAction="https://gloophit.net/eRx/PostClientRxMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <soap:operation soapAction="https://gloophit.net/eRx/GetXMLDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="https://gloophit.net/eRx/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <soap:operation soapAction="https://gloophit.net/eRx/GetResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <soap:operation soapAction="https://gloophit.net/eRx/UpdateDownloadStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <soap:operation soapAction="https://gloophit.net/eRx/RetrieveSurescriptRxMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <soap:operation soapAction="https://gloophit.net/eRx/DirectoryDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eRxMessageSoap12" type="tns:eRxMessageSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostClientRxMessage">
+      <soap12:operation soapAction="https://gloophit.net/eRx/PostClientRxMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <soap12:operation soapAction="https://gloophit.net/eRx/GetXMLDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="https://gloophit.net/eRx/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <soap12:operation soapAction="https://gloophit.net/eRx/GetResponses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <soap12:operation soapAction="https://gloophit.net/eRx/UpdateDownloadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <soap12:operation soapAction="https://gloophit.net/eRx/RetrieveSurescriptRxMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <soap12:operation soapAction="https://gloophit.net/eRx/DirectoryDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eRxMessageHttpGet" type="tns:eRxMessageHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetXMLDocument">
+      <http:operation location="/GetXMLDocument" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <http:operation location="/GetResponses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <http:operation location="/UpdateDownloadStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <http:operation location="/RetrieveSurescriptRxMessages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <http:operation location="/DirectoryDownload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eRxMessageHttpPost" type="tns:eRxMessageHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetXMLDocument">
+      <http:operation location="/GetXMLDocument" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <http:operation location="/GetResponses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <http:operation location="/UpdateDownloadStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <http:operation location="/RetrieveSurescriptRxMessages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <http:operation location="/DirectoryDownload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eRxMessage">
+    <wsdl:port name="eRxMessageSoap" binding="tns:eRxMessageSoap">
+      <soap:address location="http://74.208.109.26/testeRx/eRx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eRxMessageSoap12" binding="tns:eRxMessageSoap12">
+      <soap12:address location="http://74.208.109.26/testeRx/eRx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eRxMessageHttpGet" binding="tns:eRxMessageHttpGet">
+      <http:address location="http://74.208.109.26/testeRx/eRx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eRxMessageHttpPost" binding="tns:eRxMessageHttpPost">
+      <http:address location="http://74.208.109.26/testeRx/eRx.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

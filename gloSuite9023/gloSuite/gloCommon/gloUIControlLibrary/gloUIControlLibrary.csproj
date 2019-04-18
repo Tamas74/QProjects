@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloUIControlLibrary</RootNamespace>
+    <AssemblyName>gloUIControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\gloUIControlLibrary.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\gloUIControlLibrary.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClaimRules\TriggeredRuleInfo.cs" />
+    <Compile Include="Classes\ClaimStatus\ClaimStatusInfo.cs" />
+    <Compile Include="Classes\ClinicalChartTaskQueue\clsClinicalChartDBLayer.cs" />
+    <Compile Include="Classes\ClinicalChartTaskQueue\clsClinicalChartQueue.cs" />
+    <Compile Include="Classes\ClinicalChartTaskQueue\enumClinicalChartQueue.cs" />
+    <Compile Include="Classes\Formulary\Converter.cs" />
+    <Compile Include="Classes\ICD10\clsICD10.cs" />
+    <Compile Include="Classes\ICD10\clsICD10DBLayer.cs" />
+    <Compile Include="Classes\ICD10\clsICD10Library.cs" />
+    <Compile Include="Classes\ICD10\clsXMLSpaceConverter.cs" />
+    <Compile Include="Classes\ExceptionLog.cs" />
+    <Compile Include="Classes\ICD10\ICD9To10Mapping\cls9To10Scenario.cs" />
+    <Compile Include="Classes\ICD10\ICD9To10Mapping\clsICD9To10MappingDBLayer.cs" />
+    <Compile Include="Classes\ICD10\ICD9To10Mapping\Converters.cs" />
+    <Compile Include="Classes\PQRSViewModel.cs" />
+    <Compile Include="Classes\SmartDX\clsSmartDXDisplay.cs" />
+    <Compile Include="Classes\VirtualToggleButton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WPFForms\frmClaimStatus.xaml.cs">
+      <DependentUpon>frmClaimStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmClinicalChartQueue.xaml.cs">
+      <DependentUpon>frmClinicalChartQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmClinicalchartQueueHistory.xaml.cs">
+      <DependentUpon>frmClinicalchartQueueHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmClinicalChartQueueNotes.xaml.cs">
+      <DependentUpon>frmClinicalChartQueueNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmCodeGuide.xaml.cs">
+      <DependentUpon>frmCodeGuide.xaml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="WPFForms\frmICDCodeGallery.xaml.cs">
+      <DependentUpon>frmICDCodeGallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmPQRS.xaml.cs">
+      <DependentUpon>frmPQRS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmReviewSmartDxSelection.xaml.cs">
+      <DependentUpon>frmReviewSmartDxSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmShowCodingRules.xaml.cs">
+      <DependentUpon>frmShowCodingRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFForms\frmTriggeredRules.xaml.cs">
+      <DependentUpon>frmTriggeredRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloNARXScores.xaml.cs">
+      <DependentUpon>gloNARXScores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloListControl.xaml.cs">
+      <DependentUpon>gloListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\gloCodingRulesToolTip.xaml.cs">
+      <DependentUpon>gloCodingRulesToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\gloICD9To10MappingSearch.xaml.cs">
+      <DependentUpon>gloICD9To10MappingSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICD10CodesGrid.xaml.cs">
+      <DependentUpon>ICD10CodesGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICD10DataSetTreeView.xaml.cs">
+      <DependentUpon>ICD10DataSetTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICD9To10MappingTextTreeView.xaml.cs">
+      <DependentUpon>ICD9To10MappingTextTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICD9To10MappingTreeView.xaml.cs">
+      <DependentUpon>ICD9To10MappingTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICD9To10MappingView.xaml.cs">
+      <DependentUpon>ICD9To10MappingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICDSpecialCodeControl.xaml.cs">
+      <DependentUpon>ICDSpecialCodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\ICDSubCodeControl.xaml.cs">
+      <DependentUpon>ICDSubCodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ClearSearchControl.xaml.cs">
+      <DependentUpon>ClearSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloCopayCoverageControl.xaml.cs">
+      <DependentUpon>gloCopayCoverageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloCoverageControl.xaml.cs">
+      <DependentUpon>gloCoverageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloEMRAdminLockScreen.xaml.cs">
+      <DependentUpon>gloEMRAdminLockScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloEMRLockScreen.xaml.cs">
+      <DependentUpon>gloEMRLockScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloFormularyAlternatives.xaml.cs">
+      <DependentUpon>gloFormularyAlternatives.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloPMAdminLockScreen.xaml.cs">
+      <DependentUpon>gloPMAdminLockScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\gloPMLockScreen.xaml.cs">
+      <DependentUpon>gloPMLockScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\gloCodingRules.xaml.cs">
+      <DependentUpon>gloCodingRules.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFUserControl\ICD10\gloICD10IndexControl.xaml.cs">
+      <DependentUpon>gloICD10IndexControl.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Show ICD10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFUserControl\ICD10\ICO\OR.ico" />
+    <Resource Include="WPFUserControl\ICD10\ICO\WITH.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CreateTask.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\New.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Print.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Reply.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SaveCls.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Send.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UnReadTask.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="gloPMLockScreen_files\gloPMAdminLock-New.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="gloPMLockScreen_files\gloPMLock-New.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\gloCodingRulesBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\gloCodingRulesOrange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\gloFormularyInfoRD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\gloGUIStyleV8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\gloIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Themes\XAMLIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFForms\frmClaimStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFForms\frmClinicalChartQueue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFForms\frmClinicalchartQueueHistory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFForms\frmClinicalChartQueueNotes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFForms\frmCodeGuide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="WPFForms\frmICDCodeGallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFForms\frmPQRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFForms\frmReviewSmartDxSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFForms\frmShowCodingRules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFForms\frmTriggeredRules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\gloNARXScores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\gloListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\gloCodingRulesToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\gloICD9To10MappingSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICD10CodesGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICD10DataSetTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICD9To10MappingTextTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICD9To10MappingTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICD9To10MappingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICDSpecialCodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\ICDSubCodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\ClearSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\gloCopayCoverageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\gloCoverageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\gloEMRAdminLockScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\gloEMRLockScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\gloFormularyAlternatives.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPFUserControl\gloPMAdminLockScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\gloPMLockScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\gloCodingRules.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFUserControl\ICD10\gloICD10IndexControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DownloadFromData.png" />
+    <Resource Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RxMed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NewMessage.png" />
+    <Resource Include="Resources\SendReceiveEmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddressBook.png" />
+    <Resource Include="Resources\Attachment.png" />
+    <Resource Include="Resources\ScanDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PatientList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CDAFiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCDFiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddNotes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ViewNotes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InterfaceHL7Notes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloEMRLockScreen_files\gloEMRAdminLock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloEMRLockScreen_files\gloEMRlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloEMRLockScreen_files\gloPMLock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloEMRLockScreen_files\waves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloPMLockScreen_files\image0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloPMLockScreen_files\image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloPMLockScreen_files\image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloPMLockScreen_files\image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gloPMLockScreen_files\gloPMAdminLock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OnFormulary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\CPT.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CodingRules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\Drugs.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\PatientEducation.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\Tags.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\FLowSheet.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\OrderTemplates.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\OrderandResults.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\RefferalLetter.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SaveCPT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\SaveICD9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICDCategory.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFUserControl\ICD10\ICO\BulletOrangeDiamond.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFUserControl\ICD10\ICO\CPT.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICD09.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICD10GalleryGreen.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICD10GalleryRed.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICDCodeGallery.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\ReviewSmartDx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\ICDCodeGallery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\BulletOrangeDiamond.ico" />
+    <Resource Include="WPFForms\ICO\CPT.ico" />
+    <Resource Include="WPFForms\ICO\Drugs.ico" />
+    <Resource Include="WPFForms\ICO\FLowSheet.ico" />
+    <Resource Include="WPFForms\ICO\ICD09.ico" />
+    <Resource Include="WPFForms\ICO\ICD10GalleryGreen.ico" />
+    <Resource Include="WPFForms\ICO\ICD10GalleryRed.ico" />
+    <Resource Include="WPFForms\ICO\ICDCodeGallery.ico" />
+    <Resource Include="WPFForms\ICO\OrderandResults.ico" />
+    <Resource Include="WPFForms\ICO\OrderTemplates.ico" />
+    <Resource Include="WPFForms\ICO\PatientEducation.ico" />
+    <Resource Include="WPFForms\ICO\RefferalLetter.ico" />
+    <Resource Include="WPFForms\ICO\ReviewSmartDx.ico" />
+    <Resource Include="WPFForms\ICO\Tags.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\CodeGuide.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCAFiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFUserControl\ICD10\ICO\ICD10GalleryYellow.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICO\infobutton.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\Ignore.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="WPFForms\ICO\Review.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\ReviewClaimRule.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\RuleInformation.ico" />
+    <Resource Include="WPFForms\ICO\RuleInvalid.ico" />
+    <Resource Include="WPFForms\ICO\RuleWarning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\RuleError.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFUserControl\ICD10\ICO\Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OkSmall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CorrectClaim.ico" />
+    <Resource Include="Resources\SaveWithError.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\Delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.png" />
+    <Resource Include="Resources\UncheckAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SelectAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QDCs.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\History.ico" />
+    <Resource Include="WPFForms\ICO\Notes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ViewClinicalChartQUEUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\ClinicalChartPrintQueue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\Cancel.ico" />
+    <Resource Include="WPFForms\ICO\Process.ico" />
+    <Resource Include="WPFForms\ICO\Re-Queue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\ICO\RealClaimStatus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPFForms\Images\header3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

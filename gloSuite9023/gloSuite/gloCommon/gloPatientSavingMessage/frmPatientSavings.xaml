@@ -1,0 +1,269 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="gloPatientSavingMessage.MainWindow"
+	x:Name="Window"
+	Title="Rx Savings"
+	Width="700" Height="800" WindowStartupLocation="CenterScreen" Icon="/gloPatientSavingMessage;component/Resources/PatientSavings.gif" WindowState="Maximized" IsEnabled="True">
+	<Window.Resources>
+		<SolidColorBrush x:Key="MyBrightBlueSolidBrush1" Color="#FFBFDBFF"/>
+		<SolidColorBrush x:Key="MyDarkBlueSolidBrush" Color="#FF2B5597"/>
+
+		<LinearGradientBrush x:Key="MyToolBarBlueGradientBrush" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFCEE0F5" Offset="0"/>
+			<GradientStop Color="#FFDDEEFF" Offset="0.041666666666666664"/>
+			<GradientStop Color="#FFE5F0FD" Offset="0.5"/>
+			<GradientStop Color="#FFAECBEF" Offset="1"/>
+		</LinearGradientBrush>
+
+		<SolidColorBrush x:Key="MyBlueSolidBrush2" Color="#FF3D6394"/>
+  <!-- DefaultedBorderBrush is used to show KeyBoardFocus -->
+		<LinearGradientBrush x:Key="DefaultedBorderBrush" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#777" Offset="0.0"/>
+			<GradientStop Color="#000" Offset="1.0"/>
+		</LinearGradientBrush>
+
+		<SolidColorBrush x:Key="MyDarkOrangeSolidBrush" Color="#FFFB8C3C"/>
+
+		<LinearGradientBrush x:Key="MyMouseOverOrangeGradientBrush3" EndPoint="0,1" StartPoint="0,0" SpreadMethod="Reflect">
+			<GradientStop Color="#FFFFF5CB" Offset="0.2"/>
+			<GradientStop Color="#FFFFE290" Offset="0.6"/>
+			<GradientStop Color="#FFFFDB76" Offset="1"/>
+			<GradientStop Color="#FFFFF8D5" Offset="0"/>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="MyButtonPressedOrangeGradientBrush" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFFB923C" Offset="0"/>
+			<GradientStop Color="#FFFC953C" Offset="0.0967741935483871"/>
+			<GradientStop Color="#FFFD9D3D" Offset="0.303"/>
+			<GradientStop Color="#FFFFAB3F" Offset="0.551"/>
+			<GradientStop Color="#FFFFB14D" Offset="0.788"/>
+			<GradientStop Color="#FFFFB85D" Offset="1"/>
+		</LinearGradientBrush>
+
+		<SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE"/>
+		<SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA"/>
+
+	<!-- Disabled Brushes are used for the Disabled look of each control -->
+		<SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888"/>
+	<!-- Style for the ToolBar buttons which don't have a ContextMenu -->
+		<Style x:Key="MyToolBarButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+              <!-- We use Grid as a root because it is easy to add more elements to customize the button -->
+						<Grid x:Name="Grid">
+							<Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"/>
+							<!-- Content Presenter is where the text content etc is placed by the control -->
+                <!-- The bindings are useful so that the control can be parameterized without editing the template -->
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+						</Grid>
+              <!--Each state sets a brush on the Border in the template -->
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsKeyboardFocused" Value="true">
+								<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}" TargetName="Border"/>
+								<Setter Property="BorderThickness" Value="0.7" TargetName="Border" />
+								<Setter Property="Background" TargetName="Border" Value="{DynamicResource MyMouseOverOrangeGradientBrush3}"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter Property="Background" Value="{DynamicResource MyButtonPressedOrangeGradientBrush}" TargetName="Border"/>
+								<Setter Property="BorderBrush" Value="{DynamicResource MyDarkOrangeSolidBrush}" TargetName="Border"/>
+								<Setter Property="BorderThickness" Value="0.7" TargetName="Border" />
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="true"/>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+								<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
+								<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="ClickMode" Value="Press"/>
+		</Style>
+
+		<LinearGradientBrush x:Key="MyBorderBlueGradientBrush" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFB3D6FD" Offset="0.044936933513453105"/>
+			<GradientStop Color="#FFA7CAF3" Offset="0.046890713231429328"/>
+			<GradientStop Color="#FFB7D9FF" Offset="0.052752052385357996"/>
+			<GradientStop Color="#FF688FCD" Offset="0.98827732169214266"/>
+			<GradientStop Color="#FF688FBA" Offset="0.99413866084607139"/>
+			<GradientStop Color="#FF6990D2" Offset="0.99804622028202383"/>
+		</LinearGradientBrush>
+
+		<LinearGradientBrush x:Key="MyButtonBlueGradientBrush" EndPoint="0,1" StartPoint="0,0">
+			<GradientStop Color="#FFD9EDFF" Offset="0"/>
+			<GradientStop Color="#FFC0DEFF" Offset="0.445"/>
+			<GradientStop Color="#FFC0D9FB" Offset="1"/>
+			<GradientStop Color="#FFAFD1F8" Offset="0.53"/>
+		</LinearGradientBrush>
+
+	</Window.Resources>
+
+	<Grid x:Name="Grid">
+		<DockPanel x:Name="MainPanel" Height="Auto" Width="Auto" LastChildFill="True" Margin="0" >
+			<StackPanel x:Name="Header" Background="{DynamicResource MyBrightBlueSolidBrush1}" DockPanel.Dock="Top" Margin="0">
+				<StackPanel x:Name="ToolStrip"  >
+
+					<ToolBarTray HorizontalAlignment="Stretch" x:Name="myToolBarTray" Background="{DynamicResource MyBrightBlueSolidBrush1}" Margin="0,0,0,2" d:LayoutOverrides="Width">
+						<ToolBar Band="1" BandIndex="1"  Background="{DynamicResource MyToolBarBlueGradientBrush}"  BorderBrush="{DynamicResource MyDarkBlueSolidBrush}" BorderThickness="0,0,0,0.5">
+                            <Button x:Name="btnPrint" Style="{DynamicResource MyToolBarButtonStyle}" Background="{x:Null}" BorderThickness="0.7" BorderBrush="{x:Null}" ToolTip="Print"  Visibility="Visible" Click="btnPrint_Click">
+								<StackPanel Width="52">
+									<Image Width="Auto" Stretch="None" Source="/gloPatientSavingMessage;component/Resources/Prints.png" />
+									<TextBlock Text="Print" FontWeight="Bold" Margin="3,0,0,0" Foreground="{DynamicResource MyBlueSolidBrush2}" FontSize="10.667" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+								</StackPanel>
+							</Button>
+							<Button x:Name="btnSave_Cls" Style="{DynamicResource MyToolBarButtonStyle}" Background="{x:Null}" BorderThickness="0.7" BorderBrush="{x:Null}" ToolTip="Save and Close"  Visibility="Visible" Click="btnSave_Cls_Click">
+								<StackPanel Width="52">
+									<Image Width="Auto" Stretch="None" Source="Resources/save&amp;clsnew.png" />
+									<TextBlock Text="Save&amp;Cls" FontWeight="Bold" Margin="3,0,0,0" Foreground="{DynamicResource MyBlueSolidBrush2}" FontSize="10.667" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+								</StackPanel>
+							</Button>
+                            <Button x:Name="btnRx" Style="{DynamicResource MyToolBarButtonStyle}" Background="{x:Null}" BorderThickness="0.7" BorderBrush="{x:Null}" ToolTip="Rx"  Visibility="Visible" Click="btnRx_Click" Width="50">
+                                <StackPanel Width="52">
+                                    <Image Width="Auto" Stretch="None" Source="Resources/Rx-new.png"  />
+                                    <TextBlock Text="Rx" FontWeight="Bold" Margin="0" Foreground="{DynamicResource MyBlueSolidBrush2}" FontSize="10.667" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnClose" Style="{DynamicResource MyToolBarButtonStyle}" Background="{x:Null}" BorderThickness="0.7" BorderBrush="{x:Null}" ToolTip="Close" Click="btnClose_Click">
+								<StackPanel Width="52">
+                                    <Image Source="/gloPatientSavingMessage;component/Resources/close-new.png" Stretch="None"/>
+									<TextBlock Text="Close" FontWeight="Bold" Margin="3,0,0,0" Foreground="{DynamicResource MyBlueSolidBrush2}" FontSize="10.667" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+								</StackPanel>      
+							</Button>
+						</ToolBar>
+					</ToolBarTray>
+
+				</StackPanel>
+				<StackPanel x:Name="PatientStrip" Orientation="Vertical" Margin="0">
+					
+					<!-- <StackPanel  x:Name="PatientStrip" Margin="0,5,0,0" VerticalAlignment="Top">
+    				<WindowsFormsHost x:Name="Wfh" DockPanel.Dock="Top" Height="242" Width="Auto" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0">
+    					<WindowsFormsHost.Background>
+						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+							<GradientStop Color="#FFFFFAEF" Offset="0.005" />   
+							<GradientStop Color="#FFF5CF75" Offset="0.99" />
+							<GradientStop Color="#FF745000" Offset="0" />
+							<GradientStop Color="#FF745000" Offset="1" />
+						</LinearGradientBrush>
+					</WindowsFormsHost.Background> 
+    					<mcl:gloUC_PatientStrip Name="mc" />
+    				</WindowsFormsHost>
+    			</StackPanel> -->
+					
+					<Border x:Name="PtStrip_Header"  BorderThickness="0.5" BorderBrush="#FF4E4617" Margin="4,0,4,2">
+						<StackPanel>
+							<StackPanel x:Name="PtStrip_Top" Margin="0" Orientation="Horizontal">
+								<StackPanel.Background>
+									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+										<GradientStop Color="#FFFFE0B4" Offset="0"/>
+										<GradientStop Color="#FFFDC577" Offset="0.25"/>
+										<GradientStop Color="#FFFFAB31" Offset="0.333"/>
+										<GradientStop Color="#FFFFDA57" Offset="0.976"/>
+										<GradientStop Color="#FFD2B85B" Offset="1"/>
+									</LinearGradientBrush>
+								</StackPanel.Background>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientFName"  Text="{Binding PatFirstName}" FontWeight="Bold" FontSize="13.333" Margin="4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientMName"  Text="{Binding PatMiddleName}" FontWeight="Bold" FontSize="13.333" Margin="2,4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientLName"  Text="{Binding PatLastName}" FontWeight="Bold" FontSize="13.333" Margin="4"/>
+								<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="DOB:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientBorn" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4"/>
+								<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Gender:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientGender" Text="{Binding PatGender}" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4"/>
+								<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Code:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbPatientCode" Text="{Binding PatMedicalRecIdNumberEHR}" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4" />
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="PBM Member ID:" FontSize="13.333" FontStyle="Italic" Margin="8,4,0,4"/>
+                                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" x:Name="tbPBMMemberID" Text="{Binding BenefitCoordinationPBMMemberID}" FontSize="13.333" FontWeight="Bold" Margin="4,4,8,4" /> 
+                                </StackPanel>
+							<StackPanel x:Name="PtStrip_Bottom" Orientation="Horizontal">
+								<StackPanel.Background>
+									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+										<GradientStop Color="#FFFFFBF1" Offset="0"/>
+										<GradientStop Color="#FFFFEBBF" Offset="1"/>
+									</LinearGradientBrush>
+								</StackPanel.Background>
+								<DockPanel x:Name="pnlAddress" LastChildFill="True"  Margin="0" d:LayoutOverrides="Width">
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Address:" FontSize="10.667" Margin="8,4,0,4"/>
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbAddress" Text="{Binding PatAddressLine1}" FontSize="10.667" FontWeight="Bold" Margin="4,4,8,4"/>
+							
+								</DockPanel>
+								<DockPanel x:Name="pnlCity" LastChildFill="True"  Margin="0">
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="City:" FontSize="10.667" Margin="8,4,0,4"/>
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbCity" Text="{Binding PatCity}" FontSize="10.667" FontWeight="Bold" Margin="4,4,8,4"/>
+							
+								</DockPanel>
+								<DockPanel x:Name="pnlState" LastChildFill="True"  Margin="0">
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="State:" FontSize="10.667" Margin="8,4,0,4"/>
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbState" Text="{Binding PatState}" FontSize="10.667" FontWeight="Bold" Margin="4,4,8,4"/>
+							
+								</DockPanel>
+								<DockPanel x:Name="pnlZip" LastChildFill="True"  Margin="0">
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  Text="Zip:" FontSize="10.667" Margin="8,4,0,4"/>
+									<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left"  x:Name="tbZip" Text="{Binding PatZipCode}" FontSize="10.667" FontWeight="Bold" Margin="4,4,8,4"/>
+							
+								</DockPanel>
+							</StackPanel>                  
+						</StackPanel>                  
+					</Border>
+					<Border x:Name="PtStrip_Body" Margin="0" >
+						<StackPanel>
+							<Border x:Name="Prescriber" BorderThickness="0.5" BorderBrush="#FF3D6394" Margin="4,2,4,0" Background="#FF6FA2E4">
+								<TextBlock x:Name="lblPrescriber" TextWrapping="Wrap" Text="Prescriber" HorizontalAlignment="Left" TextAlignment="Right" VerticalAlignment="Top" Margin="10,4,0,4" Foreground="White" FontWeight="Bold" FontSize="10.667"/>
+							</Border>
+							<Border x:Name="Borders" BorderThickness="0.5,0,0.5,0.5" BorderBrush="#FF3D6394" Margin="4,0,4,2">
+								<StackPanel Margin="0">
+									<StackPanel.Background>
+										<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+											<GradientStop Color="White" Offset="0"/>
+											<GradientStop Color="#FFE0EDFF" Offset="1"/>
+										</LinearGradientBrush>
+									</StackPanel.Background>
+                                    <DockPanel x:Name="pnlPrescriber_Name" LastChildFill="True"  Margin="4,0,-2.5,0" HorizontalAlignment="Left">
+										<TextBlock TextWrapping="Wrap"  Text="Name:" Margin="8,4,0,4" Foreground="{DynamicResource MyBlueSolidBrush2}" HorizontalAlignment="Left"/>
+                                        <TextBlock x:Name="lblPrescriberFName" Text="{Binding PrescFirstName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right" Margin="4,4,0,4" HorizontalAlignment="Left" Foreground="{DynamicResource MyBlueSolidBrush2}" FontWeight="Bold"/>
+                                        <TextBlock x:Name="lblPrescriberMName" Text="{Binding PrescMiddleName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right" Margin="4,4,0,4" HorizontalAlignment="Left" Foreground="{DynamicResource MyBlueSolidBrush2}" FontWeight="Bold"/>
+                                        <TextBlock x:Name="lblPrescriberLName" Text="{Binding PrescLastName}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right" Margin="4,4,0,4" HorizontalAlignment="Left" Foreground="{DynamicResource MyBlueSolidBrush2}" FontWeight="Bold"/>
+                                        <TextBlock TextWrapping="Wrap"  Text="NPI:" Margin="35,4,0,4" Foreground="{DynamicResource MyBlueSolidBrush2}" HorizontalAlignment="Left"/>
+                                        <TextBlock x:Name="lblPrescriberNPI" Text="{Binding PrescNPI}" TextWrapping="Wrap" DockPanel.Dock="Left" TextAlignment="Right" Margin="4,4,8,4" HorizontalAlignment="Left" Foreground="{DynamicResource MyBlueSolidBrush2}" FontWeight="Bold"/>
+                                    </DockPanel>
+                                  
+                                </StackPanel>
+							</Border>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+			</StackPanel>
+                <Border x:Name="Opportunity" BorderBrush="Black" Margin="0" Background="#FFBFDBFF">
+				<TabControl Margin="0" Background="#FFBFDBFF" BorderBrush="#FFBFDBFF" BorderThickness="0" x:Name="tlbOpp">
+					<TabItem Header="Generic Alternatives" Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="#FF6FA2E4" Foreground="{DynamicResource MyBlueSolidBrush2}" Margin="2,0,-4,-4" ClipToBounds="True" IsSelected="True" x:Name="tlbGeneric">
+						<Border x:Name="border" BorderThickness="0.5,0,0.5,0.5" BorderBrush="#FF4B9AF9" Margin="0">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0" d:LayoutOverrides="Width" Background="#FF6CCFF6">
+                                <StackPanel x:Name="stkGenericOpportunity" Orientation="Vertical" Background="#FF6CCFF6" Margin="0,0,-1,-2.501"/>
+                            </ScrollViewer>
+                        </Border>
+					</TabItem>
+					<TabItem Header="30-90 Day Dispense" Background="{DynamicResource MyButtonBlueGradientBrush}" BorderBrush="#FF6FA2E4" Foreground="{DynamicResource MyBlueSolidBrush2}" Margin="8,0,-9,-4" x:Name="tlb3090">
+						<Border x:Name="border_Copy" BorderThickness="0.5,0,0.5,0.5" BorderBrush="#FF4B9AF9" Margin="0">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0" d:LayoutOverrides="Width">
+                                <StackPanel x:Name="stk3090Opportunity" Margin="0,0,-1,-2.5" Orientation="Vertical" Background="#FF6CCFF6"/>
+                            </ScrollViewer>
+                        </Border>
+					</TabItem>
+				</TabControl>
+			</Border>
+        </DockPanel>
+		<StackPanel  Margin="0,138,5,0" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment">
+			<RadioButton Content="All Messages" x:Name="rbAll" GroupName="PendingMsg" HorizontalAlignment="Left" Checked="radioButton_Checked" VerticalAlignment="Center" Margin="10,0" Foreground="#FF124485" />
+			<RadioButton Content="Pending Messages" x:Name="rbPending" GroupName="PendingMsg" HorizontalAlignment="Right" IsChecked="True" Checked="radioButton_Checked" VerticalAlignment="Center" Margin="10,0" Foreground="#FF124485" />
+		</StackPanel>
+		<StackPanel Margin="0,158,5,0" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Top" Height="28">
+            <Button Content="Previous" x:Name="btnPrevious" Margin="2" Foreground="#FF124485" FontSize="10.667" Click="btnPrevious_Click" Background="#FF3393E0" BorderBrush="#FF57B4FF" Width="60" ClipToBounds="True" Height="20" />
+			<Button Content="Next" x:Name="btnNext" Width="60" Margin="2" Foreground="#FF124485" FontSize="10.667" Click="btnNext_Click" BorderBrush="#FF57B4FF" Background="#FF3393E0" Height="20" />
+		</StackPanel>
+	</Grid>
+</Window>

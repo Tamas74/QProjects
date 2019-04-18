@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://demoportal.triarqclouds.com/QCommunication/QCommunicatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QCommunicationService" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sRequestType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sPracticeAUSID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sFieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sSearchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PopulatePracticeDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeData_DataTable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sRequestType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sPracticeAUSID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sDatabaseName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeData_DataTableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QCommunicationService" minOccurs="0" name="PopulatePracticeData_DataTableResult" nillable="true" type="q1:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulateClaimRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ClaimList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PracticeAUSID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DatabaseName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulateClaimRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PopulateClaimRulesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulateRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ClaimList" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulateRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PopulateRulesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeDataCoreURL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PracticeAUSID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePracticeDataCoreURLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PopulatePracticeDataCoreURLResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClaimRuleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RuleID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClaimRuleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClaimRuleDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClaimRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RuleData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClaimRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveClaimRuleResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishClaimRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sRequestType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sPracticeAUSID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sRulesData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtExportedDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishClaimRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PublishClaimRulesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+		<title>EPCS Test Framework - LAC</title>
+		<script type="text/javascript" src="../javascript/psha1.js"></script>
+		<script type="text/javascript" src="../javascript/tests.js"></script>
+        <style type="text/css">
+            .P
+            {
+                text-align:center;
+                font-size: 25px;
+                font-style:normal;
+                font-family: Tahoma;
+                margin: 350px;
+                border: 1 Blue;
+                color: Blue;
+             }
+            body
+            {
+                 margin:0 Auto;
+            }
+        </style>			
+	</head>
+	<body>
+			<form id="testForm" action="https://ui.staging.epcsdrfirst.com/UILaunchLogicalAccess" method="POST">
+			<table id="formTable" align="center" border="0" cellspacing="0" cellpadding="2">
+				<tr id="dont touch">
+					<td  width="200px"><p>&nbsp;</p></td>
+					<td  width="40%"><p>&nbsp;</p></td>
+				</tr>
+				<tr style="display:none">
+					<td><p><label for="test">Is Test?</label></p></td>
+					<td width="70%"><input type="checkbox" id="test" name="test" checked="checked"/></p></td>
+				</tr>
+				<tr style="display:none">
+					<td ><p><label for="testJavaScript">Test JavaScript?</label></p></td>
+					<td width="70%"><input type="checkbox" id="testJavaScript" name="testJavaScript"/></p></td>
+				</tr>
+			
+				<tr style="display:none" >
+					<td><p><label for="vendorKeyVersion">Vendor Key Version</label></p></td>
+					<td ><p><input type="text" id="vendorKeyVersion" name="vendorKeyVersion" value="rmc-001"/></p></td>
+				</tr>
+				<tr style="display:none" >
+					<td ><p><label for="issueTimeStamp">Issue Time Stamp</label></p></td>
+					<td><p><input type="text" id="issueTimeStamp" name="issueTimeStamp" value="22:04:2014-11:07:01"/></p></td>
+				</tr>
+				<tr style="display:none" >
+					<td><p><label for="sharedSecret">Shared Secret</label></p></td>
+					<td><p><input type="text" id="sharedSecret" name="sharedSecret" value="b8fbe4d5aefc4e8988aa25240c5bc56d"/></p></td>
+				</tr>
+				<tr style="display:none" >
+					<td><p><label for="hashAlgorithm">Hash Algorithm</label></p></td>
+					<td><p><input type="text" id="hashAlgorithm" name="hashAlgorithm" value="SHA1"/></p></td>
+				</tr>
+				<tr style="display:none">
+					<td><p><label for="hashValue">Hash Value</label></p></td>
+					<td><p><input type="text" id="hashValue" name="hashValue"/></p></td>
+				</tr>
+				<tr style="display:none" >
+					<td><p><label for="dataIn">Data In</label></p></td>
+					<td><p><textarea wrap="virtual" id="dataIn" name="dataIn" rows="20" cols="100">
+<EpcsRequest xmlns="urn:drfirst.com:epcsapi:v1_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EpcsRequestHeader>
+		<VendorName>GloStream_Vendor</VendorName>
+		<VendorLabel>GloStream_Vendor_Label</VendorLabel>
+		<VendorNodeName>GloStream_Vendor_Node</VendorNodeName>
+		<VendorNodeLabel>GloStream_Vendor_Node_Label</VendorNodeLabel>
+ 		
+ 		<AppVersion>
+ 			<AppName>GloStream</AppName>
+			<ApplicationVersion>1</ApplicationVersion>>
+ 		</AppVersion>
+ 		<SourceOrganizationId>GloStream_practice</SourceOrganizationId>
+ 		<Date>2014-10-05T23:56:43.9Z</Date>
+ 	</EpcsRequestHeader>
+ 		
+ 	<EpcsRequestBody>
+ 		<UiLaunchLogicalAccessRequest>
+ 			<SourceTransactionReferenceNumber>qqwertyuiasdfghjkllzxcvbnm</SourceTransactionReferenceNumber>
+ 			<ApprovedByStaffName>Peter Kaufman</ApprovedByStaffName>
+ 			<ValidatingPrescriberNpi>1508869520</ValidatingPrescriberNpi>
+ 			<PostBackUrl>www.drfirst.com</PostBackUrl>
+ 			<CloseWindowOnExit>n</CloseWindowOnExit>					
+ 		</UiLaunchLogicalAccessRequest>
+ 	</EpcsRequestBody>
+</EpcsRequest>
+						</textarea></p></td>
+				</tr>
+				<tr style="display:none" >
+					<td><input type="button" id="SubmitXML" value="Submit XML" onclick="onSubmitXML()"/></td>
+				</tr>
+			</table>
+		</form>
+         <div  >
+        <p class="P"  align="center" >
+        Please wait while the system is establishing connection to EPCS screen. 
+        </p>
+		</div>
+</body>
+</html>

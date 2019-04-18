@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ophit.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ophit.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ophit.net/">
+      <s:element name="PostClientRxMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cntFromDB" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_MsgType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostClientRxMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostClientRxMessageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrescribers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResponsesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResponsesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDownloadStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDownloadStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveSurescriptRxMessages">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveSurescriptRxMessagesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DirectoryDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DirectoryDownloadResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDownlaod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertToBytesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertToBytesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryDownloadLocal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryDownloadLocalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DirectoryDownloadLocalResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PostClientRxMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:PostClientRxMessage" />
+  </wsdl:message>
+  <wsdl:message name="PostClientRxMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:PostClientRxMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResponses" />
+  </wsdl:message>
+  <wsdl:message name="GetResponsesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDownloadStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDownloadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSurescriptRxMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveSurescriptRxMessages" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveSurescriptRxMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveSurescriptRxMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:DirectoryDownload" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:DirectoryDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertToBytes" />
+  </wsdl:message>
+  <wsdl:message name="ConvertToBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertToBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadLocalSoapIn">
+    <wsdl:part name="parameters" element="tns:DirectoryDownloadLocal" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryDownloadLocalSoapOut">
+    <wsdl:part name="parameters" element="tns:DirectoryDownloadLocalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eRxMessageSoap">
+    <wsdl:operation name="PostClientRxMessage">
+      <wsdl:input message="tns:PostClientRxMessageSoapIn" />
+      <wsdl:output message="tns:PostClientRxMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <wsdl:input message="tns:GetXMLDocumentSoapIn" />
+      <wsdl:output message="tns:GetXMLDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <wsdl:input message="tns:GetResponsesSoapIn" />
+      <wsdl:output message="tns:GetResponsesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <wsdl:input message="tns:UpdateDownloadStatusSoapIn" />
+      <wsdl:output message="tns:UpdateDownloadStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <wsdl:input message="tns:RetrieveSurescriptRxMessagesSoapIn" />
+      <wsdl:output message="tns:RetrieveSurescriptRxMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <wsdl:input message="tns:DirectoryDownloadSoapIn" />
+      <wsdl:output message="tns:DirectoryDownloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToBytes">
+      <wsdl:input message="tns:ConvertToBytesSoapIn" />
+      <wsdl:output message="tns:ConvertToBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownloadLocal">
+      <wsdl:input message="tns:DirectoryDownloadLocalSoapIn" />
+      <wsdl:output message="tns:DirectoryDownloadLocalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eRxMessageSoap" type="tns:eRxMessageSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostClientRxMessage">
+      <soap:operation soapAction="https://ophit.net/PostClientRxMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <soap:operation soapAction="https://ophit.net/GetXMLDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="https://ophit.net/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <soap:operation soapAction="https://ophit.net/GetResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <soap:operation soapAction="https://ophit.net/UpdateDownloadStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <soap:operation soapAction="https://ophit.net/RetrieveSurescriptRxMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <soap:operation soapAction="https://ophit.net/DirectoryDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToBytes">
+      <soap:operation soapAction="https://ophit.net/ConvertToBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownloadLocal">
+      <soap:operation soapAction="https://ophit.net/DirectoryDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eRxMessageSoap12" type="tns:eRxMessageSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PostClientRxMessage">
+      <soap12:operation soapAction="https://ophit.net/PostClientRxMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLDocument">
+      <soap12:operation soapAction="https://ophit.net/GetXMLDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="https://ophit.net/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResponses">
+      <soap12:operation soapAction="https://ophit.net/GetResponses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDownloadStatus">
+      <soap12:operation soapAction="https://ophit.net/UpdateDownloadStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSurescriptRxMessages">
+      <soap12:operation soapAction="https://ophit.net/RetrieveSurescriptRxMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownload">
+      <soap12:operation soapAction="https://ophit.net/DirectoryDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertToBytes">
+      <soap12:operation soapAction="https://ophit.net/ConvertToBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryDownloadLocal">
+      <soap12:operation soapAction="https://ophit.net/DirectoryDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eRxMessage">
+    <wsdl:port name="eRxMessageSoap" binding="tns:eRxMessageSoap">
+      <soap:address location="http://ophit.net/eRx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eRxMessageSoap12" binding="tns:eRxMessageSoap12">
+      <soap12:address location="http://ophit.net/eRx.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

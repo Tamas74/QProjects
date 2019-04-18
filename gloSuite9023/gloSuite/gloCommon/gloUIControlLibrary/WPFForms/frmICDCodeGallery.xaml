@@ -1,0 +1,221 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:gloUIControlLibrary="clr-namespace:gloUIControlLibrary" mc:Ignorable="d" x:Class="gloUIControlLibrary.WPFForms.frmICDCodeGallery"
+        Title="ICD-10 Code Gallery" 
+    xmlns:UserControls="clr-namespace:gloUIControlLibrary.WPFUserControl.ICD10"
+    Height="737" 
+    Width="924" 
+    WindowStartupLocation="CenterScreen" 
+    WindowState="Maximized"
+        Icon="/gloUIControlLibrary;component/Resources/ICO/ICDCodeGallery.ico" 
+	Background="{DynamicResource BaseBackColor}" FontFamily="{DynamicResource BaseFontFamily}" 
+	FontSize="12" Loaded="Window_Loaded" ResizeMode="CanResize" ShowInTaskbar="True" UseLayoutRounding="True"
+        SnapsToDevicePixels="True" Closed="Window_Closed">
+    
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+				<ResourceDictionary Source="/gloUIControlLibrary;component/Themes/XAMLIcons.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+	
+    <Grid>
+    	<DockPanel x:Name="MainPanel">
+    		<StackPanel x:Name="pnlToolStrip" Orientation="Horizontal" Margin="0" Background="{DynamicResource Img_ToolstripStyle}" Height="53" DockPanel.Dock="Top"
+                        SnapsToDevicePixels="True">
+    			<!-- SaveandCloseButton -->                
+                <Border x:Name="ShowRulesButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" MouseDown="ShowRulesButton_MouseDown">
+    				<Grid>
+                        <Button x:Name="btnShowRules"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Arrow" Click="btnShowRules_Click">
+    						<Button.ToolTip>
+    							<ToolTip>
+    								<StackPanel>
+    									<TextBlock TextWrapping="Wrap"><Run Text="Coding Rules"/></TextBlock>
+    								</StackPanel>
+    							</ToolTip>
+    						</Button.ToolTip>
+    						<Image Height="32" Source="/gloUIControlLibrary;component/Resources/Show ICD10.png" Stretch="Fill" Width="32"/>
+    					</Button>
+    					<Label  Margin="2" Content="Coding Rule" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+    				</Grid>
+    			</Border>
+    		
+                <Border x:Name="CloseButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" MouseDown="CloseButton_MouseDown">
+                	<Grid>
+                        <Button x:Name="btnClose"
+                                Style="{DynamicResource SimpleButton}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Height="32"
+                                Width="32"
+                                Margin="0,2,0,0"
+                                Cursor="Arrow" Content="{DynamicResource Close}" Click="btnClose_Click">
+                			<Button.ToolTip>
+                				<ToolTip>
+                					<StackPanel>
+                						<TextBlock TextWrapping="Wrap"><Run Text="Close"/></TextBlock>
+                					</StackPanel>
+                				</ToolTip>
+                			</Button.ToolTip>
+                		</Button>
+                		<Label  Margin="2" Content ="Close" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+                	</Grid>
+                </Border>
+                   
+    			<!-- CloseButton End -->
+    		</StackPanel>    	
+    		<Grid DockPanel.Dock="Top">
+    			<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"
+                                      MaxWidth="450" />
+    				<ColumnDefinition Width="4"/>
+    				<ColumnDefinition Width="*"/>
+    				<ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="*"
+                                      MaxWidth="450" />
+                </Grid.ColumnDefinitions>
+                <UserControls:gloICD10IndexControl x:Name="gloICD10IndexControl"
+                                                   Margin="0,3"
+                                                   HorizontalAlignment="Stretch"
+                                                   HorizontalContentAlignment="Stretch" />
+				     <GridSplitter Width ="4" Grid.Column="1" HorizontalAlignment="Stretch" ShowsPreview="True" Background="{DynamicResource BaseBackColor}"/>
+    			<gloUIControlLibrary:ICDSubCodeControl x:Name="gloICDSubCode" Grid.Column="2" Margin="0,3" HorizontalAlignment="Stretch"  HorizontalContentAlignment="Stretch"/>
+				     <GridSplitter Grid.Column="3" Width ="5" Background="{DynamicResource BaseBackColor}" HorizontalAlignment="Stretch" ShowsPreview="True"/>
+                <TabControl 
+                     HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Stretch"
+                    Grid.Column="4" 
+                    Name="tabControl1" 
+                    VerticalAlignment="Stretch" SelectionChanged="tabControl1_SelectionChanged">
+
+                    <TabItem Header="Current ICD-10" Name="tabICD10Current">
+                        <gloUIControlLibrary:ICDSpecialCodeControl x:Name="gloICDCurrentCodes"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch" />
+                    </TabItem>
+
+                    <TabItem Header="ICD-10 Master" Name="tabICD10Master">
+                        <Grid Background="{DynamicResource BaseBackColor}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border 
+                                x:Name="pnlHeaderICD"                                
+                                Grid.Row="0"  
+                                BorderThickness="1" 
+                                BorderBrush="{DynamicResource BaseForeColor}" 
+                                Background="{DynamicResource Img_DarkHeaderStyle}" 
+                                CornerRadius="2,2,0,0" 
+                                Margin="0,0,0,3">
+                                <TextBlock 
+                                    HorizontalAlignment="Center" 
+                                    TextWrapping="Wrap" 
+                                    VerticalAlignment="Center" 
+                                    Margin="10,0,0,0" 
+                                    FontWeight="Bold" 
+                                    FontFamily="{DynamicResource BaseFontFamily}" 
+                                    Text="ICD-10 Master" 
+                                    Foreground="White"/>
+                            </Border>
+
+                            <Border 
+                                x:Name="pnlClearSearch" 
+                                Grid.Row="1" 
+                                BorderBrush="{DynamicResource BaseForeColor}" 
+                                Margin="0,0,0,3"
+                                BorderThickness="1" 
+                                Background="White">
+
+                                <Grid x:Name="CLearSearch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="35"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="30"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="btnClearSearch_Copy"  Cursor="Arrow" Template="{DynamicResource Browse}" Style="{DynamicResource ClearSearchButtonStyle}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="19.75" Width="19.67"/>
+                                    <Button x:Name="btnClearSearch" VerticalAlignment="Stretch"  Grid.Column="2" Style="{DynamicResource ClearSearchButtonStyle}" Width="20" Height="18" Cursor="Hand" Click="btnClearSearch_Click" />
+                                    <TextBox Margin="0" x:Name="txtSearch" Grid.Column="1" BorderBrush="{x:Null}"  Background="{x:Null}" VerticalAlignment="Center" TextChanged="txtSearch_TextChanged" />
+                                </Grid>
+                            </Border>
+
+                            <Border 
+                                x:Name="pnlSpeciality" 
+                                Grid.Row="2" 
+                                BorderThickness="1" 
+                                BorderBrush="{DynamicResource BaseForeColor}" 
+                                Margin="0,0,0,3">
+                                <Grid Margin="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock TextWrapping="Wrap" FontFamily="{DynamicResource BaseFontFamily}" Text="Speciality:" Margin="0" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Center"/>
+                                    <ComboBox  x:Name="cmbSpeciality" Margin="0" Grid.Column="1" Grid.Row="1" FontFamily="{DynamicResource BaseFontFamily}" FontSize="{DynamicResource BaseFontSize}" SelectionChanged="cmbSpeciality_SelectionChanged">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Description}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </Grid>
+                            </Border>
+
+                            <Border                               
+                                x:Name="pnlTreeViewMaster" 
+                                Grid.Row="3"
+                                BorderThickness="1" 
+                                Background="{DynamicResource BaseWhiteColor}"
+                                BorderBrush="{DynamicResource BaseForeColor}" 
+                                Margin="0,0,0,3">
+
+                                <TreeView                             
+                                    ItemsSource="{Binding}" 
+                                    x:Name="trvCurrentICDNodes" 
+                                    BorderBrush="{x:Null}" 
+                                    BorderThickness="0" 
+                                    Background="{x:Null}"
+                                    Margin="0,3,0,0"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch"
+                                    VirtualizingStackPanel.IsVirtualizing="True"
+                                    VirtualizingStackPanel.VirtualizationMode="Recycling">
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="{x:Type TreeViewItem}">
+                                            <Setter Property="Template"
+                                Value="{DynamicResource TreeViewItemControlTemplate}" />
+                                            <EventSetter Event="KeyDown" Handler="trvMaster_KeyDown"/>
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+                                    <TreeView.ItemTemplate>
+                                        <DataTemplate>
+                                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Stretch" Margin="0,0,0,3">
+                                                <CheckBox Focusable="False" IsChecked="{Binding IsChecked}" Margin="0,3,5,0"></CheckBox>
+                                                <Image Source="ICO\ICD10GalleryGreen.ico" Height="16" Width="16" Margin="0,3,4,0"></Image>
+                                                <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                                                    <TextBlock Text="{Binding ICD10Code}" Margin="3,0,0,0"/>
+                                                    <TextBlock Text="-" Margin="3,0,0,0"/>
+                                                    <TextBlock Text="{Binding LongDescription}" Margin="3,0,0,0"
+                                           TextWrapping="Wrap"
+                                           TextTrimming="CharacterEllipsis" />
+                                                </StackPanel>
+
+                                            </WrapPanel>
+                                        </DataTemplate>
+                                    </TreeView.ItemTemplate>
+                                </TreeView>
+                            </Border>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+    	</DockPanel>
+    </Grid>
+</Window>

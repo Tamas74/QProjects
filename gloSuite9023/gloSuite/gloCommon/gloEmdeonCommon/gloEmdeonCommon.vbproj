@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27D1A249-9A51-4508-AE05-086C0C754512}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gloEmdeonCommon</RootNamespace>
+    <AssemblyName>gloEmdeonCommon</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/gloEmdeonCommon/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>gloEmdeonCommon.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>gloEmdeonCommon.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>gloEmdeonCommon.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>gloEmdeonCommon.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.BLACKICEDEVMODELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\AxInterop.BLACKICEDEVMODELib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloEMR\gloEMR\DLL\AxInterop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.ezDICOMax, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\AxInterop.ezDICOMax.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.MSChart20Lib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\AxInterop.MSChart20Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.QuintonECG, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\AxInterop.QuintonECG.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\..\gloEMR\gloEMR\DLL\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.DSOFramer">
+      <HintPath>..\..\gloEMR\gloEMR\DLL\Interop.DSOFramer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ECGMgmtCom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Interop.ECGMgmtCom.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSChart20Lib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Interop.MSChart20Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.QuintonECG, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Interop.QuintonECG.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Core">
+      <HintPath>..\..\gloDLL\Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\gloDLL\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="msdatasrc, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\gloDLL\msdatasrc.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFNet, Version=5.8.2.0, Culture=neutral, PublicKeyToken=36167be3f67ac39c, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\PDFNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PegasusImaging.WinForms.ImagXpress9, Version=9.0.31.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\PegasusImaging.WinForms.ImagXpress9.dll</HintPath>
+    </Reference>
+    <Reference Include="PegasusImaging.WinForms.PrintPro4, Version=4.0.18.0, Culture=neutral, PublicKeyToken=80d669b8b606a2da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\PegasusImaging.WinForms.PrintPro4.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClsContactDBLayer.vb" />
+    <Compile Include="Classes\clsDataDictionary.vb" />
+    <Compile Include="Classes\ClsDiagnosisDBLayer.vb" />
+    <Compile Include="Classes\clsDICOM.vb" />
+    <Compile Include="Classes\clsEFaxSettings.vb" />
+    <Compile Include="Classes\clsFAX.vb" />
+    <Compile Include="Classes\ClsFaxException.vb" />
+    <Compile Include="Classes\clsgloDataBase.vb" />
+    <Compile Include="Classes\clsInternetFax.vb" />
+    <Compile Include="Classes\clsModifiers.vb" />
+    <Compile Include="Classes\clsMytable.vb" />
+    <Compile Include="Classes\clsmyTreeNode.vb" />
+    <Compile Include="Classes\clsPatientExams.vb" />
+    <Compile Include="Classes\clsPrintFAX.vb" />
+    <Compile Include="Classes\clsPrintFaxReport.vb" />
+    <Compile Include="Classes\clsProvider.vb" />
+    <Compile Include="Classes\ClsTreatmentDBLayer.vb" />
+    <Compile Include="Classes\clsViewGraphs.vb" />
+    <Compile Include="Classes\clsWord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\EmdeonCommon.vb" />
+    <Compile Include="Classes\gloC1FlexStyle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\mdlcreatetiff.vb" />
+    <Compile Include="Classes\mdlEcgProcessLayer.vb" />
+    <Compile Include="Classes\mdlFAX.vb" />
+    <Compile Include="Classes\mdlGeneral.vb" />
+    <Compile Include="Classes\myList.vb" />
+    <Compile Include="Forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddDicomNotes.designer.vb">
+      <DependentUpon>frmAddDicomNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDicomNotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddDicom_Acknowledgement.Designer.vb">
+      <DependentUpon>frmAddDicom_Acknowledgement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDicom_Acknowledgement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddDictionary.Designer.vb">
+      <DependentUpon>frmAddDictionary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDictionary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmECGHealthCentrix.Designer.vb">
+      <DependentUpon>frmECGHealthCentrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmECGHealthCentrix.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmECGOrderOptions.Designer.vb">
+      <DependentUpon>frmECGOrderOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmECGOrderOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmgloXRay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmHealthCentrixLoad.Designer.vb">
+      <DependentUpon>frmHealthCentrixLoad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmHealthCentrixLoad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInfoDocument.Designer.vb">
+      <DependentUpon>frmInfoDocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInfoDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLab_Graphs.designer.vb">
+      <DependentUpon>frmLab_Graphs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLab_Graphs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLab_GraphsResult.designer.vb">
+      <DependentUpon>frmLab_GraphsResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLab_GraphsResult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectContactFAXWithFAXCoverPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewDICOMAmendments.designer.vb">
+      <DependentUpon>frmViewDICOMAmendments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewDICOMAmendments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Diagnosis.Designer.vb">
+      <DependentUpon>frm_Diagnosis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Diagnosis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Treatment.Designer.vb">
+      <DependentUpon>frm_Treatment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Treatment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControl\CustomControlWait.Designer.vb">
+      <DependentUpon>CustomControlWait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\CustomControlWait.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDicomNotes.resx">
+      <DependentUpon>frmAddDicomNotes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDicom_Acknowledgement.resx">
+      <DependentUpon>frmAddDicom_Acknowledgement.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDictionary.resx">
+      <DependentUpon>frmAddDictionary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmECGHealthCentrix.resx">
+      <DependentUpon>frmECGHealthCentrix.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmECGOrderOptions.resx">
+      <DependentUpon>frmECGOrderOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmgloXRay.resx">
+      <DependentUpon>frmgloXRay.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmHealthCentrixLoad.resx">
+      <DependentUpon>frmHealthCentrixLoad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInfoDocument.resx">
+      <DependentUpon>frmInfoDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLab_Graphs.resx">
+      <DependentUpon>frmLab_Graphs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLab_GraphsResult.resx">
+      <DependentUpon>frmLab_GraphsResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectContactFAXWithFAXCoverPage.resx">
+      <DependentUpon>frmSelectContactFAXWithFAXCoverPage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewDICOMAmendments.resx">
+      <DependentUpon>frmViewDICOMAmendments.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Diagnosis.resx">
+      <DependentUpon>frm_Diagnosis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Treatment.resx">
+      <DependentUpon>frm_Treatment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\CustomControlWait.resx">
+      <DependentUpon>CustomControlWait.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\gloCommon\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloBilling\gloBilling.csproj">
+      <Project>{1952B570-8843-4A21-B518-D3E0A40F11EB}</Project>
+      <Name>gloBilling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloEMRGeneralLibrary\gloEMRGeneralLibrary.vbproj">
+      <Project>{39D920BB-D15F-41CC-864B-B9786E8130CB}</Project>
+      <Name>gloEMRGeneralLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloCommon\gloUserControlLibrary\gloUserControlLibrary.vbproj">
+      <Project>{DC24512A-9212-4075-B216-F824EB12D102}</Project>
+      <Name>gloUserControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gloEMR\gloEMRReports\gloEMRReports.csproj">
+      <Project>{8B17E4C5-6705-4EFE-8227-40135A70C42F}</Project>
+      <Name>gloEMRReports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatient\gloPatient.csproj">
+      <Project>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</Project>
+      <Name>gloPatient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPrintDialog\gloPrintDialog.csproj">
+      <Project>{8DD0457B-4AF0-4CB3-A7BB-35DAC5665C50}</Project>
+      <Name>gloPrintDialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSecurity\gloSecurity.csproj">
+      <Project>{7BFA9168-E479-4217-B7BB-A9440D38CDFB}</Project>
+      <Name>gloSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloTransparentScreen\gloTransparentScreen.csproj">
+      <Project>{B0698FDA-3EA2-4203-8A5C-A13CB49E8FBA}</Project>
+      <Name>gloTransparentScreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUIControlLibrary\gloUIControlLibrary.csproj">
+      <Project>{F1DC1088-F098-466E-AA03-1A9C3AD9DB83}</Project>
+      <Name>gloUIControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloWord\gloWord.vbproj">
+      <Project>{DF7A4D19-B508-499E-BF16-347DA844D1D3}</Project>
+      <Name>gloWord</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordToolStrip\WordToolStrip.csproj">
+      <Project>{CA95D4E0-5AC5-4DDF-AE0F-085395C8B6C7}</Project>
+      <Name>WordToolStrip</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IObjectSafetyTLB">
+      <Guid>{C67830E0-D11D-11CF-BD80-00AA00575603}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Toolstrip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_Button.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\custom.png" />
+    <Content Include="Resources\Down.png" />
+    <Content Include="Resources\Down24.png" />
+    <Content Include="Resources\DownHover.png" />
+    <None Include="Resources\CPT.png" />
+    <None Include="Resources\CPT1.png" />
+    <None Include="Resources\flag yellow.png" />
+    <None Include="Resources\ICD10GalleryGreen.png" />
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <None Include="Resources\Img_Gradient.gif" />
+    <Content Include="Resources\Img_Orange.gif" />
+    <None Include="Resources\ICD 09.png" />
+    <None Include="Resources\Img_LongButton.gif" />
+    <None Include="Resources\Img_LongOrange.gif" />
+    <None Include="Resources\Img_LongYellow.gif" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\Modify1.png" />
+    <None Include="Resources\SmallDown.png" />
+    <None Include="Resources\SmallRight.png" />
+    <None Include="Resources\SmallUp.png" />
+    <None Include="Resources\SmallLeft.png" />
+    <None Include="Resources\SmallDown_Orange.png" />
+    <None Include="Resources\SmallLeft_Orange.png" />
+    <None Include="Resources\SmallRight_Orange.png" />
+    <None Include="Resources\SmallUp_Orange.png" />
+    <Content Include="Resources\UP.png" />
+    <Content Include="Resources\Up24.png" />
+    <Content Include="Resources\UPHover.png" />
+    <Content Include="Resources\YellowDown24.png" />
+    <Content Include="Resources\YellowUp24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

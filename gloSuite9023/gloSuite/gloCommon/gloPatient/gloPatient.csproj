@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80B1F701-EC47-4CD8-BDCB-475678EF96E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gloPatient</RootNamespace>
+    <AssemblyName>gloPatient</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/gloPatient/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20111.602, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1FlexGrid.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20111.88, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\C1.Win.C1SuperTooltip.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EDIdEv.FrameworkEDI.NET, Version=5.4.519.116, Culture=neutral, PublicKeyToken=366ef3324f08b1d2">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\EDIdEv.FrameworkEDI.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="gloPatientMigration, Version=1.6.3500.50, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\gloPatientMigration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cui.WPFControls, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\gloDLL\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsGloGDI.cs" />
+    <Compile Include="ClsAS_PostEDI.cs" />
+    <Compile Include="ClsgloCameraBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="clsgloPatient.cs" />
+    <Compile Include="clsgloPatientAudit.cs" />
+    <Compile Include="ClsgloPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="clsgloWebcam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="clsPatientAccounts.cs" />
+    <Compile Include="CLs_Eiligibility.cs" />
+    <Compile Include="frmAPIAccessAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAPIAccessAccount.designer.cs">
+      <DependentUpon>frmAPIAccessAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMUHosp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMUHosp.Designer.cs">
+      <DependentUpon>frmMUHosp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigureWebCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigureWebCam.Designer.cs">
+      <DependentUpon>frmConfigureWebCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuickNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuickNotes.designer.cs">
+      <DependentUpon>frmQuickNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapUnMatchPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapUnMatchPatients.designer.cs">
+      <DependentUpon>frmMapUnMatchPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientPortal.designer.cs">
+      <DependentUpon>frmPatientPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmvwRecentPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmvwRecentPatient.Designer.cs">
+      <DependentUpon>frmvwRecentPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientDemographicsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientDemographicsControl.Designer.cs">
+      <DependentUpon>gloPatientDemographicsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientRepresentativeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientRepresentativeControl.Designer.cs">
+      <DependentUpon>gloPatientRepresentativeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccountNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccountNotes.designer.cs">
+      <DependentUpon>frmAccountNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMUReferals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMUReferals.Designer.cs">
+      <DependentUpon>frmMUReferals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPAGuarantorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPAGuarantorControl.Designer.cs">
+      <DependentUpon>gloPAGuarantorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNotes.designer.cs">
+      <DependentUpon>frmAddNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPatientAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPatientAccount.designer.cs">
+      <DependentUpon>frmAddPatientAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCopyPatientAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCopyPatientAccount.designer.cs">
+      <DependentUpon>frmCopyPatientAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditPatientAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPatientAccount.designer.cs">
+      <DependentUpon>frmEditPatientAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEligibilityResponse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEligibilityResponse.designer.cs">
+      <DependentUpon>frmEligibilityResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEligibilityResponse_5010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEligibilityResponse_5010.Designer.cs">
+      <DependentUpon>frmEligibilityResponse_5010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMergeAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMergeAccounts.designer.cs">
+      <DependentUpon>frmMergeAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMergePatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMergePatients.Designer.cs">
+      <DependentUpon>frmMergePatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPAAdvanceSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPAAdvanceSearch.Designer.cs">
+      <DependentUpon>frmPAAdvanceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientChangeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientChangeHistory.Designer.cs">
+      <DependentUpon>frmPatientChangeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientRelationship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientRelationship.Designer.cs">
+      <DependentUpon>frmPatientRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelationShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelationShip.Designer.cs">
+      <DependentUpon>frmRelationShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupInsurancePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupInsurancePlan.Designer.cs">
+      <DependentUpon>frmSetupInsurancePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupPatient.Designer.cs">
+      <DependentUpon>frmSetupPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetupQuickPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetupQuickPatient.Designer.cs">
+      <DependentUpon>frmSetupQuickPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubmit271Response.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubmit271Response.Designer.cs">
+      <DependentUpon>frmSubmit271Response.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloDataGridViewStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gloPatientAccountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientAccountControl.designer.cs">
+      <DependentUpon>gloPatientAccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientAddAccountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientAddAccountControl.designer.cs">
+      <DependentUpon>gloPatientAddAccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientCopyAccountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientCopyAccountControl.designer.cs">
+      <DependentUpon>gloPatientCopyAccountControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientGuarantorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientGuarantorControl.Designer.cs">
+      <DependentUpon>gloPatientGuarantorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientGuardianControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientGuardianControl.Designer.cs">
+      <DependentUpon>gloPatientGuardianControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientInsuranceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientInsuranceControl.Designer.cs">
+      <DependentUpon>gloPatientInsuranceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientOccupationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientOccupationControl.Designer.cs">
+      <DependentUpon>gloPatientOccupationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloPatientOtherInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloPatientOtherInfoControl.Designer.cs">
+      <DependentUpon>gloPatientOtherInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloQuickPatientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloQuickPatientControl.Designer.cs">
+      <DependentUpon>gloQuickPatientControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloSmartPatientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gloSmartPatientControl.Designer.cs">
+      <DependentUpon>gloSmartPatientControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gloUCCardioVasculargraph.xaml.cs">
+      <DependentUpon>gloUCCardioVasculargraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\ActivityDialog.xaml.cs">
+      <DependentUpon>ActivityDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\ContinuousAdministrationEvent.xaml.cs">
+      <DependentUpon>ContinuousAdministrationEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\CurvedInterpolationLine.xaml.cs">
+      <DependentUpon>CurvedInterpolationLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\DecoratorTextBoxPage.xaml.cs">
+      <DependentUpon>DecoratorTextBoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\EncodableInputBoxPage.xaml.cs">
+      <DependentUpon>EncodableInputBoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\HighlightSection.cs" />
+    <Compile Include="Graphing\HelperControls\IndentedLabelPage.xaml.cs">
+      <DependentUpon>IndentedLabelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\LevelOfDetailPage.xaml.cs">
+      <DependentUpon>LevelOfDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\ModalDialog.xaml.cs">
+      <DependentUpon>ModalDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\PanelViewerPage.xaml.cs">
+      <DependentUpon>PanelViewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\HelperControls\WrapPanelPage.xaml.cs">
+      <DependentUpon>WrapPanelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\IntToVisibilityConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Controls\DosePicker.xaml.cs">
+      <DependentUpon>DosePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\SearchAndPrescribe\Controls\DurationPicker.xaml.cs">
+      <DependentUpon>DurationPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\SearchAndPrescribe\Controls\FrequencyPicker.xaml.cs">
+      <DependentUpon>FrequencyPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\SearchAndPrescribe\Controls\MedsListViewHost.xaml.cs">
+      <DependentUpon>MedsListViewHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\CompletedPrescriptionToMedsLineConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\DateTimeToCuiDateStringConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\DateTimeToCuiTimeStringConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\DrugNameToTextBlockConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\StringToTimeConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\StringToTimeSpanConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Converters\TimeSpanToStringConverter.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\AdministrationTimes.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\CompletedPrescription.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Dose.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Drug.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\DrugElement.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Duration.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\ElementValue.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Form.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Frequency.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Prescription.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Route.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\Strength.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Entities\TemplatePrescription.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Helpers\DrugDataHelper.cs" />
+    <Compile Include="Graphing\SearchAndPrescribe\Helpers\DrugSearchHelper.cs" />
+    <Compile Include="Graphing\TimelineData.cs" />
+    <Compile Include="Graphing\TimelineGraphData.cs" />
+    <Compile Include="Graphing\TimelineMedicationDetails.cs" />
+    <Compile Include="PatientImage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientImage.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PatientListControl.Designer.cs">
+      <DependentUpon>PatientListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPhoto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TimeActivityGraphHostPage.xaml.cs">
+      <DependentUpon>TimeActivityGraphHostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\EDIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RTEligibilityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsElig270\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAPIAccessAccount.resx">
+      <DependentUpon>frmAPIAccessAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMUHosp.resx">
+      <DependentUpon>frmMUHosp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigureWebCam.resx">
+      <DependentUpon>frmConfigureWebCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuickNotes.resx">
+      <DependentUpon>frmQuickNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapUnMatchPatients.resx">
+      <DependentUpon>frmMapUnMatchPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientPortal.resx">
+      <DependentUpon>frmPatientPortal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmvwRecentPatient.resx">
+      <DependentUpon>frmvwRecentPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientDemographicsControl.resx">
+      <DependentUpon>gloPatientDemographicsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientRepresentativeControl.resx">
+      <DependentUpon>gloPatientRepresentativeControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccountNotes.resx">
+      <DependentUpon>frmAccountNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMUReferals.resx">
+      <DependentUpon>frmMUReferals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPAGuarantorControl.resx">
+      <DependentUpon>gloPAGuarantorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNotes.resx">
+      <DependentUpon>frmAddNotes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPatientAccount.resx">
+      <DependentUpon>frmAddPatientAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCopyPatientAccount.resx">
+      <DependentUpon>frmCopyPatientAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPatientAccount.resx">
+      <DependentUpon>frmEditPatientAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEligibilityResponse.resx">
+      <DependentUpon>frmEligibilityResponse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEligibilityResponse_5010.resx">
+      <DependentUpon>frmEligibilityResponse_5010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMergeAccounts.resx">
+      <DependentUpon>frmMergeAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMergePatients.resx">
+      <DependentUpon>frmMergePatients.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPAAdvanceSearch.resx">
+      <DependentUpon>frmPAAdvanceSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientChangeHistory.resx">
+      <DependentUpon>frmPatientChangeHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientRelationship.resx">
+      <DependentUpon>frmPatientRelationship.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelationShip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRelationShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupInsurancePlan.resx">
+      <DependentUpon>frmSetupInsurancePlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupPatient.resx">
+      <DependentUpon>frmSetupPatient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetupQuickPatient.resx">
+      <DependentUpon>frmSetupQuickPatient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubmit271Response.resx">
+      <DependentUpon>frmSubmit271Response.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientAccountControl.resx">
+      <DependentUpon>gloPatientAccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientAddAccountControl.resx">
+      <DependentUpon>gloPatientAddAccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientCopyAccountControl.resx">
+      <DependentUpon>gloPatientCopyAccountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientGuarantorControl.resx">
+      <DependentUpon>gloPatientGuarantorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientGuardianControl.resx">
+      <DependentUpon>gloPatientGuardianControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientInsuranceControl.resx">
+      <DependentUpon>gloPatientInsuranceControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientOccupationControl.resx">
+      <DependentUpon>gloPatientOccupationControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloPatientOtherInfoControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gloPatientOtherInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloQuickPatientControl.resx">
+      <DependentUpon>gloQuickPatientControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gloSmartPatientControl.resx">
+      <DependentUpon>gloSmartPatientControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PatientListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gloAddressControl\gloAddress.csproj">
+      <Project>{CC12AABD-F887-4EE6-9AC2-55F3706F5F58}</Project>
+      <Name>gloAddress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAppointmentBook\gloAppointmentBook.csproj">
+      <Project>{8DDE29B5-495E-49D1-82A0-644B2C4B493C}</Project>
+      <Name>gloAppointmentBook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAuditTrail\gloAuditTrail.csproj">
+      <Project>{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}</Project>
+      <Name>gloAuditTrail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloAUSdll\gloAUSLibrary\gloAUSLibrary.csproj">
+      <Project>{FEBB8F47-F62A-419F-AC1B-B10E672DE624}</Project>
+      <Name>gloAUSLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloCardScanning\gloCardScanning.csproj">
+      <Project>{4EE01581-8654-44EB-865F-3B7BB27D3AED}</Project>
+      <Name>gloCardScanning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloContacts\gloContacts.csproj">
+      <Project>{E927ECC9-383B-4812-8167-48F712C5A769}</Project>
+      <Name>gloContacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDatabaseLayer\gloDatabaseLayer.csproj">
+      <Project>{6D67B632-66D0-4EDC-9943-B6488A6098D3}</Project>
+      <Name>gloDatabaseLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloDateMaster\gloDateMaster.csproj">
+      <Project>{ECD171D2-F407-41D5-AC83-C4F6A692EAF2}</Project>
+      <Name>gloDateMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGeneralItem\gloGeneralItem.csproj">
+      <Project>{076D1B63-0D5C-4F76-B30B-C94023290017}</Project>
+      <Name>gloGeneralItem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloGlobal\gloGlobal.csproj">
+      <Project>{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}</Project>
+      <Name>gloGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloListControl\gloListControl.csproj">
+      <Project>{D2305C23-DA6B-462A-8BDB-6EF267E507A6}</Project>
+      <Name>gloListControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloMaskBox\gloMaskBox.csproj">
+      <Project>{78959415-5FC9-4092-BE9F-A5380FB100DF}</Project>
+      <Name>gloMaskBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloPatientPortalCommon\gloPatientPortalCommon\gloPatientPortalCommon.vbproj">
+      <Project>{E13714AA-CE10-4A69-85A0-3EAF21227265}</Project>
+      <Name>gloPatientPortalCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSecurity\gloSecurity.csproj">
+      <Project>{7BFA9168-E479-4217-B7BB-A9440D38CDFB}</Project>
+      <Name>gloSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSettings\gloSettings.csproj">
+      <Project>{52DDAD83-38A4-4130-9D1E-B2F8CAE8DD71}</Project>
+      <Name>gloSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloSSRSApplication\Project_Reportview\gloSSRSApplication.csproj">
+      <Project>{C25CD246-8E4E-4B66-9A02-C0848E97E499}</Project>
+      <Name>gloSSRSApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloUserRights\gloUserRights.csproj">
+      <Project>{9487621F-F5AF-473F-A6FD-794890C10B39}</Project>
+      <Name>gloUserRights</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\gloWebCamWrapper\gloWebCamWrapper.csproj">
+      <Project>{CC5D5149-0092-4508-AC34-2ABE1468A1C9}</Project>
+      <Name>gloWebCamWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\AxInterop.SIGPLUSLib.dll" />
+    <Content Include="DLL\C1.Win.C1FlexGrid.2.dll" />
+    <Content Include="DLL\C1.Win.C1SuperTooltip.2.dll" />
+    <Content Include="DLL\gloPatientMigration.dll" />
+    <Content Include="DLL\Interop.SIGPLUSLib.dll" />
+    <Content Include="DLL\Microsoft.Cui.WPFControls.Design.dll">
+    </Content>
+    <Content Include="DLL\Microsoft.Cui.WPFControls.dll">
+    </Content>
+    <Content Include="DLL\Microsoft.Cui.WPFControls.Expression.Design.dll">
+    </Content>
+    <Content Include="DLL\Microsoft.Cui.WPFControls.VisualStudio.Design.dll">
+    </Content>
+    <Content Include="DLL\WPFToolkit.dll">
+    </Content>
+    <Content Include="Resources\Img_Blue2007.gif" />
+    <Content Include="Resources\Img_LongButton.gif" />
+    <Content Include="Resources\Img_LongOrange.gif" />
+    <Content Include="Resources\Img_LongYellow.gif" />
+    <None Include="PatientImage.xsc">
+      <DependentUpon>PatientImage.xsd</DependentUpon>
+    </None>
+    <None Include="PatientImage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatientImage.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PatientImage.xss">
+      <DependentUpon>PatientImage.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\EDI.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\EligibilityData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EDIService\gloWebEDI.disco" />
+    <None Include="Web References\EDIService\gloWebEDI.wsdl" />
+    <None Include="Web References\EDIService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsElig270\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsElig270\ResponseHeader.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsElig270\wsElig270.disco" />
+    <None Include="Resources\Save as Copy.ico" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Modify Patient.ico" />
+    <None Include="Resources\New Patient.ico" />
+    <None Include="Web References\RTEligibilityService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RTEligibilityService\Service.disco" />
+    <None Include="Resources\Img_2003DarkHeader.gif" />
+    <None Include="Resources\Img_Toolstrip.gif" />
+    <None Include="Resources\Img_ButtonHover.gif" />
+    <None Include="Resources\Img_Button.gif" />
+    <None Include="Resources\Ico_Save.png" />
+    <None Include="Resources\Ico_Cancel.png" />
+    <None Include="Resources\Ico_Ok.ico" />
+    <None Include="Resources\blank_female.gif" />
+    <None Include="Resources\blank_male.jpg" />
+    <None Include="Web References\RTEligibilityService\Service.wsdl" />
+    <None Include="Web References\RTEligibilityService\WSEligibilityResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RTEligibilityService\WSX12EligibilityResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsElig270\wsElig270.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://dev20/glowebedi/gloWebEDI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EDIService\</RelPath>
+      <UpdateFromURL>http://dev20/glowebedi/gloWebEDI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloPatient_EDIService_gloWebEDI837</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsElig270\</RelPath>
+      <UpdateFromURL>https://rmhcpsupport.realmed.com/webservices/wsElig270.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloPatient_wsElig270_wsElig270</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://testservices.gatewayedi.com/Eligibility/Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RTEligibilityService\</RelPath>
+      <UpdateFromURL>https://testservices.gatewayedi.com/Eligibility/Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>gloPatient_RTEligibilityService_Eligibility</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="gloUCCardioVasculargraph.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\ActivityDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\ContinuousAdministrationEvent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\CurvedInterpolationLine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\DecoratorTextBoxPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\EncodableInputBoxPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\IndentedLabelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\LevelOfDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\ModalDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\PanelViewerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\HelperControls\WrapPanelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\ResourceDictionaries\TimeActivityGraphHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\ResourceDictionaries\TimeActivityGraphHostGraphs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\SearchAndPrescribe\Controls\DosePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\SearchAndPrescribe\Controls\DurationPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\SearchAndPrescribe\Controls\FrequencyPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\SearchAndPrescribe\Controls\MedsListViewHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Graphing\SearchAndPrescribe\ResourceDictionaries\DefaultResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimeActivityGraphHostPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

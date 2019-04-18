@@ -1,0 +1,819 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:System="clr-namespace:System;assembly=mscorlib" 
+	 xmlns:Converter="clr-namespace:gloUIControlLibrary.Classes"
+        xmlns:RuleTypeConverter="clr-namespace:gloUIControlLibrary.Classes.ClaimRules"
+	mc:Ignorable="d">
+    <!-- *************************************************** -->
+    <!-- Resource dictionary entries should be defined here. -->
+    <!-- *************************************************** -->
+    
+    <!-- **************************** -->
+    <!-- Style ToolStrip Button Hover -->
+    <!-- **************************** -->
+    
+    <Style x:Key="ToolStripButtonHover"
+           TargetType="{x:Type Border}">
+        <Style.Triggers>
+            <Trigger Property="Border.IsMouseOver"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="#FFC2E0FF" />
+                <Setter Property="BorderBrush"
+                        Value="#FF3399FF" />
+                <Setter Property="BorderThickness"
+                        Value="1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!-- ************************** -->
+    <!-- Style for the SimpleButton -->
+    <!-- ************************** -->
+    
+    <Style x:Key="SimpleButton"
+           TargetType="{x:Type Button}"
+           BasedOn="{x:Null}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="Grid">
+                        <Border x:Name="Border"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                BorderThickness="0"
+                                Padding="0" />
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          Margin="0"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+     <!-- ********************* -->
+    <!-- Style Font Family -->
+    <!-- ********************* -->
+   
+    <SolidColorBrush x:Key="BaseBackColor" Color="#FFCFE0F8"/>  <!-- Style Form BackColor -->
+	<SolidColorBrush x:Key="BaseWhiteColor" Color="White"/> 	<!-- Style Treeview BackColor -->
+	<SolidColorBrush x:Key="BaseForeColor" Color="#FF1F497D"/>  <!-- Style Label ForeColor -->
+    <FontFamily x:Key="BaseFontFamily">Tahoma</FontFamily>
+    <System:Double x:Key="BaseFontSize">12</System:Double>
+	<Style  x:Key="BaseTxtFontSize" TargetType="{x:Type TextBlock}">
+		<Setter Property="FontSize" Value="9" />
+	</Style>
+
+    <!-- ********************* -->
+    <!-- Style RadioButton -->
+    <!-- ********************* -->
+    
+    <Style TargetType="{x:Type RadioButton}">
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="FontWeight" Value="Bold" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+       
+    <!-- ********************* -->
+    <!-- Style ButtonStyle -->
+    <!-- ********************* -->
+    
+	<Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+		<Setter Property="Foreground" Value="{DynamicResource BaseForeColor}" />
+	    <Setter Property="FontSize" Value="10" />
+	    <Setter Property="FontFamily" Value="Tahoma" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="BorderBrush" Value="{DynamicResource BaseForeColor}" />
+        <Setter Property="Background" Value="{DynamicResource Img_ButtonStyle}" />
+        <Style.Triggers>
+             <Trigger Property="IsMouseOver" Value="True">
+                 <Setter Property="Background" Value="{DynamicResource Img_YellowHoverButtonStyle}" />
+             </Trigger>
+        </Style.Triggers>
+      </Style>
+
+    <!-- ********************* -->
+    <!-- Style BaseButtonColor -->
+    <!-- ********************* -->
+   
+    <LinearGradientBrush x:Key="Img_ButtonStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFDEEDF7" Offset="0.15"/>
+        <GradientStop Color="#FFC7D8ED" Offset="0.45"/>
+        <GradientStop Color="#FFE0EAFA" Offset="0.9"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style ToolstripStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_ToolstripStyle" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFE5F0F9" Offset="0.069"/>
+        <GradientStop Color="#FFB8CFEF" Offset="0.19"/>
+        <GradientStop Color="#FFC6D9F4" Offset="0.614"/>
+        <GradientStop Color="White" Offset="0.993"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style YellowHoverButtonStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_YellowHoverButtonStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFFEE4" Offset="0"/>
+        <GradientStop Color="#FFFFECB3" Offset="0.404"/>
+        <GradientStop Color="#FFFFD767" Offset="0.416"/>
+        <GradientStop Color="#FFFFE496" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style OrangeHoverButtonStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_OrangeHoverButtonStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFCD6A7" Offset="0.032"/>
+        <GradientStop Color="#FFFBC57E" Offset="0.344"/>
+        <GradientStop Color="#FFF9AB47" Offset="0.412"/>
+        <GradientStop Color="#FFFFD071" Offset="0.838"/>
+        <GradientStop Color="#FFFFDB62" Offset="0.903"/>
+        <GradientStop Color="#FFF7E17E" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style GradientStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_GradientStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF8FAFE"/>
+        <GradientStop Color="#FFE3F0FD" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style PatientStripGradientStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_PatStripGradientStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF8FAFE"/>
+        <GradientStop Color="#FFFFEBBE" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style DarkHeaderStyle -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_DarkHeaderStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF8EB3E7"/>
+        <GradientStop Color="#FF799BCA" Offset="0.956"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style RxMedGreen -->
+    <!-- ********************* -->
+    
+    <LinearGradientBrush x:Key="Img_RxMedGreenStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFADE087" Offset="0"/>
+        <GradientStop Color="#FF75CC35" Offset="0.29"/>
+        <GradientStop Color="#FF59C10D" Offset="0.581"/>
+        <GradientStop Color="#FF70CA2D" Offset="0.839"/>
+        <GradientStop Color="#FF9AD96A" Offset="0.968"/>
+    </LinearGradientBrush>
+    
+    <!-- ********************* -->
+    <!-- Style DataGrid -->
+    <!-- ********************* -->
+    
+    <SolidColorBrush x:Key="DataGridAlternatingRowBackground" Color="#DEE7FA"/>
+	<SolidColorBrush x:Key="DataGridBackground" Color="White"/>
+	<SolidColorBrush x:Key="DataGridLinesBrush" Color="#9FB5DD"/>
+	<SolidColorBrush x:Key="DataGridRowBackground" Color="#F0F7FF"/>
+    <Style x:Key="DataGridHeaderLabelStyle">
+        <Setter Property="Control.Background"  >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF567ED3" Offset="0" />
+                    <GradientStop Color="#FF567ED3" Offset="1" />
+                    <GradientStop Color="#FF567ED3" Offset="0.407" />
+                    <GradientStop Color="#FF567ED3" Offset="0.238" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Foreground" Value="White"/>
+        <Setter Property="Control.FontWeight" Value="Bold"/>
+        <Setter Property="Control.BorderThickness" Value="1,0,0,0"/>
+        <Setter Property="Control.BorderBrush" Value="#FF9FB5DD"/>
+    </Style>
+    <Style x:Key="DataGridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}"  >
+        <Setter Property="Background"  >
+            <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF567ED3" Offset="0" />
+                        <GradientStop Color="#FF567ED3" Offset="1" />
+                        <GradientStop Color="#FF567ED3" Offset="0.407" />
+                        <GradientStop Color="#FF567ED3" Offset="0.238" />
+                    </LinearGradientBrush>
+           </Setter.Value>
+    </Setter>
+			<Setter Property="Height" Value="25"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+    </Style>
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Padding" Value="3,0,0,0"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="Foreground" Value="#FF1F497D"/>
+        <Setter Property="BorderBrush" Value="#FF9FB5DD"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter  Property="Background"   >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF6D572" Offset="0"/>
+                            <GradientStop Color="#FFF6D572" Offset="0.251"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="#FF9FB5DD"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter  Property="Background"   >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFE0A0" Offset="0"/>
+                            <GradientStop Color="#FFFFE0A0" Offset="0.251"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="BorderBrush" Value="#FFFFCB5F"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+     <SolidColorBrush x:Key="DataGridCellStyleIsSelectedBackground" Color="#FFF6D572"/>
+     <SolidColorBrush x:Key="DataGridCellStyleIsSelectedBackgroundFocus" Color="#FFFFE0A0"/>
+    
+    <!-- ********************* -->
+    <!-- Style Clear Search ButtonStyle -->
+    <!-- ********************* -->
+    
+    <Style x:Key="ClearSearchButtonStyle" TargetType="{x:Type Button}">
+     	<Setter Property="Background" Value="White"/>
+     	<Setter Property="BorderBrush" Value="White"/>
+     	<Setter Property="BorderThickness" Value="1"/>
+     	<Setter Property="Template" Value="{DynamicResource ClearSearchControlTemplate}"/>
+     </Style>
+	 
+     <RadialGradientBrush x:Key="ClearSearchBrush">
+    	<GradientStop Color="#FFDE2406" Offset="0"/>
+    	<GradientStop Color="#FFFF7866" Offset="0.89"/>
+    </RadialGradientBrush>
+	
+     <Color x:Key="ClearSearchBorderColor">#FF891000</Color>
+	 
+     <RadialGradientBrush x:Key="ClearSearchIsHover">
+     	<GradientStop Color="#4CFF0000" Offset="1"/>
+     	<GradientStop Color="#FFD21E06"/>
+     </RadialGradientBrush>
+	 
+     <RadialGradientBrush x:Key="ClearSearchIsPressed">
+     	<GradientStop Color="#FFFF2104"/>
+     	<GradientStop Color="#FF681F16" Offset="0.992"/>
+     </RadialGradientBrush>
+	 
+	<ControlTemplate x:Key="ClearSearchControlTemplate" TargetType="{x:Type Button}">
+		<Grid x:Name="grid">
+			<Border x:Name="brdPath" HorizontalAlignment="Stretch" Height="Auto" Margin="0" VerticalAlignment="Stretch" Width="Auto">
+				<Path x:Name="path" Data="M14.220667,9.0329203E-05 C14.813593,0.0031606818 15.425587,0.08464441 16.050001,0.26688265 16.008003,0.27137276 15.964919,0.27742522 15.920785,0.28500646 14.552646,0.52002847 12.177216,2.2243243 9.9907198,4.4009991 L9.823657,4.5691195 9.8796158,4.6151629 C10.184045,4.8664384 10.39506,5.0487242 10.48154,5.1241627 L10.48958,5.1311899 10.500546,5.1407734 C10.516924,5.1551152 10.525355,5.162582 10.525355,5.162582 10.525355,5.162582 10.535662,5.1705895 10.555215,5.1863237 L10.576447,5.2035165 10.577813,5.2046233 10.581263,5.2074509 10.606338,5.2280098 C10.70058,5.3057404 10.871698,5.4513188 11.091121,5.6571456 L11.108295,5.6733885 11.166013,5.7279769 C11.191546,5.7523232 11.217637,5.7774034 11.244246,5.803207 L11.318336,5.875681 11.325586,5.8827735 11.327076,5.8842564 11.409801,5.9666176 C12.721897,7.284669 14.964075,10.088385 14.320967,13.363147 13.863409,11.714493 11.169671,8.6878577 8.172821,6.4550338 L8.1346817,6.4269796 7.9868469,6.6055933 C6.188952,8.8054648 4.881104,11.136394 5.0115118,12.808177 4.1953688,15.343027 2.1398547,14.190273 1.8307932,12.246204 1.7988211,12.045093 1.7855389,11.835513 1.7942521,11.620672 2.1217842,9.588399 4.3905744,6.6537119 5.7765827,5.0179964 L5.8472051,4.9349428 5.6467113,4.8246489 C4.1386657,4.0125285 2.6890817,3.54968 1.5395933,3.7075778 0.42885201,3.4195221 -0.011793549,2.8611482 0.00023938319,2.2851599 L0.00061462021,2.2779539 0.0038421444,2.215973 C0.0076741999,2.1698132 0.014347629,2.1236058 0.023751084,2.0774797 L0.036121503,2.0245066 0.039890327,2.0083674 0.045784347,1.9882167 0.060041059,1.9394746 0.075665489,1.8949768 0.084120296,1.8708976 C0.11880758,1.7797154 0.16374759,1.689635 0.21804979,1.6016915 0.24520093,1.5577199 0.27469261,1.5142823 0.30641358,1.4715081 0.35399486,1.4073469 0.406592,1.3446789 0.46382918,1.2839407 L0.49289058,1.2542321 0.52259909,1.2238619 0.5526983,1.1952655 0.58437912,1.1651663 C0.64763616,1.107195 0.71528278,1.0514446 0.78694336,0.99835175 0.81083022,0.98065406 0.8351631,0.96325165 0.85992794,0.94616079 0.93422274,0.8948878 1.0124062,0.84641808 1.0941027,0.80118811 1.1213349,0.78611147 1.1489574,0.77139478 1.1769562,0.75705432 1.2049551,0.74271357 1.2333305,0.72874915 1.2620683,0.71517723 1.2908062,0.70160502 1.3199065,0.68842524 1.3493553,0.67565399 1.3788043,0.66288256 1.4086017,0.65051972 1.4387339,0.63858169 1.4688661,0.62664353 1.499333,0.61513&#xa;1.5301205,0.60405749 1.5609082,0.59298461 1.5920166,0.58235281 1.6234319,0.57217818 1.654847,0.56200325 1.6865691,0.55228549 1.718584,0.54304087 1.750599,0.53379613 1.782907,0.52502471 1.8154939,0.51674264 1.8480809,0.50846058 1.8809467,0.50066787 1.9140779,0.49338066 1.9472089,0.48609337 1.980605,0.47931167 2.0142524,0.47305175 2.0478997,0.46679174 2.0817983,0.46105349 2.1159339,0.45585304 2.1500697,0.45065259 2.184443,0.44599005 2.2190392,0.44188156 2.2536356,0.4377731&#xa;2.2884555,0.43421867 2.3234846,0.43123447 2.3585138,0.42825016 2.3937526,0.42583614 2.4291866,0.42400863 2.4646211,0.42218095 2.5002506,0.42093971 2.536062,0.4203011 2.5825813,0.42504864 2.6295974,0.43080571 2.6770835,0.43753954 3.0569713,0.49140977 3.466933,0.60778987 3.8932049,0.76993566 L4.0288224,0.82306915 4.0537939,0.83285266 4.0735531,0.84102821 4.2157521,0.89986443 C5.3538647,1.3828173 6.5806556,2.1522799 7.6471724,2.9053853 L7.6973567,2.9410363 7.7752266,2.8696025 C9.0181722,1.7401263 11.404277,-0.014493356 14.220667,9.0329203E-05 z" RenderTransformOrigin="0.555813926959675,0.499999233432146" Stretch="Fill" StrokeThickness="0.2" Fill="{DynamicResource ClearSearchBrush}">
+					<Path.Stroke>
+						<SolidColorBrush Color="{DynamicResource ClearSearchBorderColor}"/>
+					</Path.Stroke>
+					<Path.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform/>
+							<RotateTransform Angle="-0.234"/>
+							<TranslateTransform X="-0.010611717813098665" Y="0.0220479665631359"/>
+						</TransformGroup>
+					</Path.RenderTransform>
+				</Path>
+			</Border>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsMouseOver" Value="True" SourceName="brdPath">
+				<Setter Property="Fill" TargetName="path" Value="{DynamicResource ClearSearchIsHover}"/>
+				<Setter Property="Cursor" TargetName="brdPath" Value="Hand"/>
+				<Setter Property="Background" TargetName="brdPath" Value="White"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	
+	<!-- ********************* -->
+    <!-- Style TreeViewStyle -->
+    <!-- ********************* -->
+	
+	<!--<Style x:Key="TreeViewStyle" TargetType="{x:Type TreeView}">
+		<Setter Property="OverridesDefaultStyle" Value="True"/>
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
+	</Style>-->
+	
+	<!--<Style x:Key="TreeViewContainerStyle" TargetType="{x:Type TreeViewItem}">
+		<Setter Property="IsExpanded" Value="False" />
+		<Setter Property="IsSelected" Value="{Binding IsInitiallySelected, Mode=OneTime}" />
+		<Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+		<Setter Property="Template" Value="{DynamicResource TreeViewItemControlTemplate}"/>
+        <EventSetter Event="MouseDoubleClick" Handler="OnItemMouseDoubleClick"/>
+    </Style>-->
+
+    <ControlTemplate x:Key="TreeViewItemControlTemplate" TargetType="{x:Type TreeViewItem}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition MinWidth="19" Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<ToggleButton x:Name="Expander" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
+				<ToggleButton.Style>
+					<Style TargetType="{x:Type ToggleButton}">
+						<Setter Property="Focusable" Value="False"/>
+						<Setter Property="Width" Value="16"/>
+						<Setter Property="Height" Value="16"/>
+						<Setter Property="Template">
+							<Setter.Value>
+								<ControlTemplate TargetType="{x:Type ToggleButton}">
+									<Border Background="Transparent" Height="16" Padding="5" Width="16">
+										<Path x:Name="ExpandPath" Data="M0,0 L0,6 L6,0 z" Stroke="#FF1D5E87" Margin="0.092,-1.033,-0.221,0.904" Stretch="Fill">
+											<Path.Fill>
+												<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+													<GradientStop Color="#FF3087BF" Offset="0"/>
+													<GradientStop Color="White" Offset="1"/>
+												</LinearGradientBrush>
+											</Path.Fill>
+											<Path.RenderTransform>
+												<RotateTransform Angle="135" CenterY="3" CenterX="3"/>
+											</Path.RenderTransform>
+										</Path>
+									</Border>
+									<ControlTemplate.Triggers>
+										<Trigger Property="IsMouseOver" Value="True">
+											<Setter Property="Stroke" TargetName="ExpandPath" Value="#FF1BBBFA"/>
+											<Setter Property="Fill" TargetName="ExpandPath" Value="Transparent"/>
+										</Trigger>
+										<Trigger Property="IsChecked" Value="True">
+											<Setter Property="RenderTransform" TargetName="ExpandPath">
+												<Setter.Value>
+													<RotateTransform Angle="180" CenterY="3" CenterX="3"/>
+												</Setter.Value>
+											</Setter>
+											<Setter Property="Fill" TargetName="ExpandPath" Value="#FFFFD08C"/>
+											<Setter Property="Stroke" TargetName="ExpandPath" Value="#FFAB6500"/>
+										</Trigger>
+									</ControlTemplate.Triggers>
+								</ControlTemplate>
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</ToggleButton.Style>
+			</ToggleButton>
+			<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+				<ContentPresenter x:Name="PART_Header" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+			</Border>
+			<ItemsPresenter x:Name="ItemsHost" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsExpanded" Value="False">
+				<Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+			</Trigger>
+			<Trigger Property="HasItems" Value="False">
+				<Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
+			</Trigger>
+			<Trigger Property="IsSelected" Value="True">
+				<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+			</Trigger>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition Property="IsSelected" Value="True"/>
+					<Condition Property="IsSelectionActive" Value="False"/>
+				</MultiTrigger.Conditions>
+				<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			</MultiTrigger>
+			<Trigger Property="IsEnabled" Value="False">
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+    <LinearGradientBrush x:Key="ExpanderHeaderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    	<GradientStop Color="White" Offset="0"/>
+    	<GradientStop Color="#FFF5E7D5" Offset="0.13"/>
+    	<GradientStop Color="#FFF9E1C1" Offset="0.208"/>
+    	<GradientStop Color="#FFFFDEB1" Offset="1"/>
+    </LinearGradientBrush>
+    <Color x:Key="ExpanderHeaderBorderColor">#FFDC810E</Color>
+
+
+ 	<!-- ********************* -->
+    <!-- Style Animated Expander Button's Template -->
+    <!-- ********************* -->
+
+    <ControlTemplate x:Key="AnimatedExpanderButtonTemp"
+                             TargetType="{x:Type ToggleButton}">
+        <Border x:Name="ExpanderButtonBorder"
+                        BorderThickness="1" Padding="2" CornerRadius="5,5,0,0" 
+                Background="{DynamicResource ExpanderHeaderBrush}">
+        	<Border.BorderBrush>
+        		<SolidColorBrush Color="{DynamicResource ExpanderHeaderBorderColor}"/>
+        	</Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="0.285*" />
+                    <ColumnDefinition Width="0.168*"/>
+                    <ColumnDefinition Width="0.547*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="Transparent"
+                                   Grid.ColumnSpan="4" />
+                <Ellipse x:Name="Circle"
+                                 Grid.Column="0"
+                                 Stroke="#FFDC810E"
+                                 Width="18"
+                                 Height="18"
+                                 Fill="{DynamicResource Img_OrangeHoverButtonStyle}"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" />
+                <Path x:Name="Arrow"
+                              Grid.Column="0"
+                              Data="M 1,1.5 L 4.5,5 8,1.5"
+                              Stroke="Black"
+                              StrokeThickness="2"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="0" />
+                    </Path.RenderTransform>
+                </Path>
+                <ContentPresenter x:Name="HeaderContent"
+                                          Grid.Column="1"
+                                          Margin="4,1,0,0"
+                                          ContentSource="Content" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" d:LayoutOverrides="Width, GridBox" />
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <!-- Animate arrow when toggled-->
+            <Trigger Property="IsChecked"
+                             Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                     To="180"
+                                                     Duration="0:0:0.4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                     To="0"
+                                                     Duration="0:0:0.4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            
+            <!-- MouseOver, Pressed behaviours-->
+            <Trigger Property="IsChecked"
+                             Value="True">
+                <Setter Property="Fill"
+                                TargetName="Circle"
+                                Value="{DynamicResource Img_OrangeHoverButtonStyle}" />
+                <Setter Property="Stroke"
+                                TargetName="Circle"
+                                Value="#FFDC810E" />
+                <Setter Property="Stroke"
+                                TargetName="Arrow"
+                                Value="Black" />
+            </Trigger>
+            <Trigger Property="IsMouseOver"
+                             Value="True">
+                <Setter Property="Stroke"
+                                TargetName="Circle"
+                                Value="#FFEDAE04" />
+                <Setter Property="Fill"
+                                TargetName="Circle"
+                                Value="{DynamicResource Img_YellowHoverButtonStyle}" />
+                <Setter Property="Stroke"
+                                TargetName="Arrow"
+                                Value="Black" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <!-- Stretch Out Content Expander's Template-->
+    <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type Expander}">
+                    <DockPanel>
+                        <ToggleButton x:Name="ExpanderButton"
+                                  DockPanel.Dock="Top"
+                                  Template="{StaticResource AnimatedExpanderButtonTemp}"
+                                  Content="{TemplateBinding Header}"
+                                  IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                  OverridesDefaultStyle="True"
+                                  Padding="0" Margin="3,3,3,0" />
+                        <ContentPresenter x:Name="ExpanderContent"
+                                      ContentSource="Content"
+                                      DockPanel.Dock="Bottom">
+                            <ContentPresenter.LayoutTransform>
+                                <ScaleTransform ScaleY="0" />
+                            </ContentPresenter.LayoutTransform>
+                        </ContentPresenter>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                             Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderContent"
+                                                     Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                     To="1"
+                                                     Duration="0:0:0.0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderContent"
+                                                     Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                     To="0"
+                                                     Duration="0:0:0.0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	
+	
+	
+		<!-- ********************* -->
+    <!-- Style Plane Animated Expander Right Button's Template -->
+    <!-- ********************* -->
+	
+	 
+
+    <ControlTemplate x:Key="PlaneAnimatedExpanderRightButtonTemp"
+                             TargetType="{x:Type ToggleButton}">
+        <Border x:Name="PlaneExpanderButtonBorder"
+                        BorderThickness="1" Padding="2" CornerRadius="5,5,0,0" 
+                Background="{DynamicResource ExpanderHeaderBrush}">
+        	<Border.BorderBrush>
+        		<SolidColorBrush Color="{DynamicResource ExpanderHeaderBorderColor}"/>
+        	</Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="Transparent"
+                                   Grid.ColumnSpan="4" />
+                <Ellipse x:Name="Circle"
+                                 Grid.Column="2"
+                                 Stroke="{x:Null}"
+                                 Width="18"
+                                 Height="18"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" />
+                <Path x:Name="Arrow"
+                              Grid.Column="2"
+                              Data="M 1,1.5 L 4.5,5 8,1.5"
+                              Stroke="Black"
+                              StrokeThickness="2"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="0" />
+                    </Path.RenderTransform>
+                </Path>
+                <ContentPresenter x:Name="HeaderContent"
+                                          Grid.Column="1"
+                                          Margin="0,1,0,0"
+                                          ContentSource="Content" VerticalAlignment="Center" Grid.ColumnSpan="1" d:LayoutOverrides="Width, GridBox" />
+                <!--<StackPanel Margin="0,0,3,0" Orientation="Horizontal" d:LayoutOverrides="Width" VerticalAlignment="Center">
+                	<Image Margin="0" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="NearestNeighbor"
+                            		/>
+                	<TextBlock Margin="0" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="9" FontFamily="Tahoma" FontWeight="Bold"/>
+                    <TextBlock Margin="0"
+                               TextWrapping="Wrap"
+                               Text=":"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="9"
+                               FontFamily="Tahoma"
+                               FontWeight="Bold" />
+                </StackPanel>-->
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <!-- Animate arrow when toggled-->
+            <Trigger Property="IsChecked"
+                             Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                     To="180"
+                                                     Duration="0:0:0.4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Arrow"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                     To="0"
+                                                     Duration="0:0:0.4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            
+            <!-- MouseOver, Pressed behaviours-->
+            <Trigger Property="IsChecked"
+                             Value="True">
+                <Setter Property="Fill"
+                                TargetName="Circle"
+                                Value="{x:Null}" />
+                <Setter Property="Stroke"
+                                TargetName="Circle"
+                                Value="{x:Null}" />
+                <Setter Property="Stroke"
+                                TargetName="Arrow"
+                                Value="Black" />
+            </Trigger>
+            <Trigger Property="IsMouseOver"
+                             Value="True">
+                <Setter Property="Stroke"
+                                TargetName="Circle"
+                                Value="#FFEDAE04" />
+                <Setter Property="Fill"
+                                TargetName="Circle"
+                                Value="{x:Null}" />
+                <Setter Property="Stroke"
+                                TargetName="Arrow"
+                                Value="Black" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <!-- Stretch Out Content Expander's Template-->
+    <Style x:Key="PlaneExpanderStyle" TargetType="{x:Type Expander}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate  TargetType="{x:Type Expander}">
+                    <DockPanel>
+                        <ToggleButton x:Name="ExpanderButton"
+                                  DockPanel.Dock="Top"
+                                  Template="{StaticResource PlaneAnimatedExpanderRightButtonTemp}"
+                                  Content="{TemplateBinding Header}"
+                                  IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                  OverridesDefaultStyle="True"
+                                  Padding="0" Margin="3,3,3,0" />
+                        <ContentPresenter x:Name="ExpanderContent"
+                                      ContentSource="Content"
+                                      DockPanel.Dock="Bottom">
+                            <ContentPresenter.LayoutTransform>
+                                <ScaleTransform ScaleY="0" />
+                            </ContentPresenter.LayoutTransform>
+                        </ContentPresenter>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                             Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderContent"
+                                                     Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                     To="1"
+                                                     Duration="0:0:0.0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderContent"
+                                                     Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                     To="0"
+                                                     Duration="0:0:0.0" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	
+	 <Style x:Key="PlaneListboxContainerStyle" TargetType="{x:Type GroupItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate >
+                    <Expander Header="{Binding Name}" Style="{StaticResource PlaneExpanderStyle}" IsExpanded="True">
+                        <ItemsPresenter />
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	 <!-- ********************* -->
+    <!-- Style  The End  -->
+    <!-- ********************* -->
+	
+    
+    <!-- ********************* -->
+    <!-- Style  Expander Listbox Container Style -->
+    <!-- ********************* -->
+    
+    <Style x:Key="ListboxContainerStyle" TargetType="{x:Type GroupItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate >
+                    <Expander Header="{Binding Name}" Style="{StaticResource ExpanderStyle}" IsExpanded="True">
+                        <ItemsPresenter />
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ListboxContainerStyle_ClaimRule"
+           TargetType="{x:Type GroupItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Expander Header="{Binding RuleName}"
+                              Style="{StaticResource ExpanderStyle}"
+                              IsExpanded="True">
+                        <ItemsPresenter />
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ListboxContainerStyleRules" TargetType="{x:Type GroupItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate >
+                    <Expander Header="Binding Name}" Style="{StaticResource ExpanderStyle}" IsExpanded="True">
+                        <ItemsPresenter />
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+    

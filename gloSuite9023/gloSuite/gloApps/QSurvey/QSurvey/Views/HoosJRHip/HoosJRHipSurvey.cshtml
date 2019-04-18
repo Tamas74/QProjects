@@ -1,0 +1,231 @@
+﻿@model QSurvey.Models.HoosJRHipModel
+
+@{
+    ViewBag.Title = "HoosJRHipSurvey";
+}
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HoosJRHipSurvey</title>
+</head>
+<style>
+    .container
+    {
+        color:#1f497d;
+    }
+    .h3
+    {
+       margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: medium;
+    }
+    ul, li
+    {
+        display: inline-block;
+        list-style-type: none;
+    }
+    .btnSubmit
+    {        
+        display:block;
+        height:40px;
+        width:150px;
+        background-color:#1f497d;
+        color:white;
+        text-align:center;
+        margin:0 auto;
+        border:none;
+        border-radius:40px;
+        cursor:pointer;
+    }
+</style>
+<body>
+    @using (Html.BeginForm("PostSurvey", "HoosJRHip", FormMethod.Post))
+    { @Html.HiddenFor(m => m.RequestID)
+
+        <div class="container">
+            <h1>
+                <center>
+                    HOOS, JR. HIP SURVEY
+                </center>
+            </h1>
+            <table style="margin-left: 20px;">
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                            INSTRUCTIONS</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="margin-bottom: 20px;">
+                            This survey asks for your view about your hip. This
+                            information will help us keep track of how you feel about your hip and how well
+                            you are able to do your usual activities.
+                            Answer every question by ticking the appropriate box, only one box for each
+                            question. If you are unsure about how to answer a question, please give the best
+                            answer you can. 
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h3">
+                            Pain</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            What amount of hip pain have you experienced the last week during the
+                            following activities?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p >
+                            P1. Going up or down stairs
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.P1, "never") Never 
+                                @Html.RadioButtonFor(m => m.P1, "mild") Mild 
+                                @Html.RadioButtonFor(m => m.P1, "moderate") Moderate 
+                                @Html.RadioButtonFor(m => m.P1, "severe") Severe 
+                                @Html.RadioButtonFor(m => m.P1, "extreme") Extreme
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            P2. Walking on an uneven surface
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.P2, "none") None 
+                                @Html.RadioButtonFor(m => m.P2, "mild") Mild 
+                                @Html.RadioButtonFor(m => m.P2, "moderate") Moderate 
+                                @Html.RadioButtonFor(m => m.P2, "severe") Severe 
+                                @Html.RadioButtonFor(m => m.P2, "extreme") Extreme
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <h4 class="h4">
+                            Function, daily living</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            The following questions concern your physical function. By this we mean
+                            your ability to move around and to look after yourself. For each of the
+                            following activities please indicate the degree of difficulty you have
+                            experienced in the last week due to your hip.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                     <p>
+                        A1. Rising from sitting
+                     </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.S1, "none") None 
+                                @Html.RadioButtonFor(m => m.S1, "mild") Mild 
+                                @Html.RadioButtonFor(m => m.S1, "moderate") Moderate 
+                                @Html.RadioButtonFor(m => m.S1, "severe") Severe 
+                                @Html.RadioButtonFor(m => m.S1, "extreme") Extreme
+                            </p>
+                        </ul>
+                    </td>
+                </tr>                               
+                <tr>
+                    <td>
+                        <p>
+                            A2. Bending to floor/pick up an object
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.S2, "none") None 
+                                @Html.RadioButtonFor(m => m.S2, "mild") Mild 
+                                @Html.RadioButtonFor(m => m.S2, "moderate") Moderate 
+                                @Html.RadioButtonFor(m => m.S2, "severe") Severe 
+                                @Html.RadioButtonFor(m => m.S2, "extreme") Extreme
+                            </p>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            A3. Lying in bed (turning over, maintaining hip position)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <p>
+                                @Html.RadioButtonFor(m => m.S3, "none") None 
+                                @Html.RadioButtonFor(m => m.S3, "mild") Mild 
+                                @Html.RadioButtonFor(m => m.S3, "moderate") Moderate 
+                                @Html.RadioButtonFor(m => m.S3, "severe") Severe 
+                                @Html.RadioButtonFor(m => m.S3, "extreme") Extreme
+                            </p>
+                        </ul>
+                    </td>
+                </tr>                
+                <tr>
+                    <td>
+                        <p>
+                            A4. Sitting
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            @Html.RadioButtonFor(m => m.S4, "none") None 
+                            @Html.RadioButtonFor(m => m.S4, "mild") Mild 
+                            @Html.RadioButtonFor(m => m.S4, "moderate") Moderate 
+                            @Html.RadioButtonFor(m => m.S4, "severe") Severe 
+                            @Html.RadioButtonFor(m => m.S4, "extreme") Extreme
+                        </ul>
+                    </td>
+                </tr>                               
+            </table>
+            @if (ViewBag.ReadOnly == null || (ViewBag.ReadOnly != null && ViewBag.ReadOnly == false))
+            { 
+                <input class="btnSubmit" type="submit" value="Submit Survey"/>
+            }
+        </div>
+    }
+</body>
+
+</html>
+

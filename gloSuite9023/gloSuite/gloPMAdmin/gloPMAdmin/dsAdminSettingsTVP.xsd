@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAdminSettingsTVP" targetNamespace="http://tempuri.org/dsAdminSettingsTVP.xsd" xmlns:mstns="http://tempuri.org/dsAdminSettingsTVP.xsd" xmlns="http://tempuri.org/dsAdminSettingsTVP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="glo6040_DEVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="glo6040_DEVConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.gloPMAdmin.My.MySettings.GlobalReference.Default.glo6040_DEVConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAdminSettingsTVP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAdminSettingsTVP" msprop:Generator_UserDSName="dsAdminSettingsTVP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Settings" msprop:Generator_TableClassName="SettingsDataTable" msprop:Generator_TableVarName="tableSettings" msprop:Generator_TablePropName="Settings" msprop:Generator_RowDeletingName="SettingsRowDeleting" msprop:Generator_UserTableName="Settings" msprop:Generator_RowChangingName="SettingsRowChanging" msprop:Generator_RowEvHandlerName="SettingsRowChangeEventHandler" msprop:Generator_RowDeletedName="SettingsRowDeleted" msprop:Generator_RowEvArgName="SettingsRowChangeEvent" msprop:Generator_RowChangedName="SettingsRowChanged" msprop:Generator_RowClassName="SettingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nSettingsID" msprop:Generator_ColumnVarNameInTable="columnnSettingsID" msprop:Generator_ColumnPropNameInRow="nSettingsID" msprop:Generator_ColumnPropNameInTable="nSettingsIDColumn" msprop:Generator_UserColumnName="nSettingsID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sSettingsName" msprop:Generator_ColumnVarNameInTable="columnsSettingsName" msprop:Generator_ColumnPropNameInRow="sSettingsName" msprop:Generator_ColumnPropNameInTable="sSettingsNameColumn" msprop:Generator_UserColumnName="sSettingsName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sSettingsValue" msprop:Generator_ColumnVarNameInTable="columnsSettingsValue" msprop:Generator_ColumnPropNameInRow="sSettingsValue" msprop:Generator_ColumnPropNameInTable="sSettingsValueColumn" msprop:Generator_UserColumnName="sSettingsValue" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nClinicID" msprop:Generator_ColumnVarNameInTable="columnnClinicID" msprop:Generator_ColumnPropNameInRow="nClinicID" msprop:Generator_ColumnPropNameInTable="nClinicIDColumn" msprop:Generator_UserColumnName="nClinicID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nUserID" msprop:Generator_ColumnVarNameInTable="columnnUserID" msprop:Generator_ColumnPropNameInRow="nUserID" msprop:Generator_ColumnPropNameInTable="nUserIDColumn" msprop:Generator_UserColumnName="nUserID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nUserClinicFlag" msprop:Generator_ColumnVarNameInTable="columnnUserClinicFlag" msprop:Generator_ColumnPropNameInRow="nUserClinicFlag" msprop:Generator_ColumnPropNameInTable="nUserClinicFlagColumn" msprop:Generator_UserColumnName="nUserClinicFlag" type="xs:int" minOccurs="0" />
+              <xs:element name="nProviderID" msprop:Generator_ColumnVarNameInTable="columnnProviderID" msprop:Generator_ColumnPropNameInRow="nProviderID" msprop:Generator_ColumnPropNameInTable="nProviderIDColumn" msprop:Generator_UserColumnName="nProviderID" type="xs:long" minOccurs="0" />
+              <xs:element name="nOthersID" msprop:Generator_ColumnVarNameInTable="columnnOthersID" msprop:Generator_ColumnPropNameInRow="nOthersID" msprop:Generator_ColumnPropNameInTable="nOthersIDColumn" msprop:Generator_UserColumnName="nOthersID" type="xs:long" minOccurs="0" />
+              <xs:element name="sSettingsType" msprop:Generator_ColumnVarNameInTable="columnsSettingsType" msprop:Generator_ColumnPropNameInRow="sSettingsType" msprop:Generator_ColumnPropNameInTable="sSettingsTypeColumn" msprop:Generator_UserColumnName="sSettingsType" type="xs:string" minOccurs="0" />
+              <xs:element name="bSettingFlag" msprop:Generator_ColumnVarNameInTable="columnbSettingFlag" msprop:Generator_ColumnPropNameInRow="bSettingFlag" msprop:Generator_ColumnPropNameInTable="bSettingFlagColumn" msprop:Generator_UserColumnName="bSettingFlag" type="xs:boolean" minOccurs="0" />
+              <xs:element name="sType" msprop:Generator_ColumnVarNameInTable="columnsType" msprop:Generator_ColumnPropNameInRow="sType" msprop:Generator_ColumnPropNameInTable="sTypeColumn" msprop:Generator_UserColumnName="sType" type="xs:string" minOccurs="0" />
+              <xs:element name="nBillingSettingsType" msprop:Generator_ColumnVarNameInTable="columnnBillingSettingsType" msprop:Generator_ColumnPropNameInRow="nBillingSettingsType" msprop:Generator_ColumnPropNameInTable="nBillingSettingsTypeColumn" msprop:Generator_UserColumnName="nBillingSettingsType" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

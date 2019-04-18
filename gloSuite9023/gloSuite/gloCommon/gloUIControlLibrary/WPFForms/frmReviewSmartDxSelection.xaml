@@ -1,0 +1,118 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        x:Class="gloUIControlLibrary.WPFForms.frmReviewSmartDxSelection"
+        xmlns:Converter="clr-namespace:gloUIControlLibrary.Classes"
+        xmlns:ICD10Converter="clr-namespace:gloUIControlLibrary.Classes.SmartDX"
+        Title="Review Smart Diagnosis"
+        WindowStartupLocation="CenterScreen" 
+        Height="730" Width="750" TextOptions.TextFormattingMode="Display" Background="{DynamicResource BaseBackColor}" Foreground="{DynamicResource BaseForeColor}" FontFamily="{DynamicResource BaseFontFamily}" FontSize="{DynamicResource BaseFontSize}"
+        Icon="/gloUIControlLibrary;component/Resources/ICO/ReviewSmartDx.ico" ShowInTaskbar="False"
+        Loaded="Window_Loaded">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloGUIStyleV8.xaml"/>
+                <ResourceDictionary Source="/gloUIControlLibrary;component/Themes/gloIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Converter:BolleanVisibilityConverter x:Key="BolleanVisibilityConverter"/>
+            <ICD10Converter:CodeVisibilityConverter x:Key="CodeVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+   
+    
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="59"/>
+    		<RowDefinition Height="*"/>
+    	</Grid.RowDefinitions>
+    	<StackPanel x:Name="pnlToolStrip" Orientation="Horizontal" Margin="0,0,0,4" Background="{DynamicResource Img_ToolstripStyle}">
+                <!-- SaveandCloseButton -->
+    		<Border x:Name="OKButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+    			<Grid>
+    				<Button x:Name="btnOK" IsDefault="True" Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource OK}" Click="btnOK_Click">
+    					<!--<Button.ToolTip>
+    						<ToolTip>
+    							<StackPanel>
+    								<TextBlock TextWrapping="Wrap"><Run Text="OK"/></TextBlock>
+    							</StackPanel>
+    						</ToolTip>
+    					</Button.ToolTip>-->
+    				</Button>
+    				<Label  Margin="2" Content ="OK" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+    			</Grid>
+    		</Border>
+
+                <!-- CloseButton End -->
+    		<Border x:Name="CloseButton" Style="{DynamicResource ToolStripButtonHover}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="4,0,0,0" >
+    			<Grid>
+    				<Button x:Name="btnClose"  IsCancel ="True"  Style="{DynamicResource SimpleButton}"  HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="32" Margin="0,2,0,0" Cursor="Hand" Content="{DynamicResource Close}" Click="btnClose_Click">
+    					<!--<Button.ToolTip>
+    						<ToolTip>
+    							<StackPanel>
+    								<TextBlock TextWrapping="Wrap"><Run Text="Cancel"/></TextBlock>
+    							</StackPanel>
+    						</ToolTip>
+    					</Button.ToolTip>-->
+    				</Button>
+    				<Label  Margin="2" Content ="Cancel" Foreground="{DynamicResource BaseForeColor}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="0" FontWeight="Bold" FontFamily="{DynamicResource BaseFontFamily}"/>
+    			</Grid>
+    		</Border>
+    	</StackPanel>
+           
+    	<Border BorderBrush="{DynamicResource BaseForeColor}" BorderThickness="1" Margin="3,0,3,3" x:Name="pnlBottom" d:LayoutOverrides="Height" Grid.Row="1">
+            <ListBox x:Name="lbPersonList"
+                     AlternationCount="2"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Margin="1,0,3,0"
+                     HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" Background="White" BorderThickness="0"
+                     SelectionChanged="lbPersonList_SelectionChanged">
+    			<ListBox.GroupStyle>
+                    <GroupStyle ContainerStyle="{StaticResource ListboxContainerStyle}" />
+    			</ListBox.GroupStyle>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                             Color="Transparent" />
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+    				<DataTemplate>
+                        <Border BorderThickness="1,0,1,1"
+                                Padding="2"
+                                Margin="1,0,3,0"
+                                BorderBrush="#FFDC810E">
+                            <StackPanel Orientation="Horizontal" x:Name="stkTreatment">
+                                <Image Source="{Binding Type, Converter={StaticResource CodeVisibilityConverter}}" Height="16" Width="16" Margin="0,0,2,0"></Image>
+                                <!--<CheckBox Grid.Row="0" Grid.Column="0" Margin="5" Name="CheckboxIsSelected" IsChecked="{Binding IsSelectedName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />-->
+    							<TextBlock   Margin="3" Text="{Binding DisplayName}"/>
+                                <!--<TextBlock Name="txtIcdID" Grid.Row="0" Grid.Column="2"  Margin="3" Text="{Binding ICDId}" Visibility="Hidden"/>-->
+                            </StackPanel>
+    					</Border>
+                        <!--<DataTemplate.Triggers>
+                            <DataTrigger Value="True" Binding="{Binding IsSelected, RelativeSource={RelativeSource  AncestorType={x:Type ListBoxItem}}}">
+                                <Setter TargetName="stkTreatment" Property="Background" Value="HotPink"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>-->
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+    	</Border>
+    </Grid>
+
+</Window>

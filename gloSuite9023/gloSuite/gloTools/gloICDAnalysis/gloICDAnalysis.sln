@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloICDAnalysis", "gloICDAnalysis\gloICDAnalysis.csproj", "{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "gloICDAnalysisInstaller", "gloICDAnalysisInstaller\gloICDAnalysisInstaller.vdproj", "{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloICDAnalysisUtility", "gloICDAnalysisUserInterface\gloICDAnalysisUtility.csproj", "{6875EBCE-A924-4403-A618-41306C5DE965}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2} = {8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloGlobal", "..\..\gloCommon\gloGlobal\gloGlobal.csproj", "{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloAuditTrail", "..\..\gloCommon\gloAuditTrail\gloAuditTrail.csproj", "{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloDatabaseLayer", "..\..\gloCommon\gloDatabaseLayer\gloDatabaseLayer.csproj", "{6D67B632-66D0-4EDC-9943-B6488A6098D3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://glosvr03.glodom.local:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = gloICDAnalysis\\gloICDAnalysis.csproj
+		SccProjectName1 = gloICDAnalysis
+		SccLocalPath1 = gloICDAnalysis
+		SccProjectUniqueName2 = gloICDAnalysisInstaller\\gloICDAnalysisInstaller.vdproj
+		SccProjectName2 = gloICDAnalysisInstaller
+		SccLocalPath2 = gloICDAnalysisInstaller
+		SccProjectUniqueName3 = gloICDAnalysisUserInterface\\gloICDAnalysisUtility.csproj
+		SccProjectName3 = gloICDAnalysisUserInterface
+		SccLocalPath3 = gloICDAnalysisUserInterface
+		SccProjectUniqueName4 = ..\\..\\gloCommon\\gloGlobal\\gloGlobal.csproj
+		SccProjectName4 = ../../gloCommon/gloGlobal
+		SccLocalPath4 = ..\\..\\gloCommon\\gloGlobal
+		SccProjectUniqueName5 = ..\\..\\gloCommon\\gloAuditTrail\\gloAuditTrail.csproj
+		SccProjectName5 = ../../gloCommon/gloAuditTrail
+		SccLocalPath5 = ..\\..\\gloCommon\\gloAuditTrail
+		SccProjectUniqueName6 = ..\\..\\gloCommon\\gloDatabaseLayer\\gloDatabaseLayer.csproj
+		SccProjectName6 = ../../gloCommon/gloDatabaseLayer
+		SccLocalPath6 = ..\\..\\gloCommon\\gloDatabaseLayer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Debug|x86.ActiveCfg = Debug|x86
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Debug|x86.Build.0 = Debug|x86
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Release|Any CPU.ActiveCfg = Release|x86
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Release|x86.ActiveCfg = Release|x86
+		{3CE7D86F-2CC0-4755-8083-D5A19BE720AA}.Release|x86.Build.0 = Release|x86
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Debug|Any CPU.ActiveCfg = Debug
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Debug|Any CPU.Build.0 = Debug
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Debug|x86.ActiveCfg = Debug
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Debug|x86.Build.0 = Debug
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Release|Any CPU.ActiveCfg = Release
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Release|Any CPU.Build.0 = Release
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Release|x86.ActiveCfg = Release
+		{8BDDB5D5-FF43-4E48-9098-EFB5FD8297C2}.Release|x86.Build.0 = Release
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Debug|x86.ActiveCfg = Debug|x86
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Debug|x86.Build.0 = Debug|x86
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Release|Any CPU.ActiveCfg = Release|x86
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Release|x86.ActiveCfg = Release|x86
+		{6875EBCE-A924-4403-A618-41306C5DE965}.Release|x86.Build.0 = Release|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|x86.ActiveCfg = Debug|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|x86.Build.0 = Debug|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|x86.ActiveCfg = Release|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|x86.Build.0 = Release|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|x86.ActiveCfg = Debug|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|x86.Build.0 = Debug|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|x86.ActiveCfg = Release|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|x86.Build.0 = Release|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|x86.ActiveCfg = Debug|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|x86.Build.0 = Debug|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|x86.ActiveCfg = Release|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

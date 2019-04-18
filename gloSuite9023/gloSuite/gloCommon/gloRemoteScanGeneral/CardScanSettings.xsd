@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CardScanSettings" targetNamespace="http://tempuri.org/CardScanSettings.xsd" xmlns:mstns="http://tempuri.org/CardScanSettings.xsd" xmlns="http://tempuri.org/CardScanSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CardScanSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CardScanSettings" msprop:Generator_UserDSName="CardScanSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ScanCardSettings" msprop:Generator_TableClassName="ScanCardSettingsDataTable" msprop:Generator_TableVarName="tableScanCardSettings" msprop:Generator_RowChangedName="ScanCardSettingsRowChanged" msprop:Generator_TablePropName="ScanCardSettings" msprop:Generator_RowDeletingName="ScanCardSettingsRowDeleting" msprop:Generator_RowChangingName="ScanCardSettingsRowChanging" msprop:Generator_RowEvHandlerName="ScanCardSettingsRowChangeEventHandler" msprop:Generator_RowDeletedName="ScanCardSettingsRowDeleted" msprop:Generator_RowClassName="ScanCardSettingsRow" msprop:Generator_UserTableName="ScanCardSettings" msprop:Generator_RowEvArgName="ScanCardSettingsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScanCardSettingsId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnScanCardSettingsId" msprop:Generator_ColumnPropNameInRow="ScanCardSettingsId" msprop:Generator_ColumnPropNameInTable="ScanCardSettingsIdColumn" msprop:Generator_UserColumnName="ScanCardSettingsId" type="xs:long" />
+              <xs:element name="InsuranceCardDPI" msprop:Generator_ColumnVarNameInTable="columnInsuranceCardDPI" msprop:Generator_ColumnPropNameInRow="InsuranceCardDPI" msprop:Generator_ColumnPropNameInTable="InsuranceCardDPIColumn" msprop:Generator_UserColumnName="InsuranceCardDPI" type="xs:int" default="600" minOccurs="0" />
+              <xs:element name="DrivingLicenseCardDPI" msprop:Generator_ColumnVarNameInTable="columnDrivingLicenseCardDPI" msprop:Generator_ColumnPropNameInRow="DrivingLicenseCardDPI" msprop:Generator_ColumnPropNameInTable="DrivingLicenseCardDPIColumn" msprop:Generator_UserColumnName="DrivingLicenseCardDPI" type="xs:int" default="600" minOccurs="0" />
+              <xs:element name="ScannerColor" msprop:Generator_ColumnVarNameInTable="columnScannerColor" msprop:Generator_ColumnPropNameInRow="ScannerColor" msprop:Generator_ColumnPropNameInTable="ScannerColorColumn" msprop:Generator_UserColumnName="ScannerColor" type="xs:string" minOccurs="0" />
+              <xs:element name="ScanDuplex" msprop:Generator_ColumnVarNameInTable="columnScanDuplex" msprop:Generator_ColumnPropNameInRow="ScanDuplex" msprop:Generator_ColumnPropNameInTable="ScanDuplexColumn" msprop:Generator_UserColumnName="ScanDuplex" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="CenterImage" msprop:Generator_ColumnVarNameInTable="columnCenterImage" msprop:Generator_ColumnPropNameInRow="CenterImage" msprop:Generator_ColumnPropNameInTable="CenterImageColumn" msprop:Generator_UserColumnName="CenterImage" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="EnableOCR" msprop:Generator_ColumnVarNameInTable="columnEnableOCR" msprop:Generator_ColumnPropNameInRow="EnableOCR" msprop:Generator_ColumnPropNameInTable="EnableOCRColumn" msprop:Generator_UserColumnName="EnableOCR" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="CardType" msprop:Generator_ColumnVarNameInTable="columnCardType" msprop:Generator_ColumnPropNameInRow="CardType" msprop:Generator_ColumnPropNameInTable="CardTypeColumn" msprop:Generator_UserColumnName="CardType" type="xs:string" minOccurs="0" />
+              <xs:element name="SelectedScanner" msprop:Generator_ColumnVarNameInTable="columnSelectedScanner" msprop:Generator_ColumnPropNameInRow="SelectedScanner" msprop:Generator_ColumnPropNameInTable="SelectedScannerColumn" msprop:Generator_UserColumnName="SelectedScanner" type="xs:string" minOccurs="0" />
+              <xs:element name="CardImageFront" msprop:Generator_ColumnVarNameInTable="columnCardImageFront" msprop:Generator_ColumnPropNameInRow="CardImageFront" msprop:Generator_ColumnPropNameInTable="CardImageFrontColumn" msprop:Generator_UserColumnName="CardImageFront" type="xs:string" minOccurs="0" />
+              <xs:element name="CardFaceImage" msprop:Generator_ColumnVarNameInTable="columnCardFaceImage" msprop:Generator_ColumnPropNameInRow="CardFaceImage" msprop:Generator_ColumnPropNameInTable="CardFaceImageColumn" msprop:Generator_UserColumnName="CardFaceImage" type="xs:string" minOccurs="0" />
+              <xs:element name="CardImageBack" msprop:Generator_ColumnVarNameInTable="columnCardImageBack" msprop:Generator_ColumnPropNameInRow="CardImageBack" msprop:Generator_ColumnPropNameInTable="CardImageBackColumn" msprop:Generator_UserColumnName="CardImageBack" type="xs:string" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:string" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" msprop:Generator_UserColumnName="Sex" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" type="xs:string" minOccurs="0" />
+              <xs:element name="Zip" msprop:Generator_ColumnVarNameInTable="columnZip" msprop:Generator_ColumnPropNameInRow="Zip" msprop:Generator_ColumnPropNameInTable="ZipColumn" msprop:Generator_UserColumnName="Zip" type="xs:string" minOccurs="0" />
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" type="xs:string" minOccurs="0" />
+              <xs:element name="State" msprop:Generator_ColumnVarNameInTable="columnState" msprop:Generator_ColumnPropNameInRow="State" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_UserColumnName="State" type="xs:string" minOccurs="0" />
+              <xs:element name="InsMemberID" msprop:Generator_ColumnVarNameInTable="columnInsMemberID" msprop:Generator_ColumnPropNameInRow="InsMemberID" msprop:Generator_ColumnPropNameInTable="InsMemberIDColumn" msprop:Generator_UserColumnName="InsMemberID" type="xs:string" minOccurs="0" />
+              <xs:element name="InsMemberName" msprop:Generator_ColumnVarNameInTable="columnInsMemberName" msprop:Generator_ColumnPropNameInRow="InsMemberName" msprop:Generator_ColumnPropNameInTable="InsMemberNameColumn" msprop:Generator_UserColumnName="InsMemberName" type="xs:string" minOccurs="0" />
+              <xs:element name="InsGroupNo" msprop:Generator_ColumnVarNameInTable="columnInsGroupNo" msprop:Generator_ColumnPropNameInRow="InsGroupNo" msprop:Generator_ColumnPropNameInTable="InsGroupNoColumn" msprop:Generator_UserColumnName="InsGroupNo" type="xs:string" minOccurs="0" />
+              <xs:element name="PlanProvider" msprop:Generator_ColumnVarNameInTable="columnPlanProvider" msprop:Generator_ColumnPropNameInRow="PlanProvider" msprop:Generator_ColumnPropNameInTable="PlanProviderColumn" msprop:Generator_UserColumnName="PlanProvider" type="xs:string" minOccurs="0" />
+              <xs:element name="GroupNumber" msprop:Generator_ColumnVarNameInTable="columnGroupNumber" msprop:Generator_ColumnPropNameInRow="GroupNumber" msprop:Generator_ColumnPropNameInTable="GroupNumberColumn" msprop:Generator_UserColumnName="GroupNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" default="-1" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScanCardSettings" />
+      <xs:field xpath="mstns:ScanCardSettingsId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

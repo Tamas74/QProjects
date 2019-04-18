@@ -1,0 +1,33 @@
+<?xml version="1.0"?> 
+
+<xs:schema id="MediSpan.IREF.IMM" 
+        xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+> 
+
+  <xs:attribute name="pFontSize"> 
+    <xs:simpleType baseType="integer"> 
+      <xs:minInclusive value="10" /> 
+    </xs:simpleType> 
+  </xs:attribute> 
+
+  <xs:attribute name="pGender"> 
+    <xs:simpleType baseType="string"> 
+      <xs:enumeration value="female" /> 
+      <xs:enumeration value="male" /> 
+    </xs:simpleType> 
+  </xs:attribute>
+
+  <xs:attribute name="pLanguage"> 
+    <xs:simpleType baseType="string"> 
+      <xs:enumeration value="EN" /> 
+      <xs:enumeration value="ES" /> 
+    </xs:simpleType> 
+  </xs:attribute> 
+
+  <xs:attribute name="pProductDispensed">
+    <xs:simpleType baseType="string">
+      <xs:maxLength value="1050" />
+    </xs:simpleType>
+  </xs:attribute>
+
+</xs:schema>
