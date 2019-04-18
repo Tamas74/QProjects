@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="gloDirect" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="gloDirectSrv_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="150000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ophit.net/gloDirect/gloDirect.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ophit.net/gloDirect/gloDirect.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/gloDirectServices" />
+      <xsd:import schemaLocation="http://ophit.net/gloDirect/gloDirect.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IgloDirect_GetLoginCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_GetLoginCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_GetLoginCredentials_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/gloDirectServices" name="detail" element="q1:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_Login_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/gloDirectServices" name="detail" element="q2:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PostSecureMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostSecureMessage" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PostSecureMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostSecureMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PostSecureMessage_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/gloDirectServices" name="detail" element="q3:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownloadLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadLocal" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownloadLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownloadLocal_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/gloDirectServices" name="detail" element="q4:clsException" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownload" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrescriberDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgloDirect_PrescriberDownload_clsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/gloDirectServices" name="detail" element="q5:clsException" />
+  </wsdl:message>
+  <wsdl:portType name="IgloDirect">
+    <wsdl:operation name="GetLoginCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgloDirect/GetLoginCredentials" message="tns:IgloDirect_GetLoginCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgloDirect/GetLoginCredentialsResponse" message="tns:IgloDirect_GetLoginCredentials_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IgloDirect/GetLoginCredentialsclsExceptionFault" name="clsExceptionFault" message="tns:IgloDirect_GetLoginCredentials_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgloDirect/Login" message="tns:IgloDirect_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgloDirect/LoginResponse" message="tns:IgloDirect_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IgloDirect/LoginclsExceptionFault" name="clsExceptionFault" message="tns:IgloDirect_Login_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSecureMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgloDirect/PostSecureMessage" message="tns:IgloDirect_PostSecureMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgloDirect/PostSecureMessageResponse" message="tns:IgloDirect_PostSecureMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IgloDirect/PostSecureMessageclsExceptionFault" name="clsExceptionFault" message="tns:IgloDirect_PostSecureMessage_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownloadLocal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownloadLocal" message="tns:IgloDirect_PrescriberDownloadLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownloadLocalResponse" message="tns:IgloDirect_PrescriberDownloadLocal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownloadLocalclsExceptionFault" name="clsExceptionFault" message="tns:IgloDirect_PrescriberDownloadLocal_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownload" message="tns:IgloDirect_PrescriberDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownloadResponse" message="tns:IgloDirect_PrescriberDownload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IgloDirect/PrescriberDownloadclsExceptionFault" name="clsExceptionFault" message="tns:IgloDirect_PrescriberDownload_clsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="gloDirectSrv" type="tns:IgloDirect">
+    <wsp:PolicyReference URI="#gloDirectSrv_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLoginCredentials">
+      <soap12:operation soapAction="http://tempuri.org/IgloDirect/GetLoginCredentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IgloDirect/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostSecureMessage">
+      <soap12:operation soapAction="http://tempuri.org/IgloDirect/PostSecureMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownloadLocal">
+      <soap12:operation soapAction="http://tempuri.org/IgloDirect/PrescriberDownloadLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrescriberDownload">
+      <soap12:operation soapAction="http://tempuri.org/IgloDirect/PrescriberDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsExceptionFault">
+        <soap12:fault use="literal" name="clsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="gloDirect">
+    <wsdl:port name="gloDirectSrv" binding="tns:gloDirectSrv">
+      <soap12:address location="http://ophit.net/gloDirect/gloDirect.svc/secure" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ophit.net/gloDirect/gloDirect.svc/secure</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
